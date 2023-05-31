@@ -1,0 +1,59 @@
+{
+  "catalog": "observability",
+  "version": "1.0",
+  "categories": [
+    {
+      "category": "logs",
+      "version": "1.0",
+      "instances": [
+        {
+          "name": "logs-nginx-0001",
+          "type": "index",
+          "mapping":"ss4o_logs_template" ,
+          "creationDate": "2021-11-13T20:20:39+00:00",
+          "creationBy": ""
+        },
+        {
+          "name": "sso-logs-nginx-prod",
+          "type": "datastream",
+          "mapping":"ss4o_logs_template" ,
+          "creationDate": "2021-11-13T20:20:39+00:00",
+          "creationBy": ""
+        }
+      ]
+    },
+    {
+      "category": "traces",
+      "version": "1.0",
+      "instances": [
+        {
+          "name": "otel-v1-apm-service-map",
+          "type": "index",
+          "mapping":"ss4o_services_template" ,
+          "creationDate": "2021-11-13T20:20:39+00:00",
+          "creationBy": ""
+        },
+        {
+          "name": "sso-traces-default",
+          "mapping":"ss4o_trace_template" ,
+          "type": "datastream",
+          "creationDate": "2021-11-13T20:20:39+00:00",
+          "creationBy": ""
+        }
+      ]
+    },
+    {
+      "category": "metrics",
+      "version": "1.0",
+      "instances": [
+         {
+          "name": "sso-metrics-default",
+          "mapping":"ss4o_trace_template" ,
+          "type": "datastream",
+          "creationDate": "2021-11-13T20:20:39+00:00",
+          "creationBy": ""
+        }
+      ]
+    }
+  ]
+}

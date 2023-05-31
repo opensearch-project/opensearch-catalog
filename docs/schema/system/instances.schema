@@ -1,0 +1,53 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "catalog": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    },
+    "categories": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "category": {
+            "type": "string"
+          },
+          "version": {
+            "type": "string"
+          },
+          "instances": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "type": {
+                  "type": "string"
+                },
+                "mapping": {
+                  "type": "string"
+                },
+                "creationDate": {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                "creationBy": {
+                  "type": "string"
+                }
+              },
+              "required": ["name", "type", "mapping", "creationDate", "creationBy"]
+            }
+          }
+        },
+        "required": ["category", "version", "instances"]
+      }
+    }
+  },
+  "required": ["catalog", "version", "categories"]
+}

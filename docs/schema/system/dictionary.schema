@@ -1,0 +1,49 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "catalog": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    },
+    "attributes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "object",
+          "properties": {
+            "category": {
+              "type": "string"
+            },
+            "component": {
+              "type": "string"
+            },
+            "caption": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "examples": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "object_name": {
+              "type": "string"
+            },
+            "object_type": {
+              "type": "string"
+            }
+          },
+          "required": ["category", "component", "caption", "description", "examples", "object_name", "object_type"]
+        }
+      }
+    }
+  },
+  "required": ["catalog", "version", "attributes"]
+}
