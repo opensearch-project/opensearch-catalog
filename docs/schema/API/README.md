@@ -2,7 +2,7 @@
 The [Swagger](swagger.yaml) describes the API used by the Integration repository to support the `catalog`, `registry` and `store` functionalities.
 
 Its possible to visualize the REST API using any on the numerous [online editors](https://editor.swagger.io/)
-![](API.png)
+![](../../img/schema_api.png)
 
 ### Setup mock server
 In order to test the API, we can utilize a swagger based mock library which allows ['contract based testing'](https://github.com/stoplightio/prism).
@@ -17,9 +17,9 @@ prism mock swagger.yaml
 ```
 The next endpoints are presented:
 ```
-[10:32:12 a.m.] › [CLI] ℹ  info      GET        http://127.0.0.1:4010/catalog?limit=41
-[10:32:12 a.m.] › [CLI] ℹ  info      POST       http://127.0.0.1:4010/catalog
-[10:32:12 a.m.] › [CLI] ℹ  info      GET        http://127.0.0.1:4010/catalog/sed
+[10:32:12 a.m.] › [CLI] ℹ  info      GET        http://127.0.0.1:4010/schema?limit=41
+[10:32:12 a.m.] › [CLI] ℹ  info      POST       http://127.0.0.1:4010/schema
+[10:32:12 a.m.] › [CLI] ℹ  info      GET        http://127.0.0.1:4010/schema/sed
 [10:32:12 a.m.] › [CLI] ℹ  info      GET        http://127.0.0.1:4010/repository?limit=%5Bobject%20Object%5D
 [10:32:12 a.m.] › [CLI] ℹ  info      POST       http://127.0.0.1:4010/repository
 [10:32:12 a.m.] › [CLI] ℹ  info      GET        http://127.0.0.1:4010/repository/%5Bobject%20Object%5D
@@ -34,11 +34,11 @@ The next endpoints are presented:
 
 Once the server has started, a CURL request can be initiated with any of the above endpoints:
 
-`GET http://localhost:4010/catalog`
+`GET http://localhost:4010/schema`
 
 Would show in the traffic logs:
 
-`[10:32:23 a.m.] › [HTTP SERVER] get /catalog ℹ  info      Request received`
+`[10:32:23 a.m.] › [HTTP SERVER] get /schema ℹ  info      Request received`
 
 And will result with :
 

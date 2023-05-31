@@ -12,7 +12,7 @@ tags:
   - name: developers
     description: Operations available to regular developers
 paths:
-  /catalog:
+  /schema:
     get:
       tags:
         - developers
@@ -169,7 +169,7 @@ paths:
           description: 'invalid input, object invalid'
         '409':
           description: an existing item already exists
-  /catalog/{id}:
+  /schema/{id}:
     get:
       tags:
         - developers
