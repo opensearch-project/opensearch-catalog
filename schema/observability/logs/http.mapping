@@ -37,8 +37,13 @@
               "ignore_above": 2048
             },
             "url": {
-              "type": "keyword",
-              "ignore_above": 2048
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
             },
             "schema": {
               "type": "keyword",
