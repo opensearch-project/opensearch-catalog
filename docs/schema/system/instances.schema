@@ -33,6 +33,12 @@
                 "mapping": {
                   "type": "string"
                 },
+                "aliases": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
                 "creationDate": {
                   "type": "string",
                   "format": "date-time"
@@ -41,7 +47,7 @@
                   "type": "string"
                 }
               },
-              "required": ["name", "type", "mapping", "creationDate", "creationBy"]
+              "required": ["name", "type", "mapping", "aliases", "creationDate", "creationBy"]
             }
           }
         },

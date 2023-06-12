@@ -35,7 +35,7 @@ For additional information see [README](../README.md)
 
 The `/schema/{id}/dictionary` endpoint will return a specific domain catalog dictionary of fields and attributes encapsulated within this schema
 
-Its also possible to filter the dictionary according to any of the following categories:
+It's also possible to filter the dictionary according to any of the following categories:
  - category : `GET /schema/Observability/dictionary?category=logs`
  - component: `GET /schema/Observability/dictionary?component=http`
  - name: `GET /schema/Observability/dictionary?field=response*`
@@ -53,6 +53,12 @@ The `/schema/{id}/instances` endpoint will return a specific domain list of inst
  - Indices (created using index mapping templates)
  - DataStreams (created using index mapping templates)
  - DataSource (created and associated with mapping templates)
+
+It's also possible to filter the instances according to any of the following categories:
+- category : `GET /schema/Observability/instances?category=logs`
+- component: `GET /schema/Observability/instances?component=http`
+- name: `GET /schema/Observability/instances?field=response*`
+- mixture:  `GET /schema/Observability/instances?category=traces&component=services`
 
 
 **Examples**

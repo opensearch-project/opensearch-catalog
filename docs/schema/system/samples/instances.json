@@ -10,6 +10,7 @@
           "name": "logs-nginx-0001",
           "type": "index",
           "mapping":"ss4o_logs_template" ,
+          "aliases":["nginx-logs","logs"],
           "creationDate": "2021-11-13T20:20:39+00:00",
           "creationBy": ""
         },
@@ -17,6 +18,7 @@
           "name": "sso-logs-nginx-prod",
           "type": "datastream",
           "mapping":"ss4o_logs_template" ,
+          "aliases":["nginx-prod","logs-prod"],
           "creationDate": "2021-11-13T20:20:39+00:00",
           "creationBy": ""
         }
@@ -30,12 +32,14 @@
           "name": "otel-v1-apm-service-map",
           "type": "index",
           "mapping":"ss4o_services_template" ,
+          "aliases":["services"],
           "creationDate": "2021-11-13T20:20:39+00:00",
           "creationBy": ""
         },
         {
           "name": "sso-traces-default",
           "mapping":"ss4o_trace_template" ,
+          "aliases":["traces","spans"],
           "type": "datastream",
           "creationDate": "2021-11-13T20:20:39+00:00",
           "creationBy": ""
@@ -48,8 +52,9 @@
       "instances": [
          {
           "name": "sso-metrics-default",
-          "mapping":"ss4o_trace_template" ,
-          "type": "datastream",
+          "mapping":"ss4o_metrics_template" ,
+           "aliases":["metrics","metrics-prod"],
+           "type": "datastream",
           "creationDate": "2021-11-13T20:20:39+00:00",
           "creationBy": ""
         }
