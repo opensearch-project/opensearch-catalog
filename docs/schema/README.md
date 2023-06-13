@@ -49,7 +49,7 @@ The component is the leaf level definition of the catalog hierarchy, it details 
 Each component has two flavours:
 
  - `$component.mapping` - describes how the type is physically stored in the underlying index
- - `$component.mapping` - describing the actual json schema for this component type
+ - `$component.schema` - describing the actual json schema for this component type
 
 A component may be classified as a `container` which has the ability to group / combine multiple components inside. 
 

@@ -1,0 +1,233 @@
+{
+  "catalog": "observability",
+  "version": "1.0",
+  "attributes": [
+    {
+      "http.user_agent": {
+        "category": "log",
+        "component": "http",
+        "caption": "user agent",
+        "description": "The user_agent field usually appears in the browser request. it often show up in web service logs coming from the parsed user agent string",
+        "examples": [
+          "Mozilla/5.0 (iPhone; CPU iPhone OS 12_1 like Mac OS X)",
+          "AppleWebKit/605.1.15 (KHTML, like Gecko) Version/12.0",
+          "Mobile/15E148 Safari/604.1"
+        ],
+        "object_name": "user_agent",
+        "object_type": "keyword"
+      }
+    },
+    {
+      "http.utl": {
+        "category": "log",
+        "component": "http",
+        "caption": "url",
+        "description": "URL field provide support for complete or partial URLs, and supports the inner scheme, domain, path ext.",
+        "examples": [
+          "https://schema.ocsf.io/",
+          "https://opensearch.org/docs/2.5/observing-your-data/index/"
+        ],
+        "object_name": "url",
+        "object_type": "keyword"
+      }
+    },
+    {
+      "http.schema": {
+        "category": "log",
+        "component": "http",
+        "caption": "schema",
+        "description": "Scheme of the request, such as \"https\" or \"file\"",
+        "examples": [
+          "http",
+          "file"
+        ],
+        "object_name": "schema",
+        "object_type": "keyword"
+      }
+    },
+    {
+      "http.flavor": {
+        "category": "log",
+        "component": "http",
+        "caption": "flavor",
+        "description": "The flavor field describes the HTTP version used for the request.",
+        "examples": [
+          "HTTP/1.1",
+          "HTTP/2"
+        ],
+        "object_name": "flavor",
+        "object_type": "keyword"
+      }
+    },
+    {
+      "http.target": {
+        "category": "log",
+        "component": "http",
+        "caption": "target",
+        "description": "The target of the HTTP request, which is often the path section of the URL.",
+        "examples": [
+          "/index.html",
+          "/api/user"
+        ],
+        "object_name": "target",
+        "object_type": "keyword"
+      }
+    },
+    {
+      "http.route": {
+        "category": "log",
+        "component": "http",
+        "caption": "route",
+        "description": "The route field represents the matched route of an HTTP request.",
+        "examples": [
+          "/user/:id",
+          "/product/:sku"
+        ],
+        "object_name": "route",
+        "object_type": "keyword"
+      }
+    },
+    {
+      "http.client.ip": {
+        "category": "log",
+        "component": "http",
+        "caption": "client IP",
+        "description": "The IP address of the client that initiated the HTTP request.",
+        "examples": [
+          "192.0.2.0",
+          "2001:0db8:85a3:0000:0000:8a2e:0370:7334"
+        ],
+        "object_name": "client.ip",
+        "object_type": "ip"
+      }
+    },
+    {
+      "http.resent_count": {
+        "category": "log",
+        "component": "http",
+        "caption": "resent count",
+        "description": "The number of times the request has been resent.",
+        "examples": [
+          1,
+          2,
+          3
+        ],
+        "object_name": "resent_count",
+        "object_type": "integer"
+      }
+    },
+    {
+      "http.request.id": {
+        "category": "log",
+        "component": "http",
+        "caption": "request id",
+        "description": "Unique identifier for the HTTP request.",
+        "examples": ["12345", "67890"],
+        "object_name": "request.id",
+        "object_type": "keyword"
+      }
+    },
+    {
+      "http.request.body.content": {
+        "category": "log",
+        "component": "http",
+        "caption": "request body content",
+        "description": "The content of the body of the HTTP request.",
+        "examples": ["{\"username\":\"testuser\",\"password\":\"password\"}", "username=testuser&password=password"],
+        "object_name": "request.body.content",
+        "object_type": "text"
+      }
+    },
+    {
+      "http.request.bytes": {
+        "category": "log",
+        "component": "http",
+        "caption": "request bytes",
+        "description": "The size of the HTTP request in bytes.",
+        "examples": [345, 567],
+        "object_name": "request.bytes",
+        "object_type": "long"
+      }
+    },
+    {
+      "http.request.method": {
+        "category": "log",
+        "component": "http",
+        "caption": "request method",
+        "description": "The HTTP method of the request, such as GET, POST, PUT, DELETE, etc.",
+        "examples": ["GET", "POST"],
+        "object_name": "request.method",
+        "object_type": "keyword"
+      }
+    },
+    {
+      "http.request.referrer": {
+        "category": "log",
+        "component": "http",
+        "caption": "referrer",
+        "description": "The HTTP referrer, which specifies the URL from which the HTTP request was made.",
+        "examples": ["https://www.example.com", "https://www.testsite.com"],
+        "object_name": "request.referrer",
+        "object_type": "keyword"
+      }
+    },
+    {
+      "http.request.mime_type": {
+        "category": "log",
+        "component": "http",
+        "caption": "mime type",
+        "description": "The MIME type of the HTTP request, which indicates the media type of the data.",
+        "examples": [
+          "application/json",
+          "text/html"
+        ],
+        "object_name": "request.mime_type",
+        "object_type": "keyword"
+      }
+    },
+    {
+      "http.response.id": {
+        "category": "log",
+        "component": "http",
+        "caption": "response id",
+        "description": "Unique identifier for the HTTP response.",
+        "examples": ["12345", "67890"],
+        "object_name": "response.id",
+        "object_type": "keyword"
+      }
+    },
+    {
+      "http.response.body.content": {
+        "category": "log",
+        "component": "http",
+        "caption": "response body content",
+        "description": "The content of the body of the HTTP response.",
+        "examples": [
+          "{\"status\":\"success\",\"data\":\"example\"}",
+          "status=success&data=example"
+        ],
+        "object_name": "response.body.content",
+        "object_type": "text"
+      } },
+    {
+      "http.response.bytes": {
+        "category": "log",
+        "component": "http",
+        "caption": "response bytes",
+        "description": "The size of the HTTP response in bytes.",
+        "examples": [345, 567],
+        "object_name": "response.bytes",
+        "object_type": "long"
+      }
+    },
+    { "http.response.status_code": {
+        "category": "log",
+        "component": "http",
+        "caption": "status code",
+        "description": "The HTTP status code of the response.",
+        "examples": [200, 404, 500],
+        "object_name": "response.status_code",
+        "object_type": "integer"
+      }}
+      ]
+}
