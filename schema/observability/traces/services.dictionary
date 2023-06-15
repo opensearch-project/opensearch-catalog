@@ -1,0 +1,105 @@
+{
+  "catalog": "observability",
+  "version": "1.0",
+  "attributes": [
+    {
+      "destination.domain": {
+        "category": "services",
+        "component": "services",
+        "caption": "Destination Domain",
+        "description": "The domain of the destination.",
+        "examples": [
+          "example.com",
+          "api.service.com"
+        ],
+        "object_name": "destination.domain",
+        "object_type": "keyword"
+      },
+      "destination.resource": {
+        "category": "services",
+        "component": "services",
+        "caption": "Destination Resource",
+        "description": "The resource of the destination.",
+        "examples": [
+          "/api/v1/resource",
+          "/home/index.html"
+        ],
+        "object_name": "destination.resource",
+        "object_type": "keyword"
+      },
+      "hashId": {
+        "category": "services",
+        "component": "services",
+        "caption": "Hash ID",
+        "description": "The hash ID for the service.",
+        "examples": [
+          "a1b2c3",
+          "d4e5f6"
+        ],
+        "object_name": "hashId",
+        "object_type": "keyword"
+      },
+      "serviceName": {
+        "category": "services",
+        "component": "services",
+        "caption": "Service Name",
+        "description": "The name of the service.",
+        "examples": [
+          "serviceA",
+          "serviceB"
+        ],
+        "object_name": "serviceName",
+        "object_type": "keyword"
+      },
+      "kind": {
+        "category": "services",
+        "component": "services",
+        "caption": "Kind",
+        "description": "The kind of the service.",
+        "examples": [
+          "web",
+          "microservice"
+        ],
+        "object_name": "kind",
+        "object_type": "keyword"
+      },
+      "target.domain": {
+        "category": "services",
+        "component": "services",
+        "caption": "Target Domain",
+        "description": "The domain of the target.",
+        "examples": [
+          "example.com",
+          "api.service.com"
+        ],
+        "object_name": "target.domain",
+        "object_type": "keyword"
+      },
+      "target.resource": {
+        "category": "services",
+        "component": "services",
+        "caption": "Target Resource",
+        "description": "The resource of the target.",
+        "examples": [
+          "/api/v1/resource",
+          "/home/index.html"
+        ],
+        "object_name": "target.resource",
+        "object_type": "keyword"
+      },
+      "traceGroupName": {
+        "category": "services",
+        "component": "services",
+        "caption": "Trace Group Name",
+        "description": "The trace group name associated with the service.",
+        "examples": [
+          "traceGroupA",
+          "traceGroupB"
+        ],
+        "object_name": "traceGroupName",
+        "object_type": "keyword",
+        "correlation_field": "tracegroups.traceGroup"
+      }
+    }
+  ]
+}

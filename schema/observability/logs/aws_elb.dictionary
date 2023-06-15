@@ -1,0 +1,217 @@
+{
+  "catalog": "observability",
+  "version": "1.0",
+  "attributes": [
+    {
+      "aws.elb.backend.ip": {
+        "category": "aws_elb",
+        "component": "elb",
+        "caption": "Backend IP",
+        "description": "Backend IP address of the request",
+        "examples": [],
+        "object_name": "backend.ip",
+        "object_type": "ip"
+      },
+      "aws.elb.backend.port": {
+        "category": "aws_elb",
+        "component": "elb",
+        "caption": "Backend Port",
+        "description": "Backend port of the request",
+        "examples": [],
+        "object_name": "backend.port",
+        "object_type": "integer"
+      },
+      "aws.elb.backend.processing_time": {
+        "category": "aws_elb",
+        "component": "elb",
+        "caption": "Backend Processing Time",
+        "description": "Processing time on the backend",
+        "examples": [],
+        "object_name": "backend.processing_time",
+        "object_type": "half_float"
+      },
+      "aws.elb.backend.status_code": {
+        "category": "aws_elb",
+        "component": "elb",
+        "caption": "Backend Status Code",
+        "description": "Status code returned from the backend",
+        "examples": [],
+        "object_name": "backend.status_code",
+        "object_type": "short"
+      },
+      "aws.elb.client.ip": {
+        "category": "aws_elb",
+        "component": "elb",
+        "caption": "Client IP",
+        "description": "Client's IP address",
+        "examples": [],
+        "object_name": "client.ip",
+        "object_type": "ip"
+      },
+      "aws.elb.client.port": {
+        "category": "aws_elb",
+        "component": "elb",
+        "caption": "Client Port",
+        "description": "Client's port",
+        "examples": [],
+        "object_name": "client.port",
+        "object_type": "integer"
+      },
+      "aws.elb.connection_time": {
+        "category": "aws_elb",
+        "component": "elb",
+        "caption": "Connection Time",
+        "description": "Connection time",
+        "examples": [],
+        "object_name": "connection_time",
+        "object_type": "integer"
+      },
+      "aws.elb.destination.ip": {
+        "category": "aws_elb",
+        "component": "elb",
+        "caption": "Destination IP",
+        "description": "Destination IP address of the request",
+        "examples": [],
+        "object_name": "destination.ip",
+        "object_type": "ip"
+      },
+      "aws.elb.destination.port": {
+        "category": "aws_elb",
+        "component": "elb",
+        "caption": "Destination Port",
+        "description": "Destination port of the request",
+        "examples": [],
+        "object_name": "destination.port",
+        "object_type": "integer"
+      },
+      "aws.elb.elb_status_code": {
+        "category": "aws_elb",
+        "component": "elb",
+        "caption": "ELB Status Code",
+        "description": "Status code returned by the ELB",
+        "examples": [],
+        "object_name": "elb_status_code",
+        "object_type": "short"
+      }
+    },
+    {
+      "aws.elb.http.port": {
+        "category": "aws_elb",
+        "component": "elb",
+        "caption": "HTTP Port",
+        "description": "The port of the HTTP request",
+        "examples": [],
+        "object_name": "http.port",
+        "object_type": "integer"
+      },
+      "aws.elb.http.version": {
+        "category": "aws_elb",
+        "component": "elb",
+        "caption": "HTTP Version",
+        "description": "The HTTP version of the request",
+        "examples": [],
+        "object_name": "http.version",
+        "object_type": "keyword"
+      },
+      "aws.elb.matched_rule_priority": {
+        "category": "aws_elb",
+        "component": "elb",
+        "caption": "Matched Rule Priority",
+        "description": "The priority of the rule that was matched",
+        "examples": [],
+        "object_name": "matched_rule_priority",
+        "object_type": "integer"
+      },
+      "aws.elb.received_bytes": {
+        "category": "aws_elb",
+        "component": "elb",
+        "caption": "Received Bytes",
+        "description": "The number of bytes received",
+        "examples": [],
+        "object_name": "received_bytes",
+        "object_type": "integer"
+      },
+      "aws.elb.request_creation_time": {
+        "category": "aws_elb",
+        "component": "elb",
+        "caption": "Request Creation Time",
+        "description": "The timestamp when the request was created",
+        "examples": [],
+        "object_name": "request_creation_time",
+        "object_type": "date"
+      },
+      "aws.elb.request_processing_time": {
+        "category": "aws_elb",
+        "component": "elb",
+        "caption": "Request Processing Time",
+        "description": "The time taken to process the request",
+        "examples": [],
+        "object_name": "request_processing_time",
+        "object_type": "half_float"
+      },
+      "aws.elb.response_processing_time": {
+        "category": "aws_elb",
+        "component": "elb",
+        "caption": "Response Processing Time",
+        "description": "The time taken to process the response",
+        "examples": [],
+        "object_name": "response_processing_time",
+        "object_type": "half_float"
+      },
+      "aws.elb.sent_bytes": {
+        "category": "aws_elb",
+        "component": "elb",
+        "caption": "Sent Bytes",
+        "description": "The number of bytes sent",
+        "examples": [],
+        "object_name": "sent_bytes",
+        "object_type": "integer"
+      },
+      "aws.elb.target_ip": {
+        "category": "aws_elb",
+        "component": "elb",
+        "caption": "Target IP",
+        "description": "The target IP address of the request",
+        "examples": [],
+        "object_name": "target_ip",
+        "object_type": "ip"
+      },
+      "aws.elb.target_port": {
+        "category": "aws_elb",
+        "component": "elb",
+        "caption": "Target Port",
+        "description": "The target port of the request",
+        "examples": [],
+        "object_name": "target_port",
+        "object_type": "integer"
+      },
+      "aws.elb.target_processing_time": {
+        "category": "aws_elb",
+        "component": "elb",
+        "caption": "Target Processing Time",
+        "description": "The time taken to process the request by the target",
+        "examples": [],
+        "object_name": "target_processing_time",
+        "object_type": "half_float"
+      },
+      "aws.elb.target_status_code": {
+        "category": "aws_elb",
+        "component": "elb",
+        "caption": "Target Status Code",
+        "description": "The status code returned by the target",
+        "examples": [],
+        "object_name": "target_status_code",
+        "object_type": "short"
+      },
+      "aws.elb.timestamp": {
+        "category": "aws_elb",
+        "component": "elb",
+        "caption": "Timestamp",
+        "description": "The timestamp of the log event",
+        "examples": [],
+        "object_name": "timestamp",
+        "object_type": "date"
+      }
+    }
+  ]
+}

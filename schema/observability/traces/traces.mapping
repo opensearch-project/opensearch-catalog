@@ -214,7 +214,7 @@
       {
         "field": "serviceName",
         "foreign-schema": "services",
-        "foreign-field": "spanId"
+        "foreign-field": "serviceName"
       }
     ]
   }
