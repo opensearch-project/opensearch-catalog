@@ -1,0 +1,196 @@
+{
+  "catalog": "observability",
+  "version": "1.0",
+  "attributes": [
+    {
+      "communication.sock.family": {
+        "category": "communication",
+        "component": "socket",
+        "caption": "socket family",
+        "description": "The socket family of the communication event (e.g., AF_INET, AF_INET6).",
+        "examples": [
+          "AF_INET",
+          "AF_INET6"
+        ],
+        "object_name": "family",
+        "object_type": "keyword"
+      },
+      "communication.source.address": {
+        "category": "communication",
+        "component": "source",
+        "caption": "source address",
+        "description": "The source address of the communication event.",
+        "examples": [
+          "192.0.2.0",
+          "2001:db8::"
+        ],
+        "object_name": "address",
+        "object_type": "text"
+      },
+      "communication.source.domain": {
+        "category": "communication",
+        "component": "source",
+        "caption": "source domain",
+        "description": "The source domain of the communication event.",
+        "examples": [
+          "example.com",
+          "another-example.com"
+        ],
+        "object_name": "domain",
+        "object_type": "text"
+      },
+      "communication.source.bytes": {
+        "category": "communication",
+        "component": "source",
+        "caption": "source bytes",
+        "description": "The number of bytes sent by the source during the communication event.",
+        "examples": [
+          "1024",
+          "2048",
+          "4096"
+        ],
+        "object_name": "bytes",
+        "object_type": "long"
+      },
+      "communication.source.ip": {
+        "category": "communication",
+        "component": "source",
+        "caption": "source ip",
+        "description": "The source IP address of the communication event.",
+        "examples": [
+          "192.0.2.0",
+          "2001:db8::"
+        ],
+        "object_name": "ip",
+        "object_type": "ip"
+      },
+      "communication.source.port": {
+        "category": "communication",
+        "component": "source",
+        "caption": "source port",
+        "description": "The source port of the communication event.",
+        "examples": [
+          "80",
+          "443",
+          "22"
+        ],
+        "object_name": "port",
+        "object_type": "long"
+      },
+      "communication.source.mac": {
+        "category": "communication",
+        "component": "source",
+        "caption": "source mac",
+        "description": "The source MAC address of the communication event.",
+        "examples": [
+          "00:0a:95:9d:68:16",
+          "00:0a:95:9d:68:17",
+          "00:0a:95:9d:68:18"
+        ],
+        "object_name": "mac",
+        "object_type": "keyword"
+      },
+      "communication.source.packets": {
+        "category": "communication",
+        "component": "source",
+        "caption": "source packets",
+        "description": "The number of packets sent by the source during the communication event.",
+        "examples": [
+          "100",
+          "200",
+          "300"
+        ],
+        "object_name": "packets",
+        "object_type": "long"
+      },
+      "communication.destination.address": {
+        "category": "communication",
+        "component": "destination",
+        "caption": "destination address",
+        "description": "The destination address of the communication event.",
+        "examples": [
+          "192.0.2.1",
+          "2001:db8::1"
+        ],
+        "object_name": "address",
+        "object_type": "text"
+      },
+      "communication.destination.domain": {
+        "category": "communication",
+        "component": "destination",
+        "caption": "destination domain",
+        "description": "The destination domain of the communication event.",
+        "examples": [
+          "destination-example.com",
+          "another-destination-example.com"
+        ],
+        "object_name": "domain",
+        "object_type": "text"
+      },
+      "communication.destination.bytes": {
+        "category": "communication",
+        "component": "destination",
+        "caption": "destination bytes",
+        "description": "The number of bytes received by the destination during the communication event.",
+        "examples": [
+          "1024",
+          "2048",
+          "4096"
+        ],
+        "object_name": "bytes",
+        "object_type": "long"
+      },
+      "communication.destination.ip": {
+        "category": "communication",
+        "component": "destination",
+        "caption": "destination ip",
+        "description": "The destination IP address of the communication event.",
+        "examples": [
+          "192.0.2.1",
+          "2001:db8::1"
+        ],
+        "object_name": "ip",
+        "object_type": "ip"
+      },
+      "communication.destination.port": {
+        "category": "communication",
+        "component": "destination",
+        "caption": "destination port",
+        "description": "The destination port of the communication event.",
+        "examples": [
+          "80",
+          "443",
+          "22"
+        ],
+        "object_name": "port",
+        "object_type": "long"
+      },
+      "communication.destination.mac": {
+        "category": "communication",
+        "component": "destination",
+        "caption": "destination mac",
+        "description": "The destination MAC address of the communication event.",
+        "examples": [
+          "00:0a:95:9d:68:19",
+          "00:0a:95:9d:68:1a",
+          "00:0a:95:9d:68:1b"
+        ],
+        "object_name": "mac",
+        "object_type": "keyword"
+      },
+      "communication.destination.packets": {
+        "category": "communication",
+        "component": "destination",
+        "caption": "destination packets",
+        "description": "The number of packets received by the destination during the communication event.",
+        "examples": [
+          "100",
+          "200",
+          "300"
+        ],
+        "object_name": "packets",
+        "object_type": "long"
+      }
+    }
+  ]
+}

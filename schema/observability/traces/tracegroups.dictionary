@@ -1,0 +1,56 @@
+{
+  "catalog": "observability",
+  "version": "1.0",
+  "attributes": [
+    {
+      "traceGroup": {
+        "category": "traceGroups",
+        "component": "traceGroups",
+        "caption": "Trace Group",
+        "description": "The trace group name.",
+        "examples": [
+          "groupA",
+          "groupB"
+        ],
+        "object_name": "traceGroup",
+        "object_type": "keyword"
+      },
+      "traceGroupFields.endTime": {
+        "category": "traceGroups",
+        "component": "traceGroups",
+        "caption": "Trace Group End Time",
+        "description": "The end time of the trace group.",
+        "examples": [
+          1623704400000,
+          1623708000000
+        ],
+        "object_name": "traceGroupFields.endTime",
+        "object_type": "long"
+      },
+      "traceGroupFields.durationInNanos": {
+        "category": "traceGroups",
+        "component": "traceGroups",
+        "caption": "Trace Group Duration",
+        "description": "The duration of the trace group in nanoseconds.",
+        "examples": [
+          123456789,
+          987654321
+        ],
+        "object_name": "traceGroupFields.durationInNanos",
+        "object_type": "long"
+      },
+      "traceGroupFields.statusCode": {
+        "category": "traceGroups",
+        "component": "traceGroups",
+        "caption": "Trace Group Status Code",
+        "description": "The status code of the trace group.",
+        "examples": [
+          200,
+          404
+        ],
+        "object_name": "traceGroupFields.statusCode",
+        "object_type": "integer"
+      }
+    }
+  ]
+}

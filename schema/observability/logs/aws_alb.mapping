@@ -9,7 +9,7 @@
       },
       "aws": {
         "type": "object",
-        "elb": {
+        "alb": {
           "properties": {
             "name": {
               "type": "keyword"

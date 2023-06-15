@@ -38,6 +38,9 @@
             },
             "object_type": {
               "type": "string"
+            },
+            "correlation_field": {
+              "type": "string"
             }
           },
           "required": ["category", "component", "caption", "description", "examples", "object_name", "object_type"]

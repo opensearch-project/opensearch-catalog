@@ -1,0 +1,177 @@
+{
+  "catalog": "observability",
+  "version": "1.0",
+  "attributes": [
+    {
+      "container.image.name": {
+        "category": "container",
+        "component": "image",
+        "caption": "image name",
+        "description": "The name of the container image.",
+        "examples": [
+          "nginx",
+          "alpine",
+          "mysql"
+        ],
+        "object_name": "name",
+        "object_type": "keyword"
+      },
+      "container.image.tag": {
+        "category": "container",
+        "component": "image",
+        "caption": "image tag",
+        "description": "The tag of the container image.",
+        "examples": [
+          "latest",
+          "1.0",
+          "1.0.1"
+        ],
+        "object_name": "tag",
+        "object_type": "keyword"
+      },
+      "container.image.hash": {
+        "category": "container",
+        "component": "image",
+        "caption": "image hash",
+        "description": "The hash of the container image.",
+        "examples": [
+          "sha256:a3ed95caeb02",
+          "sha256:5f70bf18a086",
+          "sha256:2f71b45e4e25"
+        ],
+        "object_name": "hash",
+        "object_type": "keyword"
+      },
+      "container.id": {
+        "category": "container",
+        "component": "general",
+        "caption": "container id",
+        "description": "The unique identifier of the container.",
+        "examples": [
+          "7a68bf16c748",
+          "5f19a2c77ac0",
+          "44f980dc8a45"
+        ],
+        "object_name": "id",
+        "object_type": "keyword"
+      },
+      "container.name": {
+        "category": "container",
+        "component": "general",
+        "caption": "container name",
+        "description": "The name of the container.",
+        "examples": [
+          "nginx_container",
+          "db_container",
+          "app_container"
+        ],
+        "object_name": "name",
+        "object_type": "keyword"
+      },
+      "container.labels": {
+        "category": "container",
+        "component": "metadata",
+        "caption": "container labels",
+        "description": "The labels assigned to the container.",
+        "examples": [
+          "label1=value1",
+          "label2=value2",
+          "label3=value3"
+        ],
+        "object_name": "labels",
+        "object_type": "keyword"
+      },
+      "container.runtime": {
+        "category": "container",
+        "component": "runtime",
+        "caption": "container runtime",
+        "description": "The container runtime used (e.g., Docker, containerd).",
+        "examples": [
+          "Docker",
+          "containerd",
+          "cri-o"
+        ],
+        "object_name": "runtime",
+        "object_type": "keyword"
+      },
+      "container.memory.usage": {
+        "category": "container",
+        "component": "memory",
+        "caption": "memory usage",
+        "description": "The memory usage of the container in bytes.",
+        "examples": [
+          "1048576",
+          "2097152",
+          "4194304"
+        ],
+        "object_name": "usage",
+        "object_type": "float"
+      },
+      "container.network.ingress.bytes": {
+        "category": "container",
+        "component": "network",
+        "caption": "ingress bytes",
+        "description": "The number of bytes received by the container over the network.",
+        "examples": [
+          "1024",
+          "2048",
+          "4096"
+        ],
+        "object_name": "ingress_bytes",
+        "object_type": "long"
+      },
+      "container.network.egress.bytes": {
+        "category": "container",
+        "component": "network",
+        "caption": "egress bytes",
+        "description": "The number of bytes sent by the container over the network.",
+        "examples": [
+          "1024",
+          "2048",
+          "4096"
+        ],
+        "object_name": "egress_bytes",
+        "object_type": "long"
+      },
+      "container.cpu.usage": {
+        "category": "container",
+        "component": "cpu",
+        "caption": "cpu usage",
+        "description": "The CPU usage of the container as a percentage.",
+        "examples": [
+          "10.5",
+          "25.3",
+          "50.7"
+        ],
+        "object_name": "usage",
+        "object_type": "float"
+      },
+      "container.disk.read.bytes": {
+        "category": "container",
+        "component": "disk",
+        "caption": "disk read bytes",
+        "description": "The number of bytes read by the container from the disk.",
+        "examples": [
+          "1024",
+          "2048",
+          "4096"
+        ],
+        "object_name": "read_bytes",
+        "object_type": "long"
+      },
+      "container.disk.write.bytes": {
+        "category": "container",
+        "component": "disk",
+        "caption": "disk write bytes",
+        "description": "The number of bytes written by the container to the disk.",
+        "examples": [
+          "1024",
+          "2048",
+          "4096"
+        ],
+        "object_name": "write_bytes",
+        "object_type": "long"
+      }
+    }
+  ]
+}
