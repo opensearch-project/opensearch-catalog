@@ -82,7 +82,7 @@ def do_check(
                 result[key] = {"expected": get_type(value), "actual": None}
             continue
         elif "properties" in value and isinstance(data[key], dict):
-            check = do_check(value["properties"], data[key])
+            check = do_check(value["properties"], data[key], show_missing)
             if check != {}:
                 result[key] = check
         elif value.get("type") == "alias":
