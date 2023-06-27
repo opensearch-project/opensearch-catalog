@@ -57,7 +57,7 @@ def get_type(mapping: dict) -> str | dict:
             key: get_type(value)
             for key, value in mapping.get("properties").items()
         }
-    return mapping.get("type", {})
+    return mapping.get("type", "unknown")
 
 
 @beartype
