@@ -36,7 +36,7 @@ def flat_type_check(expect: str, actual: object) -> dict[str, dict]:
         case "text" | "keyword":
             if not isinstance(actual, str):
                 return { "expected": expect, "actual": actual }
-        case "long":
+        case "long" | "integer":
             if not isinstance(actual, int):
                 return { "expected": expect, "actual": actual }
         case "alias":
