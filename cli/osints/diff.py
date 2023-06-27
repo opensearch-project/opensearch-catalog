@@ -17,15 +17,15 @@ def load_mapping(mapping: str) -> dict[str, dict]:
     for item in composed_of:
         item_glob = glob.glob(os.path.join(curr_dir, f"{item}*"))
         if len(item_glob) == 0:
-            click.echo(f"ERROR: mapping file {mapping} references component {item}, which does not exist.", err=True, color='red')
+            click.secho(f"ERROR: mapping file {mapping} references component {item}, which does not exist.", err=True, fg='red')
             raise click.Abort()
         if properties.get(item) is not None:
-            click.echo(f"ERROR: mapping file {mapping} references component {item} and defines conflicting key '{item}'", err=True, color='red')
+            click.secho(f"ERROR: mapping file {mapping} references component {item} and defines conflicting key '{item}'", err=True, fg='red')
             raise click.Abort()
         # Greedily take any mapping that matches the name for now.
         # Later, configuration will need to be implemented.
         if len(item_glob) > 1:
-            click.echo(f"WARNING: found more than one mapping for component {item}. Assuming {item_glob[0]}.", err=True, color='yellow')
+            click.secho(f"WARNING: found more than one mapping for component {item}. Assuming {item_glob[0]}.", err=True, fg='yellow')
         properties.update(load_mapping(item_glob[0]))
     return properties
 
@@ -46,7 +46,7 @@ def flat_type_check(expect: str, actual: object) -> dict[str, dict]:
             if not isinstance(actual, str) and not isinstance(actual, int):
                 return { "expected": expect, "actual": actual }
         case _:
-            click.echo(f"WARNING: unknown type '{expect}'", err=True, color='yellow')
+            click.secho(f"WARNING: unknown type '{expect}'", err=True, fg='yellow')
     return {}
 
 
