@@ -61,11 +61,11 @@ def get_type(mapping: dict) -> str | dict:
 
 
 @beartype
-def do_check(mapping: dict[str, dict], data: dict[str, object], no_optional: bool = False) -> dict[str, dict]:
+def do_check(mapping: dict[str, dict], data: dict[str, object], show_missing: bool = False) -> dict[str, dict]:
     result = {}
     for key, value in mapping.items():
         if key not in data:
-            if no_optional and value.get("type") != "alias":
+            if show_missing and value.get("type") != "alias":
                 result[key] = { "expected": get_type(value), "actual": None }
             continue
         elif "properties" in value and isinstance(data[key], dict):
@@ -121,17 +121,17 @@ def output_diff(difference: dict[str, object], prefix: str = '') -> None:
     help="Output machine-readable JSON instead of the default diff format"
 )
 @click.option(
-    "--no-optional",
-    "no_optional",
+    "--show-missing",
+    "show_missing",
     is_flag=True,
-    help="Treat optional as required: Output fields that are expected in the mappings but missing in the data"
+    help="Output fields that are expected in the mappings but missing in the data"
 )
-def diff(mapping, data, output_json, no_optional):
+def diff(mapping, data, output_json, show_missing):
     """Diff between a mapping and some data. Experimental."""
     properties = load_mapping(mapping)
     with open(data, "r") as data_file:
         data_json = json.load(data_file)
-    check = do_check(properties, data_json, no_optional)
+    check = do_check(properties, data_json, show_missing)
     if output_json:
         click.echo(json.dumps(check, indent=4, sort_keys=True))
     else:
