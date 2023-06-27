@@ -51,10 +51,22 @@ def flat_type_check(expect: str, actual: object) -> dict[str, dict]:
 
 
 @beartype
-def do_check(mapping: dict[str, dict], data: dict[str, object]) -> dict[str, dict]:
+def get_type(mapping: dict) -> str | dict:
+    if mapping.get("properties"):
+        return {
+            key: get_type(value)
+            for key, value in mapping.get("properties").items()
+        }
+    return mapping.get("type", {})
+
+
+@beartype
+def do_check(mapping: dict[str, dict], data: dict[str, object], no_optional: bool = False) -> dict[str, dict]:
     result = {}
     for key, value in mapping.items():
         if key not in data:
+            if no_optional:
+                result[key] = { "expected": get_type(value), "actual": None }
             continue
         elif "properties" in value and isinstance(data[key], dict):
             check = do_check(value["properties"], data[key])
@@ -106,14 +118,20 @@ def output_diff(difference: dict[str, object], prefix: str = '') -> None:
     "--json",
     'output_json',
     is_flag=True,
-    help="Output machine-readable JSON instead of the default diff format."
+    help="Output machine-readable JSON instead of the default diff format"
 )
-def diff(mapping, data, output_json):
+@click.option(
+    "--no-optional",
+    "no_optional",
+    is_flag=True,
+    help="Treat optional as required: Output fields that are expected in the mappings but missing in the data"
+)
+def diff(mapping, data, output_json, no_optional):
     """Diff between a mapping and some data. Experimental."""
     properties = load_mapping(mapping)
     with open(data, "r") as data_file:
         data_json = json.load(data_file)
-    check = do_check(properties, data_json)
+    check = do_check(properties, data_json, no_optional)
     if output_json:
         click.echo(json.dumps(check, indent=4, sort_keys=True))
     else:
