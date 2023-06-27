@@ -9,6 +9,7 @@ setup(
         'beartype',
         'click',
     ],
+    python_requires='>3.10.0',
     entry_points={
         'console_scripts': [
             'osints = osints.main:cli'

@@ -127,7 +127,7 @@ def output_diff(difference: dict[str, object], prefix: str = '') -> None:
     help="Output fields that are expected in the mappings but missing in the data"
 )
 def diff(mapping, data, output_json, show_missing):
-    """Diff between a mapping and some data. Experimental."""
+    """Type check your integration given a sample data record and the appropriate SS4O schema."""
     properties = load_mapping(mapping)
     with open(data, "r") as data_file:
         data_json = json.load(data_file)
