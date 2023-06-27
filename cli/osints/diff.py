@@ -65,7 +65,7 @@ def do_check(mapping: dict[str, dict], data: dict[str, object], no_optional: boo
     result = {}
     for key, value in mapping.items():
         if key not in data:
-            if no_optional:
+            if no_optional and value.get("type") != "alias":
                 result[key] = { "expected": get_type(value), "actual": None }
             continue
         elif "properties" in value and isinstance(data[key], dict):
