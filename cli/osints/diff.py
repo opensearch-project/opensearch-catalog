@@ -57,7 +57,7 @@ def do_check(mapping: dict[str, dict], data: dict[str, object]) -> dict[str, dic
         if key not in data:
             continue
         elif "properties" in value and isinstance(data[key], dict):
-            check = do_check(value, data[key])
+            check = do_check(value["properties"], data[key])
             if check != {}:
                 result[key] = check
         elif value.get("type") == "alias":
@@ -77,6 +77,18 @@ def do_check(mapping: dict[str, dict], data: dict[str, object]) -> dict[str, dic
         if key not in mapping:
             result[key] = { "expected": None, "actual": value }
     return result
+
+
+@beartype
+def output_diff(difference: dict[str, object], prefix: str = '') -> None:
+    for key, value in sorted(difference.items()):
+        out_key = prefix + key
+        if "expected" not in value and "actual" not in value:
+            output_diff(value, f"{prefix}{key}.")
+        if value.get("actual") is not None:
+            click.echo(f"- {out_key}: {json.dumps(value.get('actual'))}")
+        if value.get("expected") is not None:
+            click.echo(f"+ {out_key}: {json.dumps(value.get('expected'))}")
 
 
 @click.command()
@@ -104,3 +116,5 @@ def diff(mapping, data, output_json):
     check = do_check(properties, data_json)
     if output_json:
         click.echo(json.dumps(check, indent=4, sort_keys=True))
+    else:
+        output_diff(check)
