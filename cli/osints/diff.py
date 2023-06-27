@@ -17,15 +17,27 @@ def load_mapping(mapping: str) -> dict[str, dict]:
     for item in composed_of:
         item_glob = glob.glob(os.path.join(curr_dir, f"{item}*"))
         if len(item_glob) == 0:
-            click.secho(f"ERROR: mapping file {mapping} references component {item}, which does not exist.", err=True, fg='red')
+            click.secho(
+                f"ERROR: mapping file {mapping} references component {item}, which does not exist.",
+                err=True,
+                fg="red",
+            )
             raise click.Abort()
         if properties.get(item) is not None:
-            click.secho(f"ERROR: mapping file {mapping} references component {item} and defines conflicting key '{item}'", err=True, fg='red')
+            click.secho(
+                f"ERROR: mapping file {mapping} references component {item} and defines conflicting key '{item}'",
+                err=True,
+                fg="red",
+            )
             raise click.Abort()
         # Greedily take any mapping that matches the name for now.
         # Later, configuration will need to be implemented.
         if len(item_glob) > 1:
-            click.secho(f"WARNING: found more than one mapping for component {item}. Assuming {item_glob[0]}.", err=True, fg='yellow')
+            click.secho(
+                f"WARNING: found more than one mapping for component {item}. Assuming {item_glob[0]}.",
+                err=True,
+                fg="yellow",
+            )
         properties.update(load_mapping(item_glob[0]))
     return properties
 
@@ -35,18 +47,18 @@ def flat_type_check(expect: str, actual: object) -> dict[str, dict]:
     match expect:
         case "text" | "keyword":
             if not isinstance(actual, str):
-                return { "expected": expect, "actual": actual }
+                return {"expected": expect, "actual": actual}
         case "long" | "integer":
             if not isinstance(actual, int):
-                return { "expected": expect, "actual": actual }
+                return {"expected": expect, "actual": actual}
         case "alias":
-            # We assume aliases were already unwrapped by the caller and ignore them.            
+            # We assume aliases were already unwrapped by the caller and ignore them.
             return {}
         case "date":
             if not isinstance(actual, str) and not isinstance(actual, int):
-                return { "expected": expect, "actual": actual }
+                return {"expected": expect, "actual": actual}
         case _:
-            click.secho(f"WARNING: unknown type '{expect}'", err=True, fg='yellow')
+            click.secho(f"WARNING: unknown type '{expect}'", err=True, fg="yellow")
     return {}
 
 
@@ -54,19 +66,20 @@ def flat_type_check(expect: str, actual: object) -> dict[str, dict]:
 def get_type(mapping: dict) -> str | dict:
     if mapping.get("properties"):
         return {
-            key: get_type(value)
-            for key, value in mapping.get("properties").items()
+            key: get_type(value) for key, value in mapping.get("properties").items()
         }
     return mapping.get("type", "unknown")
 
 
 @beartype
-def do_check(mapping: dict[str, dict], data: dict[str, object], show_missing: bool = False) -> dict[str, dict]:
+def do_check(
+    mapping: dict[str, dict], data: dict[str, object], show_missing: bool = False
+) -> dict[str, dict]:
     result = {}
     for key, value in mapping.items():
         if key not in data:
             if show_missing and value.get("type") != "alias":
-                result[key] = { "expected": get_type(value), "actual": None }
+                result[key] = {"expected": get_type(value), "actual": None}
             continue
         elif "properties" in value and isinstance(data[key], dict):
             check = do_check(value["properties"], data[key])
@@ -74,7 +87,7 @@ def do_check(mapping: dict[str, dict], data: dict[str, object], show_missing: bo
                 result[key] = check
         elif value.get("type") == "alias":
             # Unwrap aliases split by '.'
-            value_path = value["path"].split('.')
+            value_path = value["path"].split(".")
             curr_data = data
             for step in value_path[:-1]:
                 if step not in curr_data:
@@ -87,12 +100,12 @@ def do_check(mapping: dict[str, dict], data: dict[str, object], show_missing: bo
                 result[key] = check
     for key, value in data.items():
         if key not in mapping:
-            result[key] = { "expected": None, "actual": value }
+            result[key] = {"expected": None, "actual": value}
     return result
 
 
 @beartype
-def output_diff(difference: dict[str, object], prefix: str = '') -> None:
+def output_diff(difference: dict[str, object], prefix: str = "") -> None:
     for key, value in sorted(difference.items()):
         out_key = prefix + key
         if "expected" not in value and "actual" not in value:
@@ -116,15 +129,15 @@ def output_diff(difference: dict[str, object], prefix: str = '') -> None:
 )
 @click.option(
     "--json",
-    'output_json',
+    "output_json",
     is_flag=True,
-    help="Output machine-readable JSON instead of the default diff format"
+    help="Output machine-readable JSON instead of the default diff format",
 )
 @click.option(
     "--show-missing",
     "show_missing",
     is_flag=True,
-    help="Output fields that are expected in the mappings but missing in the data"
+    help="Output fields that are expected in the mappings but missing in the data",
 )
 def diff(mapping, data, output_json, show_missing):
     """Type check your integration given a sample data record and the appropriate SS4O schema."""
