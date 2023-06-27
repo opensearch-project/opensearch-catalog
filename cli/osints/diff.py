@@ -24,7 +24,7 @@ def load_mapping(mapping: str):
         # Later, configuration will need to be implemented.
         if len(item_glob) > 1:
             click.echo(f"WARNING: Found more than one mapping for component {item}. Assuming {item_glob[0]}.", err=True, fg='yellow')
-        properties[item] = load_mapping(item_glob[0])
+        properties.update(load_mapping(item_glob[0]))
     return properties
 
 
