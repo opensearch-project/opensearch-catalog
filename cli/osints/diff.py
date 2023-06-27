@@ -133,6 +133,6 @@ def diff(mapping, data, output_json, show_missing):
         data_json = json.load(data_file)
     check = do_check(properties, data_json, show_missing)
     if output_json:
-        click.echo(json.dumps(check, indent=4, sort_keys=True))
+        click.echo(json.dumps(check, sort_keys=True))
     else:
         output_diff(check)
