@@ -152,3 +152,6 @@ def diff(mapping, data, output_json, show_missing):
         click.echo(json.dumps(check, sort_keys=True))
     else:
         output_diff(check)
+
+if __name__ == "__main__":
+    diff()
