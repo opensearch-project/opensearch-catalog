@@ -144,6 +144,9 @@ def diff(mapping, data, output_json, show_missing):
     properties = load_mapping(mapping)
     with open(data, "r") as data_file:
         data_json = json.load(data_file)
+    if isinstance(data_json, list):
+        # Unwrap list of data, assume first record is representative
+        data_json = data_json[0]
     check = do_check(properties, data_json, show_missing)
     if output_json:
         click.echo(json.dumps(check, sort_keys=True))
