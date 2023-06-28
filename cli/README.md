@@ -36,7 +36,7 @@ See `osints --help` for a summary of all commands.
 
 ### Usage: `diff`
 
-Here's an example usage of `diff` on the [current (buggy) version of the Nginx integration](https://github.com/opensearch-project/dashboards-observability/tree/main/server/adaptors/integrations/__data__/repository/nginx):
+Here's an example usage of `diff` on the [current (buggy) version of the Nginx integration](https://github.com/opensearch-project/dashboards-observability/tree/6d5bd478704dc7342b1471767ced7036bb23f335/server/adaptors/integrations/__data__/repository/nginx):
 ```bash
 $ osints diff --mapping schemas/logs-1.0.0.mapping.json --data data/sample.json
 - event.category: ["web"]
