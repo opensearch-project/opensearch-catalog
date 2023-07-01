@@ -1,0 +1,11 @@
+{
+    "top_urls.json": {
+        "event.domain": "keyword",
+        "http.url": "keyword",
+        "@timestamp": "date_time"
+    },
+    "status_codes_over_time.json": {
+        "http.response.status_code": "integer",
+        "@timestamp": "date_time"
+    }
+}
