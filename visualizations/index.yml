@@ -9,7 +9,7 @@ visualization_catalog:
       - file: errors_over_time.json
         name: Errors over Time
         description: Get the rate of errors returned by a log source.
-      - file: atus_codes_over_time.json
+      - file: status_codes_over_time.json
         name: Status codes over Time
         description: Get the proportions of different status codes returned by a log source.
       - file: top_urls.json
