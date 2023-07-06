@@ -1,0 +1,73 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "http": {
+      "type": "object",
+      "properties": {
+        "network.protocol.name": {
+          "type": "string"
+        },
+        "network.protocol.version": {
+          "type": "string"
+        },
+        "request": {
+          "type": "object",
+          "properties": {
+            "method": {
+              "type": "string"
+            }
+          },
+          "required": ["method"]
+        },
+        "response": {
+          "type": "object",
+          "properties": {
+            "status_code": {
+              "type": "string"
+            }
+          },
+          "required": ["status_code"]
+        },
+        "client": {
+          "type": "object",
+          "properties": {
+            "server.socket.address": {
+              "type": "string"
+            },
+            "server.address": {
+              "type": "string"
+            },
+            "server.port": {
+              "type": "integer"
+            }
+          },
+          "required": ["server.socket.address", "server.address", "server.port"]
+        },
+        "server": {
+          "type": "object",
+          "properties": {
+            "route": {
+              "type": "string"
+            },
+            "address": {
+              "type": "string"
+            },
+            "port": {
+              "type": "integer"
+            },
+            "socket.address": {
+              "type": "string"
+            },
+            "url.schema": {
+              "type": "string"
+            }
+          },
+          "required": ["route", "address", "port", "socket.address", "url.schema"]
+        }
+      },
+      "required": ["network.protocol.name", "network.protocol.version", "request", "response", "client", "server"]
+    }
+  },
+  "required": ["http"]
+}

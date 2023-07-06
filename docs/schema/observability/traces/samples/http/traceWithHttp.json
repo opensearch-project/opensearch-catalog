@@ -1,0 +1,90 @@
+{
+  "traceId": "4fa04f117be100f476b175e41096e736",
+  "spanId": "e275ac9d21929e9b",
+  "traceState": [],
+  "parentSpanId": "",
+  "name": "client_checkout",
+  "kind": "INTERNAL",
+  "startTime": "2021-11-13T20:20:39+00:00",
+  "@timestamp": "2021-11-13T20:20:39+00:00",
+  "endTime": "2021-11-14T20:10:41+00:00",
+  "droppedAttributesCount": 0,
+  "droppedEventsCount": 0,
+  "droppedLinksCount": 0,
+  "resource": {
+    "telemetry@sdk@name": "opentelemetry",
+    "telemetry@sdk@language": "python",
+    "telemetry@sdk@version": "0.14b0",
+    "service@name": "frontend-client",
+    "host@hostname": "ip-172-31-10-8.us-west-2.compute.internal"
+  },
+  "status": {
+    "code": 0
+  },
+  "attributes": {
+    "serviceName": "customer",
+    "http": {
+      "user_agent": {
+        "original": "Mozilla/5.0"
+      },
+      "network": {
+        "transport": "tcp",
+        "type": "ipv4",
+        "protocol": {
+          "name": "http",
+          "version": "1.1"
+        }
+      },
+      "request": {
+        "method": "GET",
+        "method_original": "GET",
+        "body": {
+          "size": 0
+        }
+      },
+      "response": {
+        "status_code": "200",
+        "body": {
+          "size": 500
+        }
+      },
+      "client": {
+        "server": {
+          "socket": {
+            "address": "192.168.0.1",
+            "domain": "example.com",
+            "port": 80
+          },
+          "address": "192.168.0.1",
+          "port": 80
+        },
+        "resend_count": 0,
+        "url": {
+          "full": "http://example.com"
+        }
+      },
+      "server": {
+        "route": "/index",
+        "address": "192.168.0.2",
+        "port": 8080,
+        "socket": {
+          "address": "192.168.0.2",
+          "port": 8080
+        },
+        "client": {
+          "address": "192.168.0.1",
+          "port": 80,
+          "socket": {
+            "address": "192.168.0.1",
+            "port": 80
+          }
+        },
+        "url": {
+          "path": "/index",
+          "query": "?id=123",
+          "schema": "http"
+        }
+      }
+    }
+  }
+}

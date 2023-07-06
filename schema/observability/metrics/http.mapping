@@ -1,0 +1,84 @@
+{
+  "template": {
+    "mappings": {
+      "_meta": {
+        "version": "1.0.0",
+        "catalog": "observability",
+        "type": "metrics",
+        "component": "http"
+      },
+      "properties": {
+        "http": {
+          "properties": {
+            "network.protocol.name": {
+              "type": "keyword",
+              "ignore_above": 256
+            },
+            "network.protocol.version": {
+              "type": "keyword",
+              "ignore_above": 256
+            },
+            "request": {
+              "type": "object",
+              "properties": {
+                "method": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "response": {
+              "type": "object",
+              "properties": {
+                "status_code": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "client": {
+              "type": "object",
+              "properties": {
+                "server.socket.address": {
+                  "type": "keyword",
+                  "ignore_above": 1024
+                },
+                "server.address": {
+                  "type": "keyword",
+                  "ignore_above": 1024
+                },
+                "server.port": {
+                  "type": "long"
+                }
+              }
+            },
+            "server": {
+              "type": "object",
+              "properties": {
+                "route": {
+                  "type": "keyword",
+                  "ignore_above": 1024
+                },
+                "address": {
+                  "type": "keyword",
+                  "ignore_above": 1024
+                },
+                "port": {
+                  "type": "long"
+                },
+                "socket.address": {
+                  "type": "keyword",
+                  "ignore_above": 1024
+                },
+                "url.schema": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
