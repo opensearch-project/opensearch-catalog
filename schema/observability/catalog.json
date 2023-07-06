@@ -16,7 +16,8 @@
           "version": "1.0",
           "url": "https://github.com/opensearch-project/opensearch-catalog/tree/docs/schema/observability/logs/logs",
           "container": true,
-          "tags": []
+          "tags": [],
+          "facets": []
         },
         {
           "component": "http",
@@ -24,6 +25,7 @@
           "version": "1.0",
           "url": "https://github.com/opensearch-project/opensearch-catalog/tree/docs/schema/observability/logs/http",
           "tags": [],
+          "facets": [],
           "container": false
         },
         {
@@ -34,6 +36,7 @@
           "tags": [
             "web"
           ],
+          "facets": [],
           "container": false
         },
         {
@@ -42,6 +45,7 @@
           "version": "1.0",
           "url": "https://github.com/opensearch-project/opensearch-catalog/tree/docs/schema/observability/logs/cloud",
           "container": false,
+          "facets": [],
           "tags": []
         },
         {
@@ -50,7 +54,8 @@
           "version": "1.0",
           "url": "https://github.com/opensearch-project/opensearch-catalog/tree/docs/schema/observability/logs/container",
           "container": false,
-          "tags": []
+          "tags": [],
+          "facets": []
         }
       ]
     },
@@ -66,7 +71,17 @@
           "version": "1.0",
           "url": "https://github.com/opensearch-project/opensearch-catalog/tree/docs/schema/observability/traces/traces",
           "tags": [],
+          "facets": [],
           "container": true
+        },
+        {
+          "component": "http",
+          "description": "Observability HTTP traces are a type of data that capture information about HTTP requests and responses in a system. They record details such as the request method, URI, response status, and response size. Observability HTTP traces can be used to track user behavior, detect security threats, and monitor system performance",
+          "version": "1.0",
+          "url": "https://github.com/opensearch-project/opensearch-catalog/tree/docs/schema/observability/traces/http",
+          "tags": [],
+          "facets": [],
+          "container": false
         },
         {
           "component": "services",
@@ -74,6 +89,7 @@
           "version": "1.0",
           "url": "https://github.com/opensearch-project/opensearch-catalog/tree/docs/schema/observability/traces/services",
           "tags": [],
+          "facets": [],
           "container": true
         },
         {
@@ -82,6 +98,7 @@
           "version": "1.0",
           "url": "https://github.com/opensearch-project/opensearch-catalog/tree/docs/schema/observability/traces/traceGroups",
           "tags": [],
+          "facets": [],
           "container": false
         }
       ]
@@ -93,11 +110,64 @@
       "url": "https://github.com/opensearch-project/opensearch-catalog/tree/docs/schema/observability/metrics",
       "components": [
         {
+          "component": "http",
+          "description": "Observability HTTP metrics are a type of data that capture information about HTTP requests and responses in a system. They record details such as the request method, URI, response status, and response size. Observability HTTP metrics can be used to track user behavior, detect security threats, and monitor system performance",
+          "version": "1.0",
+          "url": "https://github.com/opensearch-project/opensearch-catalog/tree/docs/schema/observability/metrics/http",
+          "tags": [],
+          "facets": [
+            {
+              "group": "server",
+              "name": "http.server.duration",
+              "url": "https://opentelemetry.io/docs/specs/otel/metrics/semantic_conventions/http-metrics/#metric-httpserverduration",
+              "type": "Histogram"
+            },
+            {
+              "group": "server",
+              "name": "http.server.active_requests",
+              "url": "https://opentelemetry.io/docs/specs/otel/metrics/semantic_conventions/http-metrics/#metric-httpserveractive_requests",
+              "type": "Counter"
+            },
+            {
+              "group": "server",
+              "name": "http.server.request.size",
+              "url": "https://opentelemetry.io/docs/specs/otel/metrics/semantic_conventions/http-metrics/#metric-httpserverrequestsize",
+              "type": "Histogram"
+            },
+            {
+              "group": "server",
+              "name": "http.server.response.size",
+              "url": "https://opentelemetry.io/docs/specs/otel/metrics/semantic_conventions/http-metrics/#metric-httpserverresponsesize",
+              "type": "Histogram"
+            },
+            {
+              "group": "client",
+              "name": "http.client.duration",
+              "url": "https://opentelemetry.io/docs/specs/otel/metrics/semantic_conventions/http-metrics/#metric-httpclientduration",
+              "type": "Histogram"
+            },
+            {
+              "group": "client",
+              "name": "http.client.request.size",
+              "url": "https://opentelemetry.io/docs/specs/otel/metrics/semantic_conventions/http-metrics/#metric-httpclientrequestsize",
+              "type": "Histogram"
+            },
+            {
+              "group": "client",
+              "name": "http.client.response.size",
+              "url": "https://opentelemetry.io/docs/specs/otel/metrics/semantic_conventions/http-metrics/#metric-httpclientresponsesize",
+              "type": "Histogram"
+            }
+          ],
+          "container": false
+        },
+        {
           "component": "metric",
           "description": "There are several types of metrics that exist in observability, including: Counter Metrics, Gauge Metrics ,Histogram Metrics, Exponential Histogram Metrics, Summary Metrics ",
           "version": "1.0",
           "url": "https://github.com/opensearch-project/opensearch-catalog/tree/docs/schema/observability/metrics/metrics",
           "tags": [],
+          "facets": [],
           "container": true
         }
       ]

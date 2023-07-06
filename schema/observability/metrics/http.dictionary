@@ -1,0 +1,130 @@
+{
+  "catalog": "observability",
+  "version": "1.0",
+  "attributes": [
+    {
+      "http.network.protocol.name": {
+        "category": "http",
+        "component": "http",
+        "caption": "Network Protocol Name",
+        "description": "The name of network protocol.",
+        "examples": [
+          "http",
+          "https"
+        ],
+        "object_name": "http.network.protocol.name",
+        "object_type": "keyword"
+      }
+    },
+    {
+      "http.network.protocol.version": {
+        "category": "http",
+        "component": "http",
+        "caption": "Network Protocol Version",
+        "description": "The version of network protocol.",
+        "examples": [
+          "1.1",
+          "2"
+        ],
+        "object_name": "http.network.protocol.version",
+        "object_type": "keyword"
+      }
+    },
+    {
+      "http.request.method": {
+        "category": "http",
+        "component": "http",
+        "caption": "Request Method",
+        "description": "The HTTP request method.",
+        "examples": [
+          "GET",
+          "POST"
+        ],
+        "object_name": "http.request.method",
+        "object_type": "keyword"
+      }
+    },
+    {
+    {
+      "http.response.status_code": {
+        "category": "http",
+        "component": "http",
+        "caption": "HTTP Response Status Code",
+        "description": "HTTP response status code. Conditionally Required: If and only if one was received/sent.",
+        "examples": [
+          200
+        ],
+        "object_name": "http.response.status_code",
+        "object_type": "integer"
+      }
+    },
+    {
+      "server.address": {
+        "category": "services",
+        "component": "http",
+        "caption": "Server Address",
+        "description": "Name of the local HTTP server that received the request.",
+        "examples": [
+          "example.com"
+        ],
+        "object_name": "server.address",
+        "object_type": "keyword"
+      }
+    },
+    {
+      "server.port": {
+        "category": "services",
+        "component": "http",
+        "caption": "Server Port",
+        "description": "Port of the local HTTP server that received the request.",
+        "examples": [
+          "80",
+          "8080",
+          "443"
+        ],
+        "object_name": "server.port",
+        "object_type": "long"
+      }
+    },
+    {
+      "server.socket.address": {
+        "category": "services",
+        "component": "http",
+        "caption": "Server Socket Address",
+        "description": "Local socket address. Useful in case of a multi-IP host.",
+        "examples": [
+          "10.5.3.2"
+        ],
+        "object_name": "server.socket.address",
+        "object_type": "keyword"
+      }
+    },
+    {
+      "server.socket.port": {
+        "category": "services",
+        "component": "http",
+        "caption": "Server Socket Port",
+        "description": "Local socket port. Useful in case of a multi-port host.",
+        "examples": [
+          "16456"
+        ],
+        "object_name": "server.socket.port",
+        "object_type": "long"
+      }
+    },
+    {
+      "url.scheme": {
+        "category": "services",
+        "component": "http",
+        "caption": "URL Scheme",
+        "description": "The URI scheme component identifying the used protocol.",
+        "examples": [
+          "http",
+          "https"
+        ],
+        "object_name": "url.scheme",
+        "object_type": "keyword"
+      }
+    }
+  ]
+}

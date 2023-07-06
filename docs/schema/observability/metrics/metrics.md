@@ -55,3 +55,18 @@ For additional info [see](https://opentelemetry.io/docs/specs/otel/metrics/data-
 | instrumentationScope.droppedAttributesCount | integer | Count of attributes that were dropped due to exceeding the limit. |
 | instrumentationScope.schemaUrl | text/keyword | URL of the schema used for the instrumentation scope. |
 | schemaUrl | text/keyword | URL of the schema used for this metric. |
+
+---
+
+## Semantic Conventions for HTTP Metrics
+
+The conventions described in this section are HTTP specific. When HTTP operations occur, metric events about those operations will be generated and reported to provide insight into the operations. By adding HTTP attributes to metric events it allows for finely tuned filtering.
+* HTTP Server
+    * Metric: [http.server.duration](samples/http/http_server_duration_histogram.json) [see](https://github.com/open-telemetry/semantic-conventions/blob/main/docs/http/http-metrics.md#metric-httpserverduration)
+    * Metric: [http.server.active_requests](samples/http/http_server_active_requests.json) [see](https://github.com/open-telemetry/semantic-conventions/blob/main/docs/http/http-metrics.md#metric-httpserveractive_requests)
+    * Metric: [http.server.request.size](samples/http/http_server_request_size_histogram.json) [see](https://github.com/open-telemetry/semantic-conventions/blob/main/docs/http/http-metrics.md#metric-httpserverrequestsize) 
+    * Metric: [http.server.response.size](samples/http/http_server_response_size_histogram.json)  [see](https://github.com/open-telemetry/semantic-conventions/blob/main/docs/http/http-metrics.md#metric-httpserverresponsesize)
+* HTTP Client
+    * Metric: [http.client.duration](samples/http/http_client_duration_histogram.json)  [see](https://github.com/open-telemetry/semantic-conventions/blob/main/docs/http/http-metrics.md#metric-httpclientduration)
+    * Metric: [http.client.request.size](samples/http/http_client_request_size_histogram.json) [see](https://github.com/open-telemetry/semantic-conventions/blob/main/docs/http/http-metrics.md#metric-httpclientrequestsize)
+    * Metric: [http.client.response.size](samples/http/http_client_response_size_histogram.json) [see](https://github.com/open-telemetry/semantic-conventions/blob/main/docs/http/http-metrics.md#metric-httpclientresponsesize)

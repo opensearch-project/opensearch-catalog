@@ -203,7 +203,8 @@
     }
   },
   "composed_of": [
-    "tracegroups_template"
+    "tracegroups_template",
+    "http_template"
   ],
   "version": 1,
   "_meta": {

@@ -1,0 +1,413 @@
+{
+  "catalog": "observability",
+  "version": "1.0",
+  "attributes": [
+    {
+      "http.user_agent.original": {
+        "category": "http",
+        "component": "http",
+        "caption": "User Agent Original",
+        "description": "The original user agent string.",
+        "examples": [
+          "Mozilla/5.0 (Windows NT 10.0; Win64; x64)",
+          "PostmanRuntime/7.26.8"
+        ],
+        "object_name": "http.user_agent.original",
+        "object_type": "keyword"
+      }
+    },
+    {
+      "http.network.transport": {
+        "category": "http",
+        "component": "http",
+        "caption": "Network Transport",
+        "description": "The network transport protocol.",
+        "examples": [
+          "tcp",
+          "udp"
+        ],
+        "object_name": "http.network.transport",
+        "object_type": "keyword"
+      }
+    },
+    {
+      "http.network.type": {
+        "category": "http",
+        "component": "http",
+        "caption": "Network Type",
+        "description": "The type of network.",
+        "examples": [
+          "ipv4",
+          "ipv6"
+        ],
+        "object_name": "http.network.type",
+        "object_type": "keyword"
+      }
+    },
+    {
+      "http.network.protocol.name": {
+        "category": "http",
+        "component": "http",
+        "caption": "Network Protocol Name",
+        "description": "The name of network protocol.",
+        "examples": [
+          "http",
+          "https"
+        ],
+        "object_name": "http.network.protocol.name",
+        "object_type": "keyword"
+      }
+    },
+    {
+      "http.network.protocol.version": {
+        "category": "http",
+        "component": "http",
+        "caption": "Network Protocol Version",
+        "description": "The version of network protocol.",
+        "examples": [
+          "1.1",
+          "2"
+        ],
+        "object_name": "http.network.protocol.version",
+        "object_type": "keyword"
+      }
+    },
+    {
+      "http.request.method": {
+        "category": "http",
+        "component": "http",
+        "caption": "Request Method",
+        "description": "The HTTP request method.",
+        "examples": [
+          "GET",
+          "POST"
+        ],
+        "object_name": "http.request.method",
+        "object_type": "keyword"
+      }
+    },
+    {
+    {
+      "http.response.status_code": {
+        "category": "http",
+        "component": "http",
+        "caption": "HTTP Response Status Code",
+        "description": "HTTP response status code. Conditionally Required: If and only if one was received/sent.",
+        "examples": [
+          200
+        ],
+        "object_name": "http.response.status_code",
+        "object_type": "integer"
+      }
+    },
+    {
+      "http.request.body.size": {
+        "category": "http",
+        "component": "http",
+        "caption": "Request Body Size",
+        "description": "The size of the request payload body in bytes. This is the number of bytes transferred excluding headers and is often, but not always, present as the Content-Length header. For requests using transport encoding, this should be the compressed size. Recommended",
+        "examples": [
+          3495
+        ],
+        "object_name": "http.request.body.size",
+        "object_type": "integer"
+      }
+    },
+    {
+      "http.response.body.size": {
+        "category": "http",
+        "component": "http",
+        "caption": "Response Body Size",
+        "description": "The size of the response payload body in bytes. This is the number of bytes transferred excluding headers and is often, but not always, present as the Content-Length header. For requests using transport encoding, this should be the compressed size. Recommended",
+        "examples": [
+          3495
+        ],
+        "object_name": "http.response.body.size",
+        "object_type": "integer"
+      }
+    },
+    {
+      "http.request.header.<key>": {
+        "category": "http",
+        "component": "request",
+        "caption": "HTTP Request Header",
+        "description": "HTTP request headers, <key> being the normalized HTTP Header name (lowercase, with - characters replaced by _), the value being the header values.",
+        "examples": [
+          "http.request.header.content_type=['application/json']",
+          "http.request.header.x_forwarded_for=['1.2.3.4', '1.2.3.5']"
+        ],
+        "object_name": "http.request.header.<key>",
+        "object_type": "string[]"
+      }
+    },
+    {
+      "http.response.header.<key>": {
+        "category": "http",
+        "component": "response",
+        "caption": "HTTP Response Header",
+        "description": "HTTP response headers, <key> being the normalized HTTP Header name (lowercase, with - characters replaced by _), the value being the header values.",
+        "examples": [
+          "http.response.header.content_type=['application/json']",
+          "http.response.header.my_custom_header=['abc', 'def']"
+        ],
+        "object_name": "http.response.header.<key>",
+        "object_type": "string[]"
+      }
+    },
+    {
+      "http.resend_count": {
+        "category": "services",
+        "component": "http",
+        "caption": "HTTP Resend Count",
+        "description": "The ordinal number of request resending attempt (for any reason, including redirects).",
+        "examples": [
+          "3"
+        ],
+        "object_name": "http.resend_count",
+        "object_type": "long"
+      }
+    },
+    {
+      "server.address": {
+        "category": "services",
+        "component": "http",
+        "caption": "Server Address",
+        "description": "Host identifier of the 'URI origin' HTTP request is sent to.",
+        "examples": [
+          "example.com"
+        ],
+        "object_name": "server.address",
+        "object_type": "keyword"
+      }
+    },
+    {
+      "server.port": {
+        "category": "services",
+        "component": "http",
+        "caption": "Server Port",
+        "description": "Port identifier of the 'URI origin' HTTP request is sent to.",
+        "examples": [
+          "80",
+          "8080",
+          "443"
+        ],
+        "object_name": "server.port",
+        "object_type": "long"
+      }
+    },
+    {
+      "server.socket.address": {
+        "category": "services",
+        "component": "http",
+        "caption": "Server Socket Address",
+        "description": "Physical server IP address or Unix socket address.",
+        "examples": [
+          "10.5.3.2"
+        ],
+        "object_name": "server.socket.address",
+        "object_type": "keyword"
+      }
+    },
+    {
+      "server.socket.domain": {
+        "category": "services",
+        "component": "http",
+        "caption": "Server Socket Domain",
+        "description": "The domain name of an immediate peer.",
+        "examples": [
+          "proxy.example.com"
+        ],
+        "object_name": "server.socket.domain",
+        "object_type": "keyword"
+      }
+    },
+    {
+      "server.socket.port": {
+        "category": "services",
+        "component": "http",
+        "caption": "Server Socket Port",
+        "description": "Physical server port.",
+        "examples": [
+          "16456"
+        ],
+        "object_name": "server.socket.port",
+        "object_type": "long"
+      }
+    },
+    {
+      "url.full": {
+        "category": "services",
+        "component": "http",
+        "caption": "Full URL",
+        "description": "Absolute URL describing a network resource according to RFC3986.",
+        "examples": [
+          "https://www.foo.bar/search?q=OpenTelemetry#SemConv",
+          "//localhost"
+        ],
+        "object_name": "url.full",
+        "object_type": "keyword"
+      }
+    },
+    {
+      "http.route": {
+        "category": "services",
+        "component": "http",
+        "caption": "HTTP Route",
+        "description": "The matched route (path template in the format used by the respective server framework).",
+        "examples": [
+          "/users/:userID?",
+          "{controller}/{action}/{id?}"
+        ],
+        "object_name": "http.route",
+        "object_type": "keyword"
+      }
+    },
+    {
+      "client.address": {
+        "category": "services",
+        "component": "http",
+        "caption": "Client Address",
+        "description": "Client address - unix domain socket name, IPv4 or IPv6 address.",
+        "examples": [
+          "83.164.160.102"
+        ],
+        "object_name": "client.address",
+        "object_type": "keyword"
+      }
+    },
+    {
+      "client.port": {
+        "category": "services",
+        "component": "http",
+        "caption": "Client Port",
+        "description": "The port of the original client behind all proxies, if known (e.g. from Forwarded or a similar header). Otherwise, the immediate client peer port.",
+        "examples": [
+          "65123"
+        ],
+        "object_name": "client.port",
+        "object_type": "long"
+      }
+    },
+    {
+      "client.socket.address": {
+        "category": "services",
+        "component": "http",
+        "caption": "Client Socket Address",
+        "description": "Immediate client peer address - unix domain socket name, IPv4 or IPv6 address.",
+        "examples": [
+          "/tmp/my.sock",
+          "127.0.0.1"
+        ],
+        "object_name": "client.socket.address",
+        "object_type": "keyword"
+      }
+    },
+    {
+      "client.socket.port": {
+        "category": "services",
+        "component": "http",
+        "caption": "Client Socket Port",
+        "description": "Immediate client peer port number",
+        "examples": [
+          "35555"
+        ],
+        "object_name": "client.socket.port",
+        "object_type": "long"
+      }
+    },
+    {
+      "server.address": {
+        "category": "services",
+        "component": "http",
+        "caption": "Server Address",
+        "description": "Name of the local HTTP server that received the request.",
+        "examples": [
+          "example.com"
+        ],
+        "object_name": "server.address",
+        "object_type": "keyword"
+      }
+    },
+    {
+      "server.port": {
+        "category": "services",
+        "component": "http",
+        "caption": "Server Port",
+        "description": "Port of the local HTTP server that received the request.",
+        "examples": [
+          "80",
+          "8080",
+          "443"
+        ],
+        "object_name": "server.port",
+        "object_type": "long"
+      }
+    },
+    {
+      "server.socket.address": {
+        "category": "services",
+        "component": "http",
+        "caption": "Server Socket Address",
+        "description": "Local socket address. Useful in case of a multi-IP host.",
+        "examples": [
+          "10.5.3.2"
+        ],
+        "object_name": "server.socket.address",
+        "object_type": "keyword"
+      }
+    },
+    {
+      "server.socket.port": {
+        "category": "services",
+        "component": "http",
+        "caption": "Server Socket Port",
+        "description": "Local socket port. Useful in case of a multi-port host.",
+        "examples": [
+          "16456"
+        ],
+        "object_name": "server.socket.port",
+        "object_type": "long"
+      }
+    },
+    {
+      "url.path": {
+        "category": "services",
+        "component": "http",
+        "caption": "URL Path",
+        "description": "The URI path component.",
+        "examples": [
+          "/search"
+        ],
+        "object_name": "url.path",
+        "object_type": "keyword"
+      }
+    },
+    {
+      "url.query": {
+        "category": "services",
+        "component": "http",
+        "caption": "URL Query",
+        "description": "The URI query component.",
+        "examples": [
+          "q=OpenTelemetry"
+        ],
+        "object_name": "url.query",
+        "object_type": "keyword"
+      }
+    },
+    {
+      "url.scheme": {
+        "category": "services",
+        "component": "http",
+        "caption": "URL Scheme",
+        "description": "The URI scheme component identifying the used protocol.",
+        "examples": [
+          "http",
+          "https"
+        ],
+        "object_name": "url.scheme",
+        "object_type": "keyword"
+      }
+    }
+  ]
+}
