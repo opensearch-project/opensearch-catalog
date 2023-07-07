@@ -219,11 +219,11 @@
     }
   },
   "composed_of": [
-    "aws_elb_template",
-    "cloud_template",
-    "communication_template",
-    "container_template",
-    "http_template"
+    "{{aws_elb_template}}",
+    "{{cloud_template}}",
+    "{{communication_template}}",
+    "{{container_template}}",
+    "{{http_template}}"
   ],
   "version": 1,
   "_meta": {

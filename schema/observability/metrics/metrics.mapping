@@ -297,7 +297,7 @@
     }
   },
   "composed_of": [
-    "http_template"
+    "{{http_template}}"
   ],
   "version": 1,
   "_meta": {
