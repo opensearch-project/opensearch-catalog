@@ -1,0 +1,196 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "http": {
+      "type": "object",
+      "properties": {
+        "user_agent": {
+          "type": "object",
+          "properties": {
+            "original": {
+              "type": "string"
+            }
+          },
+          "required": ["original"]
+        },
+        "network": {
+          "type": "object",
+          "properties": {
+            "transport": {
+              "type": "string"
+            },
+            "type": {
+              "type": "string"
+            },
+            "protocol": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "version": {
+                  "type": "string"
+                }
+              },
+              "required": ["name", "version"]
+            }
+          },
+          "required": ["transport", "type", "protocol"]
+        },
+        "request": {
+          "type": "object",
+          "properties": {
+            "method": {
+              "type": "string"
+            },
+            "method_original": {
+              "type": "string"
+            },
+            "body": {
+              "type": "object",
+              "properties": {
+                "size": {
+                  "type": "integer"
+                }
+              },
+              "required": ["size"]
+            }
+          },
+          "required": ["method", "method_original", "body"]
+        },
+        "response": {
+          "type": "object",
+          "properties": {
+            "status_code": {
+              "type": "string"
+            },
+            "body": {
+              "type": "object",
+              "properties": {
+                "size": {
+                  "type": "integer"
+                }
+              },
+              "required": ["size"]
+            }
+          },
+          "required": ["status_code", "body"]
+        },
+        "client": {
+          "type": "object",
+          "properties": {
+            "server": {
+              "type": "object",
+              "properties": {
+                "socket": {
+                  "type": "object",
+                  "properties": {
+                    "address": {
+                      "type": "string"
+                    },
+                    "domain": {
+                      "type": "string"
+                    },
+                    "port": {
+                      "type": "integer"
+                    }
+                  },
+                  "required": ["address", "domain", "port"]
+                },
+                "address": {
+                  "type": "string"
+                },
+                "port": {
+                  "type": "integer"
+                }
+              },
+              "required": ["socket", "address", "port"]
+            },
+            "resend_count": {
+              "type": "integer"
+            },
+            "url": {
+              "type": "object",
+              "properties": {
+                "full": {
+                  "type": "string"
+                }
+              },
+              "required": ["full"]
+            }
+          },
+          "required": ["server", "resend_count", "url"]
+        },
+        "server": {
+          "type": "object",
+          "properties": {
+            "route": {
+              "type": "string"
+            },
+            "address": {
+              "type": "string"
+            },
+            "port": {
+              "type": "integer"
+            },
+            "socket": {
+              "type": "object",
+              "properties": {
+                "address": {
+                  "type": "string```
+                },
+                "port": {
+                  "type": "integer"
+                }
+              },
+              "required": ["address", "port"]
+            },
+            "client": {
+              "type": "object",
+              "properties": {
+                "address": {
+                  "type": "string"
+                },
+                "port": {
+                  "type": "integer"
+                },
+                "socket": {
+                  "type": "object",
+                  "properties": {
+                    "address": {
+                      "type": "string"
+                    },
+                    "port": {
+                      "type": "integer"
+                    }
+                  },
+                  "required": ["address", "port"]
+                }
+              },
+              "required": ["address", "port", "socket"]
+            },
+            "url": {
+              "type": "object",
+              "properties": {
+                "path": {
+                  "type": "string"
+                },
+                "query": {
+                  "type": "string"
+                },
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "required": ["path", "query", "schema"]
+            }
+          },
+          "required": ["route", "address", "port", "socket", "client", "url"]
+        }
+      },
+      "required": ["user_agent", "network", "request", "response", "client", "server"]
+    }
+  },
+  "required": ["http"]
+}
