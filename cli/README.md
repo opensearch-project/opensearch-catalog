@@ -59,7 +59,7 @@ From this, we can gather:
 Here's an example usage of `index-pattern` creating a sample index pattern from the logs, http, and communication mapping files.
 
 ```bash
-$ osints index-pattern --mapping ../schema/observability/log/logs.mapping --mapping ../schema/observability/log/http.mapping --mapping ../schema/observability/log/communication.mapping
+$ osints index-pattern --mappings ../schema/observability/logs/logs.mapping --mappings ../schema/observability/logs/http.mapping --mappings ../schema/observability/logs/communication.mapping --id index
 ```
 
 This creates a `index_pattern.ndjson` file with the fields attributes populated from the logs, http, and communication mapping files.
