@@ -4,6 +4,7 @@ The OsInts CLI is a utility CLI for developing integrations with OpenSearch Inte
 It provides a few convenience methods:
 
 - `diff`: Type check your integration given a sample data record and the appropriate SS4O schema.
+- `index_pattern`: Generate an index pattern compliant with given schemas for integrations
 
 ## Installation
 
@@ -52,3 +53,13 @@ $ osints diff --mapping schemas/logs-1.0.0.mapping.json --data data/sample.json
 From this, we can gather:
 - `event.category`, `event.type`, and `http.response.status_code` are all the wrong type. The first two should be a `keyword` instead of a list of strings, while the latter should be an integer `200` instead of a string `"200"`.
 - `span_id` and `trace_id` are present in the data but not accounted for in the schema. This indicates that they are either redundant or incorrectly named. In this case, it turns out to be the latter, there are appropriate `spanId` and `traceId` fields.
+
+### Usage: `index-pattern`
+
+Here's an example usage of `index-pattern` creating a sample index pattern from the logs, http, and communication mapping files.
+
+```bash
+$ osints index-pattern --mapping ../schema/observability/log/logs.mapping --mapping ../schema/observability/log/http.mapping --mapping ../schema/observability/log/communication.mapping
+```
+
+This creates a `index_pattern.ndjson` file with the fields attributes populated from the logs, http, and communication mapping files.

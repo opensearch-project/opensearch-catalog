@@ -14,31 +14,31 @@ def load_mapping(mapping: str) -> dict[str, dict]:
         return {}
     composed_of = data.get("composed_of", [])
     curr_dir = os.path.dirname(mapping)
-    for item in composed_of:
-        item_glob = glob.glob(os.path.join(curr_dir, f"{item}*"))
-        if len(item_glob) == 0:
-            click.secho(
-                f"ERROR: mapping file {mapping} references component {item}, which does not exist.",
-                err=True,
-                fg="red",
-            )
-            raise click.Abort()
-        if properties.get(item) is not None:
-            click.secho(
-                f"ERROR: mapping file {mapping} references component {item} and defines conflicting key '{item}'",
-                err=True,
-                fg="red",
-            )
-            raise click.Abort()
-        # Greedily take any mapping that matches the name for now.
-        # Later, configuration will need to be implemented.
-        if len(item_glob) > 1:
-            click.secho(
-                f"WARNING: found more than one mapping for component {item}. Assuming {item_glob[0]}.",
-                err=True,
-                fg="yellow",
-            )
-        properties.update(load_mapping(item_glob[0]))
+    # for item in composed_of:
+    #     item_glob = glob.glob(os.path.join(curr_dir, f"{item}*"))
+    #     if len(item_glob) == 0:
+    #         click.secho(
+    #             f"ERROR: mapping file {mapping} references component {item}, which does not exist.",
+    #             err=True,
+    #             fg="red",
+    #         )
+    #         raise click.Abort()
+    #     if properties.get(item) is not None:
+    #         click.secho(
+    #             f"ERROR: mapping file {mapping} references component {item} and defines conflicting key '{item}'",
+    #             err=True,
+    #             fg="red",
+    #         )
+    #         raise click.Abort()
+    #     # Greedily take any mapping that matches the name for now.
+    #     # Later, configuration will need to be implemented.
+    #     if len(item_glob) > 1:
+    #         click.secho(
+    #             f"WARNING: found more than one mapping for component {item}. Assuming {item_glob[0]}.",
+    #             err=True,
+    #             fg="yellow",
+    #         )
+    #     properties.update(load_mapping(item_glob[0]))
     return properties
 
 # Populates a field in the index pattern list object
@@ -107,8 +107,13 @@ def pre_populate(json_fields: list[dict]) -> list[dict]:
 
 # Creates index pattern as an ndjson file
 @beartype
-def create_index_pattern(json_fields: str) -> None:
-    output_file = open("index_pattern.json", "w")
+def create_index_pattern(
+    json_fields: str, output_json: bool, id: str
+) -> None:
+    if output_json:
+        output_file = open("index_pattern.json", "w")
+    else:
+        output_file = open("index_pattern.ndjson", "w")
     current_datetime = datetime.now()
     json_dict = {
         "attributes": {
@@ -116,7 +121,7 @@ def create_index_pattern(json_fields: str) -> None:
             "timeFieldName": "@timestamp",
             "title": "ss4o_logs-*-*"
         },
-        "id": "9d96cb30-f01b-11ea-99e6-53b5a9b5c41b",
+        "id": id,
         "migrationVersion": {
             "index-pattern": "7.6.0"
         },
@@ -140,13 +145,19 @@ def create_index_pattern(json_fields: str) -> None:
     is_flag=True,
     help="Output machine-readable JSON instead of the default ndjson format"
 )
-def index_pattern(mappings, output_json):
+@click.option(
+    "--id",
+    default="index_pattern",
+    help="id for the index pattern object"
+)
+def index_pattern(mappings, output_json, id):
+    """Generate an index pattern compliant with given schemas for integrations"""
     data = dict()
     for mapping in mappings:
         data.update(load_mapping(mapping))
     json_fields = get_fields(data, "")
     # print(json.dumps(json_fields))
-    create_index_pattern(json.dumps(json_fields))
+    create_index_pattern(json.dumps(json_fields), output_json, id)
     
 if __name__ == "__main__":
     index_pattern()

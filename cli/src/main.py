@@ -1,5 +1,6 @@
 import click
 from .diff import diff
+from .index_pattern import index_pattern
 
 @click.group()
 def cli():
@@ -8,6 +9,7 @@ def cli():
 
 
 cli.add_command(diff)
+cli.add_command(index_pattern)
 
 
 if __name__ == "__main__":
