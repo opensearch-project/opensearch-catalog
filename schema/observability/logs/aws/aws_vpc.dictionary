@@ -1,0 +1,278 @@
+{
+  "catalog": "observability",
+  "version": "1.0",
+  "attributes": [
+    {
+      "aws.vpc.version": {
+        "category": "aws_vpc_flow",
+        "component": "aws_vpc_flow",
+        "caption": "Version",
+        "description": "The log format version",
+        "examples": ["1.0"],
+        "object_name": "version",
+        "object_type": "keyword"
+      },
+      "aws.vpc.account-id": {
+        "category": "aws_vpc_flow",
+        "component": "aws_vpc_flow",
+        "caption": "Account ID",
+        "description": "The ID of the AWS account that owns the flow log",
+        "examples": ["123456789012"],
+        "object_name": "account-id",
+        "object_type": "keyword"
+      },
+      "aws.vpc.region": {
+        "category": "aws_vpc_flow",
+        "component": "aws_vpc_flow",
+        "caption": "Region",
+        "description": "The AWS region",
+        "examples": ["us-west-1"],
+        "object_name": "region",
+        "object_type": "keyword"
+      },
+      "aws.vpc.az-id": {
+        "category": "aws_vpc_flow",
+        "component": "aws_vpc_flow",
+        "caption": "Availability Zone ID",
+        "description": "The ID of the Availability Zone",
+        "examples": ["use1-az1"],
+        "object_name": "az-id",
+        "object_type": "keyword"
+      },
+      "aws.vpc.vpc-id": {
+        "category": "aws_vpc_flow",
+        "component": "aws_vpc_flow",
+        "caption": "VPC ID",
+        "description": "The ID of the VPC",
+        "examples": ["vpc-1a2b3c4d"],
+        "object_name": "vpc-id",
+        "object_type": "keyword"
+      },
+      "aws.vpc.subnet-id": {
+        "category": "aws_vpc_flow",
+        "component": "aws_vpc_flow",
+        "caption": "Subnet ID",
+        "description": "The ID of the subnet",
+        "examples": ["subnet-9s8d7f6g"],
+        "object_name": "subnet-id",
+        "object_type": "keyword"
+      },
+      "aws.vpc.tcp-flags": {
+        "category": "aws_vpc_flow",
+        "component": "aws_vpc_flow",
+        "caption": "TCP Flags",
+        "description": "The TCP flags in the packet",
+        "examples": ["2"],
+        "object_name": "tcp-flags",
+        "object_type": "keyword"
+      },
+      "aws.vpc.type": {
+        "category": "aws_vpc_flow",
+        "component": "aws_vpc_flow",
+        "caption": "Type",
+        "description": "The type of VPC Flow",
+        "examples": ["IPv4"],
+        "object_name": "type",
+        "object_type": "keyword"
+      },
+      "aws.vpc.interface-id": {
+        "category": "aws_vpc_flow",
+        "component": "aws_vpc_flow",
+        "caption": "Interface ID",
+        "description": "The ID of the elastic network interface",
+        "examples": ["eni-01234567"],
+        "object_name": "interface-id",
+        "object_type": "keyword"
+      },
+      "aws.vpc.instance-id": {
+        "category": "aws_vpc_flow",
+        "component": "aws_vpc_flow",
+        "caption": "Instance ID",
+        "description": "The ID of the instance",
+        "examples": ["i-0123456789abcdef0"],
+        "object_name": "instance-id",
+        "object_type": "keyword"
+      },
+      "aws.vpc.srcaddr": {
+        "category": "aws_vpc_flow",
+        "component": "aws_vpc_flow",
+        "caption": "Source Address",
+        "description": "The source IP address",
+        "examples": ["172.31.9.69"],
+        "object_name": "srcaddr",
+        "object_type": "keyword"
+      },
+      "aws.vpc.dstaddr": {
+        "category": "aws_vpc_flow",
+        "component": "aws_vpc_flow",
+        "caption": "Destination Address",
+        "description": "The destination IP address",
+        "examples": ["172.31.9.12"],
+        "object_name": "dstaddr",
+        "object_type": "keyword"
+      },
+      "aws.vpc.srcport": {
+        "category": "aws_vpc_flow",
+        "component": "aws_vpc_flow",
+        "caption": "Source Port",
+        "description": "The source port",
+        "examples": ["50654"],
+        "object_name": "srcport",
+        "object_type": "long"
+      },
+      "aws.vpc.dstport": {
+        "category": "aws_vpc_flow",
+        "component": "aws_vpc_flow",
+        "caption": "Destination Port",
+        "description": "The destination port",
+        "examples": ["22"],
+        "object_name": "dstport",
+        "object_type": "long"
+      },
+      "aws.vpc.protocol": {
+        "category": "aws_vpc_flow",
+        "component": "aws_vpc_flow",
+        "caption": "Protocol",
+        "description": "The IANA protocol number",
+        "examples": ["6"],
+        "object_name": "protocol",
+        "object_type": "keyword"
+      },
+      "aws.vpc.protocol-code": {
+        "category": "aws_vpc_flow",
+        "component": "aws_vpc_flow",
+        "caption": "Protocol Code",
+        "description": "The protocol code",
+        "examples": ["TCP"],
+        "object_name": "protocol-code",
+        "object_type": "keyword"
+      },
+      "aws.vpc.packets": {
+        "category": "aws_vpc_flow",
+        "component": "aws_vpc_flow",
+        "caption": "Packets",
+        "description": "The number of packets",
+        "examples": ["20"],
+        "object_name": "packets",
+        "object_type": "long"
+      },
+      "aws.vpc.bytes": {
+        "category": "aws_vpc_flow",
+        "component": "aws_vpc_flow",
+        "caption": "Bytes",
+        "description": "The number of bytes",
+        "examples": ["3000"],
+        "object_name": "bytes",
+        "object_type": "long"
+      },
+      "aws.vpc.start": {
+        "category": "aws_vpc_flow",
+        "component": "aws_vpc_flow",
+        "caption": "Start",
+        "description": "The start of the flow (seconds since epoch)",
+        "examples": ["1600196863"],
+        "object_name": "start",
+        "object_type": "date"
+      },
+      "aws.vpc.end": {
+        "category": "aws_vpc_flow",
+        "component": "aws_vpc_flow",
+        "caption": "End",
+        "description": "The end of the flow (seconds since epoch)",
+        "examples": ["1600196864"],
+        "object_name": "end",
+        "object_type": "date"
+      },
+      "aws.vpc.flow-direction": {
+        "category": "aws_vpc_flow",
+        "component": "aws_vpc_flow",
+        "caption": "Flow Direction",
+        "description": "The direction of the flow",
+        "examples": ["ingress"],
+        "object_name": "flow-direction",
+        "object_type": "keyword"
+      },
+      "aws.vpc.pkt-src-aws-service": {
+        "category": "aws_vpc_flow",
+        "component": "aws_vpc_flow",
+        "caption": "Packet Source AWS Service",
+        "description": "The AWS service that the flow log records represent traffic for",
+        "examples": ["AmazonS3"],
+        "object_name": "pkt-src-aws-service",
+        "object_type": "keyword"
+      },
+      "aws.vpc.pkt-srcaddr": {
+        "category": "aws_vpc_flow",
+        "component": "aws_vpc_flow",
+        "caption": "Packet Source Address",
+        "description": "The IP address of the packet source",
+        "examples": ["172.31.9.69"],
+        "object_name": "pkt-srcaddr",
+        "object_type": "keyword"
+      },
+      "aws.vpc.pkt-dst-aws-service": {
+        "category": "aws_vpc_flow",
+        "component": "aws_vpc_flow",
+        "caption": "Packet Destination AWS Service",
+        "description": "The AWS service that the destination IP address corresponds to",
+        "examples": ["AmazonS3"],
+        "object_name": "pkt-dst-aws-service",
+        "object_type": "keyword"
+      },
+      "aws.vpc.pkt-dstaddr": {
+        "category": "aws_vpc_flow",
+        "component": "aws_vpc_flow",
+        "caption": "Packet Destination Address",
+        "description": "The IP address of the packet destination",
+        "examples": ["172.31.9.12"],
+        "object_name": "pkt-dstaddr",
+        "object_type": "keyword"
+      },
+      "aws.vpc.traffic-path": {
+        "category": "aws_vpc_flow",
+        "component": "aws_vpc_flow",
+        "caption": "Traffic Path",
+        "description": "The path that the traffic took",
+        "examples": ["IntraRegion"],
+        "object_name": "traffic-path",
+        "object_type": "keyword"
+      },
+      "aws.vpc.action": {
+        "category": "aws_vpc_flow",
+        "component": "aws_vpc_flow",
+        "caption": "Action",
+        "description": "The action that was taken based on the match details",
+        "examples": ["ACCEPT"],
+        "object_name": "action",
+        "object_type": "keyword"
+      },
+      "aws.vpc.log-status": {
+        "category": "aws_vpc_flow",
+        "component": "aws_vpc_flow",
+        "caption": "Log Status",
+        "description": "The logging status of the flow",
+        "examples": ["OK"],
+        "object_name": "log-status",
+        "object_type": "keyword"
+      },
+      "aws.vpc.sublocation-id": {
+        "category": "aws_vpc_flow",
+        "component": "aws_vpc_flow",
+        "caption": "Sublocation ID",
+        "description": "The sublocation ID",
+        "examples": ["sl-0123abc"],
+        "object_name": "sublocation-id",
+        "object_type": "keyword"
+      },
+      "aws.vpc.sublocation-type": {
+        "category": "aws_vpc_flow",
+        "component": "aws_vpc_flow",
+        "caption": "Sublocation Type",
+        "description": "The sublocation type",
+        "examples": ["AvailabilityZone"],
+        "object_name": "sublocation-type",
+        "object_type": "keyword"
+      }
+    }
+  ]
+}
