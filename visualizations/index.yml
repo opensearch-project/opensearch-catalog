@@ -1,0 +1,21 @@
+visualization_catalog:
+  observability:
+    http:
+      parent: logs
+      visualizations:
+      - path: observability/http/data_volume.json
+        name: Data Volume
+        description: Get the rate of data (in bytes) returned by a log source.
+        screenshot: observability/http/data_volume.png
+      - path: observability/http/errors_over_time.json
+        name: Errors over Time
+        description: Get the rate of errors returned by a log source.
+        screenshot: observability/http/errors_over_time.png
+      - path: observability/http/status_codes_over_time.json
+        name: Status codes over Time
+        description: Get the proportions of different status codes returned by a log source.
+        screenshot: observability/http/status_codes_over_time.png
+      - path: observability/http/top_urls.json
+        name: Top URLs
+        description: Get the most frequent URLs visited by a log source.
+        screenshot: observability/http/top_urls.png
