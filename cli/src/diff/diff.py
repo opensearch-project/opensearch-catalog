@@ -75,9 +75,9 @@ def output_diff(difference: dict[str, object], prefix: str = "") -> None:
         if "expected" not in value and "actual" not in value:
             output_diff(value, f"{prefix}{key}.")
         if value.get("actual") is not None:
-            click.echo(f"- {out_key}: {json.dumps(value.get('actual'))}")
+            click.secho(f"- {out_key}: {json.dumps(value.get('actual'))}", fg="red")
         if value.get("expected") is not None:
-            click.echo(f"+ {out_key}: {json.dumps(value.get('expected'))}")
+            click.secho(f"+ {out_key}: {json.dumps(value.get('expected'))}", fg="green")
 
 
 @click.command()
