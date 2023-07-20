@@ -1,0 +1,40 @@
+{
+  "catalog": "observability",
+  "version": "1.0",
+  "attributes": [
+    {
+      "user_agent.original": {
+        "category": "user_agent",
+        "component": "original",
+        "description": "Unparsed user_agent string.\n",
+        "examples": "Mozilla/5.0 (iPhone; CPU iPhone OS 12_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/12.0 Mobile/15E148 Safari/604.1",
+        "object_name": "original",
+        "object_type": "keyword"
+      },
+      "user_agent.name": {
+        "category": "user_agent",
+        "component": "name",
+        "description": "Name of the user agent.\n",
+        "examples": "Safari",
+        "object_name": "name",
+        "object_type": "keyword"
+      },
+      "user_agent.version": {
+        "category": "user_agent",
+        "component": "version",
+        "description": "Version of the user agent.\n",
+        "examples": 12.0,
+        "object_name": "version",
+        "object_type": "keyword"
+      },
+      "user_agent.device.name": {
+        "category": "user_agent",
+        "component": "device.name",
+        "description": "Name of the device.\n",
+        "examples": "iPhone",
+        "object_name": "name",
+        "object_type": "keyword"
+      }
+    }
+  ]
+}
