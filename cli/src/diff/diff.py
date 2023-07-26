@@ -107,20 +107,31 @@ def output_diff(difference: dict[str, object], prefix: str = "") -> None:
     is_flag=True,
     help="Output fields that are expected in the mappings but missing in the data",
 )
-def diff(mapping, data, output_json, show_missing):
+@click.option(
+    "--check-all",
+    "check_all",
+    is_flag=True,
+    help="Check every available data record and report the first one with errors (default: only check first record)"
+)
+def diff(mapping, data, output_json, show_missing, check_all):
     """Type check your integration given a sample data record and the appropriate SS4O schema."""
     properties = load_mapping(mapping)
     with open(data, "r") as data_file:
         data_json = json.load(data_file)
-    if isinstance(data_json, list):
-        # Unwrap list of data, assume first record is representative
-        data_json = data_json[0]
-    check = do_check(properties, data_json, show_missing)
-    if output_json:
-        click.echo(json.dumps(check, sort_keys=True))
-    else:
-        output_diff(check)
-    quit(0 if check == {} else 1)
+    if not isinstance(data_json, list):
+        # Wrap individual data record in a list
+        data_json = [data_json]
+    for i, record in enumerate(data_json if check_all else data_json[:1], 1):
+        check = do_check(properties, record, show_missing)
+        if check == {}:
+            continue
+        if check_all:
+            click.echo(f"Validation errors found in record {i}", err=True)
+        if output_json:
+            click.echo(json.dumps(check, sort_keys=True))
+        else:
+            output_diff(check)
+        quit(1)
 
 
 if __name__ == "__main__":
