@@ -1,4 +1,5 @@
 import json
+import re
 
 import click
 from beartype import beartype
@@ -20,6 +21,9 @@ def flat_type_check(expect: str, actual: object) -> dict[str, dict]:
             return {}
         case "date":
             if not isinstance(actual, str) and not isinstance(actual, int):
+                return {"expected": expect, "actual": actual}
+        case "ip":
+            if not isinstance(actual, str) or not re.match(r"(\d{1,3}\.){3}\d{1,3}", actual):
                 return {"expected": expect, "actual": actual}
         case _:
             click.secho(f"WARNING: unknown type '{expect}'", err=True, fg="yellow")
@@ -116,6 +120,7 @@ def diff(mapping, data, output_json, show_missing):
         click.echo(json.dumps(check, sort_keys=True))
     else:
         output_diff(check)
+    quit(0 if check == {} else 1)
 
 
 if __name__ == "__main__":
