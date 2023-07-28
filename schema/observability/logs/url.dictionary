@@ -1,0 +1,120 @@
+{
+  "catalog": "observability",
+  "version": "1.0",
+  "attributes": [
+    {
+      "url.original": {
+        "category": "url",
+        "component": "original",
+        "description": "Unmodified original url as seen in the event source.\nNote that in network monitoring, the observed URL may be a full URL, whereas in access logs, the URL is often just represented as a path.\nThis field is meant to represent the URL as it was observed, complete or not.\n",
+        "examples": "https://www.elastic.co:443/search?q=elasticsearch#top or /search?q=elasticsearch\n",
+        "object_name": "original",
+        "object_type": "wildcard"
+      },
+      "url.full": {
+        "category": "url",
+        "component": "full",
+        "description": "If full URLs are important to your use case, they should be stored in `url.full`, whether this field is reconstructed or present in the event source.\n",
+        "examples": "https://www.elastic.co:443/search?q=elasticsearch#top",
+        "object_name": "full",
+        "object_type": "wildcard"
+      },
+      "url.scheme": {
+        "category": "url",
+        "component": "scheme",
+        "description": "Scheme of the request, such as \"https\".\nNote: The `:` is not part of the scheme.\n",
+        "examples": "https",
+        "object_name": "scheme",
+        "object_type": "keyword"
+      },
+      "url.domain": {
+        "category": "url",
+        "component": "domain",
+        "description": "Domain of the url, such as \"www.elastic.co\".\nIn some cases a URL may refer to an IP and/or port directly, without a domain name. In this case, the IP address would go to the `domain` field.\nIf the URL contains a literal IPv6 address enclosed by `[` and `]` (IETF RFC 2732), the `[` and `]` characters should also be captured in the `domain` field.\n",
+        "examples": "www.elastic.co",
+        "object_name": "domain",
+        "object_type": "keyword"
+      },
+      "url.registered_domain": {
+        "category": "url",
+        "component": "registered_domain",
+        "description": "The highest registered url domain, stripped of the subdomain.\nFor example, the registered domain for \"foo.example.com\" is \"example.com\".\nThis value can be determined precisely with a list like the public suffix list (http://publicsuffix.org). Trying to approximate this by simply taking the last two labels will not work well for TLDs such as \"co.uk\".\n",
+        "examples": "example.com",
+        "object_name": "registered_domain",
+        "object_type": "keyword"
+      },
+      "url.top_level_domain": {
+        "category": "url",
+        "component": "top_level_domain",
+        "description": "The effective top level domain (eTLD), also known as the domain suffix, is the last part of the domain name. For example, the top level domain for example.com is \"com\".\nThis value can be determined precisely with a list like the public suffix list (http://publicsuffix.org). Trying to approximate this by simply taking the last label will not work well for effective TLDs such as \"co.uk\".\n",
+        "examples": "co.uk",
+        "object_name": "top_level_domain",
+        "object_type": "keyword"
+      },
+      "url.subdomain": {
+        "category": "url",
+        "component": "subdomain",
+        "description": "The subdomain portion of a fully qualified domain name includes all of the names except the host name under the registered_domain.  In a partially qualified domain, or if the the qualification level of the full name cannot be determined, subdomain contains all of the names below the registered domain.\nFor example the subdomain portion of \"www.east.mydomain.co.uk\" is \"east\". If the domain has multiple levels of subdomain, such as \"sub2.sub1.example.com\", the subdomain field should contain \"sub2.sub1\", with no trailing period.\n",
+        "examples": "east",
+        "object_name": "subdomain",
+        "object_type": "keyword"
+      },
+      "url.port": {
+        "category": "url",
+        "component": "port",
+        "description": "Port of the request, such as 443.\n",
+        "examples": 443,
+        "object_name": "port",
+        "object_type": "long"
+      },
+      "url.path": {
+        "category": "url",
+        "component": "path",
+        "description": "Path of the request, such as \"/search\".\n",
+        "examples": null,
+        "object_name": "path",
+        "object_type": "wildcard"
+      },
+      "url.query": {
+        "category": "url",
+        "component": "query",
+        "description": "The query field describes the query string of the request, such as \"q=elasticsearch\".\nThe `?` is excluded from the query string. If a URL contains no `?`, there is no query field. If there is a `?` but no query, the query field exists with an empty string. The `exists` query can be used to differentiate between the two cases.\n",
+        "examples": null,
+        "object_name": "query",
+        "object_type": "keyword"
+      },
+      "url.extension": {
+        "category": "url",
+        "component": "extension",
+        "description": "The field contains the file extension from the original request url, excluding the leading dot.\nThe file extension is only set if it exists, as not every url has a file extension.\nThe leading period must not be included. For example, the value must be \"png\", not \".png\".\nNote that when the file name has multiple extensions (example.tar.gz), only the last one should be captured (\"gz\", not \"tar.gz\").\n",
+        "examples": "png",
+        "object_name": "extension",
+        "object_type": "keyword"
+      },
+      "url.fragment": {
+        "category": "url",
+        "component": "fragment",
+        "description": "Portion of the url after the `#`, such as \"top\".\nThe `#` is not part of the fragment.\n",
+        "examples": null,
+        "object_name": "fragment",
+        "object_type": "keyword"
+      },
+      "url.username": {
+        "category": "url",
+        "component": "username",
+        "description": "Username of the request.\n",
+        "examples": null,
+        "object_name": "username",
+        "object_type": "keyword"
+      },
+      "url.password": {
+        "category": "url",
+        "component": "password",
+        "description": "Password of the request.\n",
+        "examples": null,
+        "object_name": "password",
+        "object_type": "keyword"
+      }
+    }
+  ]
+}
