@@ -3,6 +3,32 @@
   "version": "1.0",
   "attributes": [
     {
+      "cloud.resource_id": {
+        "category": "cloud",
+        "component": "resource_id",
+        "caption": "cloud resource_id",
+        "description": "The cloud resource_id is typically a unique identifier assigned by the cloud service provider to each resource within their platform",
+        "examples": [
+          "AWS",
+          "GCP",
+          "Azure"
+        ],
+        "object_name": "resource_id",
+        "object_type": "keyword"
+      },
+    {
+      "cloud.platform": {
+        "category": "cloud",
+        "component": "platform",
+        "caption": "cloud platform",
+        "description": "The cloud service provider (e.g., AWS, GCP, Azure).",
+        "examples": [
+          "arn:aws:s3:::my_bucket_name",
+          "https://www.googleapis.com/compute/v1/projects/myproject/zones/us-central1-a/instances/myinstance",
+        ],
+        "object_name": "platform",
+        "object_type": "keyword"
+      },
       "cloud.provider": {
         "category": "cloud",
         "component": "provider",
