@@ -43,11 +43,16 @@
                 "elb_status_code": {
                   "type": "short"
                 },
-                "http.port": {
-                  "type": "integer"
-                },
-                "http.version": {
-                  "type": "keyword"
+                "http": {
+                  "type": "object"
+                  "properties": {
+                    "port": {
+                      "type": "integer"
+                    },
+                    "version": {
+                      "type": "keyword"
+                    }
+                  }
                 },
                 "matched_rule_priority": {
                   "type": "integer"
