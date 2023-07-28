@@ -13,32 +13,47 @@
           "properties": {
             "elb": {
               "properties": {
-                "backend.ip": {
-                  "type": "ip"
+                "backend": {
+                  "type": "object",
+                  "properties": {
+                    "ip": {
+                      "type": "ip"
+                    },
+                    "port": {
+                      "type": "integer"
+                    },
+                    "processing_time": {
+                      "type": "half_float"
+                    },
+                    "status_code": {
+                      "type": "short"
+                    },
+                  }
                 },
-                "backend.port": {
-                  "type": "integer"
-                },
-                "backend.processing_time": {
-                  "type": "half_float"
-                },
-                "backend.status_code": {
-                  "type": "short"
-                },
-                "client.ip": {
-                  "type": "ip"
-                },
-                "client.port": {
-                  "type": "integer"
+                "client": {
+                  "type": "object",
+                  "properties": {
+                    "client.ip": {
+                      "type": "ip"
+                    },
+                    "client.port": {
+                      "type": "integer"
+                    },
+                  }
                 },
                 "connection_time": {
                   "type": "integer"
                 },
-                "destination.ip": {
-                  "type": "ip"
-                },
-                "destination.port": {
-                  "type": "integer"
+                "destination": {
+                  "type": "object",
+                  "properties": {
+                    "ip": {
+                      "type": "ip"
+                    },
+                    "port": {
+                      "type": "integer"
+                    },
+                  }
                 },
                 "elb_status_code": {
                   "type": "short"
