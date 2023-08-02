@@ -73,7 +73,7 @@
         "description": "Path of the request, such as \"/search\".\n",
         "examples": null,
         "object_name": "path",
-        "object_type": "wildcard"
+        "object_type": "keyword"
       },
       "url.query": {
         "category": "url",

@@ -11,10 +11,10 @@
         "url": {
           "properties": {
             "original": {
-              "type": "wildcard"
+              "type": "keyword"
             },
             "full": {
-              "type": "wildcard"
+              "type": "keyword"
             },
             "scheme": {
               "type": "keyword"
@@ -35,21 +35,12 @@
               "type": "long"
             },
             "path": {
-              "type": "wildcard"
+              "type": "keyword"
             },
             "query": {
               "type": "keyword"
             },
-            "extension": {
-              "type": "keyword"
-            },
             "fragment": {
-              "type": "keyword"
-            },
-            "username": {
-              "type": "keyword"
-            },
-            "password": {
               "type": "keyword"
             }
           }
