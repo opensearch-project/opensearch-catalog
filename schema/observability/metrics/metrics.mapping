@@ -296,9 +296,7 @@
       }
     }
   },
-  "composed_of": [
-    "{{http_template}}"
-  ],
+  "composed_of": [],
   "version": 1,
   "_meta": {
     "description": "Observability Metrics Mapping Template",

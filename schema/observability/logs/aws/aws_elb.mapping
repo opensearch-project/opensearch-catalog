@@ -13,61 +13,41 @@
           "properties": {
             "elb": {
               "properties": {
-                "backend": {
-                  "type": "object",
-                  "properties": {
-                    "ip": {
-                      "type": "ip"
-                    },
-                    "port": {
-                      "type": "integer"
-                    },
-                    "processing_time": {
-                      "type": "half_float"
-                    },
-                    "status_code": {
-                      "type": "short"
-                    },
-                  }
+                "backend.ip": {
+                  "type": "ip"
                 },
-                "client": {
-                  "type": "object",
-                  "properties": {
-                    "client.ip": {
-                      "type": "ip"
-                    },
-                    "client.port": {
-                      "type": "integer"
-                    },
-                  }
+                "backend.port": {
+                  "type": "integer"
+                },
+                "backend.processing_time": {
+                  "type": "half_float"
+                },
+                "backend.status_code": {
+                  "type": "short"
+                },
+                "client.ip": {
+                  "type": "ip"
+                },
+                "client.port": {
+                  "type": "integer"
                 },
                 "connection_time": {
                   "type": "integer"
                 },
-                "destination": {
-                  "type": "object",
-                  "properties": {
-                    "ip": {
-                      "type": "ip"
-                    },
-                    "port": {
-                      "type": "integer"
-                    },
-                  }
+                "destination.ip": {
+                  "type": "ip"
+                },
+                "destination.port": {
+                  "type": "integer"
                 },
                 "elb_status_code": {
                   "type": "short"
                 },
-                "http": {
-                  "type": "object"
-                  "properties": {
-                    "port": {
-                      "type": "integer"
-                    },
-                    "version": {
-                      "type": "keyword"
-                    }
-                  }
+                "http.port": {
+                  "type": "integer"
+                },
+                "http.version": {
+                  "type": "keyword"
                 },
                 "matched_rule_priority": {
                   "type": "integer"

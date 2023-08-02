@@ -1,0 +1,29 @@
+{
+  "catalog": "observability",
+  "version": "1.0",
+  "url": "https://github.com/opensearch-project/opensearch-catalog/tree/docs/schema/observability",
+  "description": "Observability metrics are a type of data that capture quantitative measurements of system performance and behavior. They provide information about system resources such as CPU usage, memory consumption, and network traffic. Metrics can be used to track key performance indicators (KPIs) and service level objectives (SLOs), and to monitor system health.By visualizing and analyzing metrics, it is possible to identify trends and anomalies, and to proactively detect and address performance issues before they impact system availability or user experience.",
+  "category": "metrics",
+  "components": [
+     {
+      "component": "http",
+      "description": "Observability HTTP dimensions are a type of data that capture information about HTTP requests and responses in a system. They record details such as the request method, URI, response status, and response size. Observability HTTP logs can be used to track user behavior, detect security threats, and monitor system performance. By analyzing HTTP logs, it is possible to identify patterns and anomalies, and to optimize system configuration and behavior for better user experience.",
+      "version": "1.0",
+      "url": "https://github.com/opensearch-project/opensearch-catalog/tree/docs/schema/observability/logs/http",
+      "tags": [],
+      "facets": [],
+      "container": false
+    }
+   ],
+  "containers": [
+    {
+      "component": "metric",
+      "description": "There are several types of metrics that exist in observability, including: Counter Metrics, Gauge Metrics ,Histogram Metrics, Exponential Histogram Metrics, Summary Metrics ",
+      "version": "1.0",
+      "url": "https://github.com/opensearch-project/opensearch-catalog/tree/docs/schema/observability/metrics/metrics",
+      "tags": [],
+      "facets": [],
+      "container": true
+    }
+  ]
+}

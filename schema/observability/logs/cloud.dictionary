@@ -15,7 +15,8 @@
         ],
         "object_name": "resource_id",
         "object_type": "keyword"
-      },
+      }
+    },
     {
       "cloud.platform": {
         "category": "cloud",
@@ -24,7 +25,7 @@
         "description": "The cloud service provider (e.g., AWS, GCP, Azure).",
         "examples": [
           "arn:aws:s3:::my_bucket_name",
-          "https://www.googleapis.com/compute/v1/projects/myproject/zones/us-central1-a/instances/myinstance",
+          "https://www.googleapis.com/compute/v1/projects/myproject/zones/us-central1-a/instances/myinstance"
         ],
         "object_name": "platform",
         "object_type": "keyword"
