@@ -20,7 +20,7 @@ $ osints
 If you want the installation to be editable (for development), you can either specify the editable flag:
 
 ```bash
-$ pip install . --editable
+$ pip install --editable .
 $ osints
 ```
 
