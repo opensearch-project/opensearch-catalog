@@ -9,10 +9,8 @@
       },
       "properties": {
         "aws": {
-          "type": "object",
           "properties": {
             "vpc": {
-              "type": "object",
               "properties": {
                 "version": {
                   "type": "keyword"

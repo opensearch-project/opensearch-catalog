@@ -45,7 +45,6 @@
       }
     },
     {
-    {
       "http.response.status_code": {
         "category": "http",
         "component": "http",

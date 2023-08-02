@@ -218,13 +218,7 @@
       }
     }
   },
-  "composed_of": [
-    "{{aws_elb_template}}",
-    "{{cloud_template}}",
-    "{{communication_template}}",
-    "{{container_template}}",
-    "{{http_template}}"
-  ],
+  "composed_of": [],
   "version": 1,
   "_meta": {
     "description": "Simple Schema For Observability",

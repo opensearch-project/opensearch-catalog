@@ -1,0 +1,47 @@
+{
+  "catalog": "observability",
+  "version": "1.0",
+  "url": "https://github.com/opensearch-project/opensearch-catalog/tree/docs/schema/observability",
+  "description": "Observability traces are a type of data that capture the end-to-end flow of a transaction or request through a system. They include information about the different components and services involved in processing the request, as well as timing and latency data. Traces help identify bottlenecks and performance issues in complex distributed systems, they simplify root cause analysis of issues by providing a detailed view of how a request flows through the system and where delays or errors occur.",
+  "category": "metrics",
+  "components": [
+     {
+      "component": "http",
+      "description": "Observability HTTP dimensions are a type of data that capture information about HTTP requests and responses in a system. They record details such as the request method, URI, response status, and response size. Observability HTTP logs can be used to track user behavior, detect security threats, and monitor system performance. By analyzing HTTP logs, it is possible to identify patterns and anomalies, and to optimize system configuration and behavior for better user experience.",
+      "version": "1.0",
+      "url": "https://github.com/opensearch-project/opensearch-catalog/tree/docs/schema/observability/logs/http",
+      "tags": [],
+      "facets": [],
+      "container": false
+    },
+     {
+      "component": "tracegroups",
+      "description": "Observability tracegroups AKA span-operations is a mechanism for grouping together similar operation spans within the same trace",
+      "version": "1.0",
+      "url": "https://github.com/opensearch-project/opensearch-catalog/tree/docs/schema/observability/logs/tracegroups",
+      "tags": [],
+      "facets": [],
+      "container": false
+    }
+   ],
+  "containers": [
+    {
+      "component": "services",
+      "description": "Observability services are representations of the dependencies and interactions between various components of a software system. They provide a high-level view of how different parts of the system are connected and how data flows between them. By using service maps, engineers and developers can gain a better understanding of how changes in one part of the system can affect other parts, helping them make more informed decisions about troubleshooting and optimization including root cause analysis",
+      "version": "1.0",
+      "url": "https://github.com/opensearch-project/opensearch-catalog/tree/docs/schema/observability/traces/services",
+      "tags": [],
+      "facets": [],
+      "container": true
+    },
+    {
+      "component": "span",
+      "description": "Observability spans are a type of data that represent a single unit of work within a trace.They provide information about the execution of a specific operation or function within a service or component.Spans can include timing data, metadata, and contextual information such as error messages or parameters passed to the function, by examining spans within a trace, it is possible to identify specific areas where performance can be optimized or where errors are occurring.",
+      "version": "1.0",
+      "url": "https://github.com/opensearch-project/opensearch-catalog/tree/docs/schema/observability/traces/traces",
+      "tags": [],
+      "facets": [],
+      "container": true
+    }
+  ]
+}
