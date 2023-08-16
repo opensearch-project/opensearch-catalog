@@ -4,6 +4,7 @@
   "displayName": "NginX Dashboard",
   "description": "Nginx HTTP server collector",
   "license": "Apache-2.0",
+  "type-alias": "logs-nginx",
   "type": "logs",
   "labels": ["log", "http", "communication"],
   "author": "OpenSearch",

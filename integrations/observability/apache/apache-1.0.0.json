@@ -4,7 +4,8 @@
   "displayName": "Apache Dashboard",
   "description": "Apache web logs collector",
   "license": "Apache-2.0",
-  "type": "logs_apache",
+  "type": "logs",
+  "type-alias": "logs-apache",
   "labels": ["log", "communication", "http"],
   "author": "OpenSearch",
   "sourceUrl": "https://github.com/opensearch-project/dashboards-observability/tree/main/server/adaptors/integrations/__data__/repository/apache/info",
@@ -30,7 +31,7 @@
       "version": "1.0.0"
     },
     {
-      "name": "logs_apache",
+      "name": "logs",
       "version": "1.0.0"
     }
   ],

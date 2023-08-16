@@ -4,7 +4,8 @@
   "displayName": "AWS ELB",
   "description": "AWS Elastic Load Balancer collector",
   "license": "Apache-2.0",
-  "type": "logs_elb",
+  "type": "logs",
+  "type-alias": "logs-elb",
   "labels": ["log", "aws", "communication", "http", "cloud", "elb", "url"],
   "author": "OpenSearch",
   "sourceUrl": "https://github.com/opensearch-project/dashboards-observability/tree/main/server/adaptors/integrations/__data__/repository/aws_elb/info",
@@ -42,7 +43,7 @@
       "version": "1.0.0"
     },
     {
-      "name": "logs_elb",
+      "name": "logs",
       "version": "1.0.0"
     }
   ],

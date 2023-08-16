@@ -4,7 +4,8 @@
   "displayName": "AWS waf",
   "description": "AWS waf log collector",
   "license": "Apache-2.0",
-  "type": "logs_waf",
+  "type": "logs",
+  "type-alias": "logs-waf",
   "labels": ["log", "aws", "s3", "cloud", "waf"],
   "author": "OpenSearch",
   "sourceUrl": "https://github.com/opensearch-project/dashboards-observability/tree/main/server/adaptors/integrations/__data__/repository/aws_waf/info",
@@ -30,7 +31,7 @@
       "version": "1.0.0"
     },
     {
-      "name": "logs_waf",
+      "name": "logs",
       "version": "1.0.0"
     },
     {
