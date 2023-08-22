@@ -38,10 +38,12 @@ The Nginx Integration if part of the Observability Catalog:
 - **Description**: NGINX is open-source software for web serving, reverse proxying, caching, load balancing, media streaming, and more.
 - **Version**: 1.0
 - **URL**: [Nginx Integration on GitHub](https://github.com/opensearch-project/opensearch-catalog/blob/main/integrations/observability/nginx)
-- **Tags**: log, http, communication
-- **Logo**: ![Nginx Logo](https://github.com/opensearch-project/opensearch-catalog/blob/main/integrations/observability/nginx/static/logo.png)
+- **Tags**: `log`, `http`, `communication`
+- **Logo**: <_logo image url_>
 - **Gallery**:
-    - **Dashboard**: ![Dashboard Image](https://github.com/opensearch-project/opensearch-catalog/blob/main/integrations/observability/nginx/static/dashboard1.png)
+    - **Dashboard**: <_dashboard image url_>
+
+---
 
 ### Observability Integration Catalog
 Observability Integration Catalog is the default catalog which is bundled with OpenSearch release.
