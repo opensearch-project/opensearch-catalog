@@ -1,7 +1,6 @@
 {
-  "index_patterns": [
-    "sso_logs-*-*"
-  ],
+  "index_patterns": ["ss4o_logs-*-*"],
+  "priority": 900,
   "data_stream": {},
   "template": {
     "mappings": {
@@ -219,22 +218,5 @@
     }
   },
   "composed_of": [],
-  "version": 1,
-  "_meta": {
-    "description": "Simple Schema For Observability",
-    "catalog": "observability",
-    "type": "logs",
-    "correlations": [
-      {
-        "field": "spanId",
-        "foreign-schema": "traces",
-        "foreign-field": "spanId"
-      },
-      {
-        "field": "traceId",
-        "foreign-schema": "traces",
-        "foreign-field": "traceId"
-      }
-    ]
-  }
+  "version": 1
 }

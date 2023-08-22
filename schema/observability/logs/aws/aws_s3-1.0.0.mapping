@@ -5,53 +5,18 @@
         "version": "1.0.0",
         "catalog": "observability",
         "type": "logs",
-        "component": "aws_cloudfront"
+        "component": "s3",
+        "labels": ["aws", "s3"]
       },
       "properties": {
         "aws": {
           "properties": {
-            "cloudfront": {
+            "s3": {
               "properties": {
-                "c-ip": {
-                  "type": "ip"
-                },
-                "geo_location": {
-                  "type": "geo_point"
-                },
-                "geo_iso_code": {
+                "bucket_owner": {
                   "type": "keyword"
                 },
-                "geo_country": {
-                  "type": "keyword"
-                },
-                "geo_city": {
-                  "type": "keyword"
-                },
-                "ua_browser": {
-                  "type": "keyword"
-                },
-                "ua_browser_version": {
-                  "type": "keyword"
-                },
-                "ua_os": {
-                  "type": "keyword"
-                },
-                "ua_os_version": {
-                  "type": "keyword"
-                },
-                "ua_device": {
-                  "type": "keyword"
-                },
-                "ua_category": {
-                  "type": "keyword"
-                },
-                "c-port": {
-                  "type": "keyword"
-                },
-                "cs-cookie": {
-                  "type": "text"
-                },
-                "cs-host": {
+                "bucket": {
                   "type": "text",
                   "fields": {
                     "keyword": {
@@ -60,7 +25,7 @@
                     }
                   }
                 },
-                "cs-referer": {
+                "remote_ip": {
                   "type": "text",
                   "fields": {
                     "keyword": {
@@ -69,7 +34,7 @@
                     }
                   }
                 },
-                "cs-user-agent": {
+                "requester": {
                   "type": "text",
                   "fields": {
                     "keyword": {
@@ -78,55 +43,67 @@
                     }
                   }
                 },
-                "cs-bytes": {
+                "request_id": {
+                  "type": "text",
+                  "fields": {
+                    "keyword": {
+                      "type": "keyword",
+                      "ignore_above": 256
+                    }
+                  }
+                },
+                "operation": {
+                  "type": "keyword"
+                },
+                "key": {
+                  "type": "text",
+                  "fields": {
+                    "keyword": {
+                      "type": "keyword",
+                      "ignore_above": 256
+                    }
+                  }
+                },
+                "copy_source": {
+                  "type": "keyword"
+                },
+                "upload_id": {
+                  "type": "keyword"
+                },
+                "delete": {
+                  "type": "keyword"
+                },
+                "part_number": {
+                  "type": "keyword"
+                },
+                "request_uri": {
+                  "type": "text",
+                  "fields": {
+                    "keyword": {
+                      "type": "keyword",
+                      "ignore_above": 256
+                    }
+                  }
+                },
+                "http_status": {
+                  "type": "keyword"
+                },
+                "error_code": {
+                  "type": "keyword"
+                },
+                "bytes_sent": {
                   "type": "long"
                 },
-                "cs-method": {
-                  "type": "keyword"
-                },
-                "cs-protocol": {
-                  "type": "keyword"
-                },
-                "cs-protocol-version": {
-                  "type": "keyword"
-                },
-                "cs-uri-query": {
-                  "type": "text"
-                },
-                "cs-uri-stem": {
-                  "type": "text",
-                  "fields": {
-                    "keyword": {
-                      "type": "keyword",
-                      "ignore_above": 256
-                    }
-                  }
-                },
-                "fle-encrypted-fields": {
-                  "type": "text"
-                },
-                "fle-status": {
-                  "type": "keyword"
-                },
-                "sc-bytes": {
+                "object_size": {
                   "type": "long"
                 },
-                "sc-content-len": {
-                  "type": "long"
+                "total_time": {
+                  "type": "integer"
                 },
-                "sc-content-type": {
-                  "type": "keyword"
+                "turn_around_time": {
+                  "type": "integer"
                 },
-                "sc-range-end": {
-                  "type": "long"
-                },
-                "sc-range-start": {
-                  "type": "long"
-                },
-                "sc-status": {
-                  "type": "keyword"
-                },
-                "ssl-cipher": {
+                "referrer": {
                   "type": "text",
                   "fields": {
                     "keyword": {
@@ -135,22 +112,7 @@
                     }
                   }
                 },
-                "ssl-protocol": {
-                  "type": "keyword"
-                },
-                "time-taken": {
-                  "type": "float"
-                },
-                "time-to-first-byte": {
-                  "type": "float"
-                },
-                "x-edge-detailed-result-type": {
-                  "type": "keyword"
-                },
-                "x-edge-location": {
-                  "type": "keyword"
-                },
-                "x-edge-request-id": {
+                "user_agent": {
                   "type": "text",
                   "fields": {
                     "keyword": {
@@ -159,13 +121,10 @@
                     }
                   }
                 },
-                "x-edge-result-type": {
+                "version_id": {
                   "type": "keyword"
                 },
-                "x-edge-response-result-type": {
-                  "type": "keyword"
-                },
-                "x-forwarded-for": {
+                "host_id": {
                   "type": "text",
                   "fields": {
                     "keyword": {
@@ -174,7 +133,10 @@
                     }
                   }
                 },
-                "x-host-header": {
+                "signature_version": {
+                  "type": "keyword"
+                },
+                "cipher_suite": {
                   "type": "text",
                   "fields": {
                     "keyword": {
@@ -182,6 +144,21 @@
                       "ignore_above": 256
                     }
                   }
+                },
+                "authentication_type": {
+                  "type": "keyword"
+                },
+                "host_header": {
+                  "type": "text",
+                  "fields": {
+                    "keyword": {
+                      "type": "keyword",
+                      "ignore_above": 256
+                    }
+                  }
+                },
+                "tls_version": {
+                  "type": "keyword"
                 }
               }
             }

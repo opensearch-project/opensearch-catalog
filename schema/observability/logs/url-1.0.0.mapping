@@ -5,7 +5,8 @@
         "version": "1.0.0",
         "catalog": "observability",
         "type": "logs",
-        "component": "url"
+        "component": "url",
+        "labels": ["url"]
       },
       "properties": {
         "url": {
@@ -40,7 +41,16 @@
             "query": {
               "type": "keyword"
             },
+            "extension": {
+              "type": "keyword"
+            },
             "fragment": {
+              "type": "keyword"
+            },
+            "username": {
+              "type": "keyword"
+            },
+            "password": {
               "type": "keyword"
             }
           }
