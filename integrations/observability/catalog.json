@@ -11,119 +11,137 @@
     "logo": {
       "annotation": "OpenSearch Logo",
       "path": "https://opensearch.org/assets/brand/PNG/Logo/opensearch_logo_darkmode.png"
-    },
-    "gallery": [
-      {
-        "annotation": "Apache Integration",
-        "path": "https://github.com/opensearch-project/opensearch-catalog/integrations/observability/apache/static/dashboard1.png"
-      },
-      {
-        "annotation": "Cloudfront Integration",
-        "path": "https://github.com/opensearch-project/opensearch-catalog/integrations/observability/aws_cloudfront/static/dashboard.png"
-      },
-      {
-        "annotation": "Cloudtrail Integration",
-        "path": "https://github.com/opensearch-project/opensearch-catalog/integrations/observability/aws_cloudtrail/static/dashboard.png"
-      },
-      {
-        "annotation": "ELB Integration",
-        "path": "https://github.com/opensearch-project/opensearch-catalog/integrations/observability/aws_elb/static/dashboard1.png"
-      },
-      {
-        "annotation": "RDS Integration",
-        "path": "https://github.com/opensearch-project/opensearch-catalog/integrations/observability/aws_rds/static/dashboard.png"
-      },
-      {
-        "annotation": "S3 Integration",
-        "path": "https://github.com/opensearch-project/opensearch-catalog/integrations/observability/aws_s3/static/dashboard.png"
-      },
-      {
-        "annotation": "VPC Flow Integration",
-        "path": "https://github.com/opensearch-project/opensearch-catalog/integrations/observability/aws_vpc/static/dashboard1.png"
-      },
-      {
-        "annotation": "WAF Integration",
-        "path": "https://github.com/opensearch-project/opensearch-catalog/integrations/observability/aws_waf/static/dashboard.png"
-      },
-      {
-        "annotation": "K8s Integration",
-        "path": "https://github.com/opensearch-project/opensearch-catalog/integrations/observability/k8s/static/dashboard.png"
-      },
-      {
-        "annotation": "Nginx Integration",
-        "path": "https://github.com/opensearch-project/opensearch-catalog/integrations/observability/nginx/static/dashboard1.png"
-      }
-    ]
+    }
   },
   "components": [
     {
       "component": "Apache Integration",
       "description": "Apache is an open source web server software for modern operating systems including UNIX and Windows.",
       "version": "1.0",
-      "url": "https://github.com/opensearch-project/opensearch-catalog/integrations/observability/apache",
-      "tags": ["log", "communication", "http"]
+      "url": "https://github.com/opensearch-project/opensearch-catalog/blob/main/integrations/observability/apache",
+      "logo": "https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/apache/static/logo.png",
+      "gallery": [
+        {
+          "asset": "dashboard",
+          "image": "https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/apache/static/dashboard1.png"
+        }],
+        "tags": ["log", "communication", "http"]
     },
     {
       "component": "Amazon CloudFront Integration",
       "description": "Amazon CloudFront is a fast content delivery network (CDN) service that securely delivers data, videos, applications, and APIs to customers globally with low latency and high transfer speeds. CloudFront is integrated with other Amazon Web Services products to give developers and businesses an easy way to distribute content to end-users with low latency and high data transfer speeds.",
       "version": "1.0",
-      "url": "https://github.com/opensearch-project/opensearch-catalog/integrations/observability/aws_cloudfront",
+      "url": "https://github.com/opensearch-project/opensearch-catalog/blob/main/integrations/observability/aws_cloudfront",
+      "logo": "https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/aws_cloudfront/static/logo.png",
+      "gallery": [
+        {
+          "asset": "dashboard",
+          "image": "https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/aws_cloudfront/static/dashboard.png"
+        }],
       "tags": ["log", "aws", "s3", "cloud", "cloudfront"]
     },
     {
       "component": "Amazon CloudTrail Integration",
       "description": "AWS CloudTrail is a service that enables governance, compliance, operational auditing, and risk auditing of your AWS account. With CloudTrail, you can log, continuously monitor, and retain account activity related to actions across your AWS infrastructure.",
       "version": "1.0",
-      "url": "https://github.com/opensearch-project/opensearch-catalog/integrations/observability/aws_cloudtrail",
+      "url": "https://github.com/opensearch-project/opensearch-catalog/blob/main/integrations/observability/aws_cloudtrail",
+      "logo": "https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/aws_cloudtrail/static/logo.png",
+      "gallery": [
+        {
+          "asset": "dashboard",
+          "image": "https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/aws_cloudtrail/static/dashboard.png"
+        }],
       "tags": ["log", "aws", "s3", "cloud", "cloudtrail"]
     },
     {
       "component": "Amazon ELB Integration",
       "description": "ELB Access Logs is a feature that allows you to capture information about requests sent to your load balancer.",
       "version": "1.0",
-      "url": "https://github.com/opensearch-project/opensearch-catalog/integrations/observability/aws_elb",
+      "url": "https://github.com/opensearch-project/opensearch-catalog/blob/main/integrations/observability/aws_elb",
+      "logo": "https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/aws_elb/static/logo.svg",
+      "gallery": [
+        {
+          "asset": "dashboard",
+          "image": "https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/aws_elb/static/dashboard1.png"
+        }],
       "tags": ["log", "aws", "communication", "http", "cloud", "elb", "url"]
     },
     {
       "component": "Amazon RDS Integration",
       "description": "AWS RDS (Relational Database Service) is a managed service that makes it easy to set up, operate, and scale a relational database in the cloud.",
       "version": "1.0",
-      "url": "https://github.com/opensearch-project/opensearch-catalog/integrations/observability/aws_rds",
+      "url": "https://github.com/opensearch-project/opensearch-catalog/blob/main/integrations/observability/aws_rds",
+      "logo": "https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/aws_rds/static/logo.png",
+      "gallery": [
+        {
+          "asset": "dashboard",
+          "image": "https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/aws_rds/static/dashboard.png"
+        }],
       "tags": ["log", "aws", "s3", "cloud", "rds"]
     },
     {
       "component": "Amazon S3 Integration",
       "description": "Amazon S3 (Simple Storage Service) is an object storage service that offers industry-leading scalability, data availability, security, and performance. It is designed to make web-scale computing easier for developers.",
       "version": "1.0",
-      "url": "https://github.com/opensearch-project/opensearch-catalog/integrations/observability/aws_s3",
+      "url": "https://github.com/opensearch-project/opensearch-catalog/blob/main/integrations/observability/aws_s3",
+      "logo": "https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/aws_s3/static/logo.png",
+      "gallery": [
+        {
+          "asset": "dashboard",
+          "image": "https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/aws_s3/static/dashboard.png"
+        }],
       "tags": ["log", "aws", "s3", "cloud"]
     },
     {
       "component": "Amazon VPC Flow Integration",
       "description": "AWS VPC Flow Logs is a feature that enables you to capture information about the IP traffic going to and from network interfaces in your VPC.",
       "version": "1.0",
-      "url": "https://github.com/opensearch-project/opensearch-catalog/integrations/observability/aws_vpc_flow",
+      "url": "https://github.com/opensearch-project/opensearch-catalog/blob/main/integrations/observability/aws_vpc_flow",
+      "logo": "https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/aws_vpc_flow/static/logo.png",
+      "gallery": [
+        {
+          "asset": "dashboard",
+          "image": "https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/aws_vpc_flow/static/dashboard1.png"
+        }],
       "tags": ["log", "aws", "s3", "cloud", "communication", "vpc"]
     },
     {
       "component": "Amazon WAF Integration",
       "description": "AWS WAF (Web Application Firewall) is a web application firewall service that helps protect your web applications from common web exploits that could affect application availability, compromise security, or consume excessive resources. AWS WAF provides firewall rules to filter and monitor HTTP/HTTPS requests based on specific conditions.",
       "version": "1.0",
-      "url": "https://github.com/opensearch-project/opensearch-catalog/integrations/observability/aws_waf",
+      "url": "https://github.com/opensearch-project/opensearch-catalog/blob/main/integrations/observability/aws_waf",
+      "logo": "https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/aws_waf/static/logo.png",
+      "gallery": [
+        {
+          "asset": "dashboard",
+          "image": "https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/aws_waf/static/dashboard.png"
+        }],
       "tags": ["log", "aws", "s3", "cloud", "waf"]
     },
     {
       "component": "Kubernetes Integration",
       "description": "Kubernetes is an open-source container orchestration platform that automates the deployment, scaling, and management of containerized applications. It provides a robust and scalable infrastructure for running applications in a cloud-native environment.\n/HTTPS requests based on specific conditions.",
       "version": "1.0",
-      "url": "https://github.com/opensearch-project/opensearch-catalog/integrations/observability/k8s",
+      "url": "https://github.com/opensearch-project/opensearch-catalog/blob/main/integrations/observability/k8s",
+      "logo": "https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/k8s/static/logo.png",
+      "gallery": [
+        {
+          "asset": "dashboard",
+          "image": "https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/k8s/static/dashboard.png"
+        }],
       "tags": ["log", "k8s", "cloud", "container"]
     },
     {
       "component": "Nginx Integration",
       "description": "NGINX is open source software for web serving, reverse proxying, caching, load balancing, media streaming, and more./HTTPS requests based on specific conditions.",
       "version": "1.0",
-      "url": "https://github.com/opensearch-project/opensearch-catalog/integrations/observability/nginx",
+      "url": "https://github.com/opensearch-project/opensearch-catalog/blob/main/integrations/observability/nginx",
+      "logo": "https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/nginx/static/logo.svg",
+      "gallery": [
+        {
+          "asset": "dashboard",
+          "image": "https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/nginx/static/dashboard1.png"
+        }],
       "tags": ["log", "http", "communication"]
     }
   ]

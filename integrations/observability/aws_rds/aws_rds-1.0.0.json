@@ -12,7 +12,7 @@
   "statics": {
     "logo": {
       "annotation": "AWS RDS Logo",
-      "path": "aws-rds-icon.png"
+      "path": "logo.png"
     },
     "gallery": [
       {
