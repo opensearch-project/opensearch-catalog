@@ -1,0 +1,157 @@
+{
+  "template": {
+    "mappings": {
+      "_meta": {
+        "version": "1.0.0",
+        "catalog": "observability",
+        "type": "traces",
+        "component": "http",
+        "labels": ["http"]
+      },
+      "properties": {
+        "attributes": {
+          "type": "object",
+          "properties": {
+            "http": {
+              "properties": {
+                "user_agent.original": {
+                  "type": "keyword",
+                  "ignore_above": 1024
+                },
+                "network.transport": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                },
+                "network.type": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                },
+                "network.protocol.name": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                },
+                "network.protocol.version": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                },
+                "request": {
+                  "type": "object",
+                  "properties": {
+                    "method": {
+                      "type": "keyword",
+                      "ignore_above": 256
+                    },
+                    "method_original": {
+                      "type": "keyword",
+                      "ignore_above": 256
+                    },
+                    "body.size": {
+                      "type": "long"
+                    },
+                    "header": {
+                      "type": "object"
+                    }
+                  }
+                },
+                "response": {
+                  "type": "object",
+                  "properties": {
+                    "status_code": {
+                      "type": "keyword",
+                      "ignore_above": 256
+                    },
+                    "body.size": {
+                      "type": "long"
+                    },
+                    "header": {
+                      "type": "object"
+                    }
+                  }
+                },
+                "client": {
+                  "type": "object",
+                  "properties": {
+                    "server.socket.address": {
+                      "type": "keyword",
+                      "ignore_above": 1024
+                    },
+                    "server.socket.domain": {
+                      "type": "keyword",
+                      "ignore_above": 1024
+                    },
+                    "server.address": {
+                      "type": "keyword",
+                      "ignore_above": 1024
+                    },
+                    "server.port": {
+                      "type": "long"
+                    },
+                    "server.socket.port": {
+                      "type": "long"
+                    },
+                    "resend_count": {
+                      "type": "long"
+                    },
+                    "url.full": {
+                      "type": "keyword",
+                      "ignore_above": 2048
+                    }
+                  }
+                },
+                "server": {
+                  "type": "object",
+                  "properties": {
+                    "route": {
+                      "type": "keyword",
+                      "ignore_above": 1024
+                    },
+                    "address": {
+                      "type": "keyword",
+                      "ignore_above": 1024
+                    },
+                    "port": {
+                      "type": "long"
+                    },
+                    "socket.address": {
+                      "type": "keyword",
+                      "ignore_above": 1024
+                    },
+                    "socket.port": {
+                      "type": "long"
+                    },
+                    "client.address": {
+                      "type": "keyword",
+                      "ignore_above": 1024
+                    },
+                    "client.port": {
+                      "type": "long"
+                    },
+                    "client.socket.address": {
+                      "type": "keyword",
+                      "ignore_above": 1024
+                    },
+                    "client.socket.port": {
+                      "type": "long"
+                    },
+                    "url.path": {
+                      "type": "keyword",
+                      "ignore_above": 1024
+                    },
+                    "url.query": {
+                      "type": "keyword",
+                      "ignore_above": 1024
+                    },
+                    "url.schema": {
+                      "type": "keyword",
+                      "ignore_above": 256
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

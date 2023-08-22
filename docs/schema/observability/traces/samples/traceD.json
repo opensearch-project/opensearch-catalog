@@ -1,0 +1,55 @@
+{
+  "attributes": {
+    "data_stream": {
+      "dataset": "default",
+      "namespace": "namespace",
+      "type": "span"
+    },
+    "http.flavor": "1.1",
+    "http.method": "GET",
+    "http.response_content_length": 11,
+    "http.status_code": 200,
+    "http.url": "http://demo-server:7080/hello",
+    "net.peer.name": "demo-server",
+    "net.peer.port": 7080
+  },
+  "droppedAttributesCount": 0,
+  "droppedEventsCount": 0,
+  "droppedLinksCount": 0,
+  "endTime": "2023-07-31T16:45:20.599043855Z",
+  "instrumentationScope": {
+    "droppedAttributesCount": 0,
+    "name": "go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp",
+    "schemaUrl": "",
+    "version": "0.42.0"
+  },
+  "kind": "Client",
+  "name": "HTTP GET",
+  "parentSpanId": "c9820c4fcb181475",
+  "resource": {
+    "host.name": "d4d3cf05c754",
+    "process.command_args": [
+      "/app/main"
+    ],
+    "process.executable.name": "main",
+    "process.executable.path": "/app/main",
+    "process.owner": "root",
+    "process.pid": 1,
+    "process.runtime.description": "go version go1.20.6 linux/amd64",
+    "process.runtime.name": "go",
+    "process.runtime.version": "go1.20.6",
+    "service.name": "demo-client",
+    "telemetry.sdk.language": "go",
+    "telemetry.sdk.name": "opentelemetry",
+    "telemetry.sdk.version": "1.16.0"
+  },
+  "spanId": "ae9dde3a42273a8b",
+  "startTime": "2023-07-31T16:45:19.863862547Z",
+  "status": {
+    "code": "Unset",
+    "message": ""
+  },
+  "@timestamp": "2023-07-31T16:45:19.863862547Z",
+  "traceId": "2566150bc56619c53fc89b052eaba4f5",
+  "traceState": ""
+}
