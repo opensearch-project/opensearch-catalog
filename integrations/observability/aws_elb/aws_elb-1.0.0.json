@@ -6,7 +6,7 @@
   "license": "Apache-2.0",
   "type": "logs",
   "type-alias": "logs-elb",
-  "labels": ["log", "aws", "communication", "http", "cloud", "elb", "url"],
+  "labels": ["log", "aws", "communication", "http", "cloud", "elb", "url", "s3-datasource"],
   "author": "OpenSearch",
   "sourceUrl": "https://github.com/opensearch-project/dashboards-observability/tree/main/server/adaptors/integrations/__data__/repository/aws_elb/info",
   "statics": {
@@ -48,6 +48,24 @@
     }
   ],
   "assets": {
+    "tables": [
+      {
+        "name": "aws_elb_s3_table",
+        "version": "1.0.0"
+      },
+      {
+        "name": "aws_elb_s3_skipping_index",
+        "version": "1.0.0"
+      }
+    ] ,
+    "indices": {
+      "name": "aws_elb_s3_opensearch_skipping_index_template",
+      "version": "1.0.0"
+    },
+    "queries": {
+      "name": "",
+      "version": "1.0.0"
+    },
     "savedObjects": {
       "name": "aws_elb",
       "version": "1.0.0"

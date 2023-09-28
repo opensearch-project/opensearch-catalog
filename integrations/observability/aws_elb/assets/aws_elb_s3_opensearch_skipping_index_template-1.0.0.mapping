@@ -1,0 +1,34 @@
+{
+  "_meta": {
+    "version": "0.1",
+    "indexConfig": {
+      "kind": "skipping",
+      "properties": {
+        "indexedColumns": [
+          {
+            "kind": "Partition",
+            "columnName": "year",
+            "columnType": "int"
+          },
+          {
+            "kind": "ValuesSet",
+            "columnName": "elb_status_code",
+            "columnType": "int"
+          }
+        ]
+      }
+    },
+    "source": "alb_logs"
+  },
+  "properties": {
+    "year": {
+      "type": "integer"
+    },
+    "elb_status_code": {
+      "type": "integer"
+    },
+    "file_path": {
+      "type": "keyword"
+    }
+  }
+}
