@@ -102,7 +102,6 @@
         "description": "Count the number of HTTP GET requests received by the load balancer grouped by the client IP address",
         "version": "1.0.0"
       },
-      },
       {
         "name": "largest_latency_by_date_range",
         "description": "List each time in a specified date range when the target processing time was more than ? (5) seconds",
