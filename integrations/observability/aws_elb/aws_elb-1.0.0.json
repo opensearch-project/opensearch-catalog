@@ -6,7 +6,16 @@
   "license": "Apache-2.0",
   "type": "logs",
   "type-alias": "logs-elb",
-  "labels": ["log", "aws", "communication", "http", "cloud", "elb", "url", "s3-datasource"],
+  "labels": [
+    "log",
+    "aws",
+    "communication",
+    "http",
+    "cloud",
+    "elb",
+    "url",
+    "s3-datasource"
+  ],
   "author": "OpenSearch",
   "sourceUrl": "https://github.com/opensearch-project/dashboards-observability/tree/main/server/adaptors/integrations/__data__/repository/aws_elb/info",
   "statics": {
@@ -57,15 +66,54 @@
         "name": "aws_elb_s3_skipping_index",
         "version": "1.0.0"
       }
-    ] ,
+    ],
     "indices": {
       "name": "aws_elb_s3_opensearch_skipping_index_template",
       "version": "1.0.0"
     },
-    "queries": {
-      "name": "",
-      "version": "1.0.0"
-    },
+    "queries": [
+      {
+        "name": "average_amount_of_data_query",
+        "description": " List the average amount of data (in kilobytes) that's passing through the Application Load Balancer in request or response pairs",
+        "version": "1.0.0"
+      },
+      {
+        "name": "distinct_client_count_query",
+        "description": "List all client IP addresses that accessed the Application Load Balancer, and how many times they accessed the Application Load Balancer",
+        "version": "1.0.0"
+      },
+      {
+        "name": "clients_by_visiting_urls",
+        "description": "List clients, in descending order, by the number of times that each client visited a specified URL",
+        "version": "1.0.0"
+      },
+      {
+        "name": "clients_by_data",
+        "description": "List clients, in descending order, by the amount of data (in megabytes) that each client sent in their requests to the Application Load Balancer",
+        "version": "1.0.0"
+      },
+      {
+        "name": "target_traffic_imbalance",
+        "description": "List all targets that the Application Load Balancer routes traffic to and the number of routed requests per target, by percentage distribution",
+        "version": "1.0.0"
+      },
+      {
+        "name": "count_http_by_ip",
+        "description": "Count the number of HTTP GET requests received by the load balancer grouped by the client IP address",
+        "version": "1.0.0"
+      },
+      },
+      {
+        "name": "largest_latency_by_date_range",
+        "description": "List each time in a specified date range when the target processing time was more than ? (5) seconds",
+        "version": "1.0.0"
+      },
+      {
+        "name": "most_frequent_user_agents",
+        "description": "List the ? (10) URLs that ? (Firefox) users accessed most frequently, in descending order",
+        "version": "1.0.0"
+      }
+    ],
     "savedObjects": {
       "name": "aws_elb",
       "version": "1.0.0"

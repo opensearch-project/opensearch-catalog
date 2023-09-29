@@ -32,5 +32,13 @@ CREATE EXTERNAL TABLE IF NOT EXISTS alb_logs (
             target_status_code_list string,
             classification string,
             classification_reason string
-            )
-LOCATION 's3://your-alb-logs-directory/AWSLogs/<ACCOUNT-ID>/elasticloadbalancing/<REGION>/'
+       )PARTITIONED BY ( year STRING, month STRING, day STRING )
+            ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.RegexSerDe'
+            WITH SERDEPROPERTIES (
+            'serialization.format' = '1',
+            'input.regex' = 
+        '([^ ]*) ([^ ]*) ([^ ]*) ([^ ]*):([0-9]*) ([^ ]*)[:-]([0-9]*) ([-.0-9]*) ([-.0-9]*) ([-.0-9]*) (|[-0-9]*) (-|[-0-9]*) ([-0-9]*) ([-0-9]*) \"([^ ]*) (.*) (- |[^ ]*)\" \"([^\"]*)\" ([A-Z0-9-_]+) ([A-Za-z0-9.-]*) ([^ ]*) \"([^\"]*)\" \"([^\"]*)\" \"([^\"]*)\" ([-.0-9]*) ([^ ]*) \"([^\"]*)\" \"([^\"]*)\" \"([^ ]*)\" \"([^\s]+?)\" \"([^\s]+)\" \"([^ ]*)\" \"([^ ]*)\"')
+            LOCATION '/Users/daichen/Temp/us-west-2/';
+            
+-- # Add partition individually following Hive convention like year=2022/month=04/day=01
+ALTER TABLE alb_logs ADD PARTITION (year='?',month='?', day='?') location '?';
