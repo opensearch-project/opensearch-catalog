@@ -1,0 +1,27 @@
+{
+  "template": {
+    "mappings": {
+      "_meta": {
+        "version": "0.1",
+        "indexConfig": {
+          "kind": "skipping",
+          "properties": {
+            "indexedColumns": [
+              {
+                "kind": "Partition",
+                "columnName": "year",
+                "columnType": "int"
+              },
+              {
+                "kind": "ValuesSet",
+                "columnName": "elb_status_code",
+                "columnType": "int"
+              }
+            ]
+          }
+        },
+        "source": "alb_logs"
+      }
+    }
+  }
+}
