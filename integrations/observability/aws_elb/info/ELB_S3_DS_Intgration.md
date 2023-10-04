@@ -63,14 +63,15 @@ The next section describes the integration responsibilities for creating the req
 Assuming all the prerequisites mentioned above are resolved, the first step would be to create the ELB logical table on the catalog ([Glue](https://aws.amazon.com/glue/)/[Hive](https://hive.apache.org/)) 
 
 - [The ELB table definition](../assets/tables/aws_elb_s3_table-1.0.0.sql) this table definition is used by the Spark/EMR catalog)
-
 Once the table is created the next phase will be to generate the index template for the ELB log based on the simple schema for Observability index standard.
+
 This index template will be augmented with the [covering index component template](../assets/indices/aws_elb_covering_index-1.0.0.mapping) (In addition to the other component templates)
 So that the flint data loading process will have a valid index to load into.
 
 - Once this is done, the next phase will be to initiate the s3 based data loading into the ELB index by calling the [`refresh` command](../assets/tables/aws_elb_s3_refresh_covering_index-1.0.0.sql)
 
 The last part would be loading the visual assets including the dashboard that will show the ELB status according to the covering index data. 
+- [Dashboards & visualization loading](../assets/aws_elb-1.0.0.ndjson) 
 
 ### User Custom Parameters
 The user has the next custom parameter which can be used to dictate the names of the indices and tables:
