@@ -11,11 +11,11 @@ This is a brief overview of a sample ingestion flow for the AWS ELB integration 
 ## S3 Table Definition
 Using S3 datasource as the raw data for this integration requires the following assets to be present:
 
- - S3-ELB [Table definition](../assets/aws_elb_s3_table-1.0.0.sql) this table definition is used by the Spark/EMR catalog
- - S3-ELB [Acceleration table definition](../assets/aws_elb_s3_skipping_index-1.0.0.sql) this table is used by opensearch flint-spark 
- - S3 opensearch acceleration index template definition 
-   - Covering Index for accelerating general SQL/PPL queries targeted for S3
-   - Materialized view Index for accelerating the ELB dashboards based on OpenSearch indices
+ - S3-ELB [Table definition](../assets/tables/aws_elb_s3_table-1.0.0.sql) this table definition is used by the Spark/EMR catalog
+ - S3-ELB [Acceleration table refresh command](../assets/tables/aws_elb_s3_refresh_covering_index-1.0.0.sql) this command will initiate the flint job processing that
+   will populate the secondary index according to the specified fields in the mapping metadata section.
+ - S3 [opensearch acceleration index template definition ](../assets/indices/aws_elb_covering_index-1.0.0.mapping)
+   - Covering Index for accelerating general SQL/PPL queries targeted for S3 and cached in OpenSearch secondery index - see  [covering index acceleration process](https://github.com/opensearch-project/opensearch-spark/blob/main/docs/index.md#covering-index).
 
 
 #### ELB table mapping
@@ -57,3 +57,24 @@ The next columns mapping between the S3-ELB table definition and the ELB schema 
 | classification              | aws.elb.classification         | string   |
 | classification_reason       | aws.elb.classification_reason  | string   |
 
+### Integration Flow
+The next section describes the integration responsibilities for creating the required assets to project ELB s3 based tables into OpenSearch ELB dashboards.
+
+Assuming all the prerequisites mentioned above are resolved, the first step would be to create the ELB logical table on the catalog ([Glue](https://aws.amazon.com/glue/)/[Hive](https://hive.apache.org/)) 
+
+- [The ELB table definition](../assets/tables/aws_elb_s3_table-1.0.0.sql) this table definition is used by the Spark/EMR catalog)
+
+Once the table is created the next phase will be to generate the index template for the ELB log based on the simple schema for Observability index standard.
+This index template will be augmented with the [covering index component template](../assets/indices/aws_elb_covering_index-1.0.0.mapping) (In addition to the other component templates)
+So that the flint data loading process will have a valid index to load into.
+
+- Once this is done, the next phase will be to initiate the s3 based data loading into the ELB index by calling the [`refresh` command](../assets/tables/aws_elb_s3_refresh_covering_index-1.0.0.sql)
+
+The last part would be loading the visual assets including the dashboard that will show the ELB status according to the covering index data. 
+
+### User Custom Parameters
+The user has the next custom parameter which can be used to dictate the names of the indices and tables:
+
+- {table_name} - the table (FQN) name used to create the catalog table, example:`glue.default.elb-logs`
+- {s3_bucket_location} - S3 bucket location, example -`'s3://your-alb-logs-directory/AWSLogs/<ACCOUNT-ID>/elasticloadbalancing/<REGION>/'`
+- {object_name} - the actual object name used to refer to by the index name , example -`elb_logs`

@@ -1,4 +1,4 @@
-CREATE EXTERNAL TABLE IF NOT EXISTS alb_logs (
+CREATE EXTERNAL TABLE IF NOT EXISTS {table_name} (
             type string as aws.elb.elb_type,
             time string as @timestamp,
             elb string as aws.elb.elb_name,
@@ -32,13 +32,9 @@ CREATE EXTERNAL TABLE IF NOT EXISTS alb_logs (
             target_status_code_list string as aws.elb.target_status_code_list,
             classification string as aws.elb.classification ,
             classification_reason string as  aws.elb.classification_reason
-       )PARTITIONED BY ( year STRING, month STRING, day STRING )
+             )
             ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.RegexSerDe'
             WITH SERDEPROPERTIES (
             'serialization.format' = '1',
-            'input.regex' = 
-        '([^ ]*) ([^ ]*) ([^ ]*) ([^ ]*):([0-9]*) ([^ ]*)[:-]([0-9]*) ([-.0-9]*) ([-.0-9]*) ([-.0-9]*) (|[-0-9]*) (-|[-0-9]*) ([-0-9]*) ([-0-9]*) \"([^ ]*) (.*) (- |[^ ]*)\" \"([^\"]*)\" ([A-Z0-9-_]+) ([A-Za-z0-9.-]*) ([^ ]*) \"([^\"]*)\" \"([^\"]*)\" \"([^\"]*)\" ([-.0-9]*) ([^ ]*) \"([^\"]*)\" \"([^\"]*)\" \"([^ ]*)\" \"([^\s]+?)\" \"([^\s]+)\" \"([^ ]*)\" \"([^ ]*)\"')
-            LOCATION {location};
-            
--- # Add partition individually following Hive convention like year=2022/month=04/day=01
-ALTER TABLE alb_logs ADD PARTITION (year='?',month='?', day='?') location '?';
+            'input.regex' = '([^ ]*) ([^ ]*) ([^ ]*) ([^ ]*):([0-9]*) ([^ ]*)[:-]([0-9]*) ([-.0-9]*) ([-.0-9]*) ([-.0-9]*) (|[-0-9]*) (-|[-0-9]*) ([-0-9]*) ([-0-9]*) \"([^ ]*) (.*) (- |[^ ]*)\" \"([^\"]*)\" ([A-Z0-9-_]+) ([A-Za-z0-9.-]*) ([^ ]*) \"([^\"]*)\" \"([^\"]*)\" \"([^\"]*)\" ([-.0-9]*) ([^ ]*) \"([^\"]*)\" \"([^\"]*)\" \"([^ ]*)\" \"([^\s]+?)\" \"([^\s]+)\" \"([^ ]*)\" \"([^ ]*)\"')
+            LOCATION {s3_bucket_location}            
