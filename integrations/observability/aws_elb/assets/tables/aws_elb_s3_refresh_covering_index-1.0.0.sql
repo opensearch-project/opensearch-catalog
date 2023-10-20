@@ -1,1 +1,0 @@
-REFRESH INDEX name ON {index_name}
