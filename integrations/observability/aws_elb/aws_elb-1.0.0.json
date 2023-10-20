@@ -48,10 +48,6 @@
       "version": "1.0.0"
     },
     {
-      "name": "aws_elb_covering_index",
-      "version": "1.0.0"
-    },
-    {
       "name": "url",
       "version": "1.0.0"
     },
@@ -67,7 +63,7 @@
         "version": "1.0.0"
       },
       {
-        "name": "aws_elb_s3_refresh_covering_index",
+        "name": "aws_elb_s3_mv_index",
         "version": "1.0.0"
       }
     ],
