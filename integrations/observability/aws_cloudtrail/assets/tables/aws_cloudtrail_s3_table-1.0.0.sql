@@ -1,4 +1,4 @@
-CREATE EXTERNAL TABLE IF NOT EXISTS ${table} (
+CREATE TABLE IF NOT EXISTS ${table} (
     Records ARRAY<STRUCT<
         awsRegion: STRING,
         eventCategory: STRING,
