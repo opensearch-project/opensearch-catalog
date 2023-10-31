@@ -27,6 +27,10 @@ CREATE MATERIALIZED VIEW {table_name}_mview AS
         pkt_src_aws_service as `aws.vpc.pkt-src-aws-service`,
         pkt_dst_aws_service as `aws.vpc.pkt-dst-aws-service`,
         traffic_path as `aws.vpc.traffic-path`,
-        flow_direction as `aws.vpc.flow-direction`
+        CASE
+            WHEN regexp(dstaddr, '(10\\..*)|(192\\.168\\..*)|(172\\.1[6-9]\\..*)|(172\\.2[0-9]\\..*)|(172\\.3[0-1]\\.*)')
+            THEN 'ingress'
+            ELSE 'egress'
+        END AS `aws.vpc.flow-direction`
 FROM
     {table_name};
