@@ -11,7 +11,7 @@ This is a brief overview of a sample ingestion flow for the AWS ELB integration 
 ## S3 Table Definition
 Using S3 datasource as the raw data for this integration requires the following assets to be present:
 
- - S3-ELB [Table definition](../assets/tables/aws_elb_s3_table-1.0.0.sql) this table definition is used by the Spark/EMR catalog
+ - S3-ELB [Table definition](../assets/tables/create_table_elb-1.0.0.sql) this table definition is used by the Spark/EMR catalog
  - S3-ELB [Acceleration table refresh command](../assets/tables/aws_elb_s3_refresh_covering_index-1.0.0.sql) this command will initiate the flint job processing that
    will populate the secondary index according to the specified fields in the mapping metadata section.
  - S3 [opensearch acceleration index template definition ](../assets/indices/aws_elb_covering_index-1.0.0.mapping)
@@ -62,7 +62,7 @@ The next section describes the integration responsibilities for creating the req
 
 Assuming all the prerequisites mentioned above are resolved, the first step would be to create the ELB logical table on the catalog ([Glue](https://aws.amazon.com/glue/)/[Hive](https://hive.apache.org/)) 
 
-- [The ELB table definition](../assets/tables/aws_elb_s3_table-1.0.0.sql) this table definition is used by the Spark/EMR catalog)
+- [The ELB table definition](../assets/tables/create_table_elb-1.0.0.sql) this table definition is used by the Spark/EMR catalog)
 Once the table is created the next phase will be to generate the index template for the ELB log based on the simple schema for Observability index standard.
 
 This index template will be augmented with the [covering index component template](../assets/indices/aws_elb_covering_index-1.0.0.mapping) (In addition to the other component templates)
