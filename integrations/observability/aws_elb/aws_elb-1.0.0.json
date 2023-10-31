@@ -5,8 +5,7 @@
   "description": "AWS Elastic Load Balancer collector",
   "license": "Apache-2.0",
   "type": "logs",
-  "type-alias": "logs-elb",
-  "labels": ["log", "aws", "communication", "http", "cloud", "elb", "url"],
+  "labels": ["Observability", "Logs", "AWS", "Flint S3", "Cloud"],
   "author": "OpenSearch",
   "sourceUrl": "https://github.com/opensearch-project/dashboards-observability/tree/main/server/adaptors/integrations/__data__/repository/aws_elb/info",
   "statics": {
@@ -48,6 +47,23 @@
     }
   ],
   "assets": {
+    "tables": [
+      {
+        "name": "create_table_elb",
+        "version": "1.0.0",
+        "language": "sql"
+      },
+      {
+        "name": "create_mv_elb",
+        "version": "1.0.0",
+        "language": "sql"
+      },
+      {
+        "name": "refresh_mv_elb",
+        "version": "1.0.0",
+        "language": "sql"
+      }
+    ],
     "savedObjects": {
       "name": "aws_elb",
       "version": "1.0.0"
