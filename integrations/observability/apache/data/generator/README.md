@@ -50,3 +50,19 @@ Don't forget allowing the script to run by adding the next file premissions
 ```text
 chmod +x stop.sh
 ```
+
+### Sync the result to S3 bucket
+To synchronizes a JSON file to an Amazon S3 bucket based on provided arguments for the file name and the S3 bucket name, you'll need to use the AWS Command Line Interface (AWS CLI).
+Make sure you have AWS CLI installed and configured with the necessary credentials and permissions to write to the S3 bucket.
+
+Dont forget allowing the script to run by adding the next file premissions
+
+```text
+chmod +x sync_s3.sh
+```
+
+You can then run the script by providing the filename and the S3 bucket name:
+
+```bash
+./sync_s3.sh --filename output_log.json --bucket s3://my_data/apache_logs
+```
