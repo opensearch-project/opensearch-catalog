@@ -1,6 +1,6 @@
 # Apache Log Processor
 
-This repository contains scripts for processing Apache log files and transforming them into a JSON format suitable for ingestion into an OpenSearch index.
+This folder contains scripts for processing Apache log files and transforming them into a JSON format suitable for ingestion into an OpenSearch Apache based SS4O index.
 
 ## Scripts
 
