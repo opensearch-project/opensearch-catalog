@@ -72,10 +72,10 @@
                 "name": "Chrome",
                 "version": "114.0.0",
                 "os": {
-                    "name": "Mac OS X",
-                    "full": "Mac OS X 10.15.7",
-                    "version": "10.15.7",
-                    "device": {
+               "device": {
+                        "name": "Mac OS X",
+                        "full": "Mac OS X 10.15.7",
+                        "version": "10.15.7",
                         "name": "Mac"
                     }
                 }
@@ -86,10 +86,7 @@
             "dataset": "apache.access",
             "namespace": "production",
             "type": "logs"
-        }
-        },
-        "event": {
-            "result": "success",
+        }                 
             "category": "web",
             "name": "access",
             "type": "access",

@@ -1,12 +1,18 @@
 #!/bin/bash
 
-# Define the Python script and requirements file
-PYTHON_SCRIPT="generator.py"
+# Define the Python scripts and requirements file
+GENERATOR_SCRIPT="generator.py"
+ETL_SCRIPT="run-etl.py"
 REQUIREMENTS_FILE="requirements.txt"
 
-# Check if the Python script and requirements file exist
-if [[ ! -f "$PYTHON_SCRIPT" ]]; then
-    echo "Python script '$PYTHON_SCRIPT' does not exist."
+# Check if the Python scripts and requirements file exist
+if [[ ! -f "$GENERATOR_SCRIPT" ]]; then
+    echo "Python script '$GENERATOR_SCRIPT' does not exist."
+    exit 1
+fi
+
+if [[ ! -f "$ETL_SCRIPT" ]]; then
+    echo "Python ETL script '$ETL_SCRIPT' does not exist."
     exit 1
 fi
 
@@ -25,14 +31,19 @@ if [[ $? -ne 0 ]]; then
     exit 1
 fi
 
-# Run the Python script
-echo "Running script '$PYTHON_SCRIPT'..."
-python "$PYTHON_SCRIPT" "$@"
+# Run the generator Python script in the background
+echo "Running script '$GENERATOR_SCRIPT' in the background..."
+nohup python "$GENERATOR_SCRIPT" "$@" &
 
-# Check if the Python script ran successfully
-if [[ $? -ne 0 ]]; then
-    echo "Script '$PYTHON_SCRIPT' failed to run."
-    exit 1
-else
-    echo "Script '$PYTHON_SCRIPT' ran successfully."
-fi
+# Run the ETL Python script in the background
+echo "Running ETL script '$ETL_SCRIPT' in the background..."
+nohup python "$ETL_SCRIPT" "$@" &
+
+# Wait for all background jobs to finish
+wait
+
+echo "Both scripts are now running in the background."
+
+echo "redirect the stdout and stderr of the generator script to generator.log and the ETL script to etl.log"
+nohup python "$GENERATOR_SCRIPT" "$@" > generator.log 2>&1 &
+nohup python "$ETL_SCRIPT" "$@" > etl.log 2>&1 &

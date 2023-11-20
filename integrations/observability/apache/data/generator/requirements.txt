@@ -1,2 +1,5 @@
 faker
 argparse
+pandas
+user-agents
+python-dateutil
