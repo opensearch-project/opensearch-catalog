@@ -3,9 +3,13 @@ import time
 import os
 import json
 import re
-from user_agents import parse as ua_parse
+import uuid
 import pandas as pd
 
+from user_agents import parse as ua_parse
+from faker import Faker
+
+fake = Faker()
 
 # Initialize the argument parser
 parser = argparse.ArgumentParser(description='ETL script for processing log files.')
@@ -37,6 +41,11 @@ def parse_and_transform_log_line(line):
     match = log_pattern.match(line)
     if match:
         user_agent = ua_parse(match.group('user_agent'))
+
+        # Use Faker to generate country name and country code separately
+        country_name = fake.country()
+        country_code = fake.country_code()  # This generates a country ISO code
+
         log_json = {
             "observedTimestamp": pd.to_datetime(match.group('timestamp'), format='%d/%b/%Y:%H:%M:%S %z').strftime('%Y-%m-%dT%H:%M:%S.000Z'),
             "http": {
@@ -68,14 +77,14 @@ def parse_and_transform_log_line(line):
                     "address": match.group('ip'),
                     "ip": match.group('ip'),
                     "geo": {
-                        "country": "",  # Add this if you have the data
-                        "country_iso_code": ""  # Add this if you have the data
+                        "country": country_name,  # Randomly generated country name
+                        "country_iso_code": country_code  # Randomly generated country ISO code
                     }
                 }
             },
             "body": line,
-            "traceId": "",  # Add this if you have the data
-            "spanId": "",  # Add this if you have the data
+            "traceId": str(uuid.uuid4()),  # Randomly generated UUID for traceId
+            "spanId": str(uuid.uuid4()),   # Randomly generated UUID for spanId
             "@timestamp": pd.to_datetime(match.group('timestamp'), format='%d/%b/%Y:%H:%M:%S %z').strftime('%Y-%m-%dT%H:%M:%S.000Z')
         }
         return log_json
