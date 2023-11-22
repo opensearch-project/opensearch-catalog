@@ -2,24 +2,22 @@ import argparse
 from faker import Faker
 import random
 import time
+import multiprocessing
+import os
+from datetime import datetime
 
-def main():
+def generate_logs(args, process_id):
     fake = Faker()
-
-    # Set up command-line argument parsing
-    parser = argparse.ArgumentParser(description='Generate Apache log files with Faker.')
-    parser.add_argument('--filename', type=str, default='apache_logs.txt', help='Filename for the generated log file.')
-    parser.add_argument('--log-number', type=int, default=-1, help='Number of logs to generate. Pass a negative number to generate logs indefinitely.')
-    parser.add_argument('--start-time', type=str, help='Start time for log generation in YYYY-MM-DD format.')
-    parser.add_argument('--end-time', type=str, help='End time for log generation in YYYY-MM-DD format.')
-
-    args = parser.parse_args()
 
     # Define the log format
     log_format = '{ip} - - [{time}] "{method} {url} HTTP/1.1" {status_code} {size} "{referer}" "{user_agent}"'
 
+    # Add process ID and current date to the filename
+    current_date = datetime.now().strftime('%Y-%m-%d')
+    filename = f"apache_logs_process_{process_id}_{current_date}.txt"
+
     # Open the log file
-    with open(args.filename, 'w') as log_file:
+    with open(filename, 'w') as log_file:
         log_count = 0  # Initialize a counter for the number of logs generated
         while args.log_number < 0 or log_count < args.log_number:
             # If time range is provided, generate logs within that range
@@ -46,9 +44,35 @@ def main():
 
     # Print out how many log entries were generated
     if args.log_number < 0:
-        print(f"Generated logs indefinitely in {args.filename}")
+        print(f"Generated logs indefinitely in {filename}")
     else:
-        print(f"Generated {log_count} log entries in {args.filename}")
+        print(f"Generated {log_count} log entries in {filename}")
+
+def main():
+    parser = argparse.ArgumentParser(description='Generate Apache log files with Faker.')
+    parser.add_argument('--filename', type=str, default='', help='Base filename for the generated log files.')
+    parser.add_argument('--log-number', type=int, default=-1, help='Number of logs to generate. Pass a negative number to generate logs indefinitely.')
+    parser.add_argument('--start-time', type=str, help='Start time for log generation in YYYY-MM-DD format.')
+    parser.add_argument('--end-time', type=str, help='End time for log generation in YYYY-MM-DD format.')
+    parser.add_argument('--num-processes', type=int, default=4, help='Number of processes to run in parallel.')
+
+    args = parser.parse_args()
+
+    # If no filename is provided, use the default with the current date suffix
+    if not args.filename:
+        current_date = datetime.now().strftime('%Y-%m-%d')
+        args.filename = f"apache_logs_{current_date}"
+
+    # Create a list to hold the process objects
+    processes = []
+
+    for process_id in range(args.num_processes):
+        process = multiprocessing.Process(target=generate_logs, args=(args, process_id))
+        processes.append(process)
+        process.start()
+
+    for process in processes:
+        process.join()
 
 if __name__ == "__main__":
     main()
