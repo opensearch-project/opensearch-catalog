@@ -33,7 +33,15 @@
   "assets": {
     "savedObjects": [
       {
+      "name": "otel-index-patterns",
+      "version": "1.0.0"
+      },
+      {
       "name": "demo-loading-page",
+      "version": "1.0.0"
+      },
+      {
+      "name": "otel-services",
       "version": "1.0.0"
       },
       {
