@@ -1,6 +1,6 @@
 {
   "index_patterns": [
-    "sso_services-*-*"
+    "ss4o_services-*-*"
   ],
   "template": {
     "mappings": {
