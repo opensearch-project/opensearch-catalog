@@ -135,6 +135,7 @@
           }
         },
         "buckets": {
+          "type" : "nested",
           "properties": {
             "count": {
               "type": "long"
@@ -176,6 +177,7 @@
           "type": "long"
         },
         "positiveBuckets": {
+          "type" : "nested",
           "properties": {
             "count": {
               "type": "long"
@@ -189,6 +191,7 @@
           }
         },
         "negativeBuckets": {
+          "type" : "nested",
           "properties": {
             "count": {
               "type": "long"
