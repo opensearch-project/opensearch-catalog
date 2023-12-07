@@ -28,14 +28,6 @@
       },
       "dynamic_templates": [
         {
-          "attributes_map": {
-            "mapping": {
-              "type": "keyword"
-            },
-            "path_match": "attributes.*"
-          }
-        },
-        {
           "resources_map": {
             "mapping": {
               "type": "keyword"
@@ -124,15 +116,11 @@
         "observedTimestamp": {
           "type": "date_nanos"
         },
-        "value": {
-          "properties": {
-            "int": {
-              "type": "integer"
-            },
-            "double": {
-              "type": "double"
-            }
-          }
+        "value@int": {
+          "type": "integer"
+        },
+        "value@double": {
+          "type": "double"
         },
         "buckets": {
           "type" : "nested",
