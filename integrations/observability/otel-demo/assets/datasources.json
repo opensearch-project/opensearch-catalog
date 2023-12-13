@@ -1,0 +1,12 @@
+{
+  "endpoint": "/_plugins/_query/_datasources",
+  "payload": [
+    {
+      "name": "prometheus",
+      "connector": "prometheus",
+      "properties": {
+        "prometheus.uri": "http://prometheus:9090"
+      }
+    }
+  ]
+}
