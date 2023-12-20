@@ -1,6 +1,6 @@
 {
   "index_patterns": [
-    "sso_metrics-*-*"
+    "ss4o_metrics-*-*"
   ],
   "data_stream": {},
   "template": {
@@ -27,14 +27,6 @@
         "enabled": true
       },
       "dynamic_templates": [
-        {
-          "attributes_map": {
-            "mapping": {
-              "type": "keyword"
-            },
-            "path_match": "attributes.*"
-          }
-        },
         {
           "resources_map": {
             "mapping": {
@@ -124,17 +116,14 @@
         "observedTimestamp": {
           "type": "date_nanos"
         },
-        "value": {
-          "properties": {
-            "int": {
-              "type": "integer"
-            },
-            "double": {
-              "type": "double"
-            }
-          }
+        "value@int": {
+          "type": "integer"
+        },
+        "value@double": {
+          "type": "double"
         },
         "buckets": {
+          "type" : "nested",
           "properties": {
             "count": {
               "type": "long"
@@ -176,6 +165,7 @@
           "type": "long"
         },
         "positiveBuckets": {
+          "type" : "nested",
           "properties": {
             "count": {
               "type": "long"
@@ -189,6 +179,7 @@
           }
         },
         "negativeBuckets": {
+          "type" : "nested",
           "properties": {
             "count": {
               "type": "long"
