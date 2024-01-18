@@ -1,5 +1,5 @@
 # Vega Visualizations
-
+![](https://camo.githubusercontent.com/50297da03de4194e718f933fe6cfd279dd0aedf281fcfe7f8598ed03f243b976/68747470733a2f2f766567612e6769746875622e696f2f766567612f6173736574732f62616e6e65722e706e67)
 ### Tutorial: Creating a Vega Visualization in OpenSearch
 
 #### Introduction
