@@ -6,6 +6,7 @@ The Service Map Widget for OpenSearch Dashboards uses Vega for complex visualiza
 
 ## Info
 This widget graphically presents service map interactions, ingested via [data-prepper service_map pipelines](https://opensearch.org/docs/2.4/data-prepper/pipelines/configuration/processors/service-map-stateful/), aiding in performance monitoring and troubleshooting.
+See additional [instruction](../../vega-visualizations.md) on how to use and build [vega based visualization](https://opensearch.org/docs/latest/dashboards/visualize/viz-index/#vega) in the dashboards.
 
 ![Service Map Visualization](service-map.png)
 
@@ -16,8 +17,9 @@ Vega's integration allows for customized, interactive graph creation, enabling d
 The widget includes:
 - **Data Folder**: Node based Scripts for synthetic data generation for visualization using the [faker](https://fakerjs.dev/api/) framework .
 - **Queries**: The actual queries used to fetch the visualized data
-- **PPL Query Based Widget**: Uses OpenSearch's Piped Processing Language for data querying and visualization.
-- **DQL Query Based Widget**: Employs OpenSearch DSL for advanced querying.
+- **PPL Query Based Widget**: Vega spec that uses OpenSearch's Piped Processing Language for data querying.
+- **DQL Query Based Widget**: Vega spec that employs OpenSearch DSL for data querying.
+- **Visualization**: The actual `ndjson` visualization predefined with dql based vega specs
 - **Self-Contained Widget**: Predefined for use in [Vega Editor](https://vega.github.io/editor/), allowing customization.
 
 ## Data Model
