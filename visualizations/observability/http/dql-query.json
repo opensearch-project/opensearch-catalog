@@ -1,0 +1,61 @@
+[
+  {
+    "http-network-graph-widget":[ {
+      "index": "ss4o_logs_vpc-*-*",
+      "body": {
+        "size": 0,
+        "aggs": {
+          "table": {
+            "composite": {
+              "size": 10000,
+              "sources": [
+                {
+                  "stk1": {
+                    "terms": {
+                      "field": "aws.vpc.srcaddr"
+                    }
+                  }
+                },
+                {
+                  "stk2": {
+                    "terms": {
+                      "field": "aws.vpc.dstaddr"
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    },{
+      "index": "ss4o_logs_vpc-*-*",
+      "body": {
+        "size": 0,
+        "aggs": {
+          "table": {
+            "composite": {
+              "size": 10000,
+              "sources": [
+                {
+                  "stk1": {
+                    "terms": {
+                      "field": "communication.source.address"
+                    }
+                  }
+                },
+                {
+                  "stk2": {
+                    "terms": {
+                      "field": "communication.destination.address"
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    }]
+  }
+]

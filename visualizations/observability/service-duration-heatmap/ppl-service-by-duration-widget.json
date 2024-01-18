@@ -21,7 +21,7 @@
           "as": "count"
         },
         {
-          "calculate": "timeFormat(utcParse(datum.key_as_string,'%Y-%m-%dT%H:%M:%S.%LZ'), '%B %d, %Y %H:%M')",
+          "calculate": "timeFormat(utcParse(datum.key_as_string, '%Y-%m-%dT%H:%M:%S.%LZ'), '%b %d, %H:%M')",
           "as": "time"
         },
         {
@@ -49,7 +49,7 @@
             "values": [0, 0, 1000, 5000, 10000, 25000, 5000],
             "title": [
               "Duration SLO Index (DSI)",
-              "0: No Duration ; 50000: Exceptional Duration"
+              "0: No Duration ; 5000: Exceptional Duration"
             ]
           }
         },
@@ -63,20 +63,6 @@
           {"field": "count"}
         ]
       }
-    },
-    {
-      "data": {"values": [{}]},
-      "layer": [
-        {
-          "mark": {
-            "type": "text",
-            "text": "RED: Hourly Services Duration Heat Map  ",
-            "font": "Outfit",
-            "dx": 360,
-            "dy": 18
-          }
-        }
-      ]
     }
   ],
   "config": {
