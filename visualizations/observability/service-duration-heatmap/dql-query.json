@@ -1,0 +1,58 @@
+[
+  {
+    "service-by-duration-slo-widget": {
+      "%context%": "true",
+      "%timefield%": "startTime",
+      "index": "otel-v1-apm-span-*",
+      "body": {
+        "size": 0,
+        "aggs": {
+          "time_buckets": {
+            "date_histogram": {
+              "field": "startTime",
+              "interval": {
+                "%autointerval%": true
+              },
+              "extended_bounds": {
+                "min": {
+                  "%timefilter%": "min"
+                },
+                "max": {
+                  "%timefilter%": "max"
+                }
+              },
+              "min_doc_count": 0
+            },
+            "aggs": {
+              "time_buckets": {
+                "date_histogram": {
+                  "field": "startTime",
+                  "interval": {
+                    "%autointerval%": true
+                  }
+                },
+                "aggs": {
+                  "service_names": {
+                    "terms": {
+                      "field": "serviceName",
+                      "order": {
+                        "_count": "desc"
+                      }
+                    },
+                    "aggs": {
+                      "avg_duration": {
+                        "avg": {
+                          "field": "durationInNanos"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+]

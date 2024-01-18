@@ -1,5 +1,13 @@
 visualization_catalog:
   observability:
+    service-duration:
+      parent: traces
+      visualizations:
+        - path: observability/service-duration-heatmap/service-duration.ndjson
+          name: Services Duration Heat-Map
+          description: Display services duration heat map according to some timely aggregation 
+          info: https://github.com/opensearch-project/opensearch-catalog/blob/main/visualizations/observability/service-duration-heatmap/README.md
+          screenshot: observability/service-duration-heatmap/service-duration.png
     service-map:
       parent: traces
       visualizations:
