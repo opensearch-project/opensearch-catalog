@@ -1,5 +1,13 @@
 visualization_catalog:
   observability:
+    service-map:
+      parent: traces
+      visualizations:
+        - path: observability/service-map/dql-services-graph-widget.json.json
+          name: Services Map Graph
+          description: Display services map graph based on the system's services interactions.
+          info: https://github.com/opensearch-project/opensearch-catalog/blob/main/visualizations/observability/service-map/README.md
+          screenshot: observability/service-map/service-map.png
     http:
       parent: logs
       visualizations:
