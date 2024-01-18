@@ -1,0 +1,43 @@
+{
+  "endpoint": "_plugins/_transform/",
+  "body": {
+    "transform": {
+      "description": "Daily Services Duration calculation",
+      "enabled": true,
+      "page_size": 1000,
+      "roles": [],
+      "schedule": {
+        "interval": {
+          "start_time": "now",
+          "unit": "Days",
+          "period": 1
+        }
+      },
+      "source_index": "otel-v1-apm-span*",
+      "target_index": "daily-services-duration",
+      "groups": [
+        {
+          "date_histogram": {
+            "source_field": "startTime",
+            "fixed_interval": "1d",
+            "target_field": "startTime_histogram"
+          }
+        },
+        {
+          "terms": {
+            "source_field": "serviceName",
+            "target_field": "serviceName_terms"
+          }
+        }
+      ],
+      "aggregations": {
+        "avg_durationInNanos": {
+          "avg": {
+            "field": "durationInNanos"
+          }
+        }
+      },
+      "continuous": true
+    }
+  }
+}
