@@ -1,0 +1,8 @@
+[
+  {
+    "service-graph-widget": [
+      "source = otel-v1-apm-service-map* | stats count(serviceName) by serviceName, destination.domain | stats count(traceId) by serviceName, traceGroup",
+      "source = otel-v1-apm-span-* | stats count(traceId) by serviceName, traceGroup"
+    ]
+  }
+]

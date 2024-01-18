@@ -1,0 +1,44 @@
+[
+  {
+    "service-graph-widget": [
+      {
+        "%context%": "true",
+        "index": "otel-v1-apm-service-map*",
+        "body": {
+          "size": 0,
+          "aggs": {
+            "services": {
+              "terms": {
+                "size": 10000,
+                "field": "serviceName"
+              },
+              "aggs": {
+                "target": {
+                  "terms": {
+                    "size": 10000,
+                    "field": "destination.domain"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "%context%": "true",
+        "index": "otel-v1-apm-span-*",
+        "body": {
+          "size": 0,
+          "aggs": {
+            "services": {
+              "terms": {
+                "field": "serviceName",
+                "size": 10000
+              }
+            }
+          }
+        }
+      }
+    ]
+  }
+]

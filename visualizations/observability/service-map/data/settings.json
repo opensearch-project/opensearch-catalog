@@ -1,0 +1,6 @@
+// PUT _plugins/_query/settings
+{
+  "transient" : {
+    "plugins.query.size_limit" : 10000
+  }
+}
