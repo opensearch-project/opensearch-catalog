@@ -106,5 +106,6 @@ creating a Vega visualization.
 #### Additional Resources
 
 - Vega Docs: https://vega.github.io/vega/docs/
+- Vega Tutorial: https://vda-lab.github.io/2019/12/vega
 - OpenSearch Docs: https://opensearch.org/docs/
 
