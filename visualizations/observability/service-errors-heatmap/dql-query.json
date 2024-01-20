@@ -1,0 +1,63 @@
+[
+  {
+    "service-by-error-slo-widget": {
+      "%context%": "true",
+      "%timefield%": "startTime",
+      "index": "otel-v1-apm-span-*",
+      "body": {
+        "size": 0,
+        "aggs": {
+          "time_buckets": {
+            "date_histogram": {
+              "field": "startTime",
+              "interval": {
+                "%autointerval%": true
+              },
+              "extended_bounds": {
+                "min": {
+                  "%timefilter%": "min"
+                },
+                "max": {
+                  "%timefilter%": "max"
+                }
+              },
+              "min_doc_count": 0
+            },
+            "aggs": {
+              "time_buckets": {
+                "date_histogram": {
+                  "field": "startTime",
+                  "interval": {
+                    "%autointerval%": true
+                  }
+                },
+                "aggs": {
+                  "service_names": {
+                    "terms": {
+                      "field": "serviceName",
+                      "order": {
+                        "_count": "desc"
+                      }
+                    },
+                    "aggs":{
+                      "status_code":{
+                        "terms": {
+                          "field": "status.code"
+                        }
+                      },
+                      "status_code_ranges": {
+                        "terms": {
+                          "field": "span.attributes.http@status_code"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+]

@@ -1,0 +1,8 @@
+[
+  {
+    "service-by-errors-slo-widget": [
+      ???
+//      "source = otel-v1-apm-span-* | stats avg(durationInNanos) by span(startTime, 1h) , serviceName | sort - `avg(durationInNanos)`"
+    ]
+  }
+]

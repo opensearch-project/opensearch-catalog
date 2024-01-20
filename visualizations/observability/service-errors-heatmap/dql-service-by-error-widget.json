@@ -1,33 +1,102 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-   "vconcat": [
+  "vconcat": [
     {
       "title": {
-        "text": "SLO Services Durations",
-        "subtitle": "Timely Service Duration SLO heatmap",
-        "color": "black"
+        "text": "SLO Services Error",
+        "subtitle": "Timely Service Errors SLO heatmap",
+        "color":"black"
       },
       "height": {"step": 29},
       "data": {
-        "url" : "http://localhost:9200/_plugins/_ppl?ppl=source%20%3D%20otel-v1-apm-span-*%20%7C%20stats%20avg(durationInNanos)%20by%20span(startTime%2C%201h)%20%2C%20serviceName%20%7C%20sort%20-%20`avg(durationInNanos)`",
+        "name": "data-raw",
+        "url": {
+          "%context%": "true",
+          "%timefield%": "startTime",
+          "index": "otel-v1-apm-span-*",
+          "body": {
+            "size": 0,
+            "aggs": {
+              "time_buckets": {
+                "date_histogram": {
+                  "field": "startTime",
+                  "interval": {
+                    "%autointerval%": true
+                  },
+                  "extended_bounds": {
+                    "min": {
+                      "%timefilter%": "min"
+                    },
+                    "max": {
+                      "%timefilter%": "max"
+                    }
+                  },
+                  "min_doc_count": 0
+                },
+                "aggs": {
+                  "time_buckets": {
+                    "date_histogram": {
+                      "field": "startTime",
+                      "interval": {
+                        "%autointerval%": true
+                      },
+                    },
+                    "aggs": {
+                      "service_names": {
+                        "terms": {
+                          "field": "serviceName",
+                          "order": {
+                            "_count": "desc"
+                          }
+                        },
+                        "aggs":{
+                          "status_code":{
+                            "terms": {
+                              "field": "status.code"
+                            }
+                          },
+                          "status_code_ranges": {
+                            "terms": {
+                              "field": "span.attributes.http@status_code"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
         "format": {
           "type": "json",
-          "property": "datarows"
+          "property": "aggregations.time_buckets.buckets"
         }
       },
       "transform": [
-        {
-          "calculate": "datum[0]",
-          "as": "count"
-        },
         {
           "calculate": "timeFormat(utcParse(datum.key_as_string, '%Y-%m-%dT%H:%M:%S.%LZ'), '%b %d, %H:%M')",
           "as": "time"
         },
         {
-          "calculate": "datum[2]",
+          "calculate": "datum.time_buckets.buckets", "as": "servicesData"
+        },
+        {
+          "flatten": ["servicesData"], "as": ["flatten"]
+        },
+        {
+          "flatten": ["flatten.service_names.buckets"], "as": ["serviceInfo"]
+        },
+        {
+          "calculate": "datum.serviceInfo.key",
           "as": "service"
-        }],
+        },
+        {
+          "calculate": "datum.serviceInfo.status_codes.value",
+          "as": "count"
+        }
+      ],
       "params": [
         {"name": "highlight", "select": {"type": "point", "on": "mouseover"}}
       ],
@@ -42,7 +111,7 @@
           "field": "count",
           "type": "quantitative",
           "scale": {
-            "range": ["#ECF7E1", "#ECEFD5", "#EACC87", "#EA8D53", "#EF4B2A"]
+            "range": ["#b3cde3", "#6497b1", "#005b96", "#03396c", "#011f4b"]
           },
           "legend": {
             "description": "Vega-Lite doesn't show the first value of the legend's gradient so I used zero twice in the values array",
