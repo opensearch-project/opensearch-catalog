@@ -1,0 +1,76 @@
+{
+  "catalog": "observability",
+  "components": [
+    {
+      "component": "Services Duration Heat-Map",
+      "description": "Display services duration heat map according to some timely aggregation",
+      "url": "https://github.com/opensearch-project/opensearch-catalog/blob/main/visualizations/observability/service-duration-heatmap/README.md",
+      "info": "",
+      "gallery": [
+        {
+          "asset": "visualization",
+          "image": "observability/service-duration-heatmap/service-duration.png"
+        }
+      ],
+      "asset": "observability/service-duration-heatmap/service-duration.ndjson",
+      "parent": "traces"
+    },
+    {
+      "component": "Services Map Graph",
+      "description": "Display services map graph based on the system's services interactions.",
+      "url": "https://github.com/opensearch-project/opensearch-catalog/blob/main/visualizations/observability/service-map/README.md",
+      "info": "",
+      "gallery": [
+        {
+          "asset": "visualization",
+          "image": "observability/service-map/service-map.png"
+        }
+      ],
+      "asset": "observability/service-map/dql-services-graph-widget.json",
+      "parent": "traces"
+    },
+    {
+      "component": "HTTP Visualizations",
+      "description": "Collection of HTTP related visualizations including data volume, errors over time, status codes, and top URLs.",
+      "info": "",
+      "children": [
+        {
+          "name": "Network Graph",
+          "description": "The Http Network Graph Widget for OpenSearch Dashboards uses Vega for complex visualization of service interactions.",
+          "screenshot": "observability/http/data_volume.png",
+          "asset": "observability/http/data_volume.json",
+          "info": ""
+        },
+        {
+          "name": "Data Volume",
+          "description": "Get the rate of data (in bytes) returned by a log source.",
+          "screenshot": "observability/http/data_volume.png",
+          "asset": "observability/http/data_volume.json",
+          "info": ""
+        },
+        {
+          "name": "Errors over Time",
+          "description": "Get the rate of errors returned by a log source.",
+          "screenshot": "observability/http/errors_over_time.png",
+          "asset": "observability/http/errors_over_time.json",
+          "info": ""
+        },
+        {
+          "name": "Status Codes over Time",
+          "description": "Get the proportions of different status codes returned by a log source.",
+          "screenshot": "observability/http/status_codes_over_time.png",
+          "asset": "observability/http/status_codes_over_time.json",
+          "info": ""
+        },
+        {
+          "name": "Top URLs",
+          "description": "Get the most frequent URLs visited by a log source.",
+          "screenshot": "observability/http/top_urls.png",
+          "asset": "observability/http/top_urls.json",
+          "info": ""
+        }
+      ],
+      "parent": "logs"
+    }
+  ]
+}
