@@ -2,9 +2,39 @@
 
 ## OpenSearch Catalog
 
-The OpenSearch Catalog is designed to make it easier for developers and community to contribute, search and install artifacts like plugins, visualization dashboards, ingestion to visualization content packs (data pipeline configurations, normalization, ingestion, dashboards). The OpenSearch Catalog does this by providing a searchable catalog of community contributed OpenSearch artifacts and [projects](https://opensearch.org/community_projects) that users can browse, rate and download from the project website, OpenSearch CLI, and OpenSearch Dashboards. Users can install and update artifacts with a single click from OpenSearch Dashboards or by running an install/update command from OpenSearch CLI. When the artifacts have updates, they are highlighted in OpenSearch Dashboards to help users discover the latest versions of artifacts.
+_For deeper dive into the catalog repository - please check our [main catalog documentation page ](docs/README.md)_
 
-We are requesting comments on our [RFC](https://github.com/opensearch-project/opensearch-catalog/issues/1).
+The OpenSearch Catalog is designed to make it easier for developers and community to contribute, search and install artifacts like:
+ 
+### Integrations
+ - [Integrations](https://opensearch.org/docs/latest/integrations/)
+ - [Integrations Readme](https://github.com/opensearch-project/opensearch-catalog/blob/main/docs/integrations/README.md)
+   [Integration Observability Catalog](https://htmlpreview.github.io/?https://github.com/opensearch-project/opensearch-catalog/blob/main/integrations/observability/catalog.html)
+
+The Integration catalog is a concept that focuses on grouping similar integration together to allow a meaningful way of introducing a common group into the user's working space.
+
+
+### Visualization
+- [Visualizations](https://opensearch.org/docs/latest/visualization/)
+- [Visualizations Readme](https://github.com/opensearch-project/opensearch-catalog/blob/main/docs/visualization/README.md)
+- [Visualizations catalog](https://htmlpreview.github.io/?https://github.com/opensearch-project/opensearch-catalog/blob/main/visualization/observability/catalog.html)
+
+The Visualization Catalog is a central repository for organizing and sharing visualizations used in integrations developed using the standard simple schema mapping ( structure aware visual components).
+This catalog aims to extend the usage of different data-visualization component for the benefit of delivering fast, configurable and context aware user experience.  
+
+
+### Schema
+- [Schema Readme](https://github.com/opensearch-project/opensearch-catalog/blob/main/docs/schema/README.md)
+- [Schema Instantiation](https://github.com/opensearch-project/opensearch-catalog/blob/main/docs/schema/initiation.md)
+- [Observability Schema ](https://github.com/opensearch-project/opensearch-catalog/blob/main/docs/schema/observability/README.md)
+
+The Schema catalog for OpenSearch brings the concept of organized and structured catalog data.
+A catalog of schemas is a comprehensive collection of all the possible data schemas or structures that can be used to represent information.
+
+---
+### Community
+- [Community Forums](https://forum.opensearch.org/) 
+The Catalog is also about community involvement and contribution to the making of OpenSearch into a true content driven project.
 
 ## Security
 
