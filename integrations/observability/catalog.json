@@ -97,7 +97,7 @@
       "description": "AWS VPC Flow Logs is a feature that enables you to capture information about the IP traffic going to and from network interfaces in your VPC.",
       "version": "1.0",
       "url": "https://github.com/opensearch-project/opensearch-catalog/blob/main/integrations/observability/aws_vpc_flow",
-      "logo": "https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/aws_vpc_flow/static/logo.png",
+      "logo": "https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/aws_vpc_flow/static/logo.svg",
       "gallery": [
         {
           "asset": "dashboard",
@@ -110,7 +110,7 @@
       "description": "AWS WAF (Web Application Firewall) is a web application firewall service that helps protect your web applications from common web exploits that could affect application availability, compromise security, or consume excessive resources. AWS WAF provides firewall rules to filter and monitor HTTP/HTTPS requests based on specific conditions.",
       "version": "1.0",
       "url": "https://github.com/opensearch-project/opensearch-catalog/blob/main/integrations/observability/aws_waf",
-      "logo": "https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/aws_waf/static/logo.png",
+      "logo": "https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/aws_waf/static/logo.jpg",
       "gallery": [
         {
           "asset": "dashboard",

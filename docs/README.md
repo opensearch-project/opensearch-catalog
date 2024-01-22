@@ -8,7 +8,7 @@ The OpenSearch Catalog is designed to make it easier for developers and communit
 - [Integrations](https://opensearch.org/docs/latest/integrations/)
 - [Integrations Readme](https://github.com/opensearch-project/opensearch-catalog/blob/main/docs/integrations/README.md)
 - [Integrations Creation](https://github.com/opensearch-project/opensearch-catalog/blob/main/docs/integrations/Integration-creation.md)
-- [Integrations Catalog](https://htmlpreview.github.io/?https://github.com/opensearch-project/opensearch-catalog/blob/main/integrations/observability/catalog.html)
+  [Integration Observability Catalog](https://htmlpreview.github.io/?https://github.com/opensearch-project/opensearch-catalog/blob/main/integrations/observability/catalog.html)
 
 
 ![](img/)![integrations-observability-catalog.png](img%2Fintegrations-observability-catalog.png)
