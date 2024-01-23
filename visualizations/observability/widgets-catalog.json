@@ -33,7 +33,7 @@
       "component": "HTTP Visualizations",
       "description": "Collection of HTTP related visualizations including data volume, errors over time, status codes, and top URLs.",
       "info": "https://github.com/opensearch-project/opensearch-catalog/blob/main/visualizations/observability/http/README.md",
-      "logo": "https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/visualizations/observability/http/logo.png",
+      "logo": "https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/visualizations/observability/http/logo.jpg",
       "children": [
         {
           "name": "Network Graph",
@@ -51,19 +51,19 @@
           "name": "Errors over Time",
           "description": "Get the rate of errors returned by a log source.",
           "screenshot": "https://github.com/opensearch-project/opensearch-catalog/blob/main/visualizations/observability/observability/http/errors_over_time.png",
-          "asset": "https://github.com/opensearch-project/opensearch-catalog/blob/main/visualizations/observability/observability/http/errors_over_time.json",
+          "asset": "https://github.com/opensearch-project/opensearch-catalog/blob/main/visualizations/observability/observability/http/errors_over_time.json"
         },
         {
           "name": "Status Codes over Time",
           "description": "Get the proportions of different status codes returned by a log source.",
           "screenshot": "https://github.com/opensearch-project/opensearch-catalog/blob/main/visualizations/observability/observability/http/status_codes_over_time.png",
-          "asset": "https://github.com/opensearch-project/opensearch-catalog/blob/main/visualizations/observability/observability/http/status_codes_over_time.json",
+          "asset": "https://github.com/opensearch-project/opensearch-catalog/blob/main/visualizations/observability/observability/http/status_codes_over_time.json"
         },
         {
           "name": "Top URLs",
           "description": "Get the most frequent URLs visited by a log source.",
           "screenshot": "https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/visualizations/observability/observability/http/top_urls.png",
-          "asset": "https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/visualizations/observability/observability/http/top_urls.json",
+          "asset": "https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/visualizations/observability/observability/http/top_urls.json"
         }
       ],
       "parent": "logs"
