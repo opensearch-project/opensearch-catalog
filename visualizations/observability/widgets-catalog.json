@@ -5,7 +5,7 @@
   "description": "Observability visualizations are a type of data that capture the events and activities occurring in a system. They reflect information such as user actions, system responses, and errors, providing valuable insights into system behavior. Integrations are well structured and include contextual information such as timestamps, unique identifiers, and metadata tags. Integrations can be used to visualize and troubleshoot performance issues, detect anomalies, and improve system performance by identifying areas for optimization",
   "displayName": "OpenSearch Observability visualizations Catalog",
   "license": "Apache-2.0",
-  "labels": ["log", "observability", "http", "aws", "cloud", "services"],
+  "labels": ["log", "http","communication", "services"],
   "author": "OpenSearch",
   "statics": {
     "logo": {
@@ -38,7 +38,7 @@
       "url": "https://github.com/opensearch-project/opensearch-catalog/tree/main/visualizations/observability/service-map",
       "info": "https://github.com/opensearch-project/opensearch-catalog/blob/main/visualizations/observability/service-map/README.md",
       "logo": "https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/visualizations/observability/service-map/logo.png",
-      "tags": ["services"],
+      "tags": ["services","communication"],
       "gallery": [
         {
           "asset": "visualization",
@@ -55,7 +55,7 @@
       "url": "https://github.com/opensearch-project/opensearch-catalog/tree/main/visualizations/observability/http",
       "info": "https://github.com/opensearch-project/opensearch-catalog/blob/main/visualizations/observability/http/README.md",
       "logo": "https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/visualizations/observability/http/logo.jpg",
-      "tags": ["logs","http"],
+      "tags": ["log","http","communication"],
       "gallery": [
         {
           "asset": "visualization",

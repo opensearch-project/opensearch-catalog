@@ -5,7 +5,7 @@
   "description": "Observability integrations are a type of data that capture the events and activities occurring in a system. They reflect information such as user actions, system responses, and errors, providing valuable insights into system behavior. Integrations are well structured and include contextual information such as timestamps, unique identifiers, and metadata tags. Integrations can be used to visualize and troubleshoot performance issues, detect anomalies, and improve system performance by identifying areas for optimization",
   "displayName": "OpenSearch Observability Catalog",
   "license": "Apache-2.0",
-  "labels": ["log", "observability", "http", "aws", "cloud", "container"],
+  "labels": ["log", "http", "aws", "cloud", "container", "communication"],
   "author": "OpenSearch",
   "statics": {
     "logo": {

@@ -45,7 +45,7 @@ def generate_modal_html(modal_id, item):
                         <p><strong>Description:</strong> {item.get('description', '')}</p>
                         <p><strong>Version:</strong> {item.get('version', '')}</p>
                         <p><strong>URL:</strong> <a href="{item.get('url', '')}">{item.get('url', '')}</a></p>
-                        <p><strong>Tags:</strong> {", ".join(item.get('tags', []))}</p>
+                        {generate_labels_html(item.get('tags', []))}
                         <div>
                             {"".join([f'<img src="{asset.get("image", "")}" style="width: 100%; height: auto; margin-top: 10px;" alt="dashboard" />' for asset in item.get('gallery', [])])}
                         </div>
@@ -60,7 +60,19 @@ def generate_css():
     """Generate and return CSS styles."""
     css_styles = """
     <style>
-      body {
+        .color-red { color: red; }
+        .color-blue { color: blue; }
+        .color-green { color: green; }
+        .color-orange { color: orange; }
+        .color-purple { color: purple; }
+        .color-yellow { color: yellow; }
+        .color-pink { color: pink; }
+        .color-violet { color: violet; }
+        .label-item {
+            display: inline-block;
+            margin-right: 10px;
+        }
+        body {
             font-family: Arial, sans-serif;
             background-color: #7e94ce;
             background-image: url('https://opensearch.org/assets/media/herobanners/release-hero-bg-mobile.png');
@@ -117,6 +129,26 @@ def generate_javascript():
     """
     return javascript
 
+def generate_labels_html(labels_data):
+    """Generate HTML content for labels with specific colors and icons, displayed in a single row."""
+    label_colors_icons = {
+        "log": ("red", "▶"),
+        "aws": ("blue", "⋔"),
+        "communication": ("green", "❊"),
+        "container": ("violet", "⤀"),
+        "http": ("orange", "❖"),
+        "cloud": ("purple", "✧"),
+        "elb": ("yellow", "✑"),
+        "url": ("pink", "❀")
+    }
+
+    labels_html = "<p><strong>Labels:</strong> "
+    for label in labels_data:
+        color, icon = label_colors_icons.get(label, ("black", "•"))  # Default color and icon
+        labels_html += f"<span class='label-item color-{color}'><span class='label-icon'>{icon}</span> {label}</span> "
+
+    labels_html += "</p>"
+    return labels_html
 
 def generate_catalog_details(integrations_data):
     """Generate HTML content for catalog details."""
@@ -127,8 +159,8 @@ def generate_catalog_details(integrations_data):
             <p><strong>Version:</strong> {integrations_data.get('version', '')}</p>
             <p><strong>URL:</strong> <a href="{integrations_data.get('url', '')}">{integrations_data.get('url', '')}</a></p>
             <p><strong>License:</strong> {integrations_data.get('license', '')}</p>
-            <p><strong>Labels:</strong> {", ".join(integrations_data.get('labels', []))}</p>
             <p><strong>Author:</strong> {integrations_data.get('author', '')}</p>
+            {generate_labels_html(integrations_data.get('labels', []))}
         </div>
     """
     return catalog_html
