@@ -1,58 +1,93 @@
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OpenSearch Observability Integrations Catalog</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <!-- Bootstrap JS -->
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>OpenSearch Observability Catalog</title>
+        <!-- Bootstrap CSS -->
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <!-- Bootstrap JS -->
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+       
     <style>
-        font-family: Arial, sans-serif;
-        background-color: #f4f7ff; 
+      body {
+            font-family: Arial, sans-serif;
+            background-color: #7e94ce;
+            background-image: url('https://opensearch.org/assets/media/herobanners/release-hero-bg-mobile.png');
+            background-size: cover;
+            background-attachment: fixed;
+            color: #ffffff;
+        }
+        .modal-content {
+            background-color: #105179;
+            background-image: url('https://opensearch.org/assets/media/herobanners/release-hero-bg-mobile.png');
+            background-size: cover;
+            background-attachment: fixed;
+        }
         .container { max-width: 800px; margin: auto; }
-        .integrations { padding: 10px; border: 1px solid #ddd; margin-bottom: 10px; }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <img src="https://opensearch.org/assets/brand/PNG/Logo/opensearch_logo_darkmode.png" style="width: 750px; height: 250px; alt="Logo" />
-        <h1>OpenSearch Observability Integrations Catalog</h1>
-        <p><strong>Version:</strong> 1.0</p>
-        <p><strong>URL:</strong> <a href="https://github.com/opensearch-project/opensearch-catalog/integrations/observability">https://github.com/opensearch-project/opensearch-catalog/integrations/observability</a></p>
-        <p><strong>Description:</strong> Observability integrations are a type of data that capture the events and activities occurring in a system. They reflect information such as user actions, system responses, and errors, providing valuable insights into system behavior. Integrations are well structured and include contextual information such as timestamps, unique identifiers, and metadata tags. Integrations can be used to visualize and troubleshoot performance issues, detect anomalies, and improve system performance by identifying areas for optimization</p>
-        <p><strong>License:</strong> Apache-2.0</p>
-        <p><strong>Labels:</strong> log, observability, http, aws, cloud, container</p>
-        <p><strong>Author:</strong> OpenSearch</p>
-        <h2>Integrations</h2>
-
-    <style>
         .grid-item {
-            border: 4px solid #f4f7ff;
-            padding: 10px;
-            margin-bottom: 15px; /* Space between rows */
+            border: 2px solid #8ea4de;
+            padding: 5px;
+            margin-bottom: 5px;
+            transition: background-color 0.3s ease;
         }
         .grid-item:hover {
-            background-color: #f8f8f8; /* Slight highlight on hover */
+            background-color: #16415b;
+            cursor: pointer;
         }
-    </style>
-    <div class="container">
-        <div class="row">
+        h2 {
+            text-align: center;
+        }
+        .collapsible {
+            cursor: pointer;
+        }
+        .content {
+            overflow: hidden;
+            transition: max-height 0.2s ease-out;
+            max-height: 1000px;
+        }
 
-        <div class="col-md-2 grid-item text-center">
-            <img src="https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/apache/static/logo.png" style="width: 75px; height: 75px; cursor: pointer;" alt="Apache Integration Logo" data-toggle="modal" data-target="#modal0">
-            <p>Apache Integration</p>
+    </style>
+    
+    </head>
+    <body>
+        
+        <div class="container">
+            <img src="https://opensearch.org/assets/brand/PNG/Logo/opensearch_logo_darkmode.png" style="width: 750px; height: 250px;" alt="Logo" />
+            <h1>OpenSearch Observability Catalog</h1>
+            <p><strong>Version:</strong> 1.0</p>
+            <p><strong>URL:</strong> <a href="https://github.com/opensearch-project/opensearch-catalog/tree/main/integrations/observability">https://github.com/opensearch-project/opensearch-catalog/tree/main/integrations/observability</a></p>
+            <p><strong>License:</strong> Apache-2.0</p>
+            <p><strong>Labels:</strong> log, observability, http, aws, cloud, container</p>
+            <p><strong>Author:</strong> OpenSearch</p>
         </div>
     
-        <div class="modal fade" id="modal0" tabindex="-1" role="dialog" aria-labelledby="modalLabel0" aria-hidden="true">
+        
+    <script>
+        function toggleSection(sectionId) {
+            var content = document.getElementById(sectionId);
+            if (content.style.maxHeight && content.style.maxHeight !== "1000px") {
+                content.style.maxHeight = "1000px";
+            } else {
+                content.style.maxHeight = "0px";
+            }
+        }
+    </script>
+    
+    <h2 class='collapsible' onclick='toggleSection("integrations-section")'>Integrations</h2><div class='container content' id='integrations-section'><div class='row'>
+            <div class="col-md-2 grid-item text-center">
+                <img src="https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/apache/static/logo.png" style="width: 75px; height: 75px; cursor: pointer;" alt="Apache Integration Logo" data-toggle="modal" data-target="#modalinteg-0">
+                <p>Apache Integration</p>
+            </div>
+        
+        <div class="modal fade" id="modalinteg-0" tabindex="-1" role="dialog" aria-labelledby="modalLabelinteg-0" aria-hidden="true">
             <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="modalLabel0">Apache Integration</h5>
+                        <h5 class="modal-title" id="modalLabelinteg-0">Apache Integration</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -71,16 +106,16 @@
             </div>
         </div>
     
-        <div class="col-md-2 grid-item text-center">
-            <img src="https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/aws_cloudfront/static/logo.png" style="width: 75px; height: 75px; cursor: pointer;" alt="Amazon CloudFront Integration Logo" data-toggle="modal" data-target="#modal1">
-            <p>Amazon CloudFront Integration</p>
-        </div>
-    
-        <div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="modalLabel1" aria-hidden="true">
+            <div class="col-md-2 grid-item text-center">
+                <img src="https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/aws_cloudfront/static/logo.png" style="width: 75px; height: 75px; cursor: pointer;" alt="Amazon CloudFront Integration Logo" data-toggle="modal" data-target="#modalinteg-1">
+                <p>Amazon CloudFront Integration</p>
+            </div>
+        
+        <div class="modal fade" id="modalinteg-1" tabindex="-1" role="dialog" aria-labelledby="modalLabelinteg-1" aria-hidden="true">
             <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="modalLabel1">Amazon CloudFront Integration</h5>
+                        <h5 class="modal-title" id="modalLabelinteg-1">Amazon CloudFront Integration</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -99,16 +134,16 @@
             </div>
         </div>
     
-        <div class="col-md-2 grid-item text-center">
-            <img src="https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/aws_cloudtrail/static/logo.png" style="width: 75px; height: 75px; cursor: pointer;" alt="Amazon CloudTrail Integration Logo" data-toggle="modal" data-target="#modal2">
-            <p>Amazon CloudTrail Integration</p>
-        </div>
-    
-        <div class="modal fade" id="modal2" tabindex="-1" role="dialog" aria-labelledby="modalLabel2" aria-hidden="true">
+            <div class="col-md-2 grid-item text-center">
+                <img src="https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/aws_cloudtrail/static/logo.png" style="width: 75px; height: 75px; cursor: pointer;" alt="Amazon CloudTrail Integration Logo" data-toggle="modal" data-target="#modalinteg-2">
+                <p>Amazon CloudTrail Integration</p>
+            </div>
+        
+        <div class="modal fade" id="modalinteg-2" tabindex="-1" role="dialog" aria-labelledby="modalLabelinteg-2" aria-hidden="true">
             <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="modalLabel2">Amazon CloudTrail Integration</h5>
+                        <h5 class="modal-title" id="modalLabelinteg-2">Amazon CloudTrail Integration</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -127,16 +162,16 @@
             </div>
         </div>
     
-        <div class="col-md-2 grid-item text-center">
-            <img src="https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/aws_elb/static/logo.svg" style="width: 75px; height: 75px; cursor: pointer;" alt="Amazon ELB Integration Logo" data-toggle="modal" data-target="#modal3">
-            <p>Amazon ELB Integration</p>
-        </div>
-    
-        <div class="modal fade" id="modal3" tabindex="-1" role="dialog" aria-labelledby="modalLabel3" aria-hidden="true">
+            <div class="col-md-2 grid-item text-center">
+                <img src="https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/aws_elb/static/logo.svg" style="width: 75px; height: 75px; cursor: pointer;" alt="Amazon ELB Integration Logo" data-toggle="modal" data-target="#modalinteg-3">
+                <p>Amazon ELB Integration</p>
+            </div>
+        
+        <div class="modal fade" id="modalinteg-3" tabindex="-1" role="dialog" aria-labelledby="modalLabelinteg-3" aria-hidden="true">
             <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="modalLabel3">Amazon ELB Integration</h5>
+                        <h5 class="modal-title" id="modalLabelinteg-3">Amazon ELB Integration</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -155,16 +190,16 @@
             </div>
         </div>
     
-        <div class="col-md-2 grid-item text-center">
-            <img src="https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/aws_rds/static/logo.png" style="width: 75px; height: 75px; cursor: pointer;" alt="Amazon RDS Integration Logo" data-toggle="modal" data-target="#modal4">
-            <p>Amazon RDS Integration</p>
-        </div>
-    
-        <div class="modal fade" id="modal4" tabindex="-1" role="dialog" aria-labelledby="modalLabel4" aria-hidden="true">
+            <div class="col-md-2 grid-item text-center">
+                <img src="https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/aws_rds/static/logo.png" style="width: 75px; height: 75px; cursor: pointer;" alt="Amazon RDS Integration Logo" data-toggle="modal" data-target="#modalinteg-4">
+                <p>Amazon RDS Integration</p>
+            </div>
+        
+        <div class="modal fade" id="modalinteg-4" tabindex="-1" role="dialog" aria-labelledby="modalLabelinteg-4" aria-hidden="true">
             <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="modalLabel4">Amazon RDS Integration</h5>
+                        <h5 class="modal-title" id="modalLabelinteg-4">Amazon RDS Integration</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -183,16 +218,16 @@
             </div>
         </div>
     
-        <div class="col-md-2 grid-item text-center">
-            <img src="https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/aws_s3/static/logo.png" style="width: 75px; height: 75px; cursor: pointer;" alt="Amazon S3 Integration Logo" data-toggle="modal" data-target="#modal5">
-            <p>Amazon S3 Integration</p>
-        </div>
-    
-        <div class="modal fade" id="modal5" tabindex="-1" role="dialog" aria-labelledby="modalLabel5" aria-hidden="true">
+            <div class="col-md-2 grid-item text-center">
+                <img src="https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/aws_s3/static/logo.png" style="width: 75px; height: 75px; cursor: pointer;" alt="Amazon S3 Integration Logo" data-toggle="modal" data-target="#modalinteg-5">
+                <p>Amazon S3 Integration</p>
+            </div>
+        
+        <div class="modal fade" id="modalinteg-5" tabindex="-1" role="dialog" aria-labelledby="modalLabelinteg-5" aria-hidden="true">
             <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="modalLabel5">Amazon S3 Integration</h5>
+                        <h5 class="modal-title" id="modalLabelinteg-5">Amazon S3 Integration</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -211,16 +246,16 @@
             </div>
         </div>
     </div><div class="row">
-        <div class="col-md-2 grid-item text-center">
-            <img src="https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/aws_vpc_flow/static/logo.svg" style="width: 75px; height: 75px; cursor: pointer;" alt="Amazon VPC Flow Integration Logo" data-toggle="modal" data-target="#modal6">
-            <p>Amazon VPC Flow Integration</p>
-        </div>
-    
-        <div class="modal fade" id="modal6" tabindex="-1" role="dialog" aria-labelledby="modalLabel6" aria-hidden="true">
+            <div class="col-md-2 grid-item text-center">
+                <img src="https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/aws_vpc_flow/static/logo.svg" style="width: 75px; height: 75px; cursor: pointer;" alt="Amazon VPC Flow Integration Logo" data-toggle="modal" data-target="#modalinteg-6">
+                <p>Amazon VPC Flow Integration</p>
+            </div>
+        
+        <div class="modal fade" id="modalinteg-6" tabindex="-1" role="dialog" aria-labelledby="modalLabelinteg-6" aria-hidden="true">
             <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="modalLabel6">Amazon VPC Flow Integration</h5>
+                        <h5 class="modal-title" id="modalLabelinteg-6">Amazon VPC Flow Integration</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -239,16 +274,16 @@
             </div>
         </div>
     
-        <div class="col-md-2 grid-item text-center">
-            <img src="https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/aws_waf/static/logo.jpg" style="width: 75px; height: 75px; cursor: pointer;" alt="Amazon WAF Integration Logo" data-toggle="modal" data-target="#modal7">
-            <p>Amazon WAF Integration</p>
-        </div>
-    
-        <div class="modal fade" id="modal7" tabindex="-1" role="dialog" aria-labelledby="modalLabel7" aria-hidden="true">
+            <div class="col-md-2 grid-item text-center">
+                <img src="https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/aws_waf/static/logo.jpg" style="width: 75px; height: 75px; cursor: pointer;" alt="Amazon WAF Integration Logo" data-toggle="modal" data-target="#modalinteg-7">
+                <p>Amazon WAF Integration</p>
+            </div>
+        
+        <div class="modal fade" id="modalinteg-7" tabindex="-1" role="dialog" aria-labelledby="modalLabelinteg-7" aria-hidden="true">
             <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="modalLabel7">Amazon WAF Integration</h5>
+                        <h5 class="modal-title" id="modalLabelinteg-7">Amazon WAF Integration</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -267,16 +302,16 @@
             </div>
         </div>
     
-        <div class="col-md-2 grid-item text-center">
-            <img src="https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/k8s/static/logo.png" style="width: 75px; height: 75px; cursor: pointer;" alt="Kubernetes Integration Logo" data-toggle="modal" data-target="#modal8">
-            <p>Kubernetes Integration</p>
-        </div>
-    
-        <div class="modal fade" id="modal8" tabindex="-1" role="dialog" aria-labelledby="modalLabel8" aria-hidden="true">
+            <div class="col-md-2 grid-item text-center">
+                <img src="https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/k8s/static/logo.png" style="width: 75px; height: 75px; cursor: pointer;" alt="Kubernetes Integration Logo" data-toggle="modal" data-target="#modalinteg-8">
+                <p>Kubernetes Integration</p>
+            </div>
+        
+        <div class="modal fade" id="modalinteg-8" tabindex="-1" role="dialog" aria-labelledby="modalLabelinteg-8" aria-hidden="true">
             <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="modalLabel8">Kubernetes Integration</h5>
+                        <h5 class="modal-title" id="modalLabelinteg-8">Kubernetes Integration</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -296,16 +331,16 @@
             </div>
         </div>
     
-        <div class="col-md-2 grid-item text-center">
-            <img src="https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/nginx/static/logo.svg" style="width: 75px; height: 75px; cursor: pointer;" alt="Nginx Integration Logo" data-toggle="modal" data-target="#modal9">
-            <p>Nginx Integration</p>
-        </div>
-    
-        <div class="modal fade" id="modal9" tabindex="-1" role="dialog" aria-labelledby="modalLabel9" aria-hidden="true">
+            <div class="col-md-2 grid-item text-center">
+                <img src="https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/nginx/static/logo.svg" style="width: 75px; height: 75px; cursor: pointer;" alt="Nginx Integration Logo" data-toggle="modal" data-target="#modalinteg-9">
+                <p>Nginx Integration</p>
+            </div>
+        
+        <div class="modal fade" id="modalinteg-9" tabindex="-1" role="dialog" aria-labelledby="modalLabelinteg-9" aria-hidden="true">
             <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="modalLabel9">Nginx Integration</h5>
+                        <h5 class="modal-title" id="modalLabelinteg-9">Nginx Integration</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -323,6 +358,88 @@
                 </div>
             </div>
         </div>
+    </div></div><h2 class='collapsible' onclick='toggleSection("visualizations-section")'>Visualizations</h2><div class='container content' id='visualizations-section'><div class='row'>
+            <div class="col-md-2 grid-item text-center">
+                <img src="https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/visualizations/observability/service-duration-heatmap/logo.png" style="width: 75px; height: 75px; cursor: pointer;" alt="Services Duration Heat-Map Logo" data-toggle="modal" data-target="#modalvis-0">
+                <p>Services Duration Heat-Map</p>
+            </div>
+        
+        <div class="modal fade" id="modalvis-0" tabindex="-1" role="dialog" aria-labelledby="modalLabelvis-0" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalLabelvis-0">Services Duration Heat-Map</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <img src="https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/visualizations/observability/service-duration-heatmap/logo.png" style="width: 100px; height: 100px;" alt="Services Duration Heat-Map Logo">
+                        <p><strong>Description:</strong> Display services duration heat map according to some timely aggregation</p>
+                        <p><strong>Version:</strong> 1.0</p>
+                        <p><strong>URL:</strong> <a href="https://github.com/opensearch-project/opensearch-catalog/tree/main/visualizations/observability/service-duration-heatmap">https://github.com/opensearch-project/opensearch-catalog/tree/main/visualizations/observability/service-duration-heatmap</a></p>
+                        <p><strong>Tags:</strong> services, duration</p>
+                        <div>
+                            <img src="https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/visualizations/observability/service-duration-heatmap/service-duration.png" style="width: 100%; height: auto; margin-top: 10px;" alt="dashboard" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     
-        </div> <!-- Closing row -->
-    </div> <!-- Closing container -->
+            <div class="col-md-2 grid-item text-center">
+                <img src="https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/visualizations/observability/service-map/logo.png" style="width: 75px; height: 75px; cursor: pointer;" alt="Services Map Graph Logo" data-toggle="modal" data-target="#modalvis-1">
+                <p>Services Map Graph</p>
+            </div>
+        
+        <div class="modal fade" id="modalvis-1" tabindex="-1" role="dialog" aria-labelledby="modalLabelvis-1" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalLabelvis-1">Services Map Graph</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <img src="https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/visualizations/observability/service-map/logo.png" style="width: 100px; height: 100px;" alt="Services Map Graph Logo">
+                        <p><strong>Description:</strong> Display services map graph based on the system's services interactions.</p>
+                        <p><strong>Version:</strong> 1.0</p>
+                        <p><strong>URL:</strong> <a href="https://github.com/opensearch-project/opensearch-catalog/tree/main/visualizations/observability/service-map">https://github.com/opensearch-project/opensearch-catalog/tree/main/visualizations/observability/service-map</a></p>
+                        <p><strong>Tags:</strong> services</p>
+                        <div>
+                            <img src="https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/visualizations/observability/service-map/service-map.png" style="width: 100%; height: auto; margin-top: 10px;" alt="dashboard" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+            <div class="col-md-2 grid-item text-center">
+                <img src="https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/visualizations/observability/http/logo.jpg" style="width: 75px; height: 75px; cursor: pointer;" alt="HTTP Visualizations Logo" data-toggle="modal" data-target="#modalvis-2">
+                <p>HTTP Visualizations</p>
+            </div>
+        
+        <div class="modal fade" id="modalvis-2" tabindex="-1" role="dialog" aria-labelledby="modalLabelvis-2" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalLabelvis-2">HTTP Visualizations</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <img src="https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/visualizations/observability/http/logo.jpg" style="width: 100px; height: 100px;" alt="HTTP Visualizations Logo">
+                        <p><strong>Description:</strong> Collection of HTTP related visualizations including data volume, errors over time, status codes, and top URLs.</p>
+                        <p><strong>Version:</strong> 1.0</p>
+                        <p><strong>URL:</strong> <a href="https://github.com/opensearch-project/opensearch-catalog/tree/main/visualizations/observability/http">https://github.com/opensearch-project/opensearch-catalog/tree/main/visualizations/observability/http</a></p>
+                        <p><strong>Tags:</strong> logs, http</p>
+                        <div>
+                            <img src="https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/visualizations/observability/http/data_volume.png" style="width: 100%; height: auto; margin-top: 10px;" alt="dashboard" /><img src="https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/visualizations/observability/http/http-network-graph.png" style="width: 100%; height: auto; margin-top: 10px;" alt="dashboard" /><img src="https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/visualizations/observability/http/errors_over_time.png" style="width: 100%; height: auto; margin-top: 10px;" alt="dashboard" /><img src="https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/visualizations/observability/http/status_codes_over_time.png" style="width: 100%; height: auto; margin-top: 10px;" alt="dashboard" /><img src="https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/visualizations/observability/http/top_urls.png" style="width: 100%; height: auto; margin-top: 10px;" alt="dashboard" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div></div></body></html>

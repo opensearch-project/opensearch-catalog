@@ -5,36 +5,37 @@ def read_json(file_path):
     with open(file_path, 'r') as file:
         return json.load(file)
 
-def generate_html_for_section(data, section_title, item_key, modal=True, section_id=""):
+def generate_html_for_section(data, section_title, item_key, modal=True, section_id="", modal_id_prefix=""):
     """Generate HTML content for a given section (Integrations or Visualizations)."""
     html_content = f"<h2 class='collapsible' onclick='toggleSection(\"{section_id}\")'>{section_title}</h2>"
     html_content += f"<div class='container content' id='{section_id}'><div class='row'>"
 
     for i, item in enumerate(data.get(item_key, [])):
+        modal_id = f"{modal_id_prefix}{i}"  # Unique modal ID
         if i % 6 == 0 and i != 0:
-            html_content += '</div><div class="row">'  # New row for every 6 items
+            html_content += '</div><div class="row">'
 
         html_content += f"""
             <div class="col-md-2 grid-item text-center">
-                <img src="{item.get('logo', '')}" style="width: 75px; height: 75px; cursor: pointer;" alt="{item.get('component', '')} Logo" data-toggle="modal" data-target="#modal{i}">
+                <img src="{item.get('logo', '')}" style="width: 75px; height: 75px; cursor: pointer;" alt="{item.get('component', '')} Logo" data-toggle="modal" data-target="#modal{modal_id}">
                 <p>{item.get('component', '')}</p>
             </div>
         """
 
         if modal:
-            html_content += generate_modal_html(i, item)
+            html_content += generate_modal_html(modal_id, item)
 
-    html_content += "</div></div>"  # Close row and container divs
+    html_content += "</div></div>"
     return html_content
 
-def generate_modal_html(index, item):
+def generate_modal_html(modal_id, item):
     """Generate HTML content for a modal."""
     modal_html = f"""
-        <div class="modal fade" id="modal{index}" tabindex="-1" role="dialog" aria-labelledby="modalLabel{index}" aria-hidden="true">
+        <div class="modal fade" id="modal{modal_id}" tabindex="-1" role="dialog" aria-labelledby="modalLabel{modal_id}" aria-hidden="true">
             <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="modalLabel{index}">{item.get('component', '')}</h5>
+                        <h5 class="modal-title" id="modalLabel{modal_id}">{item.get('component', '')}</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -59,19 +60,29 @@ def generate_css():
     """Generate and return CSS styles."""
     css_styles = """
     <style>
-        body {
+      body {
             font-family: Arial, sans-serif;
-            background-color: #f4f7ff;
+            background-color: #7e94ce;
+            background-image: url('https://opensearch.org/assets/media/herobanners/release-hero-bg-mobile.png');
+            background-size: cover;
+            background-attachment: fixed;
+            color: #ffffff;
+        }
+        .modal-content {
+            background-color: #105179;
+            background-image: url('https://opensearch.org/assets/media/herobanners/release-hero-bg-mobile.png');
+            background-size: cover;
+            background-attachment: fixed;
         }
         .container { max-width: 800px; margin: auto; }
         .grid-item {
-            border: 4px solid #8ea4de;
-            padding: 10px;
-            margin-bottom: 10px;
+            border: 2px solid #8ea4de;
+            padding: 5px;
+            margin-bottom: 5px;
             transition: background-color 0.3s ease;
         }
         .grid-item:hover {
-            background-color: #e0e0e0;
+            background-color: #16415b;
             cursor: pointer;
         }
         h2 {
@@ -115,7 +126,6 @@ def generate_catalog_details(integrations_data):
             <h1>{integrations_data.get('displayName', '')}</h1>
             <p><strong>Version:</strong> {integrations_data.get('version', '')}</p>
             <p><strong>URL:</strong> <a href="{integrations_data.get('url', '')}">{integrations_data.get('url', '')}</a></p>
-            <p><strong>Description:</strong> {integrations_data.get('description', '')}</p>
             <p><strong>License:</strong> {integrations_data.get('license', '')}</p>
             <p><strong>Labels:</strong> {", ".join(integrations_data.get('labels', []))}</p>
             <p><strong>Author:</strong> {integrations_data.get('author', '')}</p>
@@ -149,11 +159,9 @@ def main():
     """
 
     # Generate HTML for Integrations
-    html_content += generate_html_for_section(integrations_data, 'Integrations', 'components', modal=True, section_id="integrations-section")
-
+    html_content += generate_html_for_section(integrations_data, 'Integrations', 'components', modal=True, section_id="integrations-section", modal_id_prefix="integ-")
     # Generate HTML for Visualizations
-    html_content += generate_html_for_section(visualizations_data, 'Visualizations', 'components', modal=False, section_id="visualizations-section")
-
+    html_content += generate_html_for_section(visualizations_data, 'Visualizations', 'components', modal=True, section_id="visualizations-section", modal_id_prefix="vis-")
     html_content += "</body></html>"
 
     # Write HTML content to file
