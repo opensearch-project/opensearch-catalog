@@ -23,7 +23,7 @@ html_content = f"""
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <style>
         font-family: Arial, sans-serif;
-        background-color: #f4f7ff; 
+        background-color: #f4f7ff;
         .container {{ max-width: 800px; margin: auto; }}
         .integrations {{ padding: 10px; border: 1px solid #ddd; margin-bottom: 10px; }}
     </style>
@@ -45,7 +45,7 @@ html_content = f"""
 html_content += """
     <style>
         .grid-item {
-            border: 4px solid #f4f7ff;
+            border: 4px solid #c1d5d9;
             padding: 10px;
             margin-bottom: 15px; /* Space between rows */
         }
