@@ -20,6 +20,7 @@
       "version": "1.0",
       "url": "https://github.com/opensearch-project/opensearch-catalog/blob/main/integrations/observability/apache",
       "logo": "https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/apache/static/logo.png",
+      "try_me_url": "https://otel.playground.opensearch.org/app/dashboards?security_tenant=global#/view/d0e5df06-5d7e-4def-8146-88ac07489821?_g=(filters:!(),refreshInterval:(pause:!t,value:0),time:(from:now-4w,to:now))&_a=(description:'Filebeat%20Apache%20module%20dashboard',filters:!(),fullScreenMode:!f,options:(hidePanelTitles:!f,useMargins:!t),query:(language:kuery,query:''),timeRestore:!t,title:'Access%20and%20error%20logs%20ECS',viewMode:view)",
       "gallery": [
         {
           "asset": "dashboard",
@@ -33,6 +34,7 @@
       "version": "1.0",
       "url": "https://github.com/opensearch-project/opensearch-catalog/blob/main/integrations/observability/aws_cloudfront",
       "logo": "https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/aws_cloudfront/static/logo.png",
+      "try_me_url": "https://otel.playground.opensearch.org/app/dashboards?security_tenant=global#/view/10bcf6e7-9c6a-4afb-913e-e98c7053237a?_g=(filters:!(),refreshInterval:(pause:!t,value:0),time:(from:'2024-01-02T19:28:32.161Z',to:'2024-01-02T19:43:51.183Z'))&_a=(description:'',filters:!(),fullScreenMode:!f,options:(hidePanelTitles:!f,useMargins:!t),query:(language:kuery,query:''),timeRestore:!f,title:logs-aws-cloudfront-dashboard,viewMode:view)",
       "gallery": [
         {
           "asset": "dashboard",
@@ -46,6 +48,7 @@
       "version": "1.0",
       "url": "https://github.com/opensearch-project/opensearch-catalog/blob/main/integrations/observability/aws_cloudtrail",
       "logo": "https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/aws_cloudtrail/static/logo.png",
+      "try_me_url": "https://otel.playground.opensearch.org/app/dashboards?security_tenant=global#/view/8b01006c-f3e4-4b66-84bb-d4989b9341d4?_g=(filters:!(),refreshInterval:(pause:!t,value:0),time:(from:'2024-01-02T19:28:32.161Z',to:'2024-01-02T19:43:51.183Z'))&_a=(description:'',filters:!(),fullScreenMode:!f,options:(hidePanelTitles:!f,useMargins:!t),query:(language:kuery,query:''),timeRestore:!f,title:logs-cloudtrail-dashboard,viewMode:view)",
       "gallery": [
         {
           "asset": "dashboard",
@@ -59,6 +62,7 @@
       "version": "1.0",
       "url": "https://github.com/opensearch-project/opensearch-catalog/blob/main/integrations/observability/aws_elb",
       "logo": "https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/aws_elb/static/logo.svg",
+      "try_me_url": "https://otel.playground.opensearch.org/app/dashboards?security_tenant=global#/view/9139f66d-7e4b-4a07-b89b-3acd30db8c40?_g=(filters:!(),refreshInterval:(pause:!t,value:0),time:(from:'2024-01-02T19:28:32.161Z',to:'2024-01-02T19:43:51.183Z'))&_a=(description:'',filters:!(),fullScreenMode:!f,options:(hidePanelTitles:!f,useMargins:!t),query:(language:kuery,query:''),timeRestore:!f,title:'ELB%20Summary',viewMode:view)",
       "gallery": [
         {
           "asset": "dashboard",
@@ -72,6 +76,7 @@
       "version": "1.0",
       "url": "https://github.com/opensearch-project/opensearch-catalog/blob/main/integrations/observability/aws_rds",
       "logo": "https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/aws_rds/static/logo.png",
+      "try_me_url" : "https://otel.playground.opensearch.org/app/dashboards?security_tenant=global#/view/ea4a25f2-9bcb-49cb-8fc0-0a89a43a58a2?_g=(filters:!(),refreshInterval:(pause:!t,value:0),time:(from:'2024-01-02T19:38:31.109Z',to:'2024-01-02T19:42:47.383Z'))&_a=(description:'',filters:!(),fullScreenMode:!f,options:(hidePanelTitles:!f,useMargins:!t),query:(language:kuery,query:''),timeRestore:!t,title:logs-aws-rds-dashboard,viewMode:view)",
       "gallery": [
         {
           "asset": "dashboard",
@@ -85,6 +90,7 @@
       "version": "1.0",
       "url": "https://github.com/opensearch-project/opensearch-catalog/blob/main/integrations/observability/aws_s3",
       "logo": "https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/aws_s3/static/logo.png",
+      "try_me_url": "https://otel.playground.opensearch.org/app/dashboards?security_tenant=global#/view/9e64d6b4-3717-4a34-bc80-9f3e4b54d6c4?_g=(filters:!(),refreshInterval:(pause:!t,value:0),time:(from:'2024-01-02T19:38:31.109Z',to:'2024-01-02T19:42:47.383Z'))&_a=(description:'',filters:!(),fullScreenMode:!f,options:(hidePanelTitles:!f,useMargins:!t),query:(language:kuery,query:''),timeRestore:!f,title:logs-aws-s3-dashboard,viewMode:view)",
       "gallery": [
         {
           "asset": "dashboard",
@@ -98,6 +104,7 @@
       "version": "1.0",
       "url": "https://github.com/opensearch-project/opensearch-catalog/blob/main/integrations/observability/aws_vpc_flow",
       "logo": "https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/aws_vpc_flow/static/logo.svg",
+      "try_me_url" : "https://otel.playground.opensearch.org/app/dashboards?security_tenant=global#/view/69e0dce3-7850-4e67-bed1-7f59f816caea?_g=(filters%3A!()%2CrefreshInterval%3A(pause%3A!t%2Cvalue%3A0)%2Ctime%3A(from%3A'2024-01-02T19%3A18%3A41.257Z'%2Cto%3A'2024-01-02T19%3A30%3A00.655Z'))",
       "gallery": [
         {
           "asset": "dashboard",
@@ -111,6 +118,7 @@
       "version": "1.0",
       "url": "https://github.com/opensearch-project/opensearch-catalog/blob/main/integrations/observability/aws_waf",
       "logo": "https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/aws_waf/static/logo.jpg",
+      "try_me_url" : "https://otel.playground.opensearch.org/app/dashboards?security_tenant=global#/view/fe37a1be-4642-444f-948e-3d173be632a6?_g=(filters:!(),refreshInterval:(pause:!t,value:0),time:(from:'2024-01-02T19:25:10.808Z',to:'2024-01-02T19:50:22.226Z'))&_a=(description:'',filters:!(),fullScreenMode:!f,options:(darkTheme:!f,hidePanelTitles:!f,useMargins:!t),query:(language:kuery,query:''),timeRestore:!f,title:logs-waf-dashboard,viewMode:view)",
       "gallery": [
         {
           "asset": "dashboard",
@@ -124,6 +132,7 @@
       "version": "1.0",
       "url": "https://github.com/opensearch-project/opensearch-catalog/blob/main/integrations/observability/k8s",
       "logo": "https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/k8s/static/logo.png",
+      "try_me_url" : "https://otel.playground.opensearch.org/app/dashboards?security_tenant=global#/view/235aaec2-1762-40f2-a4b4-73911d1bd9ab?_g=(filters:!(),refreshInterval:(pause:!t,value:0),time:(from:'2024-01-02T19:30:22.251Z',to:'2024-01-02T19:42:47.929Z'))&_a=(description:'Overview%20of%20Kubernetes%20cluster%20metrics',filters:!(),fullScreenMode:!f,options:(hidePanelTitles:!f,useMargins:!t),query:(language:kuery,query:''),timeRestore:!t,title:'%5BKubernetes%5D%20Overview%20',viewMode:view)",
       "gallery": [
         {
           "asset": "dashboard",
@@ -137,6 +146,7 @@
       "version": "1.0",
       "url": "https://github.com/opensearch-project/opensearch-catalog/blob/main/integrations/observability/nginx",
       "logo": "https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/nginx/static/logo.svg",
+      "try_me_url": "https://otel.playground.opensearch.org/app/dashboards?security_tenant=global#/view/a5c36fb5-5178-4c3b-9c30-318c58c9221e?_g=(filters:!(),refreshInterval:(pause:!t,value:0),time:(from:'2024-01-02T19:32:04.481Z',to:'2024-01-02T19:42:56.951Z'))&_a=(description:'Nginx%20dashboard%20with%20basic%20Observability%20on%20access%20%2F%20error%20logs',filters:!(),fullScreenMode:!f,options:(hidePanelTitles:!f,useMargins:!t),query:(language:kuery,query:''),timeRestore:!t,title:'Nginx%20Logs%20Overview',viewMode:view)",
       "gallery": [
         {
           "asset": "dashboard",

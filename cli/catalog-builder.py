@@ -1,9 +1,12 @@
+import html
 import json
+
 
 def read_json(file_path):
     """Read and return JSON data from a file."""
     with open(file_path, 'r') as file:
         return json.load(file)
+
 
 def generate_html_for_section(data, section_title, item_key, modal=True, section_id="", modal_id_prefix=""):
     """Generate HTML content for a given section (Integrations or Visualizations)."""
@@ -28,8 +31,13 @@ def generate_html_for_section(data, section_title, item_key, modal=True, section
     html_content += "</div></div>"
     return html_content
 
+
 def generate_modal_html(modal_id, item):
     """Generate HTML content for a modal."""
+    try_me_url = item.get('try_me_url', '')  # URL for the "Try Me" feature
+    try_me_url_encoded = html.escape(try_me_url)  # Encode special characters
+    try_me_link_html = f"<div class='text-center'><a href='{try_me_url_encoded}' target='_blank' class='btn btn-primary'>Try Me</a></div>" if try_me_url_encoded else ""
+
     modal_html = f"""
         <div class="modal fade" id="modal{modal_id}" tabindex="-1" role="dialog" aria-labelledby="modalLabel{modal_id}" aria-hidden="true">
             <div class="modal-dialog modal-lg" role="document">
@@ -45,10 +53,11 @@ def generate_modal_html(modal_id, item):
                         <p><strong>Description:</strong> {item.get('description', '')}</p>
                         <p><strong>Version:</strong> {item.get('version', '')}</p>
                         <p><strong>URL:</strong> <a href="{item.get('url', '')}">{item.get('url', '')}</a></p>
-                        {generate_labels_html(item.get('tags', []))}
+                        {try_me_link_html}
                         <div>
                             {"".join([f'<img src="{asset.get("image", "")}" style="width: 100%; height: auto; margin-top: 10px;" alt="dashboard" />' for asset in item.get('gallery', [])])}
                         </div>
+                        {generate_labels_html(item.get('tags', []))}
                     </div>
                 </div>
             </div>
@@ -113,10 +122,15 @@ def generate_css():
     """
     return css_styles
 
+
 def generate_javascript():
     """Generate JavaScript for collapsible sections."""
     javascript = """
     <script>
+        function showIframe(iframeId) {
+            var iframe = document.getElementById(iframeId);
+            iframe.style.display = iframe.style.display === 'none' ? 'block' : 'none';
+        }
         function toggleSection(sectionId) {
             var content = document.getElementById(sectionId);
             if (content.style.maxHeight && content.style.maxHeight !== "1000px") {
@@ -128,6 +142,7 @@ def generate_javascript():
     </script>
     """
     return javascript
+
 
 def generate_labels_html(labels_data):
     """Generate HTML content for labels with specific colors and icons, displayed in a single row."""
@@ -150,6 +165,7 @@ def generate_labels_html(labels_data):
     labels_html += "</p>"
     return labels_html
 
+
 def generate_catalog_details(integrations_data):
     """Generate HTML content for catalog details."""
     catalog_html = f"""
@@ -164,6 +180,7 @@ def generate_catalog_details(integrations_data):
         </div>
     """
     return catalog_html
+
 
 def main():
     """Main function to generate the HTML content for the catalog."""
@@ -191,9 +208,11 @@ def main():
     """
 
     # Generate HTML for Integrations
-    html_content += generate_html_for_section(integrations_data, 'Integrations', 'components', modal=True, section_id="integrations-section", modal_id_prefix="integ-")
+    html_content += generate_html_for_section(integrations_data, 'Integrations', 'components', modal=True,
+                                              section_id="integrations-section", modal_id_prefix="integ-")
     # Generate HTML for Visualizations
-    html_content += generate_html_for_section(visualizations_data, 'Visualizations', 'components', modal=True, section_id="visualizations-section", modal_id_prefix="vis-")
+    html_content += generate_html_for_section(visualizations_data, 'Visualizations', 'components', modal=True,
+                                              section_id="visualizations-section", modal_id_prefix="vis-")
     html_content += "</body></html>"
 
     # Write HTML content to file
@@ -201,6 +220,7 @@ def main():
         file.write(html_content)
 
     print("HTML file created successfully.")
+
 
 if __name__ == "__main__":
     main()
