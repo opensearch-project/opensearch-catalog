@@ -16,7 +16,7 @@ The Integration catalog is a concept that focuses on grouping similar integratio
 
 
 ### Visualization
-- [Visualizations](https://opensearch.org/docs/latest/visualization/)
+- [Visualizations](https://github.com/opensearch-project/opensearch-catalog/blob/main/visualizations/vega-visualizations.md)
 - [Visualizations Readme](https://github.com/opensearch-project/opensearch-catalog/tree/main/visualizations)
 - [Visualizations Catalog](https://htmlpreview.github.io/?https://github.com/opensearch-project/opensearch-catalog/blob/main/integrations/observability/catalog.html)
 
@@ -27,7 +27,7 @@ This catalog aims to extend the usage of different data-visualization component 
 
 ### Schema
 - [Schema Readme](https://github.com/opensearch-project/opensearch-catalog/blob/main/docs/schema/README.md)
-- [Schema Instantiation](https://github.com/opensearch-project/opensearch-catalog/blob/main/docs/schema/initiation.md)
+- [Schema Instantiation](https://github.com/opensearch-project/opensearch-catalog/blob/main/docs/schema/Instantiation.md)
 - [Observability Schema](https://github.com/opensearch-project/opensearch-catalog/blob/main/docs/schema/observability/README.md)
   - [Observability Logs Schema](https://github.com/opensearch-project/opensearch-catalog/tree/main/docs/schema/observability/logs#readme)
   - [Observability Traces Schema](https://github.com/opensearch-project/opensearch-catalog/tree/main/docs/schema/observability/traces#readme)
