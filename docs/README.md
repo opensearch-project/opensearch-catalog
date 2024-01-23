@@ -8,7 +8,7 @@ The OpenSearch Catalog is designed to make it easier for developers and communit
 - [Integrations](https://opensearch.org/docs/latest/integrations/)
 - [Integrations Readme](https://github.com/opensearch-project/opensearch-catalog/blob/main/docs/integrations/README.md)
 - [Integrations Creation](https://github.com/opensearch-project/opensearch-catalog/blob/main/docs/integrations/Integration-creation.md)
-  [Integration Observability Catalog](https://htmlpreview.github.io/?https://github.com/opensearch-project/opensearch-catalog/blob/main/integrations/observability/catalog.html)
+- [Integration Observability Catalog](https://htmlpreview.github.io/?https://github.com/opensearch-project/opensearch-catalog/blob/main/integrations/observability/catalog.html)
 
 
 ![](img/)![integrations-observability-catalog.png](img%2Fintegrations-observability-catalog.png)
@@ -18,7 +18,7 @@ The Integration catalog is a concept that focuses on grouping similar integratio
 ### Visualization
 - [Visualizations](https://opensearch.org/docs/latest/visualization/)
 - [Visualizations Readme](https://github.com/opensearch-project/opensearch-catalog/blob/main/docs/visualization/README.md)
-- [Visualizations Catalog](https://htmlpreview.github.io/?https://github.com/opensearch-project/opensearch-catalog/blob/main/visualization/observability/catalog.html)
+- [Visualizations Catalog](https://htmlpreview.github.io/?https://github.com/opensearch-project/opensearch-catalog/blob/main/integrations/observability/catalog.html)
 
 The Visualization Catalog is a central repository for organizing and sharing visualizations used in integrations developed using the standard simple schema mapping ( structure aware visual components).
 This catalog aims to extend the usage of different data-visualization component for the benefit of delivering fast, configurable and context aware user experience.
