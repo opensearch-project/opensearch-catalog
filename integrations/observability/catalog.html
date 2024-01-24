@@ -4,186 +4,479 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OpenSearch Observability Integrations Catalog</title>
+    <title>OpenSearch Observability Catalog</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
     <style>
-        body { font-family: Arial, sans-serif; }
-        .container { max-width: 800px; margin: auto; }
-        .integrations { padding: 10px; border: 1px solid #ddd; margin-bottom: 10px; }
+        .color-red { color: red; }
+        .color-blue { color: blue; }
+        .color-green { color: green; }
+        .color-orange { color: orange; }
+        .color-purple { color: purple; }
+        .color-yellow { color: yellow; }
+        .color-pink { color: pink; }
+        .color-violet { color: violet; }
+        .label-item {
+            display: inline-block;
+            margin-right: 10px;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #7e94ce;
+            background-image: url('https://opensearch.org/assets/media/herobanners/release-hero-bg-mobile.png');
+            background-size: cover;
+            background-attachment: fixed;
+            color: #ffffff;
+        }
+        .modal-content {
+            background-color: #105179;
+            background-image: url('https://opensearch.org/assets/media/herobanners/release-hero-bg-mobile.png');
+            background-size: cover;
+            background-attachment: fixed;
+        }
+        .container {
+            max-width: 800px;
+            padding: 8px; /* Add padding to the container */
+        }
+        .grid-item {
+            border: 2px solid #8ea4de;
+            padding: 5px;
+            margin: 8px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transform: perspective(500px) rotateY(0deg);
+        }
+        .grid-item:hover {
+            background-color: #16415b;
+            cursor: pointer;
+            transform: scale(1.025);
+            transform: perspective(500px) rotateY(20deg);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+        }
+        h2 {
+            text-align: center;
+        }
+        .collapsible {
+            cursor: pointer;
+        }
+        .content {
+            overflow: hidden;
+            transition: max-height 0.2s ease-out;
+            max-height: 1000px;
+        }
+
     </style>
+
 </head>
 <body>
-    <div class="container">
-        <img src="https://opensearch.org/assets/brand/PNG/Logo/opensearch_logo_darkmode.png" style="width: 750px; height: 250px;" alt="Logo" />
-        <h1>OpenSearch Observability Integrations Catalog</h1>
-        <p><strong>Version:</strong> 1.0</p>
-        <p><strong>URL:</strong> <a href="https://github.com/opensearch-project/opensearch-catalog/integrations/observability">https://github.com/opensearch-project/opensearch-catalog/integrations/observability</a></p>
-        <p><strong>Description:</strong> Observability integrations are a type of data that capture the events and activities occurring in a system. They reflect information such as user actions, system responses, and errors, providing valuable insights into system behavior. Integrations are well structured and include contextual information such as timestamps, unique identifiers, and metadata tags. Integrations can be used to visualize and troubleshoot performance issues, detect anomalies, and improve system performance by identifying areas for optimization</p>
-        <p><strong>License:</strong> Apache-2.0</p>
-        <p><strong>Labels:</strong> log, observability, http, aws, cloud, container</p>
-        <p><strong>Author:</strong> OpenSearch</p>
-        <h2>Integrations</h2>
 
-        <div class="integrations">
-            <h3>Apache Integration</h3>
-            <img src="https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/apache/static/logo.png" style="width: 75px; height: 75px;" alt="Apache Integration Logo" />
-            <p><strong>Description:</strong> Apache is an open source web server software for modern operating systems including UNIX and Windows.</p>
-            <p><strong>Version:</strong> 1.0</p>
-            <p><strong>URL:</strong> <a href="https://github.com/opensearch-project/opensearch-catalog/blob/main/integrations/observability/apache">https://github.com/opensearch-project/opensearch-catalog/blob/main/integrations/observability/apache</a></p>
-            <p><strong>Tags:</strong> log, communication, http</p>
-            <div class="gallery">
-    
-                <div class="asset">
-                    <img src="https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/apache/static/dashboard1.png" style="width: 350px; height: 250px;" alt="dashboard" />
-                </div>
-        
-            </div>
-        </div>
-    
-        <div class="integrations">
-            <h3>Amazon CloudFront Integration</h3>
-            <img src="https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/aws_cloudfront/static/logo.png" style="width: 75px; height: 75px;" alt="Amazon CloudFront Integration Logo" />
-            <p><strong>Description:</strong> Amazon CloudFront is a fast content delivery network (CDN) service that securely delivers data, videos, applications, and APIs to customers globally with low latency and high transfer speeds. CloudFront is integrated with other Amazon Web Services products to give developers and businesses an easy way to distribute content to end-users with low latency and high data transfer speeds.</p>
-            <p><strong>Version:</strong> 1.0</p>
-            <p><strong>URL:</strong> <a href="https://github.com/opensearch-project/opensearch-catalog/blob/main/integrations/observability/aws_cloudfront">https://github.com/opensearch-project/opensearch-catalog/blob/main/integrations/observability/aws_cloudfront</a></p>
-            <p><strong>Tags:</strong> log, aws, s3, cloud, cloudfront</p>
-            <div class="gallery">
-    
-                <div class="asset">
-                    <img src="https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/aws_cloudfront/static/dashboard.png" style="width: 350px; height: 250px;" alt="dashboard" />
-                </div>
-        
-            </div>
-        </div>
-    
-        <div class="integrations">
-            <h3>Amazon CloudTrail Integration</h3>
-            <img src="https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/aws_cloudtrail/static/logo.png" style="width: 75px; height: 75px;" alt="Amazon CloudTrail Integration Logo" />
-            <p><strong>Description:</strong> AWS CloudTrail is a service that enables governance, compliance, operational auditing, and risk auditing of your AWS account. With CloudTrail, you can log, continuously monitor, and retain account activity related to actions across your AWS infrastructure.</p>
-            <p><strong>Version:</strong> 1.0</p>
-            <p><strong>URL:</strong> <a href="https://github.com/opensearch-project/opensearch-catalog/blob/main/integrations/observability/aws_cloudtrail">https://github.com/opensearch-project/opensearch-catalog/blob/main/integrations/observability/aws_cloudtrail</a></p>
-            <p><strong>Tags:</strong> log, aws, s3, cloud, cloudtrail</p>
-            <div class="gallery">
-    
-                <div class="asset">
-                    <img src="https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/aws_cloudtrail/static/dashboard.png" style="width: 350px; height: 250px;" alt="dashboard" />
-                </div>
-        
-            </div>
-        </div>
-    
-        <div class="integrations">
-            <h3>Amazon ELB Integration</h3>
-            <img src="https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/aws_elb/static/logo.svg" style="width: 75px; height: 75px;"alt="Amazon ELB Integration Logo" />
-            <p><strong>Description:</strong> ELB Access Logs is a feature that allows you to capture information about requests sent to your load balancer.</p>
-            <p><strong>Version:</strong> 1.0</p>
-            <p><strong>URL:</strong> <a href="https://github.com/opensearch-project/opensearch-catalog/main/integrations/observability/aws_elb">https://github.com/opensearch-project/opensearch-catalog/blob/main/integrations/observability/aws_elb</a></p>
-            <p><strong>Tags:</strong> log, aws, communication, http, cloud, elb, url</p>
-            <div class="gallery">
-    
-                <div class="asset">
-                    <img src="https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/aws_elb/static/dashboard1.png" style="width: 350px; height: 250px;" alt="dashboard" />
-                </div>
-        
-            </div>
-        </div>
-    
-        <div class="integrations">
-            <h3>Amazon RDS Integration</h3>
-            <img src="https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/aws_rds/static/logo.png" style="width: 75px; height: 75px;" alt="Amazon RDS Integration Logo" />
-            <p><strong>Description:</strong> AWS RDS (Relational Database Service) is a managed service that makes it easy to set up, operate, and scale a relational database in the cloud.</p>
-            <p><strong>Version:</strong> 1.0</p>
-            <p><strong>URL:</strong> <a href="https://github.com/opensearch-project/opensearch-catalog/blob/main/integrations/observability/aws_rds">https://github.com/opensearch-project/opensearch-catalog/blob/main/integrations/observability/aws_rds</a></p>
-            <p><strong>Tags:</strong> log, aws, s3, cloud, rds</p>
-            <div class="gallery">
-    
-                <div class="asset">
-                    <img src="https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/aws_rds/static/dashboard.png" style="width: 350px; height: 250px;"alt="dashboard" />
-                </div>
-        
-            </div>
-        </div>
-    
-        <div class="integrations">
-            <h3>Amazon S3 Integration</h3>
-            <img src="https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/aws_s3/static/logo.png" style="width: 75px; height: 75px;" alt="Amazon S3 Integration Logo" />
-            <p><strong>Description:</strong> Amazon S3 (Simple Storage Service) is an object storage service that offers industry-leading scalability, data availability, security, and performance. It is designed to make web-scale computing easier for developers.</p>
-            <p><strong>Version:</strong> 1.0</p>
-            <p><strong>URL:</strong> <a href="https://github.com/opensearch-project/opensearch-catalog/blob/main/integrations/observability/aws_s3">https://github.com/opensearch-project/opensearch-catalog/blob/main/integrations/observability/aws_s3</a></p>
-            <p><strong>Tags:</strong> log, aws, s3, cloud</p>
-            <div class="gallery">
-    
-                <div class="asset">
-                    <img src="https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/aws_s3/static/dashboard.png" style="width: 350px; height: 250px;" alt="dashboard" />
-                </div>
-        
-            </div>
-        </div>
-    
-        <div class="integrations">
-            <h3>Amazon VPC Flow Integration</h3>
-            <img src="https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/aws_vpc_flow/static/logo.svg" style="width: 75px; height: 75px;"alt="Amazon VPC Flow Integration Logo" />
-            <p><strong>Description:</strong> AWS VPC Flow Logs is a feature that enables you to capture information about the IP traffic going to and from network interfaces in your VPC.</p>
-            <p><strong>Version:</strong> 1.0</p>
-            <p><strong>URL:</strong> <a href="https://github.com/opensearch-project/opensearch-catalog/blob/main/integrations/observability/aws_vpc_flow">https://github.com/opensearch-project/opensearch-catalog/blob/main/integrations/observability/aws_vpc_flow</a></p>
-            <p><strong>Tags:</strong> log, aws, s3, cloud, communication, vpc</p>
-            <div class="gallery">
-    
-                <div class="asset">
-                    <img src="https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/aws_vpc_flow/static/dashboard1.png" style="width: 350px; height: 250px;" alt="dashboard" />
-                </div>
-        
-            </div>
-        </div>
-    
-        <div class="integrations">
-            <h3>Amazon WAF Integration</h3>
-            <img src="https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/aws_waf/static/logo.png" style="width: 75px; height: 75px;" alt="Amazon WAF Integration Logo" />
-            <p><strong>Description:</strong> AWS WAF (Web Application Firewall) is a web application firewall service that helps protect your web applications from common web exploits that could affect application availability, compromise security, or consume excessive resources. AWS WAF provides firewall rules to filter and monitor HTTP/HTTPS requests based on specific conditions.</p>
-            <p><strong>Version:</strong> 1.0</p>
-            <p><strong>URL:</strong> <a href="https://github.com/opensearch-project/opensearch-catalog/blob/main/integrations/observability/aws_waf">https://github.com/opensearch-project/opensearch-catalog/blob/main/integrations/observability/aws_waf</a></p>
-            <p><strong>Tags:</strong> log, aws, s3, cloud, waf</p>
-            <div class="gallery">
-    
-                <div class="asset">
-                    <img src="https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/aws_waf/static/dashboard.png" style="width: 350px; height: 250px;"alt="dashboard" />
-                </div>
-        
-            </div>
-        </div>
-    
-        <div class="integrations">
-            <h3>Kubernetes Integration</h3>
-            <img src="https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/k8s/static/logo.png" style="width: 75px; height: 75px;" alt="Kubernetes Integration Logo" />
-            <p><strong>Description:</strong> Kubernetes is an open-source container orchestration platform that automates the deployment, scaling, and management of containerized applications. It provides a robust and scalable infrastructure for running applications in a cloud-native environment.
-/HTTPS requests based on specific conditions.</p>
-            <p><strong>Version:</strong> 1.0</p>
-            <p><strong>URL:</strong> <a href="https://github.com/opensearch-project/opensearch-catalog/main/integrations/observability/k8s">https://github.com/opensearch-project/opensearch-catalog/blob/main/integrations/observability/k8s</a></p>
-            <p><strong>Tags:</strong> log, k8s, cloud, container</p>
-            <div class="gallery">
-    
-                <div class="asset">
-                    <img src="https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/k8s/static/dashboard.png" style="width: 350px; height: 250px;" alt="dashboard" />
-                </div>
-        
-            </div>
-        </div>
-    
-        <div class="integrations">
-            <h3>Nginx Integration</h3>
-            <img src="https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/nginx/static/logo.svg" style="width: 75px; height: 75px;" alt="Nginx Integration Logo" />
-            <p><strong>Description:</strong> NGINX is open source software for web serving, reverse proxying, caching, load balancing, media streaming, and more./HTTPS requests based on specific conditions.</p>
-            <p><strong>Version:</strong> 1.0</p>
-            <p><strong>URL:</strong> <a href="https://github.com/opensearch-project/opensearch-catalog/blob/main/integrations/observability/nginx">https://github.com/opensearch-project/opensearch-catalog/blob/main/integrations/observability/nginx</a></p>
-            <p><strong>Tags:</strong> log, http, communication</p>
-            <div class="gallery">
-    
-                <div class="asset">
-                    <img src="https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/nginx/static/dashboard1.png" style="width: 350px; height: 250px;"alt="dashboard" />
-                </div>
-        
-            </div>
-        </div>
-    
+<div class="container">
+    <img src="https://opensearch.org/assets/brand/PNG/Logo/opensearch_logo_darkmode.png" style="width: 750px; height: 250px;" alt="Logo" />
+    <h1>OpenSearch Observability Catalog</h1>
+    <p><strong>Version:</strong> 1.0</p>
+    <p><strong>URL:</strong> <a href="https://github.com/opensearch-project/opensearch-catalog/tree/main/integrations/observability">https://github.com/opensearch-project/opensearch-catalog/tree/main/integrations/observability</a></p>
+    <p><strong>License:</strong> Apache-2.0</p>
+    <p><strong>Author:</strong> OpenSearch</p>
+    <p><strong>Labels:</strong> <span class='label-item color-red'><span class='label-icon'>▶</span> log</span> <span class='label-item color-orange'><span class='label-icon'>❖</span> http</span> <span class='label-item color-blue'><span class='label-icon'>⋔</span> aws</span> <span class='label-item color-purple'><span class='label-icon'>✧</span> cloud</span> <span class='label-item color-violet'><span class='label-icon'>⤀</span> container</span> <span class='label-item color-green'><span class='label-icon'>❊</span> communication</span> </p>
+</div>
+
+
+<script>
+    function showIframe(iframeId) {
+        var iframe = document.getElementById(iframeId);
+        iframe.style.display = iframe.style.display === 'none' ? 'block' : 'none';
+    }
+    function toggleSection(sectionId) {
+        var content = document.getElementById(sectionId);
+        if (content.style.maxHeight && content.style.maxHeight !== "1200px") {
+            content.style.maxHeight = "1200px";
+        } else {
+            content.style.maxHeight = "0px";
+        }
+    }
+</script>
+
+<h2 class='collapsible' onclick='toggleSection("integrations-section")'>Integrations</h2><div class='container content' id='integrations-section'><div class='row'>
+    <div class="col-md-2 grid-item text-center">
+        <img src="https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/apache/static/logo.png" style="width: 75px; height: 75px; cursor: pointer;" alt="Apache Integration Logo" data-toggle="modal" data-target="#modalinteg-0">
+        <p>Apache Integration</p>
     </div>
-</body>
-</html>
+
+    <div class="modal fade" id="modalinteg-0" tabindex="-1" role="dialog" aria-labelledby="modalLabelinteg-0" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalLabelinteg-0">Apache Integration</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img src="https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/apache/static/logo.png" style="width: 100px; height: 100px;" alt="Apache Integration Logo">
+                    <p><strong>Description:</strong> Apache is an open source web server software for modern operating systems including UNIX and Windows.</p>
+                    <p><strong>Version:</strong> 1.0</p>
+                    <p><strong>URL:</strong> <a href="https://github.com/opensearch-project/opensearch-catalog/blob/main/integrations/observability/apache">https://github.com/opensearch-project/opensearch-catalog/blob/main/integrations/observability/apache</a></p>
+                    <div class='text-center'><a href='https://otel.playground.opensearch.org/app/dashboards?security_tenant=global#/view/d0e5df06-5d7e-4def-8146-88ac07489821?_g=(filters:!(),refreshInterval:(pause:!t,value:0),time:(from:now-4w,to:now))&amp;_a=(description:&#x27;Filebeat%20Apache%20module%20dashboard&#x27;,filters:!(),fullScreenMode:!f,options:(hidePanelTitles:!f,useMargins:!t),query:(language:kuery,query:&#x27;&#x27;),timeRestore:!t,title:&#x27;Access%20and%20error%20logs%20ECS&#x27;,viewMode:view)' target='_blank' class='btn btn-primary'>Try Me</a></div>
+                    <div>
+                        <img src="https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/apache/static/dashboard1.png" style="width: 100%; height: auto; margin-top: 10px;" alt="dashboard" />
+                    </div>
+                    <p><strong>Labels:</strong> <span class='label-item color-red'><span class='label-icon'>▶</span> log</span> <span class='label-item color-green'><span class='label-icon'>❊</span> communication</span> <span class='label-item color-orange'><span class='label-icon'>❖</span> http</span> </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-2 grid-item text-center">
+        <img src="https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/aws_cloudfront/static/logo.png" style="width: 75px; height: 75px; cursor: pointer;" alt="Amazon CloudFront Integration Logo" data-toggle="modal" data-target="#modalinteg-1">
+        <p>Amazon CloudFront Integration</p>
+    </div>
+
+    <div class="modal fade" id="modalinteg-1" tabindex="-1" role="dialog" aria-labelledby="modalLabelinteg-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalLabelinteg-1">Amazon CloudFront Integration</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img src="https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/aws_cloudfront/static/logo.png" style="width: 100px; height: 100px;" alt="Amazon CloudFront Integration Logo">
+                    <p><strong>Description:</strong> Amazon CloudFront is a fast content delivery network (CDN) service that securely delivers data, videos, applications, and APIs to customers globally with low latency and high transfer speeds. CloudFront is integrated with other Amazon Web Services products to give developers and businesses an easy way to distribute content to end-users with low latency and high data transfer speeds.</p>
+                    <p><strong>Version:</strong> 1.0</p>
+                    <p><strong>URL:</strong> <a href="https://github.com/opensearch-project/opensearch-catalog/blob/main/integrations/observability/aws_cloudfront">https://github.com/opensearch-project/opensearch-catalog/blob/main/integrations/observability/aws_cloudfront</a></p>
+                    <div class='text-center'><a href='https://otel.playground.opensearch.org/app/dashboards?security_tenant=global#/view/10bcf6e7-9c6a-4afb-913e-e98c7053237a?_g=(filters:!(),refreshInterval:(pause:!t,value:0),time:(from:&#x27;2024-01-02T19:28:32.161Z&#x27;,to:&#x27;2024-01-02T19:43:51.183Z&#x27;))&amp;_a=(description:&#x27;&#x27;,filters:!(),fullScreenMode:!f,options:(hidePanelTitles:!f,useMargins:!t),query:(language:kuery,query:&#x27;&#x27;),timeRestore:!f,title:logs-aws-cloudfront-dashboard,viewMode:view)' target='_blank' class='btn btn-primary'>Try Me</a></div>
+                    <div>
+                        <img src="https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/aws_cloudfront/static/dashboard.png" style="width: 100%; height: auto; margin-top: 10px;" alt="dashboard" />
+                    </div>
+                    <p><strong>Labels:</strong> <span class='label-item color-red'><span class='label-icon'>▶</span> log</span> <span class='label-item color-blue'><span class='label-icon'>⋔</span> aws</span> <span class='label-item color-black'><span class='label-icon'>•</span> s3</span> <span class='label-item color-purple'><span class='label-icon'>✧</span> cloud</span> <span class='label-item color-black'><span class='label-icon'>•</span> cloudfront</span> </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-2 grid-item text-center">
+        <img src="https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/aws_cloudtrail/static/logo.png" style="width: 75px; height: 75px; cursor: pointer;" alt="Amazon CloudTrail Integration Logo" data-toggle="modal" data-target="#modalinteg-2">
+        <p>Amazon CloudTrail Integration</p>
+    </div>
+
+    <div class="modal fade" id="modalinteg-2" tabindex="-1" role="dialog" aria-labelledby="modalLabelinteg-2" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalLabelinteg-2">Amazon CloudTrail Integration</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img src="https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/aws_cloudtrail/static/logo.png" style="width: 100px; height: 100px;" alt="Amazon CloudTrail Integration Logo">
+                    <p><strong>Description:</strong> AWS CloudTrail is a service that enables governance, compliance, operational auditing, and risk auditing of your AWS account. With CloudTrail, you can log, continuously monitor, and retain account activity related to actions across your AWS infrastructure.</p>
+                    <p><strong>Version:</strong> 1.0</p>
+                    <p><strong>URL:</strong> <a href="https://github.com/opensearch-project/opensearch-catalog/blob/main/integrations/observability/aws_cloudtrail">https://github.com/opensearch-project/opensearch-catalog/blob/main/integrations/observability/aws_cloudtrail</a></p>
+                    <div class='text-center'><a href='https://otel.playground.opensearch.org/app/dashboards?security_tenant=global#/view/8b01006c-f3e4-4b66-84bb-d4989b9341d4?_g=(filters:!(),refreshInterval:(pause:!t,value:0),time:(from:&#x27;2024-01-02T19:28:32.161Z&#x27;,to:&#x27;2024-01-02T19:43:51.183Z&#x27;))&amp;_a=(description:&#x27;&#x27;,filters:!(),fullScreenMode:!f,options:(hidePanelTitles:!f,useMargins:!t),query:(language:kuery,query:&#x27;&#x27;),timeRestore:!f,title:logs-cloudtrail-dashboard,viewMode:view)' target='_blank' class='btn btn-primary'>Try Me</a></div>
+                    <div>
+                        <img src="https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/aws_cloudtrail/static/dashboard.png" style="width: 100%; height: auto; margin-top: 10px;" alt="dashboard" />
+                    </div>
+                    <p><strong>Labels:</strong> <span class='label-item color-red'><span class='label-icon'>▶</span> log</span> <span class='label-item color-blue'><span class='label-icon'>⋔</span> aws</span> <span class='label-item color-black'><span class='label-icon'>•</span> s3</span> <span class='label-item color-purple'><span class='label-icon'>✧</span> cloud</span> <span class='label-item color-black'><span class='label-icon'>•</span> cloudtrail</span> </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-2 grid-item text-center">
+        <img src="https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/aws_elb/static/logo.svg" style="width: 75px; height: 75px; cursor: pointer;" alt="Amazon ELB Integration Logo" data-toggle="modal" data-target="#modalinteg-3">
+        <p>Amazon ELB Integration</p>
+    </div>
+
+    <div class="modal fade" id="modalinteg-3" tabindex="-1" role="dialog" aria-labelledby="modalLabelinteg-3" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalLabelinteg-3">Amazon ELB Integration</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img src="https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/aws_elb/static/logo.svg" style="width: 100px; height: 100px;" alt="Amazon ELB Integration Logo">
+                    <p><strong>Description:</strong> ELB Access Logs is a feature that allows you to capture information about requests sent to your load balancer.</p>
+                    <p><strong>Version:</strong> 1.0</p>
+                    <p><strong>URL:</strong> <a href="https://github.com/opensearch-project/opensearch-catalog/blob/main/integrations/observability/aws_elb">https://github.com/opensearch-project/opensearch-catalog/blob/main/integrations/observability/aws_elb</a></p>
+                    <div class='text-center'><a href='https://otel.playground.opensearch.org/app/dashboards?security_tenant=global#/view/9139f66d-7e4b-4a07-b89b-3acd30db8c40?_g=(filters:!(),refreshInterval:(pause:!t,value:0),time:(from:&#x27;2024-01-02T19:28:32.161Z&#x27;,to:&#x27;2024-01-02T19:43:51.183Z&#x27;))&amp;_a=(description:&#x27;&#x27;,filters:!(),fullScreenMode:!f,options:(hidePanelTitles:!f,useMargins:!t),query:(language:kuery,query:&#x27;&#x27;),timeRestore:!f,title:&#x27;ELB%20Summary&#x27;,viewMode:view)' target='_blank' class='btn btn-primary'>Try Me</a></div>
+                    <div>
+                        <img src="https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/aws_elb/static/dashboard1.png" style="width: 100%; height: auto; margin-top: 10px;" alt="dashboard" />
+                    </div>
+                    <p><strong>Labels:</strong> <span class='label-item color-red'><span class='label-icon'>▶</span> log</span> <span class='label-item color-blue'><span class='label-icon'>⋔</span> aws</span> <span class='label-item color-green'><span class='label-icon'>❊</span> communication</span> <span class='label-item color-orange'><span class='label-icon'>❖</span> http</span> <span class='label-item color-purple'><span class='label-icon'>✧</span> cloud</span> <span class='label-item color-yellow'><span class='label-icon'>✑</span> elb</span> <span class='label-item color-pink'><span class='label-icon'>❀</span> url</span> </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-2 grid-item text-center">
+        <img src="https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/aws_rds/static/logo.png" style="width: 75px; height: 75px; cursor: pointer;" alt="Amazon RDS Integration Logo" data-toggle="modal" data-target="#modalinteg-4">
+        <p>Amazon RDS Integration</p>
+    </div>
+
+    <div class="modal fade" id="modalinteg-4" tabindex="-1" role="dialog" aria-labelledby="modalLabelinteg-4" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalLabelinteg-4">Amazon RDS Integration</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img src="https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/aws_rds/static/logo.png" style="width: 100px; height: 100px;" alt="Amazon RDS Integration Logo">
+                    <p><strong>Description:</strong> AWS RDS (Relational Database Service) is a managed service that makes it easy to set up, operate, and scale a relational database in the cloud.</p>
+                    <p><strong>Version:</strong> 1.0</p>
+                    <p><strong>URL:</strong> <a href="https://github.com/opensearch-project/opensearch-catalog/blob/main/integrations/observability/aws_rds">https://github.com/opensearch-project/opensearch-catalog/blob/main/integrations/observability/aws_rds</a></p>
+                    <div class='text-center'><a href='https://otel.playground.opensearch.org/app/dashboards?security_tenant=global#/view/ea4a25f2-9bcb-49cb-8fc0-0a89a43a58a2?_g=(filters:!(),refreshInterval:(pause:!t,value:0),time:(from:&#x27;2024-01-02T19:38:31.109Z&#x27;,to:&#x27;2024-01-02T19:42:47.383Z&#x27;))&amp;_a=(description:&#x27;&#x27;,filters:!(),fullScreenMode:!f,options:(hidePanelTitles:!f,useMargins:!t),query:(language:kuery,query:&#x27;&#x27;),timeRestore:!t,title:logs-aws-rds-dashboard,viewMode:view)' target='_blank' class='btn btn-primary'>Try Me</a></div>
+                    <div>
+                        <img src="https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/aws_rds/static/dashboard.png" style="width: 100%; height: auto; margin-top: 10px;" alt="dashboard" />
+                    </div>
+                    <p><strong>Labels:</strong> <span class='label-item color-red'><span class='label-icon'>▶</span> log</span> <span class='label-item color-blue'><span class='label-icon'>⋔</span> aws</span> <span class='label-item color-black'><span class='label-icon'>•</span> s3</span> <span class='label-item color-purple'><span class='label-icon'>✧</span> cloud</span> <span class='label-item color-black'><span class='label-icon'>•</span> rds</span> </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><div class="row">
+    <div class="col-md-2 grid-item text-center">
+        <img src="https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/aws_s3/static/logo.png" style="width: 75px; height: 75px; cursor: pointer;" alt="Amazon S3 Integration Logo" data-toggle="modal" data-target="#modalinteg-5">
+        <p>Amazon S3 Integration</p>
+    </div>
+
+    <div class="modal fade" id="modalinteg-5" tabindex="-1" role="dialog" aria-labelledby="modalLabelinteg-5" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalLabelinteg-5">Amazon S3 Integration</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img src="https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/aws_s3/static/logo.png" style="width: 100px; height: 100px;" alt="Amazon S3 Integration Logo">
+                    <p><strong>Description:</strong> Amazon S3 (Simple Storage Service) is an object storage service that offers industry-leading scalability, data availability, security, and performance. It is designed to make web-scale computing easier for developers.</p>
+                    <p><strong>Version:</strong> 1.0</p>
+                    <p><strong>URL:</strong> <a href="https://github.com/opensearch-project/opensearch-catalog/blob/main/integrations/observability/aws_s3">https://github.com/opensearch-project/opensearch-catalog/blob/main/integrations/observability/aws_s3</a></p>
+                    <div class='text-center'><a href='https://otel.playground.opensearch.org/app/dashboards?security_tenant=global#/view/9e64d6b4-3717-4a34-bc80-9f3e4b54d6c4?_g=(filters:!(),refreshInterval:(pause:!t,value:0),time:(from:&#x27;2024-01-02T19:38:31.109Z&#x27;,to:&#x27;2024-01-02T19:42:47.383Z&#x27;))&amp;_a=(description:&#x27;&#x27;,filters:!(),fullScreenMode:!f,options:(hidePanelTitles:!f,useMargins:!t),query:(language:kuery,query:&#x27;&#x27;),timeRestore:!f,title:logs-aws-s3-dashboard,viewMode:view)' target='_blank' class='btn btn-primary'>Try Me</a></div>
+                    <div>
+                        <img src="https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/aws_s3/static/dashboard.png" style="width: 100%; height: auto; margin-top: 10px;" alt="dashboard" />
+                    </div>
+                    <p><strong>Labels:</strong> <span class='label-item color-red'><span class='label-icon'>▶</span> log</span> <span class='label-item color-blue'><span class='label-icon'>⋔</span> aws</span> <span class='label-item color-black'><span class='label-icon'>•</span> s3</span> <span class='label-item color-purple'><span class='label-icon'>✧</span> cloud</span> </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-2 grid-item text-center">
+        <img src="https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/aws_vpc_flow/static/logo.svg" style="width: 75px; height: 75px; cursor: pointer;" alt="Amazon VPC Flow Integration Logo" data-toggle="modal" data-target="#modalinteg-6">
+        <p>Amazon VPC Flow Integration</p>
+    </div>
+
+    <div class="modal fade" id="modalinteg-6" tabindex="-1" role="dialog" aria-labelledby="modalLabelinteg-6" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalLabelinteg-6">Amazon VPC Flow Integration</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img src="https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/aws_vpc_flow/static/logo.svg" style="width: 100px; height: 100px;" alt="Amazon VPC Flow Integration Logo">
+                    <p><strong>Description:</strong> AWS VPC Flow Logs is a feature that enables you to capture information about the IP traffic going to and from network interfaces in your VPC.</p>
+                    <p><strong>Version:</strong> 1.0</p>
+                    <p><strong>URL:</strong> <a href="https://github.com/opensearch-project/opensearch-catalog/blob/main/integrations/observability/aws_vpc_flow">https://github.com/opensearch-project/opensearch-catalog/blob/main/integrations/observability/aws_vpc_flow</a></p>
+                    <div class='text-center'><a href='https://otel.playground.opensearch.org/app/dashboards?security_tenant=global#/view/69e0dce3-7850-4e67-bed1-7f59f816caea?_g=(filters%3A!()%2CrefreshInterval%3A(pause%3A!t%2Cvalue%3A0)%2Ctime%3A(from%3A&#x27;2024-01-02T19%3A18%3A41.257Z&#x27;%2Cto%3A&#x27;2024-01-02T19%3A30%3A00.655Z&#x27;))' target='_blank' class='btn btn-primary'>Try Me</a></div>
+                    <div>
+                        <img src="https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/aws_vpc_flow/static/dashboard1.png" style="width: 100%; height: auto; margin-top: 10px;" alt="dashboard" />
+                    </div>
+                    <p><strong>Labels:</strong> <span class='label-item color-red'><span class='label-icon'>▶</span> log</span> <span class='label-item color-blue'><span class='label-icon'>⋔</span> aws</span> <span class='label-item color-black'><span class='label-icon'>•</span> s3</span> <span class='label-item color-purple'><span class='label-icon'>✧</span> cloud</span> <span class='label-item color-green'><span class='label-icon'>❊</span> communication</span> <span class='label-item color-black'><span class='label-icon'>•</span> vpc</span> </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-2 grid-item text-center">
+        <img src="https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/aws_waf/static/logo.jpg" style="width: 75px; height: 75px; cursor: pointer;" alt="Amazon WAF Integration Logo" data-toggle="modal" data-target="#modalinteg-7">
+        <p>Amazon WAF Integration</p>
+    </div>
+
+    <div class="modal fade" id="modalinteg-7" tabindex="-1" role="dialog" aria-labelledby="modalLabelinteg-7" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalLabelinteg-7">Amazon WAF Integration</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img src="https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/aws_waf/static/logo.jpg" style="width: 100px; height: 100px;" alt="Amazon WAF Integration Logo">
+                    <p><strong>Description:</strong> AWS WAF (Web Application Firewall) is a web application firewall service that helps protect your web applications from common web exploits that could affect application availability, compromise security, or consume excessive resources. AWS WAF provides firewall rules to filter and monitor HTTP/HTTPS requests based on specific conditions.</p>
+                    <p><strong>Version:</strong> 1.0</p>
+                    <p><strong>URL:</strong> <a href="https://github.com/opensearch-project/opensearch-catalog/blob/main/integrations/observability/aws_waf">https://github.com/opensearch-project/opensearch-catalog/blob/main/integrations/observability/aws_waf</a></p>
+                    <div class='text-center'><a href='https://otel.playground.opensearch.org/app/dashboards?security_tenant=global#/view/fe37a1be-4642-444f-948e-3d173be632a6?_g=(filters:!(),refreshInterval:(pause:!t,value:0),time:(from:&#x27;2024-01-02T19:25:10.808Z&#x27;,to:&#x27;2024-01-02T19:50:22.226Z&#x27;))&amp;_a=(description:&#x27;&#x27;,filters:!(),fullScreenMode:!f,options:(darkTheme:!f,hidePanelTitles:!f,useMargins:!t),query:(language:kuery,query:&#x27;&#x27;),timeRestore:!f,title:logs-waf-dashboard,viewMode:view)' target='_blank' class='btn btn-primary'>Try Me</a></div>
+                    <div>
+                        <img src="https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/aws_waf/static/dashboard.png" style="width: 100%; height: auto; margin-top: 10px;" alt="dashboard" />
+                    </div>
+                    <p><strong>Labels:</strong> <span class='label-item color-red'><span class='label-icon'>▶</span> log</span> <span class='label-item color-blue'><span class='label-icon'>⋔</span> aws</span> <span class='label-item color-black'><span class='label-icon'>•</span> s3</span> <span class='label-item color-purple'><span class='label-icon'>✧</span> cloud</span> <span class='label-item color-black'><span class='label-icon'>•</span> waf</span> </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-2 grid-item text-center">
+        <img src="https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/k8s/static/logo.png" style="width: 75px; height: 75px; cursor: pointer;" alt="Kubernetes Integration Logo" data-toggle="modal" data-target="#modalinteg-8">
+        <p>Kubernetes Integration</p>
+    </div>
+
+    <div class="modal fade" id="modalinteg-8" tabindex="-1" role="dialog" aria-labelledby="modalLabelinteg-8" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalLabelinteg-8">Kubernetes Integration</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img src="https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/k8s/static/logo.png" style="width: 100px; height: 100px;" alt="Kubernetes Integration Logo">
+                    <p><strong>Description:</strong> Kubernetes is an open-source container orchestration platform that automates the deployment, scaling, and management of containerized applications. It provides a robust and scalable infrastructure for running applications in a cloud-native environment.
+                        /HTTPS requests based on specific conditions.</p>
+                    <p><strong>Version:</strong> 1.0</p>
+                    <p><strong>URL:</strong> <a href="https://github.com/opensearch-project/opensearch-catalog/blob/main/integrations/observability/k8s">https://github.com/opensearch-project/opensearch-catalog/blob/main/integrations/observability/k8s</a></p>
+                    <div class='text-center'><a href='https://otel.playground.opensearch.org/app/dashboards?security_tenant=global#/view/235aaec2-1762-40f2-a4b4-73911d1bd9ab?_g=(filters:!(),refreshInterval:(pause:!t,value:0),time:(from:&#x27;2024-01-02T19:30:22.251Z&#x27;,to:&#x27;2024-01-02T19:42:47.929Z&#x27;))&amp;_a=(description:&#x27;Overview%20of%20Kubernetes%20cluster%20metrics&#x27;,filters:!(),fullScreenMode:!f,options:(hidePanelTitles:!f,useMargins:!t),query:(language:kuery,query:&#x27;&#x27;),timeRestore:!t,title:&#x27;%5BKubernetes%5D%20Overview%20&#x27;,viewMode:view)' target='_blank' class='btn btn-primary'>Try Me</a></div>
+                    <div>
+                        <img src="https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/k8s/static/dashboard.png" style="width: 100%; height: auto; margin-top: 10px;" alt="dashboard" />
+                    </div>
+                    <p><strong>Labels:</strong> <span class='label-item color-red'><span class='label-icon'>▶</span> log</span> <span class='label-item color-black'><span class='label-icon'>•</span> k8s</span> <span class='label-item color-purple'><span class='label-icon'>✧</span> cloud</span> <span class='label-item color-violet'><span class='label-icon'>⤀</span> container</span> </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-2 grid-item text-center">
+        <img src="https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/nginx/static/logo.svg" style="width: 75px; height: 75px; cursor: pointer;" alt="Nginx Integration Logo" data-toggle="modal" data-target="#modalinteg-9">
+        <p>Nginx Integration</p>
+    </div>
+
+    <div class="modal fade" id="modalinteg-9" tabindex="-1" role="dialog" aria-labelledby="modalLabelinteg-9" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalLabelinteg-9">Nginx Integration</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img src="https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/nginx/static/logo.svg" style="width: 100px; height: 100px;" alt="Nginx Integration Logo">
+                    <p><strong>Description:</strong> NGINX is open source software for web serving, reverse proxying, caching, load balancing, media streaming, and more./HTTPS requests based on specific conditions.</p>
+                    <p><strong>Version:</strong> 1.0</p>
+                    <p><strong>URL:</strong> <a href="https://github.com/opensearch-project/opensearch-catalog/blob/main/integrations/observability/nginx">https://github.com/opensearch-project/opensearch-catalog/blob/main/integrations/observability/nginx</a></p>
+                    <div class='text-center'><a href='https://otel.playground.opensearch.org/app/dashboards?security_tenant=global#/view/a5c36fb5-5178-4c3b-9c30-318c58c9221e?_g=(filters:!(),refreshInterval:(pause:!t,value:0),time:(from:&#x27;2024-01-02T19:32:04.481Z&#x27;,to:&#x27;2024-01-02T19:42:56.951Z&#x27;))&amp;_a=(description:&#x27;Nginx%20dashboard%20with%20basic%20Observability%20on%20access%20%2F%20error%20logs&#x27;,filters:!(),fullScreenMode:!f,options:(hidePanelTitles:!f,useMargins:!t),query:(language:kuery,query:&#x27;&#x27;),timeRestore:!t,title:&#x27;Nginx%20Logs%20Overview&#x27;,viewMode:view)' target='_blank' class='btn btn-primary'>Try Me</a></div>
+                    <div>
+                        <img src="https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/nginx/static/dashboard1.png" style="width: 100%; height: auto; margin-top: 10px;" alt="dashboard" />
+                    </div>
+                    <p><strong>Labels:</strong> <span class='label-item color-red'><span class='label-icon'>▶</span> log</span> <span class='label-item color-orange'><span class='label-icon'>❖</span> http</span> <span class='label-item color-green'><span class='label-icon'>❊</span> communication</span> </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div></div><h2 class='collapsible' onclick='toggleSection("visualizations-section")'>Visualizations</h2><div class='container content' id='visualizations-section'><div class='row'>
+    <div class="col-md-2 grid-item text-center">
+        <img src="https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/visualizations/observability/service-duration-heatmap/logo.png" style="width: 75px; height: 75px; cursor: pointer;" alt="Services Duration Heat-Map Logo" data-toggle="modal" data-target="#modalvis-0">
+        <p>Services Duration Heat-Map</p>
+    </div>
+
+    <div class="modal fade" id="modalvis-0" tabindex="-1" role="dialog" aria-labelledby="modalLabelvis-0" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalLabelvis-0">Services Duration Heat-Map</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img src="https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/visualizations/observability/service-duration-heatmap/logo.png" style="width: 100px; height: 100px;" alt="Services Duration Heat-Map Logo">
+                    <p><strong>Description:</strong> Display services duration heat map according to some timely aggregation</p>
+                    <p><strong>Version:</strong> 1.0</p>
+                    <p><strong>URL:</strong> <a href="https://github.com/opensearch-project/opensearch-catalog/tree/main/visualizations/observability/service-duration-heatmap">https://github.com/opensearch-project/opensearch-catalog/tree/main/visualizations/observability/service-duration-heatmap</a></p>
+                    <div class='text-center'><a href='https://otel.playground.opensearch.org/app/dashboards?security_tenant=global#/view/830039e0-b026-11ee-ad69-f335a07fe19a?_g=(filters:!(),refreshInterval:(pause:!t,value:0),time:(from:now-15h,to:now))&amp;_a=(description:&#x27;&#x27;,expandedPanelId:&#x27;10338bb7-0477-4d2e-aa92-e89813f7ba2a&#x27;,filters:!(),fullScreenMode:!f,options:(hidePanelTitles:!f,useMargins:!t),query:(language:kuery,query:&#x27;&#x27;),timeRestore:!f,title:Services-Dashboard,viewMode:view)' target='_blank' class='btn btn-primary'>Try Me</a></div>
+                    <div>
+                        <img src="https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/visualizations/observability/service-duration-heatmap/service-duration.png" style="width: 100%; height: auto; margin-top: 10px;" alt="dashboard" />
+                    </div>
+                    <p><strong>Labels:</strong> <span class='label-item color-black'><span class='label-icon'>•</span> services</span> <span class='label-item color-black'><span class='label-icon'>•</span> duration</span> </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-2 grid-item text-center">
+        <img src="https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/visualizations/observability/service-map/logo.png" style="width: 75px; height: 75px; cursor: pointer;" alt="Services Map Graph Logo" data-toggle="modal" data-target="#modalvis-1">
+        <p>Services Map Graph</p>
+    </div>
+
+    <div class="modal fade" id="modalvis-1" tabindex="-1" role="dialog" aria-labelledby="modalLabelvis-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalLabelvis-1">Services Map Graph</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img src="https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/visualizations/observability/service-map/logo.png" style="width: 100px; height: 100px;" alt="Services Map Graph Logo">
+                    <p><strong>Description:</strong> Display services map graph based on the system's services interactions.</p>
+                    <p><strong>Version:</strong> 1.0</p>
+                    <p><strong>URL:</strong> <a href="https://github.com/opensearch-project/opensearch-catalog/tree/main/visualizations/observability/service-map">https://github.com/opensearch-project/opensearch-catalog/tree/main/visualizations/observability/service-map</a></p>
+                    <div class='text-center'><a href='https://otel.playground.opensearch.org/app/dashboards?security_tenant=global#/view/830039e0-b026-11ee-ad69-f335a07fe19a?_g=(filters:!(),refreshInterval:(pause:!t,value:0),time:(from:now-15h,to:now))&amp;_a=(description:&#x27;&#x27;,filters:!(),fullScreenMode:!f,options:(hidePanelTitles:!f,useMargins:!t),query:(language:kuery,query:&#x27;&#x27;),timeRestore:!f,title:Services-Dashboard,viewMode:view)' target='_blank' class='btn btn-primary'>Try Me</a></div>
+                    <div>
+                        <img src="https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/visualizations/observability/service-map/service-map.png" style="width: 100%; height: auto; margin-top: 10px;" alt="dashboard" />
+                    </div>
+                    <p><strong>Labels:</strong> <span class='label-item color-black'><span class='label-icon'>•</span> services</span> <span class='label-item color-green'><span class='label-icon'>❊</span> communication</span> </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-2 grid-item text-center">
+        <img src="https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/visualizations/observability/http/logo.jpg" style="width: 75px; height: 75px; cursor: pointer;" alt="HTTP Visualizations Logo" data-toggle="modal" data-target="#modalvis-2">
+        <p>HTTP Visualizations</p>
+    </div>
+
+    <div class="modal fade" id="modalvis-2" tabindex="-1" role="dialog" aria-labelledby="modalLabelvis-2" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalLabelvis-2">HTTP Visualizations</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img src="https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/visualizations/observability/http/logo.jpg" style="width: 100px; height: 100px;" alt="HTTP Visualizations Logo">
+                    <p><strong>Description:</strong> Collection of HTTP related visualizations including data volume, errors over time, status codes, and top URLs.</p>
+                    <p><strong>Version:</strong> 1.0</p>
+                    <p><strong>URL:</strong> <a href="https://github.com/opensearch-project/opensearch-catalog/tree/main/visualizations/observability/http">https://github.com/opensearch-project/opensearch-catalog/tree/main/visualizations/observability/http</a></p>
+                    <div class='text-center'><a href='https://otel.playground.opensearch.org/app/dashboards?security_tenant=global#/view/69e0dce3-7850-4e67-bed1-7f59f816caea?_g=(filters:!(),refreshInterval:(pause:!t,value:0),time:(from:&#x27;2024-01-02T18:52:17.888Z&#x27;,to:&#x27;2024-01-02T19:37:24.075Z&#x27;))&amp;_a=(description:&#x27;VPC%20Flow%20Logs%20dashboard%20with%20basic%20Observability&#x27;,expandedPanelId:fb0edb10-2e2a-4b3f-99a5-22ffe95e3250,filters:!(),fullScreenMode:!f,options:(hidePanelTitles:!f,useMargins:!t),query:(language:kuery,query:&#x27;&#x27;),timeRestore:!f,title:&#x27;AWS%20VPC%20Flow%20Logs%20Overview&#x27;,viewMode:view)' target='_blank' class='btn btn-primary'>Try Me</a></div>
+                    <div>
+                        <img src="https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/visualizations/observability/http/data_volume.png" style="width: 100%; height: auto; margin-top: 10px;" alt="dashboard" /><img src="https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/visualizations/observability/http/http-network-graph.png" style="width: 100%; height: auto; margin-top: 10px;" alt="dashboard" /><img src="https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/visualizations/observability/http/errors_over_time.png" style="width: 100%; height: auto; margin-top: 10px;" alt="dashboard" /><img src="https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/visualizations/observability/http/status_codes_over_time.png" style="width: 100%; height: auto; margin-top: 10px;" alt="dashboard" /><img src="https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/visualizations/observability/http/top_urls.png" style="width: 100%; height: auto; margin-top: 10px;" alt="dashboard" />
+                    </div>
+                    <p><strong>Labels:</strong> <span class='label-item color-red'><span class='label-icon'>▶</span> log</span> <span class='label-item color-orange'><span class='label-icon'>❖</span> http</span> <span class='label-item color-green'><span class='label-icon'>❊</span> communication</span> </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div></div></body></html>

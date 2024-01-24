@@ -1,0 +1,119 @@
+{
+  "catalog": "observability-widgets",
+  "version": "1.0",
+  "url": "https://github.com/opensearch-project/opensearch-catalog/tree/main/visualizations/observability",
+  "description": "Observability visualizations are a type of data that capture the events and activities occurring in a system. They reflect information such as user actions, system responses, and errors, providing valuable insights into system behavior. Integrations are well structured and include contextual information such as timestamps, unique identifiers, and metadata tags. Integrations can be used to visualize and troubleshoot performance issues, detect anomalies, and improve system performance by identifying areas for optimization",
+  "displayName": "OpenSearch Observability visualizations Catalog",
+  "license": "Apache-2.0",
+  "labels": ["log", "http","communication", "services"],
+  "author": "OpenSearch",
+  "statics": {
+    "logo": {
+      "annotation": "OpenSearch Logo",
+      "path": "https://opensearch.org/assets/brand/PNG/Logo/opensearch_logo_darkmode.png"
+    }
+  },
+  "components": [
+    {
+      "component": "Services Duration Heat-Map",
+      "description": "Display services duration heat map according to some timely aggregation",
+      "version": "1.0",
+      "url": "https://github.com/opensearch-project/opensearch-catalog/tree/main/visualizations/observability/service-duration-heatmap",
+      "info": "https://github.com/opensearch-project/opensearch-catalog/blob/main/visualizations/observability/service-duration-heatmap/README.md",
+      "logo": "https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/visualizations/observability/service-duration-heatmap/logo.png",
+      "tags": ["services","duration"],
+      "try_me_url": "https://otel.playground.opensearch.org/app/dashboards?security_tenant=global#/view/830039e0-b026-11ee-ad69-f335a07fe19a?_g=(filters:!(),refreshInterval:(pause:!t,value:0),time:(from:now-15h,to:now))&_a=(description:'',expandedPanelId:'10338bb7-0477-4d2e-aa92-e89813f7ba2a',filters:!(),fullScreenMode:!f,options:(hidePanelTitles:!f,useMargins:!t),query:(language:kuery,query:''),timeRestore:!f,title:Services-Dashboard,viewMode:view)",
+      "gallery": [
+        {
+          "asset": "visualization",
+          "image": "https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/visualizations/observability/service-duration-heatmap/service-duration.png"
+        }
+      ],
+      "asset": "https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/visualizations/observability/observability/service-duration-heatmap/service-duration.ndjson",
+      "parent": "traces"
+    },
+    {
+      "component": "Services Map Graph",
+      "description": "Display services map graph based on the system's services interactions.",
+      "version": "1.0",
+      "url": "https://github.com/opensearch-project/opensearch-catalog/tree/main/visualizations/observability/service-map",
+      "info": "https://github.com/opensearch-project/opensearch-catalog/blob/main/visualizations/observability/service-map/README.md",
+      "logo": "https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/visualizations/observability/service-map/logo.png",
+      "tags": ["services","communication"],
+      "try_me_url": "https://otel.playground.opensearch.org/app/dashboards?security_tenant=global#/view/830039e0-b026-11ee-ad69-f335a07fe19a?_g=(filters:!(),refreshInterval:(pause:!t,value:0),time:(from:now-15h,to:now))&_a=(description:'',filters:!(),fullScreenMode:!f,options:(hidePanelTitles:!f,useMargins:!t),query:(language:kuery,query:''),timeRestore:!f,title:Services-Dashboard,viewMode:view)",
+      "gallery": [
+        {
+          "asset": "visualization",
+          "image": "https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/visualizations/observability/service-map/service-map.png"
+        }
+      ],
+      "asset": "https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/visualizations/observability/observability/service-map/dql-services-graph-widget.json",
+      "parent": "traces"
+    },
+    {
+      "component": "HTTP Visualizations",
+      "description": "Collection of HTTP related visualizations including data volume, errors over time, status codes, and top URLs.",
+      "version": "1.0",
+      "url": "https://github.com/opensearch-project/opensearch-catalog/tree/main/visualizations/observability/http",
+      "info": "https://github.com/opensearch-project/opensearch-catalog/blob/main/visualizations/observability/http/README.md",
+      "logo": "https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/visualizations/observability/http/logo.jpg",
+      "try_me_url": "https://otel.playground.opensearch.org/app/dashboards?security_tenant=global#/view/69e0dce3-7850-4e67-bed1-7f59f816caea?_g=(filters:!(),refreshInterval:(pause:!t,value:0),time:(from:'2024-01-02T18:52:17.888Z',to:'2024-01-02T19:37:24.075Z'))&_a=(description:'VPC%20Flow%20Logs%20dashboard%20with%20basic%20Observability',expandedPanelId:fb0edb10-2e2a-4b3f-99a5-22ffe95e3250,filters:!(),fullScreenMode:!f,options:(hidePanelTitles:!f,useMargins:!t),query:(language:kuery,query:''),timeRestore:!f,title:'AWS%20VPC%20Flow%20Logs%20Overview',viewMode:view)",
+      "tags": ["log","http","communication"],
+      "gallery": [
+        {
+          "asset": "visualization",
+          "image": "https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/visualizations/observability/http/data_volume.png"
+        },
+        {
+          "asset": "visualization",
+          "image": "https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/visualizations/observability/http/http-network-graph.png"
+        },
+        {
+          "asset": "visualization",
+          "image": "https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/visualizations/observability/http/errors_over_time.png"
+        },
+        {
+          "asset": "visualization",
+          "image": "https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/visualizations/observability/http/status_codes_over_time.png"
+        },
+        {
+          "asset": "visualization",
+          "image": "https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/visualizations/observability/http/top_urls.png"
+        }
+      ],
+      "children": [
+        {
+          "name": "Network Graph",
+          "description": "The Http Network Graph Widget for OpenSearch Dashboards uses Vega for complex visualization of service interactions.",
+          "screenshot": "https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/visualizations/observability/http/http-network-graph.png",
+          "asset": "https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/visualizations/observability/observability/http/data_volume.json"
+        },
+        {
+          "name": "Data Volume",
+          "description": "Get the rate of data (in bytes) returned by a log source.",
+          "screenshot": "https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/visualizations/observability/http/data_volume.png",
+          "asset": "https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/visualizations/observability/observability/http/data_volume.json"
+        },
+        {
+          "name": "Errors over Time",
+          "description": "Get the rate of errors returned by a log source.",
+          "screenshot": "https://github.com/opensearch-project/opensearch-catalog/blob/main/visualizations/observability/http/errors_over_time.png",
+          "asset": "https://github.com/opensearch-project/opensearch-catalog/blob/main/visualizations/observability/observability/http/errors_over_time.json"
+        },
+        {
+          "name": "Status Codes over Time",
+          "description": "Get the proportions of different status codes returned by a log source.",
+          "screenshot": "https://github.com/opensearch-project/opensearch-catalog/blob/main/visualizations/observability/http/status_codes_over_time.png",
+          "asset": "https://github.com/opensearch-project/opensearch-catalog/blob/main/visualizations/observability/observability/http/status_codes_over_time.json"
+        },
+        {
+          "name": "Top URLs",
+          "description": "Get the most frequent URLs visited by a log source.",
+          "screenshot": "https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/visualizations/observability/http/top_urls.png",
+          "asset": "https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/visualizations/observability/observability/http/top_urls.json"
+        }
+      ],
+      "parent": "logs"
+    }
+  ]
+}
