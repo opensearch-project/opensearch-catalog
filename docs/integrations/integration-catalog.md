@@ -50,6 +50,6 @@ Observability Integration Catalog is the default catalog which is bundled with O
 
 _Here is the catalog summarization page that was auto generated as an html page to be published reviewed:_
 
-[Integration Observability Catalog](https://htmlpreview.github.io/?https://github.com/opensearch-project/opensearch-catalog/blob/main/integrations/observability/catalog.html)
+[Integration Observability Catalog](https://htmlpreview.github.io/?https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/catalog.html)
 
 ![](https://user-images.githubusercontent.com/48943349/262477858-e06e21b5-aa10-431d-93cc-81498ac39cf1.png)
