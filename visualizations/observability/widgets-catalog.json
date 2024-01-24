@@ -22,7 +22,7 @@
       "info": "https://github.com/opensearch-project/opensearch-catalog/blob/main/visualizations/observability/service-duration-heatmap/README.md",
       "logo": "https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/visualizations/observability/service-duration-heatmap/logo.png",
       "tags": ["services","duration"],
-      "try_me_url": "https://otel.playground.opensearch.org/app/dashboards?security_tenant=global#/view/69e0dce3-7850-4e67-bed1-7f59f816caea?_g=(filters:!(),refreshInterval:(pause:!t,value:0),time:(from:'2024-01-02T18:52:17.888Z',to:'2024-01-02T19:37:24.075Z'))&_a=(description:'VPC%20Flow%20Logs%20dashboard%20with%20basic%20Observability',expandedPanelId:fb0edb10-2e2a-4b3f-99a5-22ffe95e3250,filters:!(),fullScreenMode:!f,options:(hidePanelTitles:!f,useMargins:!t),query:(language:kuery,query:''),timeRestore:!f,title:'AWS%20VPC%20Flow%20Logs%20Overview',viewMode:view)",
+      "try_me_url": "https://otel.playground.opensearch.org/app/dashboards?security_tenant=global#/view/830039e0-b026-11ee-ad69-f335a07fe19a?_g=(filters:!(),refreshInterval:(pause:!t,value:0),time:(from:now-15h,to:now))&_a=(description:'',expandedPanelId:'10338bb7-0477-4d2e-aa92-e89813f7ba2a',filters:!(),fullScreenMode:!f,options:(hidePanelTitles:!f,useMargins:!t),query:(language:kuery,query:''),timeRestore:!f,title:Services-Dashboard,viewMode:view)",
       "gallery": [
         {
           "asset": "visualization",
@@ -57,7 +57,7 @@
       "url": "https://github.com/opensearch-project/opensearch-catalog/tree/main/visualizations/observability/http",
       "info": "https://github.com/opensearch-project/opensearch-catalog/blob/main/visualizations/observability/http/README.md",
       "logo": "https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/visualizations/observability/http/logo.jpg",
-      "try_me_url": "https://otel.playground.opensearch.org/app/dashboards#/view/69e0dce3-7850-4e67-bed1-7f59f816caea?_g=h@82bf1c3&_a=h@98f6994",
+      "try_me_url": "https://otel.playground.opensearch.org/app/dashboards?security_tenant=global#/view/69e0dce3-7850-4e67-bed1-7f59f816caea?_g=(filters:!(),refreshInterval:(pause:!t,value:0),time:(from:'2024-01-02T18:52:17.888Z',to:'2024-01-02T19:37:24.075Z'))&_a=(description:'VPC%20Flow%20Logs%20dashboard%20with%20basic%20Observability',expandedPanelId:fb0edb10-2e2a-4b3f-99a5-22ffe95e3250,filters:!(),fullScreenMode:!f,options:(hidePanelTitles:!f,useMargins:!t),query:(language:kuery,query:''),timeRestore:!f,title:'AWS%20VPC%20Flow%20Logs%20Overview',viewMode:view)",
       "tags": ["log","http","communication"],
       "gallery": [
         {
