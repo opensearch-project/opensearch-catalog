@@ -39,16 +39,24 @@
             background-size: cover;
             background-attachment: fixed;
         }
-        .container { max-width: 800px; margin: auto; }
+        .container {
+            max-width: 800px;
+            padding: 8px; /* Add padding to the container */
+        }
         .grid-item {
             border: 2px solid #8ea4de;
             padding: 5px;
-            margin-bottom: 5px;
-            transition: background-color 0.3s ease;
+            margin: 8px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transform: perspective(500px) rotateY(0deg);
         }
         .grid-item:hover {
             background-color: #16415b;
             cursor: pointer;
+            transform: scale(1.025);
+            transform: perspective(500px) rotateY(20deg);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
         }
         h2 {
             text-align: center;
@@ -85,8 +93,8 @@
     }
     function toggleSection(sectionId) {
         var content = document.getElementById(sectionId);
-        if (content.style.maxHeight && content.style.maxHeight !== "1000px") {
-            content.style.maxHeight = "1000px";
+        if (content.style.maxHeight && content.style.maxHeight !== "1200px") {
+            content.style.maxHeight = "1200px";
         } else {
             content.style.maxHeight = "0px";
         }
@@ -238,7 +246,7 @@
             </div>
         </div>
     </div>
-
+</div><div class="row">
     <div class="col-md-2 grid-item text-center">
         <img src="https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/aws_s3/static/logo.png" style="width: 75px; height: 75px; cursor: pointer;" alt="Amazon S3 Integration Logo" data-toggle="modal" data-target="#modalinteg-5">
         <p>Amazon S3 Integration</p>
@@ -267,7 +275,7 @@
             </div>
         </div>
     </div>
-</div><div class="row">
+
     <div class="col-md-2 grid-item text-center">
         <img src="https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/aws_vpc_flow/static/logo.svg" style="width: 75px; height: 75px; cursor: pointer;" alt="Amazon VPC Flow Integration Logo" data-toggle="modal" data-target="#modalinteg-6">
         <p>Amazon VPC Flow Integration</p>

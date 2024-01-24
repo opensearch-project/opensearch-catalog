@@ -15,7 +15,7 @@ def generate_html_for_section(data, section_title, item_key, modal=True, section
 
     for i, item in enumerate(data.get(item_key, [])):
         modal_id = f"{modal_id_prefix}{i}"  # Unique modal ID
-        if i % 6 == 0 and i != 0:
+        if i % 5 == 0 and i != 0:
             html_content += '</div><div class="row">'
 
         html_content += f"""
@@ -95,16 +95,24 @@ def generate_css():
             background-size: cover;
             background-attachment: fixed;
         }
-        .container { max-width: 800px; margin: auto; }
+        .container {
+            max-width: 800px;
+            padding: 8px; /* Add padding to the container */
+        }
         .grid-item {
             border: 2px solid #8ea4de;
             padding: 5px;
-            margin-bottom: 5px;
-            transition: background-color 0.3s ease;
+            margin: 8px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transform: perspective(500px) rotateY(0deg);
         }
         .grid-item:hover {
             background-color: #16415b;
             cursor: pointer;
+            transform: scale(1.025);
+            transform: perspective(500px) rotateY(20deg);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
         }
         h2 {
             text-align: center;
@@ -133,8 +141,8 @@ def generate_javascript():
         }
         function toggleSection(sectionId) {
             var content = document.getElementById(sectionId);
-            if (content.style.maxHeight && content.style.maxHeight !== "1000px") {
-                content.style.maxHeight = "1000px";
+            if (content.style.maxHeight && content.style.maxHeight !== "1200px") {
+                content.style.maxHeight = "1200px";
             } else {
                 content.style.maxHeight = "0px";
             }
