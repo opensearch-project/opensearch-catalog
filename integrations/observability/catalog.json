@@ -153,6 +153,20 @@
           "image": "https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/nginx/static/dashboard1.png"
         }],
       "tags": ["log", "http", "communication"]
+    },
+    {
+      "component": "RED Services Workflow",
+      "description": "The RED Method defines the three key metrics you should measure for every microservice in your architecture. Those metrics are:\n\n(Request) Rate - the number of requests, per second, you services are serving.\n(Request) Errors - the number of failed requests per second.\n(Request) Duration - distributions of the amount of time each request takes.",
+      "version": "1.0",
+      "url": "https://github.com/opensearch-project/opensearch-catalog/blob/main/integrations/observability/reds-services-workflow",
+      "logo": "https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/reds-services-workflow/static/logo.png",
+      "try_me_url": "https://github.com/opensearch-project/opensearch-catalog/blob/main/integrations/observability/reds-services-workflow/assets/sense-1.0.0.json",
+      "gallery" : [
+        {
+          "asset": "dashboard",
+          "image": "https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/reds-services-workflow/static/service-duration.png"
+        }],
+      "tags": ["traces", "http", "services"]
     }
   ]
 }
