@@ -31,6 +31,10 @@
     "queries": {
       "name": "queries",
       "version": "1.0.0"
+    },
+    "console": {
+      "name": "sense",
+      "version": "1.0.0"
     }
   },
   "sampleData": {
