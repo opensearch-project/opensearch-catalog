@@ -1,8 +1,9 @@
-# REDS Services Workflow
+# RED Services Workflow
 
 **What is the integration resource ?**
 
 This is a workflows based integration in which the RED's needed indices are being build as workflow steps
+![](../static/logo.png)
 
 ### What is The RED Method?
 
