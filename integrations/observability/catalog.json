@@ -160,7 +160,8 @@
       "version": "1.0",
       "url": "https://github.com/opensearch-project/opensearch-catalog/blob/main/integrations/observability/reds-services-workflow",
       "logo": "https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/reds-services-workflow/static/logo.png",
-      "gallery": [
+      "try_me_url": "https://github.com/opensearch-project/opensearch-catalog/blob/main/integrations/observability/reds-services-workflow/assets/sense-1.0.0.json",
+      "gallery" : [
         {
           "asset": "dashboard",
           "image": "https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/reds-services-workflow/static/service-duration.png"
