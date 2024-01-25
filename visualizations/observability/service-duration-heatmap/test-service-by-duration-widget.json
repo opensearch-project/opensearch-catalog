@@ -536,11 +536,11 @@
           "field": "count",
           "type": "quantitative",
           "scale": {
-            "range": ["#FCF7E1", "#FCEFD5", "#FACC87", "#FA8D53", "#DF4B2A"]
+            "range": ["#ECF7E1", "#ECEFD5", "#EACC87", "#EA8D53", "#EF4B2A"]
           },
           "legend": {
             "description": "Vega-Lite doesn't show the first value of the legend's gradient so I used zero twice in the values array",
-            "values": [0, 0, 1000, 5000, 10000, 25000, 5000],
+            "values": [0, 0, 1000, 5000, 10000, 25000, 50000],
             "title": [
               "Duration SLO Index (DSI)",
               "0: No Duration ; 5000: Exceptional Duration"

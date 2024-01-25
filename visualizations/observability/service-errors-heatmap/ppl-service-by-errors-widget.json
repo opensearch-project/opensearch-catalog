@@ -9,7 +9,7 @@
       },
       "height": {"step": 29},
       "data": {
-        "url" : "http://localhost:9200/_plugins/_ppl?ppl=source%20%3D%20otel-v1-apm-span-*%20%7C%20stats%20avg(durationInNanos)%20by%20span(startTime%2C%201h)%20%2C%20serviceName%20%7C%20sort%20-%20`avg(durationInNanos)`",
+        "url" : "http://localhost:9200/_plugins/_ppl?ppl=???",
         "format": {
           "type": "json",
           "property": "datarows"
@@ -42,7 +42,7 @@
           "field": "count",
           "type": "quantitative",
           "scale": {
-            "range": ["#ECF7E1", "#ECEFD5", "#EACC87", "#EA8D53", "#EF4B2A"]
+            "range": ["#b3cde3", "#6497b1", "#005b96", "#03396c", "#011f4b"]
           },
           "legend": {
             "description": "Vega-Lite doesn't show the first value of the legend's gradient so I used zero twice in the values array",

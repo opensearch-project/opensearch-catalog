@@ -1,0 +1,6076 @@
+{
+  "aggregations": {
+    "time_buckets": {
+      "buckets": [
+        {
+          "key_as_string": "2023-10-10T18:00:00.000Z",
+          "key": 1696960800000,
+          "doc_count": 63124,
+          "service_names": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 3372,
+            "buckets": [
+              {
+                "key": "frontend",
+                "doc_count": 25794,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 25794
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 13563
+                    },
+                    {
+                      "key": "308",
+                      "doc_count": 1229
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "productcatalogservice",
+                "doc_count": 8341,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 8341
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": []
+                }
+              },
+              {
+                "key": "loadgenerator",
+                "doc_count": 6878,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 6878
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 6878
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "checkoutservice",
+                "doc_count": 5220,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 5220
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 381
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "cartservice",
+                "doc_count": 3787,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 3787
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 3787
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "featureflagservice",
+                "doc_count": 3214,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 3214
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 273
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "recommendationservice",
+                "doc_count": 2424,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 2424
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": []
+                }
+              },
+              {
+                "key": "emailservice",
+                "doc_count": 1524,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 1524
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 381
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "adservice",
+                "doc_count": 1405,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 1405
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": []
+                }
+              },
+              {
+                "key": "quoteservice",
+                "doc_count": 1165,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 1165
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 390
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "key_as_string": "2023-10-10T19:00:00.000Z",
+          "key": 1696964400000,
+          "doc_count": 84554,
+          "service_names": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 4732,
+            "buckets": [
+              {
+                "key": "frontend",
+                "doc_count": 34144,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 34144
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 18038
+                    },
+                    {
+                      "key": "308",
+                      "doc_count": 1626
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "productcatalogservice",
+                "doc_count": 11076,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 11076
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": []
+                }
+              },
+              {
+                "key": "loadgenerator",
+                "doc_count": 9165,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 9165
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 9165
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "checkoutservice",
+                "doc_count": 7324,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 7324
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 535
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "cartservice",
+                "doc_count": 5040,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 5040
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 5040
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "featureflagservice",
+                "doc_count": 4348,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 4348
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 360
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "recommendationservice",
+                "doc_count": 3056,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 3056
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": []
+                }
+              },
+              {
+                "key": "emailservice",
+                "doc_count": 2140,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 2140
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 535
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "adservice",
+                "doc_count": 1924,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 1924
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": []
+                }
+              },
+              {
+                "key": "quoteservice",
+                "doc_count": 1605,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 1605
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 535
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "key_as_string": "2023-10-10T20:00:00.000Z",
+          "key": 1696968000000,
+          "doc_count": 89347,
+          "service_names": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 5140,
+            "buckets": [
+              {
+                "key": "frontend",
+                "doc_count": 35678,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 35678
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 18568
+                    },
+                    {
+                      "key": "308",
+                      "doc_count": 1649
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "productcatalogservice",
+                "doc_count": 11921,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 11921
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": []
+                }
+              },
+              {
+                "key": "loadgenerator",
+                "doc_count": 9420,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 9420
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 9420
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "checkoutservice",
+                "doc_count": 7968,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 7968
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 578
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "cartservice",
+                "doc_count": 5400,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 5400
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 5400
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "featureflagservice",
+                "doc_count": 4538,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 4538
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 359
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "recommendationservice",
+                "doc_count": 3500,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 3500
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": []
+                }
+              },
+              {
+                "key": "emailservice",
+                "doc_count": 2304,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 2304
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 576
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "adservice",
+                "doc_count": 1744,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 1744
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": []
+                }
+              },
+              {
+                "key": "quoteservice",
+                "doc_count": 1734,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 1734
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 578
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "key_as_string": "2023-10-10T21:00:00.000Z",
+          "key": 1696971600000,
+          "doc_count": 85821,
+          "service_names": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 4821,
+            "buckets": [
+              {
+                "key": "frontend",
+                "doc_count": 34564,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 34564
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 18191
+                    },
+                    {
+                      "key": "308",
+                      "doc_count": 1574
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "productcatalogservice",
+                "doc_count": 11361,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 11361
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": []
+                }
+              },
+              {
+                "key": "loadgenerator",
+                "doc_count": 9232,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 9232
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 9232
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "checkoutservice",
+                "doc_count": 7462,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 7462
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 545
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "cartservice",
+                "doc_count": 5198,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 5198
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 5198
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "featureflagservice",
+                "doc_count": 4428,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 4428
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 359
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "recommendationservice",
+                "doc_count": 3180,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 3180
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": []
+                }
+              },
+              {
+                "key": "emailservice",
+                "doc_count": 2180,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 2180
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 545
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "adservice",
+                "doc_count": 1760,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 1760
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": []
+                }
+              },
+              {
+                "key": "quoteservice",
+                "doc_count": 1635,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 1635
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 545
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "key_as_string": "2023-10-10T22:00:00.000Z",
+          "key": 1696975200000,
+          "doc_count": 84650,
+          "service_names": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 4638,
+            "buckets": [
+              {
+                "key": "frontend",
+                "doc_count": 34085,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 34085
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 17797
+                    },
+                    {
+                      "key": "308",
+                      "doc_count": 1667
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "productcatalogservice",
+                "doc_count": 11343,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 11343
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": []
+                }
+              },
+              {
+                "key": "loadgenerator",
+                "doc_count": 9039,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 9038
+                    },
+                    {
+                      "key": 2,
+                      "doc_count": 1
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 9038
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "checkoutservice",
+                "doc_count": 7164,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 7164
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 528
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "cartservice",
+                "doc_count": 4916,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 4916
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 4916
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "featureflagservice",
+                "doc_count": 4556,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 4556
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 360
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "recommendationservice",
+                "doc_count": 3368,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 3368
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": []
+                }
+              },
+              {
+                "key": "emailservice",
+                "doc_count": 2112,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 2112
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 528
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "adservice",
+                "doc_count": 1845,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 1845
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": []
+                }
+              },
+              {
+                "key": "quoteservice",
+                "doc_count": 1584,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 1584
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 528
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "key_as_string": "2023-10-10T23:00:00.000Z",
+          "key": 1696978800000,
+          "doc_count": 84976,
+          "service_names": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 4738,
+            "buckets": [
+              {
+                "key": "frontend",
+                "doc_count": 34180,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 34180
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 17843
+                    },
+                    {
+                      "key": "308",
+                      "doc_count": 1689
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "productcatalogservice",
+                "doc_count": 11227,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 11227
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": []
+                }
+              },
+              {
+                "key": "loadgenerator",
+                "doc_count": 9043,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 9043
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 9043
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "checkoutservice",
+                "doc_count": 7320,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 7320
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 539
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "cartservice",
+                "doc_count": 4998,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 4998
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 4998
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "featureflagservice",
+                "doc_count": 4434,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 4434
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 360
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "recommendationservice",
+                "doc_count": 3328,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 3328
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": []
+                }
+              },
+              {
+                "key": "emailservice",
+                "doc_count": 2156,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 2156
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 539
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "adservice",
+                "doc_count": 1935,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 1935
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": []
+                }
+              },
+              {
+                "key": "quoteservice",
+                "doc_count": 1617,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 1617
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 539
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "key_as_string": "2023-10-11T00:00:00.000Z",
+          "key": 1696982400000,
+          "doc_count": 87530,
+          "service_names": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 4882,
+            "buckets": [
+              {
+                "key": "frontend",
+                "doc_count": 35294,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 35294
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 18457
+                    },
+                    {
+                      "key": "308",
+                      "doc_count": 1658
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "productcatalogservice",
+                "doc_count": 11703,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 11703
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": []
+                }
+              },
+              {
+                "key": "loadgenerator",
+                "doc_count": 9364,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 9362
+                    },
+                    {
+                      "key": 2,
+                      "doc_count": 2
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 9362
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "checkoutservice",
+                "doc_count": 7572,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 7572
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 548
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "cartservice",
+                "doc_count": 5215,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 5215
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 5215
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "featureflagservice",
+                "doc_count": 4456,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 4456
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 360
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "recommendationservice",
+                "doc_count": 3368,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 3368
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": []
+                }
+              },
+              {
+                "key": "emailservice",
+                "doc_count": 2192,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 2192
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 548
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "adservice",
+                "doc_count": 1840,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 1840
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": []
+                }
+              },
+              {
+                "key": "quoteservice",
+                "doc_count": 1644,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 1644
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 548
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "key_as_string": "2023-10-11T01:00:00.000Z",
+          "key": 1696986000000,
+          "doc_count": 84101,
+          "service_names": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 4609,
+            "buckets": [
+              {
+                "key": "frontend",
+                "doc_count": 34119,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 34119
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 17921
+                    },
+                    {
+                      "key": "308",
+                      "doc_count": 1595
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "productcatalogservice",
+                "doc_count": 11237,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 11237
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": []
+                }
+              },
+              {
+                "key": "loadgenerator",
+                "doc_count": 9095,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 9094
+                    },
+                    {
+                      "key": 2,
+                      "doc_count": 1
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 9094
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "checkoutservice",
+                "doc_count": 7122,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 7122
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 524
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "cartservice",
+                "doc_count": 4950,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 4950
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 4950
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "featureflagservice",
+                "doc_count": 4284,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 4284
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 359
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "recommendationservice",
+                "doc_count": 3272,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 3272
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": []
+                }
+              },
+              {
+                "key": "emailservice",
+                "doc_count": 2096,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 2096
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 524
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "adservice",
+                "doc_count": 1745,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 1745
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": []
+                }
+              },
+              {
+                "key": "quoteservice",
+                "doc_count": 1572,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 1572
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 524
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "key_as_string": "2023-10-11T02:00:00.000Z",
+          "key": 1696989600000,
+          "doc_count": 86832,
+          "service_names": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 4914,
+            "buckets": [
+              {
+                "key": "frontend",
+                "doc_count": 34945,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 34945
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 18340
+                    },
+                    {
+                      "key": "308",
+                      "doc_count": 1621
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "productcatalogservice",
+                "doc_count": 11466,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 11466
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": []
+                }
+              },
+              {
+                "key": "loadgenerator",
+                "doc_count": 9296,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 9295
+                    },
+                    {
+                      "key": 2,
+                      "doc_count": 1
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 9295
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "checkoutservice",
+                "doc_count": 7604,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 7604
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 556
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "cartservice",
+                "doc_count": 5257,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 5257
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 5257
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "featureflagservice",
+                "doc_count": 4410,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 4410
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 359
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "recommendationservice",
+                "doc_count": 3268,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 3268
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": []
+                }
+              },
+              {
+                "key": "emailservice",
+                "doc_count": 2224,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 2224
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 556
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "adservice",
+                "doc_count": 1780,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 1780
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": []
+                }
+              },
+              {
+                "key": "quoteservice",
+                "doc_count": 1668,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 1668
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 556
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "key_as_string": "2023-10-11T03:00:00.000Z",
+          "key": 1696993200000,
+          "doc_count": 87340,
+          "service_names": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 5087,
+            "buckets": [
+              {
+                "key": "frontend",
+                "doc_count": 35009,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 35009
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 18538
+                    },
+                    {
+                      "key": "308",
+                      "doc_count": 1548
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "productcatalogservice",
+                "doc_count": 11374,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 11374
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": []
+                }
+              },
+              {
+                "key": "loadgenerator",
+                "doc_count": 9407,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 9406
+                    },
+                    {
+                      "key": 2,
+                      "doc_count": 1
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 9406
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "checkoutservice",
+                "doc_count": 7882,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 7882
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 573
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "cartservice",
+                "doc_count": 5397,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 5397
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 5397
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "featureflagservice",
+                "doc_count": 4376,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 4376
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 360
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "recommendationservice",
+                "doc_count": 3012,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 3012
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": []
+                }
+              },
+              {
+                "key": "emailservice",
+                "doc_count": 2292,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 2292
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 573
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "adservice",
+                "doc_count": 1785,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 1785
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": []
+                }
+              },
+              {
+                "key": "quoteservice",
+                "doc_count": 1719,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 1719
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 573
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "key_as_string": "2023-10-11T04:00:00.000Z",
+          "key": 1696996800000,
+          "doc_count": 84619,
+          "service_names": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 4688,
+            "buckets": [
+              {
+                "key": "frontend",
+                "doc_count": 34216,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 34216
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 17920
+                    },
+                    {
+                      "key": "308",
+                      "doc_count": 1613
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "productcatalogservice",
+                "doc_count": 11266,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 11266
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": []
+                }
+              },
+              {
+                "key": "loadgenerator",
+                "doc_count": 9087,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 9086
+                    },
+                    {
+                      "key": 2,
+                      "doc_count": 1
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 9086
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "checkoutservice",
+                "doc_count": 7256,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 7256
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 530
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "cartservice",
+                "doc_count": 5024,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 5024
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 5024
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "featureflagservice",
+                "doc_count": 4292,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 4292
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 359
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "recommendationservice",
+                "doc_count": 3296,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 3296
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": []
+                }
+              },
+              {
+                "key": "emailservice",
+                "doc_count": 2120,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 2120
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 530
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "adservice",
+                "doc_count": 1784,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 1784
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": []
+                }
+              },
+              {
+                "key": "quoteservice",
+                "doc_count": 1590,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 1590
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 530
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "key_as_string": "2023-10-11T05:00:00.000Z",
+          "key": 1697000400000,
+          "doc_count": 86377,
+          "service_names": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 4836,
+            "buckets": [
+              {
+                "key": "frontend",
+                "doc_count": 34944,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 34944
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 18365
+                    },
+                    {
+                      "key": "308",
+                      "doc_count": 1602
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "productcatalogservice",
+                "doc_count": 11422,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 11422
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": []
+                }
+              },
+              {
+                "key": "loadgenerator",
+                "doc_count": 9322,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 9321
+                    },
+                    {
+                      "key": 2,
+                      "doc_count": 1
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 9321
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "checkoutservice",
+                "doc_count": 7500,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 7499
+                    },
+                    {
+                      "key": 2,
+                      "doc_count": 1
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 542
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "cartservice",
+                "doc_count": 5245,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 5245
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 5245
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "featureflagservice",
+                "doc_count": 4304,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 4304
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 360
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "recommendationservice",
+                "doc_count": 3232,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 3232
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": []
+                }
+              },
+              {
+                "key": "emailservice",
+                "doc_count": 2168,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 2168
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 542
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "adservice",
+                "doc_count": 1775,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 1775
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": []
+                }
+              },
+              {
+                "key": "quoteservice",
+                "doc_count": 1629,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 1629
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 543
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "key_as_string": "2023-10-11T06:00:00.000Z",
+          "key": 1697004000000,
+          "doc_count": 85484,
+          "service_names": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 4674,
+            "buckets": [
+              {
+                "key": "frontend",
+                "doc_count": 34416,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 34416
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 17967
+                    },
+                    {
+                      "key": "308",
+                      "doc_count": 1652
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "productcatalogservice",
+                "doc_count": 11481,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 11481
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": []
+                }
+              },
+              {
+                "key": "loadgenerator",
+                "doc_count": 9117,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 9116
+                    },
+                    {
+                      "key": 2,
+                      "doc_count": 1
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 9116
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "checkoutservice",
+                "doc_count": 7228,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 7228
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 530
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "cartservice",
+                "doc_count": 5048,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 5048
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 5048
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "featureflagservice",
+                "doc_count": 4630,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 4630
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 359
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "recommendationservice",
+                "doc_count": 3380,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 3380
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": []
+                }
+              },
+              {
+                "key": "emailservice",
+                "doc_count": 2120,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 2120
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 530
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "adservice",
+                "doc_count": 1800,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 1800
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": []
+                }
+              },
+              {
+                "key": "quoteservice",
+                "doc_count": 1590,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 1590
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 530
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "key_as_string": "2023-10-11T07:00:00.000Z",
+          "key": 1697007600000,
+          "doc_count": 86944,
+          "service_names": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 4845,
+            "buckets": [
+              {
+                "key": "frontend",
+                "doc_count": 35094,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 35094
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 18395
+                    },
+                    {
+                      "key": "308",
+                      "doc_count": 1689
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "productcatalogservice",
+                "doc_count": 11476,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 11476
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": []
+                }
+              },
+              {
+                "key": "loadgenerator",
+                "doc_count": 9342,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 9342
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 9342
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "checkoutservice",
+                "doc_count": 7498,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 7498
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 548
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "cartservice",
+                "doc_count": 5161,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 5161
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 5161
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "featureflagservice",
+                "doc_count": 4438,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 4438
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 360
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "recommendationservice",
+                "doc_count": 3312,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 3312
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": []
+                }
+              },
+              {
+                "key": "emailservice",
+                "doc_count": 2192,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 2192
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 548
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "adservice",
+                "doc_count": 1942,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 1942
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": []
+                }
+              },
+              {
+                "key": "quoteservice",
+                "doc_count": 1644,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 1644
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 548
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "key_as_string": "2023-10-11T08:00:00.000Z",
+          "key": 1697011200000,
+          "doc_count": 86217,
+          "service_names": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 4734,
+            "buckets": [
+              {
+                "key": "frontend",
+                "doc_count": 34821,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 34821
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 18212
+                    },
+                    {
+                      "key": "308",
+                      "doc_count": 1685
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "productcatalogservice",
+                "doc_count": 11419,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 11419
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": []
+                }
+              },
+              {
+                "key": "loadgenerator",
+                "doc_count": 9230,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 9229
+                    },
+                    {
+                      "key": 2,
+                      "doc_count": 1
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 9229
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "checkoutservice",
+                "doc_count": 7316,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 7316
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 538
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "cartservice",
+                "doc_count": 5135,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 5135
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 5135
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "featureflagservice",
+                "doc_count": 4510,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 4510
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 360
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "recommendationservice",
+                "doc_count": 3368,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 3368
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": []
+                }
+              },
+              {
+                "key": "emailservice",
+                "doc_count": 2152,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 2152
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 538
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "adservice",
+                "doc_count": 1918,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 1918
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": []
+                }
+              },
+              {
+                "key": "quoteservice",
+                "doc_count": 1614,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 1614
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 538
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "key_as_string": "2023-10-11T09:00:00.000Z",
+          "key": 1697014800000,
+          "doc_count": 85837,
+          "service_names": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 4670,
+            "buckets": [
+              {
+                "key": "frontend",
+                "doc_count": 34811,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 34811
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 18221
+                    },
+                    {
+                      "key": "308",
+                      "doc_count": 1672
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "productcatalogservice",
+                "doc_count": 11421,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 11421
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": []
+                }
+              },
+              {
+                "key": "loadgenerator",
+                "doc_count": 9253,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 9252
+                    },
+                    {
+                      "key": 2,
+                      "doc_count": 1
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 9252
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "checkoutservice",
+                "doc_count": 7232,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 7232
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 527
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "cartservice",
+                "doc_count": 5105,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 5105
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 5105
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "featureflagservice",
+                "doc_count": 4440,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 4440
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 359
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "recommendationservice",
+                "doc_count": 3332,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 3332
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": []
+                }
+              },
+              {
+                "key": "emailservice",
+                "doc_count": 2108,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 2108
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 527
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "adservice",
+                "doc_count": 1884,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 1884
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": []
+                }
+              },
+              {
+                "key": "quoteservice",
+                "doc_count": 1581,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 1581
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 527
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "key_as_string": "2023-10-11T10:00:00.000Z",
+          "key": 1697018400000,
+          "doc_count": 84611,
+          "service_names": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 4501,
+            "buckets": [
+              {
+                "key": "frontend",
+                "doc_count": 34313,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 34313
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 17908
+                    },
+                    {
+                      "key": "308",
+                      "doc_count": 1663
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "productcatalogservice",
+                "doc_count": 11439,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 11439
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": []
+                }
+              },
+              {
+                "key": "loadgenerator",
+                "doc_count": 9084,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 9083
+                    },
+                    {
+                      "key": 2,
+                      "doc_count": 1
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 9083
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "checkoutservice",
+                "doc_count": 6970,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 6970
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 508
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "cartservice",
+                "doc_count": 4932,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 4932
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 4932
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "featureflagservice",
+                "doc_count": 4562,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 4562
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 358
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "recommendationservice",
+                "doc_count": 3428,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 3428
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": []
+                }
+              },
+              {
+                "key": "emailservice",
+                "doc_count": 2032,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 2032
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 508
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "adservice",
+                "doc_count": 1826,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 1826
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": []
+                }
+              },
+              {
+                "key": "quoteservice",
+                "doc_count": 1524,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 1524
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 508
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "key_as_string": "2023-10-11T11:00:00.000Z",
+          "key": 1697022000000,
+          "doc_count": 84828,
+          "service_names": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 4642,
+            "buckets": [
+              {
+                "key": "frontend",
+                "doc_count": 34362,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 34362
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 18096
+                    },
+                    {
+                      "key": "308",
+                      "doc_count": 1596
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "productcatalogservice",
+                "doc_count": 11288,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 11288
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": []
+                }
+              },
+              {
+                "key": "loadgenerator",
+                "doc_count": 9181,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 9181
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 9181
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "checkoutservice",
+                "doc_count": 7184,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 7184
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 525
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "cartservice",
+                "doc_count": 5075,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 5075
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 5075
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "featureflagservice",
+                "doc_count": 4454,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 4454
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 360
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "recommendationservice",
+                "doc_count": 3188,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 3188
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": []
+                }
+              },
+              {
+                "key": "emailservice",
+                "doc_count": 2100,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 2100
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 525
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "adservice",
+                "doc_count": 1779,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 1779
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": []
+                }
+              },
+              {
+                "key": "quoteservice",
+                "doc_count": 1575,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 1575
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 525
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "key_as_string": "2023-10-11T12:00:00.000Z",
+          "key": 1697025600000,
+          "doc_count": 88460,
+          "service_names": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 5037,
+            "buckets": [
+              {
+                "key": "frontend",
+                "doc_count": 35464,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 35464
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 18582
+                    },
+                    {
+                      "key": "308",
+                      "doc_count": 1638
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "productcatalogservice",
+                "doc_count": 11749,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 11749
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": []
+                }
+              },
+              {
+                "key": "loadgenerator",
+                "doc_count": 9434,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 9433
+                    },
+                    {
+                      "key": 2,
+                      "doc_count": 1
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 9433
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "checkoutservice",
+                "doc_count": 7814,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 7814
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 565
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "cartservice",
+                "doc_count": 5343,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 5343
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 5343
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "featureflagservice",
+                "doc_count": 4548,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 4548
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 360
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "recommendationservice",
+                "doc_count": 3324,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 3324
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": []
+                }
+              },
+              {
+                "key": "emailservice",
+                "doc_count": 2260,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 2260
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 565
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "adservice",
+                "doc_count": 1792,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 1792
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": []
+                }
+              },
+              {
+                "key": "quoteservice",
+                "doc_count": 1695,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 1695
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 565
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "key_as_string": "2023-10-11T13:00:00.000Z",
+          "key": 1697029200000,
+          "doc_count": 85326,
+          "service_names": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 4914,
+            "buckets": [
+              {
+                "key": "frontend",
+                "doc_count": 34265,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 34265
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 18121
+                    },
+                    {
+                      "key": "308",
+                      "doc_count": 1544
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "productcatalogservice",
+                "doc_count": 11169,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 11169
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": []
+                }
+              },
+              {
+                "key": "loadgenerator",
+                "doc_count": 9204,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 9204
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 9204
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "checkoutservice",
+                "doc_count": 7600,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 7600
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 557
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "cartservice",
+                "doc_count": 5167,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 5167
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 5167
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "featureflagservice",
+                "doc_count": 4308,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 4308
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 360
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "recommendationservice",
+                "doc_count": 3040,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 3040
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": []
+                }
+              },
+              {
+                "key": "emailservice",
+                "doc_count": 2228,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 2228
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 557
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "adservice",
+                "doc_count": 1760,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 1760
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": []
+                }
+              },
+              {
+                "key": "quoteservice",
+                "doc_count": 1671,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 1671
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 557
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "key_as_string": "2023-10-11T14:00:00.000Z",
+          "key": 1697032800000,
+          "doc_count": 85338,
+          "service_names": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 4771,
+            "buckets": [
+              {
+                "key": "frontend",
+                "doc_count": 34297,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 34297
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 17971
+                    },
+                    {
+                      "key": "308",
+                      "doc_count": 1640
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "productcatalogservice",
+                "doc_count": 11374,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 11374
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": []
+                }
+              },
+              {
+                "key": "loadgenerator",
+                "doc_count": 9123,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 9122
+                    },
+                    {
+                      "key": 2,
+                      "doc_count": 1
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 9122
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "checkoutservice",
+                "doc_count": 7374,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 7373
+                    },
+                    {
+                      "key": 2,
+                      "doc_count": 1
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 541
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "cartservice",
+                "doc_count": 5010,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 5010
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 5010
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "featureflagservice",
+                "doc_count": 4492,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 4492
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 359
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "recommendationservice",
+                "doc_count": 3288,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 3288
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": []
+                }
+              },
+              {
+                "key": "emailservice",
+                "doc_count": 2160,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 2160
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 540
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "adservice",
+                "doc_count": 1823,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 1823
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": []
+                }
+              },
+              {
+                "key": "quoteservice",
+                "doc_count": 1626,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 1626
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 542
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "key_as_string": "2023-10-11T15:00:00.000Z",
+          "key": 1697036400000,
+          "doc_count": 85777,
+          "service_names": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 4692,
+            "buckets": [
+              {
+                "key": "frontend",
+                "doc_count": 34634,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 34634
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 18111
+                    },
+                    {
+                      "key": "308",
+                      "doc_count": 1657
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "productcatalogservice",
+                "doc_count": 11462,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 11462
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": []
+                }
+              },
+              {
+                "key": "loadgenerator",
+                "doc_count": 9204,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 9203
+                    },
+                    {
+                      "key": 2,
+                      "doc_count": 1
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 9203
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "checkoutservice",
+                "doc_count": 7264,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 7264
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 530
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "cartservice",
+                "doc_count": 5079,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 5079
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 5079
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "featureflagservice",
+                "doc_count": 4520,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 4520
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 359
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "recommendationservice",
+                "doc_count": 3396,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 3396
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": []
+                }
+              },
+              {
+                "key": "emailservice",
+                "doc_count": 2120,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 2120
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 530
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "adservice",
+                "doc_count": 1816,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 1816
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": []
+                }
+              },
+              {
+                "key": "quoteservice",
+                "doc_count": 1590,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 1590
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 530
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "key_as_string": "2023-10-11T16:00:00.000Z",
+          "key": 1697040000000,
+          "doc_count": 85652,
+          "service_names": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 4734,
+            "buckets": [
+              {
+                "key": "frontend",
+                "doc_count": 34735,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 34735
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 18256
+                    },
+                    {
+                      "key": "308",
+                      "doc_count": 1624
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "productcatalogservice",
+                "doc_count": 11315,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 11315
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": []
+                }
+              },
+              {
+                "key": "loadgenerator",
+                "doc_count": 9268,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 9268
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 9268
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "checkoutservice",
+                "doc_count": 7332,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 7332
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 534
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "cartservice",
+                "doc_count": 5165,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 5165
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 5165
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "featureflagservice",
+                "doc_count": 4302,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 4302
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 359
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "recommendationservice",
+                "doc_count": 3236,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 3236
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": []
+                }
+              },
+              {
+                "key": "emailservice",
+                "doc_count": 2136,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 2136
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 534
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "adservice",
+                "doc_count": 1827,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 1827
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": []
+                }
+              },
+              {
+                "key": "quoteservice",
+                "doc_count": 1602,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 1602
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 534
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "key_as_string": "2023-10-11T17:00:00.000Z",
+          "key": 1697043600000,
+          "doc_count": 84989,
+          "service_names": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 4603,
+            "buckets": [
+              {
+                "key": "frontend",
+                "doc_count": 34547,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 34547
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 18158
+                    },
+                    {
+                      "key": "308",
+                      "doc_count": 1635
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "productcatalogservice",
+                "doc_count": 11233,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 11233
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": []
+                }
+              },
+              {
+                "key": "loadgenerator",
+                "doc_count": 9218,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 9217
+                    },
+                    {
+                      "key": 2,
+                      "doc_count": 1
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 9217
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "checkoutservice",
+                "doc_count": 7126,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 7126
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 520
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "cartservice",
+                "doc_count": 5137,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 5137
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 5137
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "featureflagservice",
+                "doc_count": 4410,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 4410
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 360
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "recommendationservice",
+                "doc_count": 3228,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 3228
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": []
+                }
+              },
+              {
+                "key": "emailservice",
+                "doc_count": 2080,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 2080
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 520
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "adservice",
+                "doc_count": 1847,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 1847
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": []
+                }
+              },
+              {
+                "key": "quoteservice",
+                "doc_count": 1560,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 1560
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 520
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "key_as_string": "2023-10-11T18:00:00.000Z",
+          "key": 1697047200000,
+          "doc_count": 21005,
+          "service_names": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 1158,
+            "buckets": [
+              {
+                "key": "frontend",
+                "doc_count": 8491,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 8491
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 4482
+                    },
+                    {
+                      "key": "308",
+                      "doc_count": 395
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "productcatalogservice",
+                "doc_count": 2734,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 2734
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": []
+                }
+              },
+              {
+                "key": "loadgenerator",
+                "doc_count": 2275,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 2275
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 2275
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "checkoutservice",
+                "doc_count": 1830,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 1830
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 135
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "cartservice",
+                "doc_count": 1284,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 1284
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 1284
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "featureflagservice",
+                "doc_count": 1062,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 1062
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 87
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "recommendationservice",
+                "doc_count": 768,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 768
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": []
+                }
+              },
+              {
+                "key": "emailservice",
+                "doc_count": 540,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 540
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 135
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "adservice",
+                "doc_count": 458,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 458
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": []
+                }
+              },
+              {
+                "key": "shippingservice",
+                "doc_count": 405,
+                "status_code": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": 0,
+                      "doc_count": 405
+                    }
+                  ]
+                },
+                "status_code_ranges": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "key": "200",
+                      "doc_count": 135
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "took": 1,
+  "timed_out": false,
+  "_shards": {
+    "total": 1,
+    "successful": 1,
+    "skipped": 0,
+    "failed": 0
+  },
+  "hits": {
+    "total": 22,
+    "max_score": null,
+    "hits": []
+  },
+  "aggregations": {
+    "table": {
+      "after_key": {
+        "stk1": "162.142.125.177",
+        "stk2": "10.0.0.200"
+      },
+      "buckets": [
+        {
+          "key": {
+            "stk1": "10.0.0.200",
+            "stk2": "162.142.125.177"
+          },
+          "doc_count": 11,
+          "stk1": "10.0.0.200",
+          "stk2": "162.142.125.177",
+          "size": 11
+        },
+        {
+          "key": {
+            "stk1": "162.142.125.177",
+            "stk2": "10.0.0.200"
+          },
+          "doc_count": 11,
+          "stk1": "162.142.125.177",
+          "stk2": "10.0.0.200",
+          "size": 11
+        }
+      ]
+    }
+  }
+}

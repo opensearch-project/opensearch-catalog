@@ -1,0 +1,149 @@
+[
+  {
+    "name": "node-data-raw",
+    "values": [
+      {
+        "key": "frontend",
+        "doc_count": 18
+      },
+      {
+        "key": "checkoutservice",
+        "doc_count": 12
+      },
+      {
+        "key": "productcatalogservice",
+        "doc_count": 8
+      },
+      {
+        "key": "cartservice",
+        "doc_count": 7
+      },
+      {
+        "key": "featureflagservice",
+        "doc_count": 6
+      },
+      {
+        "key": "paymentservice",
+        "doc_count": 6
+      },
+      {
+        "key": "currencyservice",
+        "doc_count": 5
+      },
+      {
+        "key": "recommendationservice",
+        "doc_count": 5
+      },
+      {
+        "key": "shippingservice",
+        "doc_count": 5
+      },
+      {
+        "key": "emailservice",
+        "doc_count": 5
+      },
+      {
+        "key": "accountingservice",
+        "doc_count": 5
+      }
+    ],
+    "format": {
+      "type": "json"
+    },
+    "transform": [
+      {
+        "type": "formula",
+        "expr": "datum.doc_count",
+        "as": "traceCounts"
+      },
+      {
+        "type": "formula",
+        "expr": "datum.key",
+        "as": "name"
+      },
+      {
+        "type": "formula",
+        "expr": "datum.key",
+        "as": "group"
+      }
+    ]
+  },
+  {
+    "aggregation": [
+      {
+        "key": "frontend",
+        "doc_count": 18,
+        "target": {
+          "buckets": [
+            {
+              "key": "cartservice",
+              "doc_count": 3
+            },
+            {
+              "key": "productcatalogservice",
+              "doc_count": 3
+            },
+            {
+              "key": "currencyservice",
+              "doc_count": 2
+            },
+            {
+              "key": "adservice",
+              "doc_count": 1
+            },
+            {
+              "key": "checkoutservice",
+              "doc_count": 1
+            },
+            {
+              "key": "recommendationservice",
+              "doc_count": 1
+            }
+          ]
+        }
+      },
+      {
+        "key": "checkoutservice",
+        "doc_count": 12,
+        "target": {
+          "doc_count_error_upper_bound": 0,
+          "sum_other_doc_count": 0,
+          "buckets": [
+            {
+              "key": "cartservice",
+              "doc_count": 2
+            },
+            {
+              "key": "shippingservice",
+              "doc_count": 2
+            },
+            {
+              "key": "accountingservice",
+              "doc_count": 1
+            },
+            {
+              "key": "currencyservice",
+              "doc_count": 1
+            },
+            {
+              "key": "emailservice",
+              "doc_count": 1
+            },
+            {
+              "key": "frauddetectionservice",
+              "doc_count": 1
+            },
+            {
+              "key": "paymentservice",
+              "doc_count": 1
+            },
+            {
+              "key": "productcatalogservice",
+              "doc_count": 1
+            }
+          ]
+        }
+      }
+    ]
+  }
+]

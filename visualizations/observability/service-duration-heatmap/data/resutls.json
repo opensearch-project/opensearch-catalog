@@ -1,0 +1,498 @@
+{
+  "aggregations": {
+    "time_buckets": {
+      "buckets": [
+        {
+          "key_as_string": "2024-01-13T07:53:30.000Z",
+          "key": 1705132410000,
+          "doc_count": 431,
+          "time_buckets": {
+            "buckets": [
+              {
+                "key_as_string": "2024-01-13T07:00:00.000Z",
+                "key": 1705129200000,
+                "doc_count": 431,
+                "service_names": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 33,
+                  "buckets": [
+                    {
+                      "key": "frontend",
+                      "doc_count": 151,
+                      "avg_duration": {"value": 5771611.549668875}
+                    },
+                    {
+                      "key": "checkoutservice",
+                      "doc_count": 62,
+                      "avg_duration": {"value": 5149686.338709678}
+                    },
+                    {
+                      "key": "loadgenerator",
+                      "doc_count": 40,
+                      "avg_duration": {"value": 11035119}
+                    },
+                    {
+                      "key": "productcatalogservice",
+                      "doc_count": 38,
+                      "avg_duration": {"value": 711983.447368421}
+                    },
+                    {
+                      "key": "cartservice",
+                      "doc_count": 36,
+                      "avg_duration": {"value": 1029000}
+                    },
+                    {
+                      "key": "emailservice",
+                      "doc_count": 20,
+                      "avg_duration": {"value": 1094679.85}
+                    },
+                    {
+                      "key": "quoteservice",
+                      "doc_count": 15,
+                      "avg_duration": {"value": 430928}
+                    },
+                    {
+                      "key": "shippingservice",
+                      "doc_count": 15,
+                      "avg_duration": {"value": 1487472.1333333333}
+                    },
+                    {
+                      "key": "currencyservice",
+                      "doc_count": 11,
+                      "avg_duration": {"value": 38003.454545454544}
+                    },
+                    {
+                      "key": "adservice",
+                      "doc_count": 10,
+                      "avg_duration": {"value": 73330}
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "key_as_string": "2024-01-13T07:54:00.000Z",
+          "key": 1705132440000,
+          "doc_count": 629,
+          "time_buckets": {
+            "buckets": [
+              {
+                "key_as_string": "2024-01-13T07:00:00.000Z",
+                "key": 1705129200000,
+                "doc_count": 629,
+                "service_names": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 27,
+                  "buckets": [
+                    {
+                      "key": "frontend",
+                      "doc_count": 255,
+                      "avg_duration": {"value": 5246010.227450981}
+                    },
+                    {
+                      "key": "productcatalogservice",
+                      "doc_count": 94,
+                      "avg_duration": {"value": 1379269.3617021276}
+                    },
+                    {
+                      "key": "loadgenerator",
+                      "doc_count": 69,
+                      "avg_duration": {"value": 10756970.739130436}
+                    },
+                    {
+                      "key": "checkoutservice",
+                      "doc_count": 48,
+                      "avg_duration": {"value": 5243597}
+                    },
+                    {
+                      "key": "featureflagservice",
+                      "doc_count": 42,
+                      "avg_duration": {"value": 784000.880952381}
+                    },
+                    {
+                      "key": "cartservice",
+                      "doc_count": 30,
+                      "avg_duration": {"value": 1001956.6666666666}
+                    },
+                    {
+                      "key": "recommendationservice",
+                      "doc_count": 24,
+                      "avg_duration": {"value": 8178396.666666667}
+                    },
+                    {
+                      "key": "adservice",
+                      "doc_count": 16,
+                      "avg_duration": {"value": 1561490.125}
+                    },
+                    {
+                      "key": "currencyservice",
+                      "doc_count": 12,
+                      "avg_duration": {"value": 32263.416666666668}
+                    },
+                    {
+                      "key": "emailservice",
+                      "doc_count": 12,
+                      "avg_duration": {"value": 1113677.1666666667}
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "key_as_string": "2024-01-13T07:54:30.000Z",
+          "key": 1705132470000,
+          "doc_count": 714,
+          "time_buckets": {
+            "buckets": [
+              {
+                "key_as_string": "2024-01-13T07:00:00.000Z",
+                "key": 1705129200000,
+                "doc_count": 714,
+                "service_names": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 38,
+                  "buckets": [
+                    {
+                      "key": "frontend",
+                      "doc_count": 285,
+                      "avg_duration": {"value": 5548306.863157894}
+                    },
+                    {
+                      "key": "productcatalogservice",
+                      "doc_count": 96,
+                      "avg_duration": {"value": 1624046.1979166667}
+                    },
+                    {
+                      "key": "loadgenerator",
+                      "doc_count": 80,
+                      "avg_duration": {"value": 10745925.05}
+                    },
+                    {
+                      "key": "checkoutservice",
+                      "doc_count": 66,
+                      "avg_duration": {"value": 5425193.863636363}
+                    },
+                    {
+                      "key": "cartservice",
+                      "doc_count": 41,
+                      "avg_duration": {"value": 1040795.1219512195}
+                    },
+                    {
+                      "key": "featureflagservice",
+                      "doc_count": 38,
+                      "avg_duration": {"value": 809455.6578947369}
+                    },
+                    {
+                      "key": "emailservice",
+                      "doc_count": 20,
+                      "avg_duration": {"value": 1099261.7}
+                    },
+                    {
+                      "key": "recommendationservice",
+                      "doc_count": 20,
+                      "avg_duration": {"value": 8174893.9}
+                    },
+                    {
+                      "key": "quoteservice",
+                      "doc_count": 15,
+                      "avg_duration": {"value": 508928.2}
+                    },
+                    {
+                      "key": "shippingservice",
+                      "doc_count": 15,
+                      "avg_duration": {"value": 1640500}
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "key_as_string": "2024-01-13T07:55:00.000Z",
+          "key": 1705132500000,
+          "doc_count": 646,
+          "time_buckets": {
+            "buckets": [
+              {
+                "key_as_string": "2024-01-13T07:00:00.000Z",
+                "key": 1705129200000,
+                "doc_count": 646,
+                "service_names": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 36,
+                  "buckets": [
+                    {
+                      "key": "frontend",
+                      "doc_count": 262,
+                      "avg_duration": {"value": 5117881.648854962}
+                    },
+                    {
+                      "key": "productcatalogservice",
+                      "doc_count": 88,
+                      "avg_duration": {"value": 1118303.8181818181}
+                    },
+                    {
+                      "key": "loadgenerator",
+                      "doc_count": 69,
+                      "avg_duration": {"value": 10462353.956521738}
+                    },
+                    {
+                      "key": "checkoutservice",
+                      "doc_count": 56,
+                      "avg_duration": {"value": 5425841.25}
+                    },
+                    {
+                      "key": "cartservice",
+                      "doc_count": 38,
+                      "avg_duration": {"value": 1069986.8421052631}
+                    },
+                    {
+                      "key": "featureflagservice",
+                      "doc_count": 32,
+                      "avg_duration": {"value": 818774.40625}
+                    },
+                    {
+                      "key": "recommendationservice",
+                      "doc_count": 24,
+                      "avg_duration": {"value": 8231048.458333333}
+                    },
+                    {
+                      "key": "emailservice",
+                      "doc_count": 16,
+                      "avg_duration": {"value": 1103416.125}
+                    },
+                    {
+                      "key": "adservice",
+                      "doc_count": 13,
+                      "avg_duration": {"value": 74293}
+                    },
+                    {
+                      "key": "currencyservice",
+                      "doc_count": 12,
+                      "avg_duration": {"value": 35144.333333333336}
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "key_as_string": "2024-01-13T07:55:30.000Z",
+          "key": 1705132530000,
+          "doc_count": 1008,
+          "time_buckets": {
+            "buckets": [
+              {
+                "key_as_string": "2024-01-13T07:00:00.000Z",
+                "key": 1705129200000,
+                "doc_count": 1008,
+                "service_names": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 57,
+                  "buckets": [
+                    {
+                      "key": "frontend",
+                      "doc_count": 403,
+                      "avg_duration": {"value": 4881138.660049628}
+                    },
+                    {
+                      "key": "checkoutservice",
+                      "doc_count": 114,
+                      "avg_duration": {"value": 5139593.657894737}
+                    },
+                    {
+                      "key": "loadgenerator",
+                      "doc_count": 113,
+                      "avg_duration": {"value": 9552697.654867256}
+                    },
+                    {
+                      "key": "productcatalogservice",
+                      "doc_count": 109,
+                      "avg_duration": {"value": 546134.5596330275}
+                    },
+                    {
+                      "key": "cartservice",
+                      "doc_count": 81,
+                      "avg_duration": {"value": 1070082.7160493827}
+                    },
+                    {
+                      "key": "emailservice",
+                      "doc_count": 32,
+                      "avg_duration": {"value": 1445610.875}
+                    },
+                    {
+                      "key": "featureflagservice",
+                      "doc_count": 26,
+                      "avg_duration": {"value": 817655.3846153846}
+                    },
+                    {
+                      "key": "currencyservice",
+                      "doc_count": 25,
+                      "avg_duration": {"value": 34825}
+                    },
+                    {
+                      "key": "quoteservice",
+                      "doc_count": 24,
+                      "avg_duration": {"value": 481991.7916666667}
+                    },
+                    {
+                      "key": "shippingservice",
+                      "doc_count": 24,
+                      "avg_duration": {"value": 1557881.25}
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "key_as_string": "2024-01-13T07:56:00.000Z",
+          "key": 1705132560000,
+          "doc_count": 837,
+          "time_buckets": {
+            "buckets": [
+              {
+                "key_as_string": "2024-01-13T07:00:00.000Z",
+                "key": 1705129200000,
+                "doc_count": 837,
+                "service_names": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 45,
+                  "buckets": [
+                    {
+                      "key": "frontend",
+                      "doc_count": 337,
+                      "avg_duration": {"value": 5253962.445103858}
+                    },
+                    {
+                      "key": "productcatalogservice",
+                      "doc_count": 109,
+                      "avg_duration": {"value": 1624922.6788990826}
+                    },
+                    {
+                      "key": "loadgenerator",
+                      "doc_count": 90,
+                      "avg_duration": {"value": 10552859.444444444}
+                    },
+                    {
+                      "key": "checkoutservice",
+                      "doc_count": 76,
+                      "avg_duration": {"value": 5623715.815789473}
+                    },
+                    {
+                      "key": "cartservice",
+                      "doc_count": 56,
+                      "avg_duration": {"value": 1039839.2857142857}
+                    },
+                    {
+                      "key": "featureflagservice",
+                      "doc_count": 42,
+                      "avg_duration": {"value": 830033.8333333334}
+                    },
+                    {
+                      "key": "recommendationservice",
+                      "doc_count": 24,
+                      "avg_duration": {"value": 8258135.083333333}
+                    },
+                    {
+                      "key": "adservice",
+                      "doc_count": 20,
+                      "avg_duration": {"value": 75193.6}
+                    },
+                    {
+                      "key": "emailservice",
+                      "doc_count": 20,
+                      "avg_duration": {"value": 1366047.1}
+                    },
+                    {
+                      "key": "currencyservice",
+                      "doc_count": 18,
+                      "avg_duration": {"value": 35469.5}
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "key_as_string": "2024-01-13T07:56:30.000Z",
+          "key": 1705132590000,
+          "doc_count": 729,
+          "time_buckets": {
+            "buckets": [
+              {
+                "key_as_string": "2024-01-13T07:00:00.000Z",
+                "key": 1705129200000,
+                "doc_count": 729,
+                "service_names": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 44,
+                  "buckets": [
+                    {
+                      "key": "frontend",
+                      "doc_count": 289,
+                      "avg_duration": {"value": 5431514.795847751}
+                    },
+                    {
+                      "key": "productcatalogservice",
+                      "doc_count": 95,
+                      "avg_duration": {"value": 1337376.1684210526}
+                    },
+                    {
+                      "key": "loadgenerator",
+                      "doc_count": 77,
+                      "avg_duration": {"value": 11342439.57142857}
+                    },
+                    {
+                      "key": "checkoutservice",
+                      "doc_count": 68,
+                      "avg_duration": {"value": 5854207.764705882}
+                    },
+                    {
+                      "key": "cartservice",
+                      "doc_count": 41,
+                      "avg_duration": {"value": 1071419.512195122}
+                    },
+                    {
+                      "key": "featureflagservice",
+                      "doc_count": 36,
+                      "avg_duration": {"value": 835351.8888888889}
+                    },
+                    {
+                      "key": "recommendationservice",
+                      "doc_count": 24,
+                      "avg_duration": {"value": 7982432.625}
+                    },
+                    {
+                      "key": "adservice",
+                      "doc_count": 20,
+                      "avg_duration": {"value": 76994.4}
+                    },
+                    {
+                      "key": "emailservice",
+                      "doc_count": 20,
+                      "avg_duration": {"value": 1325168.15}
+                    },
+                    {
+                      "key": "quoteservice",
+                      "doc_count": 15,
+                      "avg_duration": {"value": 559421.4666666667}
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}
