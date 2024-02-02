@@ -2,7 +2,6 @@
   "index_patterns": [
     "ss4o_traces-*-*"
   ],
-  "data_stream": {},
   "template": {
     "mappings": {
       "_meta": {
@@ -19,14 +18,6 @@
         ]
       },
       "dynamic_templates": [
-        {
-          "attributes_map": {
-            "mapping": {
-              "type": "keyword"
-            },
-            "path_match": "attributes.*"
-          }
-        },
         {
           "events_attributes_map": {
             "mapping": {
@@ -49,14 +40,6 @@
               "type": "keyword"
             },
             "path_match": "instrumentationScope.attributes.*"
-          }
-        },
-        {
-          "resources_map": {
-            "mapping": {
-              "type": "keyword"
-            },
-            "path_match": "resource.*"
           }
         }
       ],
@@ -111,7 +94,7 @@
         "status": {
           "properties": {
             "code": {
-              "type": "long"
+              "type": "keyword"
             },
             "message": {
               "ignore_above": 128,

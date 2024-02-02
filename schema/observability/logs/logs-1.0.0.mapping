@@ -35,14 +35,6 @@
           }
         },
         {
-          "attributes_map": {
-            "mapping": {
-              "type": "keyword"
-            },
-            "path_match": "attributes.*"
-          }
-        },
-        {
           "instrumentation_scope_attributes_map": {
             "mapping": {
               "type": "keyword"
