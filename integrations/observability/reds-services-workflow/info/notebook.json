@@ -25,7 +25,7 @@
 # For Additional Information visit : https://github.com/opensearch-project/opensearch-catalog/integrations/observability/reds-services-workflow/info
 # ------------------------------------------------------------------------------------------------------------------------------------
 
-# Create a new index with the additional @timestamp field
+# Create a new index with the additional @timestamp field (cant sort by @timestamp,serviceName since mapping contains nested fields)
 
 PUT  /otel-v1-apm-span-fixed
 {

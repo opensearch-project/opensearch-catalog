@@ -1,0 +1,47 @@
+{
+  "name": "reds-services-workflow",
+  "version": "1.0.0",
+  "displayName": "OTEL Schema ",
+  "description": "Simple Schema 4 Observability Mapping Setup workflow",
+  "license": "Apache-2.0",
+  "type": "OTEL",
+  "labels": ["traces", "logs", "metrics", "services"],
+  "author": "OpenSearch",
+  "sourceUrl": "https://github.com/opensearch-project/opensearch-catalog/integrations/observability/otel-schema-setup/info",
+  "statics": {
+    "logo": {
+      "annotation": "OTEL Schema Setup",
+      "path": "logo.svg"
+    },
+    "gallery": [
+      {
+        "annotation": "OTEL Demo Image",
+        "path": "otel-image.webp"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "traces",
+      "version": "1.0.0"
+    },
+    {
+      "name": "metrics",
+      "version": "1.0.0"
+    },
+    {
+      "name": "logs",
+      "version": "1.0.0"
+    },
+    {
+      "name": "services",
+      "version": "1.0.0"
+    }
+  ],
+  "assets": {
+    "console": {
+      "name": "sense",
+      "version": "1.0.0"
+    }
+  }
+}
