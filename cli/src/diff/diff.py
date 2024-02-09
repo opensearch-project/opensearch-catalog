@@ -13,11 +13,14 @@ def flat_type_check(expect: str, actual: object) -> dict[str, dict]:
         case "text" | "keyword":
             if not isinstance(actual, str):
                 return {"expected": expect, "actual": actual}
-        case "long" | "integer":
+        case "long" | "integer" | "short":
             if not isinstance(actual, int):
                 return {"expected": expect, "actual": actual}
-        case "double":
+        case "double" | "float" | "half_float":
             if not isinstance(actual, float):
+                return {"expected": expect, "actual": actual}
+        case "boolean":
+            if not isinstance(actual, bool):
                 return {"expected": expect, "actual": actual}
         case "alias":
             # We assume aliases were already unwrapped by the caller and ignore them.
