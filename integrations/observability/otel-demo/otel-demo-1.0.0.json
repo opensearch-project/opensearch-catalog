@@ -1,0 +1,57 @@
+{
+  "name": "OTEL-demo",
+  "version": "1.0.0",
+  "displayName": "Otel Demo",
+  "description": "Otel demo App with OpenSearch Observability",
+  "license": "Apache-2.0",
+  "type-alias": "otel-demo",
+  "type": "logs",
+  "labels": ["log", "traces", "metrics", "Flint S3"],
+  "author": "OpenSearch",
+  "sourceUrl": "https://github.com/opensearch-project/opensearch-catalog/integrations/observability/otel-demo/info",
+  "statics": {
+    "logo": {
+      "annotation": "OpenTelemetry Logo",
+      "path": "logo.png"
+    },
+    "gallery": [
+      {
+        "annotation": "OTEL Demo Architecture",
+        "path": "dashboard1.png"
+      },
+      {
+        "annotation": "OTEL Demo Tutorial",
+        "path": "dashboard2.png"
+      },
+      {
+        "annotation": "OTEL Demo Flow",
+        "path": "dashboard4.png"
+      }
+    ]
+  },
+  "components": [],
+  "assets": {
+    "savedObjects": [
+      {
+      "name": "otel-index-patterns",
+      "version": "1.0.0"
+      },
+      {
+      "name": "loadgenerator-metrics",
+      "version": "1.0.0"
+      },
+      {
+      "name": "sys-wide-apm",
+      "version": "1.0.0"
+      },
+      {
+      "name": "otel-architecture",
+      "version": "1.0.0"
+      },
+      {
+        "name": "demo-loading-page",
+        "version": "1.0.0"
+      }
+    ]
+  }
+}

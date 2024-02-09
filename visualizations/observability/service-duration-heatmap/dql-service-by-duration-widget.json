@@ -1,0 +1,188 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "vconcat": [
+    {
+      "title": {
+        "text": "SLO Services Durations",
+        "subtitle": "Timely Service Duration SLO heatmap",
+        "color":"black"
+      },
+      "height": {"step": 29},
+      "data": {
+        "name": "data-raw",
+        "url": {
+          "%context%": "true",
+          "%timefield%": "startTime",
+          "index": "otel-v1-apm-span-*",
+          "body": {
+            "size": 0,
+            "aggs": {
+              "time_buckets": {
+                "date_histogram": {
+                  "field": "startTime",
+                  "interval": {
+                    "%autointerval%": true
+                  },
+                  "extended_bounds": {
+                    "min": {
+                      "%timefilter%": "min"
+                    },
+                    "max": {
+                      "%timefilter%": "max"
+                    }
+                  },
+                  "min_doc_count": 0
+                },
+                "aggs": {
+                  "time_buckets": {
+                    "date_histogram": {
+                      "field": "startTime",
+                      "interval": {
+                        "%autointerval%": true
+                      },
+                    },
+                    "aggs": {
+                      "service_names": {
+                        "terms": {
+                          "field": "serviceName",
+                          "order": {
+                            "_count": "desc"
+                          }
+                        },
+                        "aggs": {
+                          "avg_duration": {
+                            "avg": {
+                              "field": "durationInNanos"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "format": {
+          "type": "json",
+          "property": "aggregations.time_buckets.buckets"
+        }
+      },
+      "transform": [
+        {
+          "calculate": "timeFormat(utcParse(datum.key_as_string, '%Y-%m-%dT%H:%M:%S.%LZ'), '%b %d, %H:%M')",
+          "as": "time"
+        },
+        {
+          "calculate": "datum.time_buckets.buckets", "as": "servicesData"
+        },
+        {
+          "flatten": ["servicesData"], "as": ["flatten"]
+        },
+        {
+          "flatten": ["flatten.service_names.buckets"], "as": ["serviceInfo"]
+        },
+        {
+          "calculate": "datum.serviceInfo.key",
+          "as": "service"
+        },
+        {
+          "calculate": "datum.serviceInfo.avg_duration.value",
+          "as": "count"
+        }
+      ],
+      "params": [
+        {"name": "highlight", "select": {"type": "point", "on": "mouseover"}}
+      ],
+      "mark": {"type": "rect"},
+      "encoding": {
+        "x": {
+          "field": "time",
+          "type": "ordinal"
+        },
+        "y": {"field": "service", "type": "nominal"},
+        "fill": {
+          "field": "count",
+          "type": "quantitative",
+          "scale": {
+            "range": ["#FCF7E1", "#FCEFD5", "#FACC87", "#FA8D53", "#DF4B2A"]
+          },
+          "legend": {
+            "description": "Vega-Lite doesn't show the first value of the legend's gradient so I used zero twice in the values array",
+            "values": [0, 0, 1000, 5000, 10000, 25000, 5000],
+            "title": [
+              "Duration SLO Index (DSI)",
+              "0: No Duration ; 5000: Exceptional Duration"
+            ]
+          }
+        },
+        "strokeWidth": {
+          "condition": [{"param": "highlight", "empty": false, "value": 1}],
+          "value": 0
+        },
+        "tooltip": [
+          {"field": "service"},
+          {"field": "time", "title": "Date"},
+          {"field": "count"}
+        ]
+      }
+    }
+  ],
+  "config": {
+    "background": "#f4f7ff",
+    "padding": {"top": 10, "bottom": 10, "left": 30, "right": 30},
+    "view": {"stroke": null},
+    "font": "Test Karbon",
+    "axis": {
+      "grid": false,
+      "labelColor": "black",
+      "labelFontSize": 17,
+      "title": null
+    },
+    "axisX": {
+      "orient": "bottom",
+      "domainColor": "black",
+      "offset": 5,
+      "tickCount": 10,
+      "tickOffset": 5,
+      "tickSize": 8,
+      "tickColor": "black",
+      "labelPadding": 5,
+      "labelFlush": false
+    },
+    "axisY": {
+      "domain": false,
+      "ticks": false,
+      "labelAlign": "left",
+      "labelPadding": 140
+    },
+    "rect": {"width": 14.5, "height": 20, "stroke": "black"},
+    "text": {"fontSize": 13},
+    "legend": {
+      "orient": "none",
+      "direction": "horizontal",
+      "gradientLength": 300,
+      "gradientThickness": 10,
+      "gradientLabelOffset": 5,
+      "labelFont": "Outfit",
+      "labelFontSize": 13,
+      "titlePadding": 5,
+      "titleFont": "Outfit",
+      "titleFontSize": 14,
+      "titleFontWeight": "normal",
+      "titleLineHeight": 20,
+      "titleLimit": 300,
+      "legendX": 703,
+      "legendY": -140
+    },
+    "title": {
+      "anchor": "start",
+      "offset": 40,
+      "fontSize": 35,
+      "subtitlePadding": 10,
+      "subtitleFontSize": 25
+    },
+    "concat": {"spacing": 0}
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "name": "services-duration-heatmap",
+  "version": "1.0.0",
+  "displayName": "Services Duration Widget",
+  "description": "Services Duration Widget which is part of the RED services info-graphics",
+  "license": "Apache-2.0",
+  "type": "traces",
+  "labels": ["trace", "services"],
+  "author": "OpenSearch",
+  "sourceUrl": "https://github.com/opensearch-project/opensearch-catalog/tree/main/visualizations/observability/service-duration-heatmap",
+  "statics": {
+    "logo": {
+      "annotation": "Duration Logo",
+      "path": "logo.png"
+    },
+    "gallery": [
+      {
+        "annotation": "Duration Heatmap",
+        "path": "service-duration.png"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "trace",
+      "version": "1.0.0"
+    }
+  ],
+  "assets": {
+    "savedObjects": {
+      "name": "service-duration",
+      "version": "1.0.0"
+    }
+  },
+  "sampleData": {
+    "path": "bulk_data.json"
+  }
+}

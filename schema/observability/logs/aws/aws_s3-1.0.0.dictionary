@@ -1,0 +1,62 @@
+{
+  "catalog": "observability",
+  "version": "1.0",
+  "attributes": [
+    {
+      "aws.s3.bucket": {
+        "category": "aws_s3",
+        "component": "s3",
+        "caption": "Bucket",
+        "description": "Bucket name in S3",
+        "examples": ["my_bucket", "test_bucket"],
+        "object_name": "bucket",
+        "object_type": "keyword"
+      },
+      "aws.s3.key": {
+        "category": "aws_s3",
+        "component": "s3",
+        "caption": "Key",
+        "description": "Object key in S3",
+        "examples": ["my_object_key", "test_object_key"],
+        "object_name": "key",
+        "object_type": "keyword"
+      },
+      "aws.s3.copy_source": {
+        "category": "aws_s3",
+        "component": "s3",
+        "caption": "Copy Source",
+        "description": "Source of the copy operation in S3",
+        "examples": ["/source_bucket/my_object_key"],
+        "object_name": "copy_source",
+        "object_type": "keyword"
+      },
+      "aws.s3.upload_id": {
+        "category": "aws_s3",
+        "component": "s3",
+        "caption": "Upload ID",
+        "description": "ID of the upload operation in S3",
+        "examples": ["3D6B2C9A4B0944C8BA"],
+        "object_name": "upload_id",
+        "object_type": "keyword"
+      },
+      "aws.s3.delete": {
+        "category": "aws_s3",
+        "component": "s3",
+        "caption": "Delete",
+        "description": "Information about the delete operation in S3",
+        "examples": ["Success", "Failure"],
+        "object_name": "delete",
+        "object_type": "keyword"
+      },
+      "aws.s3.part_number": {
+        "category": "aws_s3",
+        "component": "s3",
+        "caption": "Part Number",
+        "description": "Part number in the multipart upload in S3",
+        "examples": ["1", "2", "3"],
+        "object_name": "part_number",
+        "object_type": "keyword"
+      }
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "catalog": "observability",
+  "version": "1.0",
+  "url": "https://github.com/opensearch-project/opensearch-catalog/tree/docs/schema/observability",
+  "description": "Observability aws logs compose all the schema elements constituting the AWS services provider fields and attributes",
+  "category": "logs",
+  "components": [
+     {
+      "component": "aws_elb",
+      "description": "",
+      "version": "1.0",
+      "url": "https://github.com/opensearch-project/opensearch-catalog/tree/docs/schema/observability/logs/aws/aws_elb",
+      "tags": [],
+      "facets": [],
+      "container": false
+    },
+     {
+      "component": "aws_s3",
+      "description": "",
+      "version": "1.0",
+      "url": "https://github.com/opensearch-project/opensearch-catalog/tree/docs/schema/observability/logs/aws/aws_s3",
+      "tags": [],
+      "facets": [],
+      "container": false
+    },
+     {
+      "component": "aws_vpc",
+      "description": "",
+      "version": "1.0",
+      "url": "https://github.com/opensearch-project/opensearch-catalog/tree/docs/schema/observability/logs/aws/aws_vpc",
+      "tags": [],
+      "facets": [],
+      "container": false
+    },
+     {
+      "component": "aws_waf",
+      "description": "",
+      "version": "1.0",
+      "url": "https://github.com/opensearch-project/opensearch-catalog/tree/docs/schema/observability/logs/aws/aws_waf",
+      "tags": [],
+      "facets": [],
+      "container": false
+    },
+     {
+      "component": "aws_rds",
+      "description": "",
+      "version": "1.0",
+      "url": "https://github.com/opensearch-project/opensearch-catalog/tree/docs/schema/observability/logs/aws/aws_rds",
+      "tags": [],
+      "facets": [],
+      "container": false
+    },
+     {
+      "component": "aws_cloudfront",
+      "description": "",
+      "version": "1.0",
+      "url": "https://github.com/opensearch-project/opensearch-catalog/tree/docs/schema/observability/logs/aws/aws_cloudfront",
+      "tags": [],
+      "facets": [],
+      "container": false
+    },
+     {
+      "component": "aws_cloudtrail",
+      "description": "",
+      "version": "1.0",
+      "url": "https://github.com/opensearch-project/opensearch-catalog/tree/docs/schema/observability/logs/aws/aws_cloudtrail",
+      "tags": [],
+      "facets": [],
+      "container": false
+    }
+   ]
+}

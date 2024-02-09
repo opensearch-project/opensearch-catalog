@@ -1,0 +1,200 @@
+{
+  "catalog": "observability",
+  "version": "1.0",
+  "url": "https://github.com/opensearch-project/opensearch-catalog/tree/main/integrations/observability",
+  "description": "Observability integrations are a type of data that capture the events and activities occurring in a system. They reflect information such as user actions, system responses, and errors, providing valuable insights into system behavior. Integrations are well structured and include contextual information such as timestamps, unique identifiers, and metadata tags. Integrations can be used to visualize and troubleshoot performance issues, detect anomalies, and improve system performance by identifying areas for optimization",
+  "displayName": "OpenSearch Observability Catalog",
+  "license": "Apache-2.0",
+  "labels": ["log", "http", "aws", "cloud", "container", "communication"],
+  "author": "OpenSearch",
+  "statics": {
+    "logo": {
+      "annotation": "OpenSearch Logo",
+      "path": "https://opensearch.org/assets/brand/PNG/Logo/opensearch_logo_darkmode.png"
+    }
+  },
+  "components": [
+    {
+      "component": "Apache Integration",
+      "description": "Apache is an open source web server software for modern operating systems including UNIX and Windows.",
+      "version": "1.0",
+      "url": "https://github.com/opensearch-project/opensearch-catalog/blob/main/integrations/observability/apache",
+      "logo": "https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/apache/static/logo.png",
+      "try_me_url": "https://otel.playground.opensearch.org/app/dashboards?security_tenant=global#/view/d0e5df06-5d7e-4def-8146-88ac07489821?_g=(filters:!(),refreshInterval:(pause:!t,value:0),time:(from:now-4w,to:now))&_a=(description:'Filebeat%20Apache%20module%20dashboard',filters:!(),fullScreenMode:!f,options:(hidePanelTitles:!f,useMargins:!t),query:(language:kuery,query:''),timeRestore:!t,title:'Access%20and%20error%20logs%20ECS',viewMode:view)",
+      "gallery": [
+        {
+          "asset": "dashboard",
+          "image": "https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/apache/static/dashboard1.png"
+        }],
+        "tags": ["log", "communication", "http"]
+    },
+    {
+      "component": "Amazon CloudFront Integration",
+      "description": "Amazon CloudFront is a fast content delivery network (CDN) service that securely delivers data, videos, applications, and APIs to customers globally with low latency and high transfer speeds. CloudFront is integrated with other Amazon Web Services products to give developers and businesses an easy way to distribute content to end-users with low latency and high data transfer speeds.",
+      "version": "1.0",
+      "url": "https://github.com/opensearch-project/opensearch-catalog/blob/main/integrations/observability/aws_cloudfront",
+      "logo": "https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/aws_cloudfront/static/logo.png",
+      "try_me_url": "https://otel.playground.opensearch.org/app/dashboards?security_tenant=global#/view/10bcf6e7-9c6a-4afb-913e-e98c7053237a?_g=(filters:!(),refreshInterval:(pause:!t,value:0),time:(from:'2024-01-02T19:28:32.161Z',to:'2024-01-02T19:43:51.183Z'))&_a=(description:'',filters:!(),fullScreenMode:!f,options:(hidePanelTitles:!f,useMargins:!t),query:(language:kuery,query:''),timeRestore:!f,title:logs-aws-cloudfront-dashboard,viewMode:view)",
+      "gallery": [
+        {
+          "asset": "dashboard",
+          "image": "https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/aws_cloudfront/static/dashboard.png"
+        }],
+      "tags": ["log", "aws", "s3", "cloud", "cloudfront"]
+    },
+    {
+      "component": "Amazon CloudTrail Integration",
+      "description": "AWS CloudTrail is a service that enables governance, compliance, operational auditing, and risk auditing of your AWS account. With CloudTrail, you can log, continuously monitor, and retain account activity related to actions across your AWS infrastructure.",
+      "version": "1.0",
+      "url": "https://github.com/opensearch-project/opensearch-catalog/blob/main/integrations/observability/aws_cloudtrail",
+      "logo": "https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/aws_cloudtrail/static/logo.png",
+      "try_me_url": "https://otel.playground.opensearch.org/app/dashboards?security_tenant=global#/view/8b01006c-f3e4-4b66-84bb-d4989b9341d4?_g=(filters:!(),refreshInterval:(pause:!t,value:0),time:(from:'2024-01-02T19:28:32.161Z',to:'2024-01-02T19:43:51.183Z'))&_a=(description:'',filters:!(),fullScreenMode:!f,options:(hidePanelTitles:!f,useMargins:!t),query:(language:kuery,query:''),timeRestore:!f,title:logs-cloudtrail-dashboard,viewMode:view)",
+      "gallery": [
+        {
+          "asset": "dashboard",
+          "image": "https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/aws_cloudtrail/static/dashboard.png"
+        }],
+      "tags": ["log", "aws", "s3", "cloud", "cloudtrail"]
+    },
+    {
+      "component": "Amazon ELB Integration",
+      "description": "ELB Access Logs is a feature that allows you to capture information about requests sent to your load balancer.",
+      "version": "1.0",
+      "url": "https://github.com/opensearch-project/opensearch-catalog/blob/main/integrations/observability/aws_elb",
+      "logo": "https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/aws_elb/static/logo.svg",
+      "try_me_url": "https://otel.playground.opensearch.org/app/dashboards?security_tenant=global#/view/9139f66d-7e4b-4a07-b89b-3acd30db8c40?_g=(filters:!(),refreshInterval:(pause:!t,value:0),time:(from:'2024-01-02T19:28:32.161Z',to:'2024-01-02T19:43:51.183Z'))&_a=(description:'',filters:!(),fullScreenMode:!f,options:(hidePanelTitles:!f,useMargins:!t),query:(language:kuery,query:''),timeRestore:!f,title:'ELB%20Summary',viewMode:view)",
+      "gallery": [
+        {
+          "asset": "dashboard",
+          "image": "https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/aws_elb/static/dashboard1.png"
+        }],
+      "tags": ["log", "aws", "communication", "http", "cloud", "elb", "url"]
+    },
+    {
+      "component": "Amazon RDS Integration",
+      "description": "AWS RDS (Relational Database Service) is a managed service that makes it easy to set up, operate, and scale a relational database in the cloud.",
+      "version": "1.0",
+      "url": "https://github.com/opensearch-project/opensearch-catalog/blob/main/integrations/observability/aws_rds",
+      "logo": "https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/aws_rds/static/logo.png",
+      "try_me_url" : "https://otel.playground.opensearch.org/app/dashboards?security_tenant=global#/view/ea4a25f2-9bcb-49cb-8fc0-0a89a43a58a2?_g=(filters:!(),refreshInterval:(pause:!t,value:0),time:(from:'2024-01-02T19:38:31.109Z',to:'2024-01-02T19:42:47.383Z'))&_a=(description:'',filters:!(),fullScreenMode:!f,options:(hidePanelTitles:!f,useMargins:!t),query:(language:kuery,query:''),timeRestore:!t,title:logs-aws-rds-dashboard,viewMode:view)",
+      "gallery": [
+        {
+          "asset": "dashboard",
+          "image": "https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/aws_rds/static/dashboard.png"
+        }],
+      "tags": ["log", "aws", "s3", "cloud", "rds"]
+    },
+    {
+      "component": "Amazon S3 Integration",
+      "description": "Amazon S3 (Simple Storage Service) is an object storage service that offers industry-leading scalability, data availability, security, and performance. It is designed to make web-scale computing easier for developers.",
+      "version": "1.0",
+      "url": "https://github.com/opensearch-project/opensearch-catalog/blob/main/integrations/observability/aws_s3",
+      "logo": "https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/aws_s3/static/logo.png",
+      "try_me_url": "https://otel.playground.opensearch.org/app/dashboards?security_tenant=global#/view/9e64d6b4-3717-4a34-bc80-9f3e4b54d6c4?_g=(filters:!(),refreshInterval:(pause:!t,value:0),time:(from:'2024-01-02T19:38:31.109Z',to:'2024-01-02T19:42:47.383Z'))&_a=(description:'',filters:!(),fullScreenMode:!f,options:(hidePanelTitles:!f,useMargins:!t),query:(language:kuery,query:''),timeRestore:!f,title:logs-aws-s3-dashboard,viewMode:view)",
+      "gallery": [
+        {
+          "asset": "dashboard",
+          "image": "https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/aws_s3/static/dashboard.png"
+        }],
+      "tags": ["log", "aws", "s3", "cloud"]
+    },
+    {
+      "component": "Amazon VPC Flow Integration",
+      "description": "AWS VPC Flow Logs is a feature that enables you to capture information about the IP traffic going to and from network interfaces in your VPC.",
+      "version": "1.0",
+      "url": "https://github.com/opensearch-project/opensearch-catalog/blob/main/integrations/observability/aws_vpc_flow",
+      "logo": "https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/aws_vpc_flow/static/logo.svg",
+      "try_me_url" : "https://otel.playground.opensearch.org/app/dashboards?security_tenant=global#/view/69e0dce3-7850-4e67-bed1-7f59f816caea?_g=(filters%3A!()%2CrefreshInterval%3A(pause%3A!t%2Cvalue%3A0)%2Ctime%3A(from%3A'2024-01-02T19%3A18%3A41.257Z'%2Cto%3A'2024-01-02T19%3A30%3A00.655Z'))",
+      "gallery": [
+        {
+          "asset": "dashboard",
+          "image": "https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/aws_vpc_flow/static/dashboard1.png"
+        }],
+      "tags": ["log", "aws", "s3", "cloud", "communication", "vpc"]
+    },
+    {
+      "component": "Amazon WAF Integration",
+      "description": "AWS WAF (Web Application Firewall) is a web application firewall service that helps protect your web applications from common web exploits that could affect application availability, compromise security, or consume excessive resources. AWS WAF provides firewall rules to filter and monitor HTTP/HTTPS requests based on specific conditions.",
+      "version": "1.0",
+      "url": "https://github.com/opensearch-project/opensearch-catalog/blob/main/integrations/observability/aws_waf",
+      "logo": "https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/aws_waf/static/logo.jpg",
+      "try_me_url" : "https://otel.playground.opensearch.org/app/dashboards?security_tenant=global#/view/fe37a1be-4642-444f-948e-3d173be632a6?_g=(filters:!(),refreshInterval:(pause:!t,value:0),time:(from:'2024-01-02T19:25:10.808Z',to:'2024-01-02T19:50:22.226Z'))&_a=(description:'',filters:!(),fullScreenMode:!f,options:(darkTheme:!f,hidePanelTitles:!f,useMargins:!t),query:(language:kuery,query:''),timeRestore:!f,title:logs-waf-dashboard,viewMode:view)",
+      "gallery": [
+        {
+          "asset": "dashboard",
+          "image": "https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/aws_waf/static/dashboard.png"
+        }],
+      "tags": ["log", "aws", "s3", "cloud", "waf"]
+    },
+    {
+      "component": "Kubernetes Integration",
+      "description": "Kubernetes is an open-source container orchestration platform that automates the deployment, scaling, and management of containerized applications. It provides a robust and scalable infrastructure for running applications in a cloud-native environment.\n/HTTPS requests based on specific conditions.",
+      "version": "1.0",
+      "url": "https://github.com/opensearch-project/opensearch-catalog/blob/main/integrations/observability/k8s",
+      "logo": "https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/k8s/static/logo.png",
+      "try_me_url" : "https://otel.playground.opensearch.org/app/dashboards?security_tenant=global#/view/235aaec2-1762-40f2-a4b4-73911d1bd9ab?_g=(filters:!(),refreshInterval:(pause:!t,value:0),time:(from:'2024-01-02T19:30:22.251Z',to:'2024-01-02T19:42:47.929Z'))&_a=(description:'Overview%20of%20Kubernetes%20cluster%20metrics',filters:!(),fullScreenMode:!f,options:(hidePanelTitles:!f,useMargins:!t),query:(language:kuery,query:''),timeRestore:!t,title:'%5BKubernetes%5D%20Overview%20',viewMode:view)",
+      "gallery": [
+        {
+          "asset": "dashboard",
+          "image": "https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/k8s/static/dashboard.png"
+        }],
+      "tags": ["log", "k8s", "cloud", "container"]
+    },
+    {
+      "component": "Nginx Integration",
+      "description": "NGINX is open source software for web serving, reverse proxying, caching, load balancing, media streaming, and more./HTTPS requests based on specific conditions.",
+      "version": "1.0",
+      "url": "https://github.com/opensearch-project/opensearch-catalog/blob/main/integrations/observability/nginx",
+      "logo": "https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/nginx/static/logo.svg",
+      "try_me_url": "https://otel.playground.opensearch.org/app/dashboards?security_tenant=global#/view/a5c36fb5-5178-4c3b-9c30-318c58c9221e?_g=(filters:!(),refreshInterval:(pause:!t,value:0),time:(from:'2024-01-02T19:32:04.481Z',to:'2024-01-02T19:42:56.951Z'))&_a=(description:'Nginx%20dashboard%20with%20basic%20Observability%20on%20access%20%2F%20error%20logs',filters:!(),fullScreenMode:!f,options:(hidePanelTitles:!f,useMargins:!t),query:(language:kuery,query:''),timeRestore:!t,title:'Nginx%20Logs%20Overview',viewMode:view)",
+      "gallery": [
+        {
+          "asset": "dashboard",
+          "image": "https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/nginx/static/dashboard1.png"
+        }],
+      "tags": ["log", "http", "communication"]
+    },
+    {
+      "component": "RED Services Workflow",
+      "description": "The RED Method defines the three key metrics you should measure for every microservice in your architecture. Those metrics are:\n\n(Request) Rate - the number of requests, per second, you services are serving.\n(Request) Errors - the number of failed requests per second.\n(Request) Duration - distributions of the amount of time each request takes.",
+      "version": "1.0",
+      "url": "https://github.com/opensearch-project/opensearch-catalog/blob/main/integrations/observability/reds-services-workflow",
+      "logo": "https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/reds-services-workflow/static/logo.png",
+      "try_me_url": "https://github.com/opensearch-project/opensearch-catalog/blob/main/integrations/observability/reds-services-workflow/assets/sense-1.0.0.json",
+      "gallery" : [
+        {
+          "asset": "dashboard",
+          "image": "https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/reds-services-workflow/static/service-duration.png"
+        }],
+      "tags": ["traces", "http", "services"]
+    },
+    {
+      "component": "OTEL Demo Playground",
+      "description": "The purpose of this demo is to demonstrate the different capabilities of OpenSearch Observability to investigate and reflect your system.",
+      "version": "1.0",
+      "url": "https://github.com/opensearch-project/opensearch-catalog/blob/main/integrations/observability/otel-demo",
+      "logo": "https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/otel-demo/static/logo.png",
+      "try_me_url": "https://github.com/opensearch-project/opensearch-catalog/blob/main/integrations/observability/otel-demo/assets/sense-1.0.0.json",
+      "gallery" : [
+        {
+          "asset": "dashboard",
+          "image": "https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/otel-demo/static/dashboard4.png"
+        }],
+      "tags": ["traces", "metrics", "logs", "services"]
+    },
+    {
+      "component": "OTEL Schema",
+      "description": "This is a schema setup based integration in which the OpenTelemetry signals are defined using the SimpleSchema index template\n",
+      "version": "1.0",
+      "url": "https://github.com/opensearch-project/opensearch-catalog/blob/main/integrations/observability/otel-schema-setup",
+      "logo": "https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/otel-schema-setup/static/logo.png",
+      "try_me_url": "https://github.com/opensearch-project/opensearch-catalog/blob/main/integrations/observability/otel-schema-setup/assets/sense-1.0.0.json",
+      "gallery" : [
+        {
+          "asset": "dashboard",
+          "image": "https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/otel-schema-setup/static/otel-image.webp"
+        }],
+      "tags": ["traces", "metrics", "logs", "services"]
+    }
+  ]
+}

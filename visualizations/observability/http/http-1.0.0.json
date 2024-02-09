@@ -1,0 +1,62 @@
+{
+  "name": "http",
+  "version": "1.0.0",
+  "displayName": "HTTP Widget",
+  "description": "HTTP visualizations and widgets",
+  "license": "Apache-2.0",
+  "type": "logs",
+  "labels": ["log", "http", "communication"],
+  "author": "OpenSearch",
+  "sourceUrl": "https://github.com/opensearch-project/opensearch-catalog/tree/main/visualizations/observability/http",
+  "statics": {
+    "logo": {
+      "annotation": "HTTP Logo",
+      "path": "logo.webp"
+    },
+    "gallery": [
+      {
+        "annotation": "HTTP data-volume",
+        "path": "data_volume.png"
+      },
+      {
+        "annotation": "HTTP errors over time",
+        "path": "errors_over_time.png"
+      },
+      {
+        "annotation": "HTTP network graph",
+        "path": "http-network-graph.png"
+      },
+      {
+        "annotation": "Status Code Over Time",
+        "path": "status_codes_over_time.png"
+      },
+      {
+        "annotation": "Top URLs",
+        "path": "top_urls.png"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "communication",
+      "version": "1.0.0"
+    },
+    {
+      "name": "http",
+      "version": "1.0.0"
+    },
+    {
+      "name": "logs",
+      "version": "1.0.0"
+    }
+  ],
+  "assets": {
+    "savedObjects": {
+      "name": "http-network-graph",
+      "version": "1.0.0"
+    }
+  },
+  "sampleData": {
+    "path": "aws-vpc-bulk_data.json"
+  }
+}

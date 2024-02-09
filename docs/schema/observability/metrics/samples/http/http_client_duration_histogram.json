@@ -1,0 +1,80 @@
+{
+  "max": 652094078,
+  "kind": "HISTOGRAM",
+  "buckets": [
+    {
+      "min": 3.4028234663852886e+38,
+      "max": 0,
+      "count": 0
+    },
+    {
+      "min": 0,
+      "max": 10000000,
+      "count": 0
+    },
+    {
+      "min": 10000000,
+      "max": 50000000,
+      "count": 5
+    },
+    {
+      "min": 50000000,
+      "max": 100000000,
+      "count": 1
+    },
+    {
+      "min": 100000000,
+      "max": 3.4028234663852886e+38,
+      "count": 10
+    }
+  ],
+  "count": 16,
+  "bucketCountsList": [
+    0,
+    0,
+    5,
+    1,
+    10
+  ],
+  "description": "Histogram of http.client.duration In Nanos in the events",
+  "sum": 3136355061,
+  "unit": "seconds",
+  "aggregationTemporality": "AGGREGATION_TEMPORALITY_DELTA",
+  "min": 44606914,
+  "bucketCounts": 5,
+  "name": "histogram",
+  "startTime": "2023-01-20T05:16:16.425669Z",
+  "explicitBoundsCount": 4,
+  "@timestamp": "2023-01-20T05:16:16.425669Z",
+  "explicitBoundsList": [
+    0,
+    10000000,
+    50000000,
+    100000000
+  ],
+  "attributes": {
+    "aggr_duration": 26709005000,
+    "serviceName": "AOCDockerDemoService",
+    "histogram_key": "http.client.duration",
+    "http": {
+      "network.protocol.name": "HTTP",
+      "network.protocol.version": "1.1",
+      "request": {
+        "method": "GET"
+      },
+      "response": {
+        "status_code": "200"
+      },
+      "client": {
+        "server.address": "example.com",
+        "server.port": 80,
+        "server.socket.address": "127.0.0.1"
+      }
+    },
+    "data_stream": {
+      "dataset": "histogram",
+      "namespace": "production",
+      "type": "metric"
+    }
+  }
+}

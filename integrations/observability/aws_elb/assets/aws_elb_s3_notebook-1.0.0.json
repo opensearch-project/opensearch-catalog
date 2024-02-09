@@ -1,0 +1,105 @@
+{
+  "path": "aws_elb_queries",
+  "name": "[AWS ELB Logs Queries] AWS ELB Queries based on S3",
+  "dateCreated": "2023-09-30T00:23:39.602Z",
+  "dateModified": "2023-10-02T17:06:20.090Z",
+  "backend": "Default",
+  "paragraphs": [
+    {
+      "output": [
+        {
+          "result": "## ELB Queries\nThe next notebook shows a variety of monitoring and health check queries both in SQL / PPL on top of ELB log index / table\n\n### Queries Details:\n1) Lists the average amount of data (in kilobytes) that's passing through the Application Load Balancer in request or response pairs\n\n2) List clients, in descending order, by the amount of data (in megabytes) that each client sent in their requests to the Application Load Balancer\n\n3) List clients, in descending order, by the number of times that each client visited a specified URL\n\n4) Count the number of HTTP GET requests received by the load balancer grouped by the client IP address\n\n5) List each time in a specified date range when the target processing time was more than ? (5) seconds\n\n6) List the ? (10) URLs that ? (Firefox) users accessed most frequently, in descending order\n\n\n",
+          "outputType": "MARKDOWN",
+          "execution_time": "0.599 ms"
+        }
+      ],
+      "input": {
+        "inputText": "%md\n## ELB Queries\nThe next notebook shows a variety of monitoring and health check queries both in SQL / PPL on top of ELB log index / table\n\n### Queries Details:\n1) Lists the average amount of data (in kilobytes) that's passing through the Application Load Balancer in request or response pairs\n\n2) List clients, in descending order, by the amount of data (in megabytes) that each client sent in their requests to the Application Load Balancer\n\n3) List clients, in descending order, by the number of times that each client visited a specified URL\n\n4) Count the number of HTTP GET requests received by the load balancer grouped by the client IP address\n\n5) List each time in a specified date range when the target processing time was more than ? (5) seconds\n\n6) List the ? (10) URLs that ? (Firefox) users accessed most frequently, in descending order\n\n\n",
+        "inputType": "MARKDOWN"
+      },
+      "dateCreated": "2023-09-30T00:23:42.373Z",
+      "dateModified": "2023-10-02T17:06:20.090Z",
+      "id": "paragraph_bcac0759-a5dc-454b-85e7-507ec5b79afe"
+    },
+    {
+      "output": [
+        {
+          "result": "\nSELECT (avg(aws.elb.sent_bytes)/1000.0 + avg(aws.elb.received_bytes)/1000.0) as prewarm_kilobytes from ss4o_logs_elb-aws_elb-sample-sample;",
+          "outputType": "QUERY",
+          "execution_time": "0.010 ms"
+        }
+      ],
+      "input": {
+        "inputText": "%sql\nSELECT (avg(aws.elb.sent_bytes)/1000.0 + avg(aws.elb.received_bytes)/1000.0) as prewarm_kilobytes from ss4o_logs_elb-aws_elb-sample-sample;",
+        "inputType": "MARKDOWN"
+      },
+      "dateCreated": "2023-09-30T00:26:29.468Z",
+      "dateModified": "2023-09-30T08:03:36.310Z",
+      "id": "paragraph_10056fac-9d0a-436e-93b5-1c77c207677d"
+    },
+    {
+      "output": [
+        {
+          "result": "\nSELECT aws.elb.client.ip, sum(aws.elb.received_bytes/1000000.0) as client_datareceived_megabytes FROM ss4o_logs_elb-aws_elb-sample-sample GROUP by aws.elb.client.ip ORDER by client_datareceived_megabytes DESC;",
+          "outputType": "QUERY",
+          "execution_time": "0.006 ms"
+        }
+      ],
+      "input": {
+        "inputText": "%sql\nSELECT aws.elb.client.ip, sum(aws.elb.received_bytes/1000000.0) as client_datareceived_megabytes FROM ss4o_logs_elb-aws_elb-sample-sample GROUP by aws.elb.client.ip ORDER by client_datareceived_megabytes DESC;",
+        "inputType": "MARKDOWN"
+      },
+      "dateCreated": "2023-09-30T00:31:26.288Z",
+      "dateModified": "2023-09-30T08:04:46.029Z",
+      "id": "paragraph_7cadb639-8571-41a0-84b6-917b4f1ed88a"
+    },
+    {
+      "output": [
+        {
+          "result": "\nSELECT aws.elb.client.ip, url.domain, count(*) as count from ss4o_logs_elb-aws_elb-sample-sample\nGROUP by aws.elb.client.ip, url.domain\nORDER by count DESC;",
+          "outputType": "QUERY",
+          "execution_time": "0.006 ms"
+        }
+      ],
+      "input": {
+        "inputText": "%sql\nSELECT aws.elb.client.ip, url.domain, count(*) as count from ss4o_logs_elb-aws_elb-sample-sample\nGROUP by aws.elb.client.ip, url.domain\nORDER by count DESC;",
+        "inputType": "MARKDOWN"
+      },
+      "dateCreated": "2023-09-30T00:31:44.191Z",
+      "dateModified": "2023-09-30T08:12:50.840Z",
+      "id": "paragraph_dd1fa597-3db2-40d3-a163-e0d248300a53"
+    },
+    {
+      "output": [
+        {
+          "result": "\nSELECT COUNT(http.request.method)\n    AS count, http.request.method, aws.elb.client.ip\nFROM ss4o_logs_elb-aws_elb-sample-sample \nGROUP by http.request.method, aws.elb.client.ip;",
+          "outputType": "QUERY",
+          "execution_time": "0.006 ms"
+        }
+      ],
+      "input": {
+        "inputText": "%sql\nSELECT COUNT(http.request.method)\n    AS count, http.request.method, aws.elb.client.ip\nFROM ss4o_logs_elb-aws_elb-sample-sample \nGROUP by http.request.method, aws.elb.client.ip;",
+        "inputType": "MARKDOWN"
+      },
+      "dateCreated": "2023-09-30T00:31:57.554Z",
+      "dateModified": "2023-09-30T08:18:53.232Z",
+      "id": "paragraph_8ae6e362-ebfe-455b-8d43-ebb6db25ecea"
+    },
+    {
+      "output": [
+        {
+          "result": "\nSELECT url.domain, http.user_agent.name, count(*) as count\nFROM ss4o_logs_elb-aws_elb-sample-sample\nWHERE http.user_agent.name LIKE '%Chrome%'\nGROUP by url.domain, http.user_agent.name\nORDER by count(*) DESC;",
+          "outputType": "QUERY",
+          "execution_time": "0.007 ms"
+        }
+      ],
+      "input": {
+        "inputText": "%sql\nSELECT url.domain, http.user_agent.name, count(*) as count\nFROM ss4o_logs_elb-aws_elb-sample-sample\nWHERE http.user_agent.name LIKE '%Chrome%'\nGROUP by url.domain, http.user_agent.name\nORDER by count(*) DESC;",
+        "inputType": "MARKDOWN"
+      },
+      "dateCreated": "2023-09-30T00:38:32.321Z",
+      "dateModified": "2023-09-30T08:29:31.202Z",
+      "id": "paragraph_7fde081a-6dac-4bb7-ae49-a86695901b1a"
+    }
+  ]
+}

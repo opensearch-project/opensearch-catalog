@@ -7,7 +7,19 @@
     "schema": "https",
     "route": "https",
     "client.ip": "192.0.2.4",
-    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:72.0) Gecko/20100101 Firefox/72.0"
+    "user_agent": {
+      "original": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36",
+      "name": "Chrome",
+      "version": "114.0.0",
+      "os": {
+        "name": "Mac OS X",
+        "full": "Mac OS X 10.15.7",
+        "version": "10.15.7",
+        "device": {
+            "name": "Mac"
+        }
+      }
+    }
   },
   "source": {
     "domain": "example.com",

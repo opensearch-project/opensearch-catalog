@@ -1,0 +1,67 @@
+{
+  "catalog": "observability",
+  "version": "1.0",
+  "url": "https://github.com/opensearch-project/opensearch-catalog/tree/docs/schema/observability",
+  "description": "Observability logs are a type of data that capture the events and activities occurring in a system. They record information such as user actions, system responses, and errors, providing valuable insights into system behavior.Logs can be structured or unstructured, and may include contextual information such as timestamps, unique identifiers, and metadata tags.Logs can be used to troubleshoot issues, detect anomalies, and improve system performance by identifying areas for optimization",
+  "category": "logs",
+  "components": [
+    {
+      "component": "url",
+      "description": "Observability URL logs are a type of data that capture information about URL schema including the decomposition if the URL to its distinct parts",
+      "version": "1.0",
+      "url": "https://github.com/opensearch-project/opensearch-catalog/tree/docs/schema/observability/logs/url",
+      "tags": [],
+      "facets": [],
+      "container": false
+    },
+    {
+      "component": "http",
+      "description": "Observability HTTP logs are a type of data that capture information about HTTP requests and responses in a system. They record details such as the request method, URI, response status, and response size. Observability HTTP logs can be used to track user behavior, detect security threats, and monitor system performance. By analyzing HTTP logs, it is possible to identify patterns and anomalies, and to optimize system configuration and behavior for better user experience.",
+      "version": "1.0",
+      "url": "https://github.com/opensearch-project/opensearch-catalog/tree/docs/schema/observability/logs/http",
+      "tags": [],
+      "facets": [],
+      "container": false
+    },
+    {
+      "component": "communication",
+      "description": "Observability communication covers the host and destination information in the network fields. They contain a set of metadata that provide contextual information about the host, destination and network environment where a system is running. They include information such as the host/destination name, IP address, operating system version, and network interface details.",
+      "version": "1.0",
+      "url": "https://github.com/opensearch-project/opensearch-catalog/tree/docs/schema/observability/logs/communication",
+      "tags": [
+        "web"
+      ],
+      "facets": [],
+      "container": false
+    },
+    {
+      "component": "cloud",
+      "description": "Observability cloud fields definition contains a set of standardized fields to capture metadata about the cloud environment where an event or metric is generated. This includes information about the cloud provider, region, availability zone, machine type, account details, service name, and instance details. These fields allow for the efficient organization and analysis of data across different cloud platforms, making it easier to monitor and manage resources in a multi-cloud environment.",
+      "version": "1.0",
+      "url": "https://github.com/opensearch-project/opensearch-catalog/tree/docs/schema/observability/logs/cloud",
+      "container": false,
+      "facets": [],
+      "tags": []
+    },
+    {
+      "component": "container",
+      "description": "Observability container The container fields definition provides a structured way to store metadata and metrics about containers, which can be used to correlate data across container runtimes. This includes information like the container's unique ID, image name, tags, resource usage (CPU, memory, disk, and network), and runtime management system, allowing users to efficiently monitor and analyze their containerized applications.",
+      "version": "1.0",
+      "url": "https://github.com/opensearch-project/opensearch-catalog/tree/docs/schema/observability/logs/container",
+      "container": false,
+      "tags": [],
+      "facets": []
+    }
+  ],
+  "containers": [
+    {
+      "component": "log",
+      "description": "Observability log is the container for all compound specific log components. It includes timestamp, instrumentation details, provider's resources and attributes and additional metadata, ",
+      "version": "1.0",
+      "url": "https://github.com/opensearch-project/opensearch-catalog/tree/docs/schema/observability/logs/logs",
+      "container": true,
+      "tags": [],
+      "facets": []
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+visualization_catalog:
+  observability:
+    service-duration:
+      parent: traces
+      visualizations:
+        - path: observability/service-duration-heatmap/service-duration.ndjson
+          name: Services Duration Heat-Map
+          description: Display services duration heat map according to some timely aggregation 
+          info: https://github.com/opensearch-project/opensearch-catalog/blob/main/visualizations/observability/service-duration-heatmap/README.md
+          screenshot: observability/service-duration-heatmap/service-duration.png
+    service-map:
+      parent: traces
+      visualizations:
+        - path: observability/service-map/dql-services-graph-widget.json.json
+          name: Services Map Graph
+          description: Display services map graph based on the system's services interactions.
+          info: https://github.com/opensearch-project/opensearch-catalog/blob/main/visualizations/observability/service-map/README.md
+          screenshot: observability/service-map/service-map.png
+    http:
+      parent: logs
+      visualizations:
+      - path: observability/http/data_volume.json
+        name: Data Volume
+        description: Get the rate of data (in bytes) returned by a log source.
+        screenshot: observability/http/data_volume.png
+      - path: observability/http/errors_over_time.json
+        name: Errors over Time
+        description: Get the rate of errors returned by a log source.
+        screenshot: observability/http/errors_over_time.png
+      - path: observability/http/status_codes_over_time.json
+        name: Status codes over Time
+        description: Get the proportions of different status codes returned by a log source.
+        screenshot: observability/http/status_codes_over_time.png
+      - path: observability/http/top_urls.json
+        name: Top URLs
+        description: Get the most frequent URLs visited by a log source.
+        screenshot: observability/http/top_urls.png

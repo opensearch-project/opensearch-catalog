@@ -1,0 +1,16 @@
+{
+  "name": "faker-demo",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "build-names": "node names-generator.js",
+    "build-groups": "node services-generator.js"
+  },
+  "dependencies": {
+    "@faker-js/faker": "^8.3.1"
+  },
+  "devDependencies": {
+    "vite": "^4.5.0"
+  }
+}
