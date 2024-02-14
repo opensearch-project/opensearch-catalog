@@ -20,16 +20,6 @@
       "_source": {
         "enabled": true
       },
-      "dynamic_templates": [
-        {
-          "attributes_map": {
-            "mapping": {
-              "type": "keyword"
-            },
-            "path_match": "attributes.*"
-          }
-        }
-      ],
       "properties": {
         "destination": {
           "properties": {
