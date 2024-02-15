@@ -58,7 +58,7 @@
       "info": "https://github.com/opensearch-project/opensearch-catalog/blob/main/visualizations/observability/traces-gantt-chart/README.md",
       "logo": "https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/visualizations/observability/traces-gantt-chart/static/logo.png",
       "tags": ["services","traces"],
-      "try_me_url": "https://otel.playground.opensearch.org/app/dashboards?security_tenant=global#/view/830039e0-b026-11ee-ad69-f335a07fe19a?_g=(filters:!(),refreshInterval:(pause:!t,value:0),time:(from:now-15h,to:now))&_a=(description:'',filters:!(),fullScreenMode:!f,options:(hidePanelTitles:!f,useMargins:!t),query:(language:kuery,query:''),timeRestore:!f,title:Services-Dashboard,viewMode:view)",
+      "try_me_url": "https://otel.playground.opensearch.org/app/dashboards#/create?_g=h@d2998d6&_a=h@e251b26",
       "gallery": [
         {
           "asset": "visualization",

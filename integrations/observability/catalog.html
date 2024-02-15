@@ -454,36 +454,6 @@
             </div>
         </div>
     </div>
-
-    <div class="col-md-2 grid-item text-center">
-        <img src="https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/otel-schema-setup/static/logo.png" style="width: 75px; height: 75px; cursor: pointer;" alt="OTEL Schema Logo" data-toggle="modal" data-target="#modalinteg-12">
-        <p>OTEL Schema</p>
-    </div>
-
-    <div class="modal fade" id="modalinteg-12" tabindex="-1" role="dialog" aria-labelledby="modalLabelinteg-12" aria-hidden="true">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="modalLabelinteg-12">OTEL Schema</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <img src="https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/otel-schema-setup/static/logo.png" style="width: 100px; height: 100px;" alt="OTEL Schema Logo">
-                    <p><strong>Description:</strong> This is a schema setup based integration in which the OpenTelemetry signals are defined using the SimpleSchema index template
-                    </p>
-                    <p><strong>Version:</strong> 1.0</p>
-                    <p><strong>URL:</strong> <a href="https://github.com/opensearch-project/opensearch-catalog/blob/main/integrations/observability/otel-schema-setup">https://github.com/opensearch-project/opensearch-catalog/blob/main/integrations/observability/otel-schema-setup</a></p>
-                    <div class='text-center'><a href='https://github.com/opensearch-project/opensearch-catalog/blob/main/integrations/observability/otel-schema-setup/assets/sense-1.0.0.json' target='_blank' class='btn btn-primary'>Try Me</a></div>
-                    <div>
-                        <img src="https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/otel-schema-setup/static/otel-image.webp" style="width: 100%; height: auto; margin-top: 10px;" alt="dashboard" />
-                    </div>
-                    <p><strong>Labels:</strong> <span class='label-item color-black'><span class='label-icon'>•</span> traces</span> <span class='label-item color-black'><span class='label-icon'>•</span> metrics</span> <span class='label-item color-black'><span class='label-icon'>•</span> logs</span> <span class='label-item color-black'><span class='label-icon'>•</span> services</span> </p>
-                </div>
-            </div>
-        </div>
-    </div>
 </div></div><h2 class='collapsible' onclick='toggleSection("visualizations-section")'>Visualizations</h2><div class='container content' id='visualizations-section'><div class='row'>
     <div class="col-md-2 grid-item text-center">
         <img src="https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/visualizations/observability/service-duration-heatmap/static/logo.png" style="width: 75px; height: 75px; cursor: pointer;" alt="Services Duration Heat-Map Logo" data-toggle="modal" data-target="#modalvis-0">
@@ -544,15 +514,44 @@
     </div>
 
     <div class="col-md-2 grid-item text-center">
-        <img src="https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/visualizations/observability/http/static/logo.webp" style="width: 75px; height: 75px; cursor: pointer;" alt="HTTP Visualizations Logo" data-toggle="modal" data-target="#modalvis-2">
-        <p>HTTP Visualizations</p>
+        <img src="https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/visualizations/observability/traces-gantt-chart/static/logo.png" style="width: 75px; height: 75px; cursor: pointer;" alt="Traces Gantt Chart Logo" data-toggle="modal" data-target="#modalvis-2">
+        <p>Traces Gantt Chart</p>
     </div>
 
     <div class="modal fade" id="modalvis-2" tabindex="-1" role="dialog" aria-labelledby="modalLabelvis-2" aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="modalLabelvis-2">HTTP Visualizations</h5>
+                    <h5 class="modal-title" id="modalLabelvis-2">Traces Gantt Chart</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img src="https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/visualizations/observability/traces-gantt-chart/static/logo.png" style="width: 100px; height: 100px;" alt="Traces Gantt Chart Logo">
+                    <p><strong>Description:</strong> The Trace Gantt Chart Widget for OpenSearch Dashboards uses Vega for complex visualization of trace spans transaction breakdown.</p>
+                    <p><strong>Version:</strong> 1.0</p>
+                    <p><strong>URL:</strong> <a href="https://github.com/opensearch-project/opensearch-catalog/tree/main/visualizations/observability/traces-gantt-chart">https://github.com/opensearch-project/opensearch-catalog/tree/main/visualizations/observability/traces-gantt-chart</a></p>
+                    <div class='text-center'><a href='https://otel.playground.opensearch.org/app/dashboards#/create?_g=h@d2998d6&amp;_a=h@e251b26' target='_blank' class='btn btn-primary'>Try Me</a></div>
+                    <div>
+                        <img src="https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/visualizations/observability/traces-gantt-chart/static/traces-gantt-chart.png" style="width: 100%; height: auto; margin-top: 10px;" alt="dashboard" />
+                    </div>
+                    <p><strong>Labels:</strong> <span class='label-item color-black'><span class='label-icon'>•</span> services</span> <span class='label-item color-black'><span class='label-icon'>•</span> traces</span> </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-2 grid-item text-center">
+        <img src="https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/visualizations/observability/http/static/logo.webp" style="width: 75px; height: 75px; cursor: pointer;" alt="HTTP Visualizations Logo" data-toggle="modal" data-target="#modalvis-3">
+        <p>HTTP Visualizations</p>
+    </div>
+
+    <div class="modal fade" id="modalvis-3" tabindex="-1" role="dialog" aria-labelledby="modalLabelvis-3" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalLabelvis-3">HTTP Visualizations</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
