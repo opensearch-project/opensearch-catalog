@@ -1,6 +1,7 @@
 {
   "index_patterns": ["ss4o_logs-*-*"],
   "priority": 900,
+  "data_stream": {},
   "template": {
     "mappings": {
       "_meta": {
