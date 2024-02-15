@@ -494,7 +494,7 @@
           "field": "_source.serviceName",
           "type": "nominal",
           "legend": {"title": "Service Name"},
-          "scale": {"scheme": "category20b"}
+          "scale": {"scheme": "category10"}
         },
         "opacity": {
           "field": "normalizedDuration",
