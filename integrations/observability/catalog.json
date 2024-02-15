@@ -181,20 +181,6 @@
           "image": "https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/otel-demo/static/dashboard4.png"
         }],
       "tags": ["traces", "metrics", "logs", "services"]
-    },
-    {
-      "component": "OTEL Schema",
-      "description": "This is a schema setup based integration in which the OpenTelemetry signals are defined using the SimpleSchema index template\n",
-      "version": "1.0",
-      "url": "https://github.com/opensearch-project/opensearch-catalog/blob/main/integrations/observability/otel-schema-setup",
-      "logo": "https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/otel-schema-setup/static/logo.png",
-      "try_me_url": "https://github.com/opensearch-project/opensearch-catalog/blob/main/integrations/observability/otel-schema-setup/assets/sense-1.0.0.json",
-      "gallery" : [
-        {
-          "asset": "dashboard",
-          "image": "https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/otel-schema-setup/static/otel-image.webp"
-        }],
-      "tags": ["traces", "metrics", "logs", "services"]
     }
   ]
 }
