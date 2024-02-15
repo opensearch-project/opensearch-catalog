@@ -47,7 +47,25 @@
           "image": "https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/visualizations/observability/service-map/static/service-map.png"
         }
       ],
-      "asset": "https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/visualizations/observability/observability/service-map/static/dql-services-graph-widget.json",
+      "asset": "https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/visualizations/observability/observability/service-map/assets/service-map-1.0.0.ndjson",
+      "parent": "traces"
+    },
+    {
+      "component": "Traces Gantt Chart",
+      "description": "The Trace Gantt Chart Widget for OpenSearch Dashboards uses Vega for complex visualization of trace spans transaction breakdown.",
+      "version": "1.0",
+      "url": "https://github.com/opensearch-project/opensearch-catalog/tree/main/visualizations/observability/traces-gantt-chart",
+      "info": "https://github.com/opensearch-project/opensearch-catalog/blob/main/visualizations/observability/traces-gantt-chart/README.md",
+      "logo": "https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/visualizations/observability/traces-gantt-chart/static/logo.png",
+      "tags": ["services","traces"],
+      "try_me_url": "https://otel.playground.opensearch.org/app/dashboards?security_tenant=global#/view/830039e0-b026-11ee-ad69-f335a07fe19a?_g=(filters:!(),refreshInterval:(pause:!t,value:0),time:(from:now-15h,to:now))&_a=(description:'',filters:!(),fullScreenMode:!f,options:(hidePanelTitles:!f,useMargins:!t),query:(language:kuery,query:''),timeRestore:!f,title:Services-Dashboard,viewMode:view)",
+      "gallery": [
+        {
+          "asset": "visualization",
+          "image": "https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/visualizations/observability/traces-gantt-chart/static/traces-gantt-chart.png"
+        }
+      ],
+      "asset": "https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/visualizations/observability/observability/traces-gantt-chart/assets/traces-gantt-chart-1.0.0.ndjson",
       "parent": "traces"
     },
     {

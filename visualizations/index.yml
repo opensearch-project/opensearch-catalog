@@ -3,19 +3,27 @@ visualization_catalog:
     service-duration:
       parent: traces
       visualizations:
-        - path: observability/service-duration-heatmap/service-duration.ndjson
+        - path: observability/service-duration-heatmap/assets/service-duration-1.0.0.ndjson
           name: Services Duration Heat-Map
           description: Display services duration heat map according to some timely aggregation 
           info: https://github.com/opensearch-project/opensearch-catalog/blob/main/visualizations/observability/service-duration-heatmap/README.md
-          screenshot: observability/service-duration-heatmap/service-duration.png
+          screenshot: observability/service-duration-heatmap/static/service-duration.png
     service-map:
       parent: traces
       visualizations:
-        - path: observability/service-map/dql-services-graph-widget.json.json
+        - path: observability/service-map/assets/services-map-1.0.0.json
           name: Services Map Graph
           description: Display services map graph based on the system's services interactions.
           info: https://github.com/opensearch-project/opensearch-catalog/blob/main/visualizations/observability/service-map/README.md
-          screenshot: observability/service-map/service-map.png
+          screenshot: observability/service-map/static/service-map.png
+    traces-gantt-chart:
+      parent: traces
+      visualizations:
+        - path: observability/traces-gantt-chart/assets/traces-gantt-chart-1.0.0.ndjson
+          name: Traces gantt chart
+          description: The Trace Gantt Chart Widget for OpenSearch Dashboards uses Vega for complex visualization of trace spans transaction breakdown.
+          info: https://github.com/opensearch-project/opensearch-catalog/blob/main/visualizations/observability/traces-gantt-chart/README.md
+          screenshot: observability/traces-gantt-chart/static/traces-gantt-chart.png
     http:
       parent: logs
       visualizations:
