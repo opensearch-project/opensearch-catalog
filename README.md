@@ -15,8 +15,7 @@ The Integration catalog is a concept that focuses on grouping similar integratio
 
 
 ### Visualization
-- [Visualizations](https://opensearch.org/docs/latest/visualization/)
-- [Visualizations Readme](https://github.com/opensearch-project/opensearch-catalog/blob/main/docs/visualization/README.md)
+- [Visualizations](https://github.com/opensearch-project/opensearch-catalog/tree/main/visualizations)
 
 The Visualization Catalog is a central repository for organizing and sharing visualizations used in integrations developed using the standard simple schema mapping ( structure aware visual components).
 This catalog aims to extend the usage of different data-visualization component for the benefit of delivering fast, configurable and context aware user experience.  
