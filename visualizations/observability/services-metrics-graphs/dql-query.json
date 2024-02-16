@@ -1,0 +1,66 @@
+[
+  {
+    "all-services-metrics-agg": {
+      "%context%": "true",
+      "%timefield%": "startTime",
+      "index": "otel-metrics-*",
+      "size": 0,
+      "query": {
+        "bool": {
+          "filter": [
+            {
+              "term": {
+                "kind.keyword": "SUM"
+              }
+            }
+          ]
+        }
+      },
+      "aggs": {
+        "service_name": {
+          "terms": {
+            "field": "serviceName.keyword",
+            "size": 10
+          },
+          "aggs": {
+            "metrics_name": {
+              "terms": {
+                "field": "name.keyword",
+                "size": 10
+              },
+              "aggs": {
+                "metrics_type": {
+                  "terms": {
+                    "field": "kind.keyword",
+                    "size": 10
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "specific-service-metrics": {
+      "%context%": "true",
+      "%timefield%": "startTime",
+      "index": "otel-metrics-*",
+      "query": {
+        "bool": {
+          "filter": [
+            {
+              "term": {
+                "kind.keyword": "SUM"
+              }
+            },
+            {
+              "term": {
+                "serviceName.keyword": "%serviceName%"
+              }
+            }
+          ]
+        }
+      }
+    }
+  }
+]
