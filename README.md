@@ -23,7 +23,6 @@ This catalog aims to extend the usage of different data-visualization component 
 
 ### Schema
 - [Schema Readme](https://github.com/opensearch-project/opensearch-catalog/blob/main/docs/schema/README.md)
-- [Schema Instantiation](https://github.com/opensearch-project/opensearch-catalog/blob/main/docs/schema/initiation.md)
 - [Observability Schema ](https://github.com/opensearch-project/opensearch-catalog/blob/main/docs/schema/observability/README.md)
 
 The Schema catalog for OpenSearch brings the concept of organized and structured catalog data.
