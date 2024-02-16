@@ -28,3 +28,4 @@ By sharing visualizations in one place, we promote collaboration and reduce dupl
 
 The list of visualizations is maintained in [index.yml](index.yml).
 The format is still experimental, and may be subject to change in the future.
+![Screenshot 2024-02-16 at 1 43 11 PM](https://github.com/opensearch-project/opensearch-catalog/assets/48943349/40193e5a-3452-4505-bfcf-7c04005c065b)
