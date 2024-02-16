@@ -24,6 +24,14 @@ visualization_catalog:
           description: The Trace Gantt Chart Widget for OpenSearch Dashboards uses Vega for complex visualization of trace spans transaction breakdown.
           info: https://github.com/opensearch-project/opensearch-catalog/blob/main/visualizations/observability/traces-gantt-chart/README.md
           screenshot: observability/traces-gantt-chart/static/traces-gantt-chart.png
+    services-metrics-graphs:
+      parent: metrics
+      visualizations:
+        - path: observability/services-metrics-graphs/assets/services-metrics-graphs-1.0.0.ndjson
+          name: services metrics graphs charts
+          description: The Services Metrics Graphs Widget for OpenSearch Dashboards uses Vega for complex visualization of all available services and their related metrics
+          info: https://github.com/opensearch-project/opensearch-catalog/blob/main/visualizations/observability/services-metrics-graphs/README.md
+          screenshot: observability/services-metrics-graphs/static/services-metrics-graphs.png
     http:
       parent: logs
       visualizations:
