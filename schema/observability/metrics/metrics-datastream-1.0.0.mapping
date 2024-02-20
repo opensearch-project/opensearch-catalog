@@ -28,14 +28,6 @@
       },
       "dynamic_templates": [
         {
-          "resources_map": {
-            "mapping": {
-              "type": "keyword"
-            },
-            "path_match": "resource.*"
-          }
-        },
-        {
           "exemplar_attributes_map": {
             "mapping": {
               "type": "keyword"
@@ -53,14 +45,11 @@
         }
       ],
       "properties": {
+        "serviceName": {
+          "type": "keyword"
+        },
         "name": {
-          "type": "text",
-          "fields": {
-            "keyword": {
-              "type": "keyword",
-              "ignore_above": 256
-            }
-          }
+            "type": "keyword"
         },
         "attributes": {
           "type": "object",
