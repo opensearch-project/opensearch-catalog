@@ -169,16 +169,16 @@
       "tags": ["traces", "http", "services"]
     },
     {
-      "component": "OTEL Demo Playground",
-      "description": "The purpose of this demo is to demonstrate the different capabilities of OpenSearch Observability to investigate and reflect your system.",
+      "component": "OTEL Services Dashboard",
+      "description": "The purpose of this OTEL services dashboard demo is to demonstrate the different capabilities of OpenSearch Observability to investigate and reflect your system.",
       "version": "1.0",
-      "url": "https://github.com/opensearch-project/opensearch-catalog/blob/main/integrations/observability/otel-demo",
-      "logo": "https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/otel-demo/static/logo.png",
-      "try_me_url": "https://github.com/opensearch-project/opensearch-catalog/blob/main/integrations/observability/otel-demo/assets/sense-1.0.0.json",
+      "url": "https://github.com/opensearch-project/opensearch-catalog/blob/main/integrations/observability/otel-services",
+      "logo": "https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/otel-services/static/logo.png",
+      "try_me_url": "https://github.com/opensearch-project/opensearch-catalog/blob/main/integrations/observability/otel-services/assets/sense-1.0.0.json",
       "gallery" : [
         {
           "asset": "dashboard",
-          "image": "https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/otel-demo/static/dashboard4.png"
+          "image": "https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/otel-services/static/dashboard4.png"
         }],
       "tags": ["traces", "metrics", "logs", "services"]
     }
