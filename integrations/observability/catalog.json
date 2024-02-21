@@ -174,7 +174,7 @@
       "version": "1.0",
       "url": "https://github.com/opensearch-project/opensearch-catalog/blob/main/integrations/observability/otel-services",
       "logo": "https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/otel-services/static/logo.png",
-      "try_me_url": "https://github.com/opensearch-project/opensearch-catalog/blob/main/integrations/observability/otel-services/assets/sense-1.0.0.json",
+      "try_me_url": "https://observability.playground.opensearch.org/app/dashboards?security_tenant=global#/view/996acb40-d0f2-11ee-8ed1-b17ab442fceb?_g=(filters:!(),query:(language:kuery,query:''),refreshInterval:(pause:!t,value:0),time:(from:'2023-10-06T07:37:57.030Z',to:'2023-10-17T05:18:01.271Z'))&_a=(description:'',filters:!(),fullScreenMode:!f,options:(hidePanelTitles:!f,useMargins:!t),query:(language:kuery,query:''),timeRestore:!f,title:observability-services-dashboard,viewMode:view)",
       "gallery" : [
         {
           "asset": "dashboard",
