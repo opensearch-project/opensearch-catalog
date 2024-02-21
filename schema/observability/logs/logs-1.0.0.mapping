@@ -26,14 +26,6 @@
       },
       "dynamic_templates": [
         {
-          "resources_map": {
-            "mapping": {
-              "type": "keyword"
-            },
-            "path_match": "resource.*"
-          }
-        },
-        {
           "instrumentation_scope_attributes_map": {
             "mapping": {
               "type": "keyword"
