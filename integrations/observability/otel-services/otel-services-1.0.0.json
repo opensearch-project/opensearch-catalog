@@ -41,6 +41,10 @@
       "version": "1.0.0"
       },
       {
+      "name": "otel-ingestion-rate-dashboard",
+      "version": "1.0.0"
+      },
+      {
       "name": "otel-architecture",
       "version": "1.0.0"
       },
