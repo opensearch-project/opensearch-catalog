@@ -28,8 +28,12 @@
         "path": "dashboard3.png"
       },
       {
-        "annotation": "OTEL Services Dashboard - 2",
+        "annotation": "OTEL Traces Gantt Dashboard - 2",
         "path": "dashboard4.png"
+      },
+      {
+        "annotation": "OTEL AMP Metrics Dashboard",
+        "path": "dashboard5.png"
       }
     ]
   },
@@ -38,6 +42,10 @@
     "savedObjects": [
       {
       "name": "otel-services-dashboard",
+      "version": "1.0.0"
+      },
+      {
+      "name": "amp-system-metrics-dashboard",
       "version": "1.0.0"
       },
       {
