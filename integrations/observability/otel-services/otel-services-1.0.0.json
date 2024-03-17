@@ -6,7 +6,12 @@
   "license": "Apache-2.0",
   "type-alias": "otel-services",
   "type": "logs",
-  "labels": ["log", "traces", "metrics", "Flint S3"],
+  "labels": [
+    "log",
+    "traces",
+    "metrics",
+    "Flint S3"
+  ],
   "author": "OpenSearch",
   "sourceUrl": "https://github.com/opensearch-project/opensearch-catalog/integrations/observability/otel-services/info",
   "statics": {
@@ -41,20 +46,32 @@
   "assets": {
     "savedObjects": [
       {
-      "name": "otel-services-dashboard",
-      "version": "1.0.0"
+        "name": "otel-services-dashboard",
+        "version": "1.0.0"
       },
       {
-      "name": "amp-system-metrics-dashboard",
-      "version": "1.0.0"
+        "name": "otel-single-service-dashboard",
+        "version": "1.0.0"
       },
       {
-      "name": "otel-ingestion-rate-dashboard",
-      "version": "1.0.0"
+        "name": "otel-ingestion-rate-dashboard",
+        "version": "1.0.0"
       },
       {
-      "name": "otel-architecture",
-      "version": "1.0.0"
+        "name": "otel-amp-network-metrics-dashboard",
+        "version": "1.0.0"
+      },
+      {
+        "name": "otel-apm-network-services",
+        "version": "1.0.0"
+      },
+      {
+        "name": "otel-amp-system-metrics-dashboard",
+        "version": "1.0.0"
+      },
+      {
+        "name": "otel-architecture",
+        "version": "1.0.0"
       },
       {
         "name": "demo-loading-page",
