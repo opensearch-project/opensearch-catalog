@@ -2,6 +2,7 @@ import click
 
 from .diff import diff
 from .scanviz import scanviz
+from .bundle import bundle
 
 
 @click.group()
@@ -12,6 +13,7 @@ def cli():
 
 cli.add_command(diff)
 cli.add_command(scanviz)
+cli.add_command(bundle)
 
 
 if __name__ == "__main__":
