@@ -17,8 +17,7 @@ NAMESPACE_OS_CATALOG: uuid.UUID = uuid.UUID("f21aff9f-a6b3-43eb-85af-5ce18a88043
 CONFIG_FIELD_DIR_INFO: dict[str, tuple[str, str]] = {
     "statics": ("static", "bin"),
     "components": ("schemas", "mapping.json"),
-    "savedObjects": ("assets", "ndjson"),
-    "queries": ("assets", "text"),
+    "assets": ("assets", "text"),
     "sampleData": ("data", "json"),
 }
 OS_OBJECT_SIZE_LIMIT = 1_048_576  # 1 MB
@@ -46,7 +45,7 @@ def try_attach_assets(config: dict, path: Path, info: None | tuple[str, str]) ->
             full_path = (
                 path
                 / subdir
-                / f"{config['name']}-{config['version']}.{config['language']}"
+                / f"{config['name']}-{config['version']}.{config['extension']}"
             )
         case (None, _):  # Otherwise, use encoding as extension with name
             full_path = (
@@ -147,7 +146,7 @@ def convert_integration(integration_dir: str) -> str | None:
     help="The destination file to put the bundle (.ndjson)",
 )
 @beartype
-def bundle(integrations: str, output: str) -> bool:
+def bundle(integrations: str, output: str) -> int:
     """Convert local integration folders into an ndjson bundle."""
     input_files = glob(str(Path(integrations) / "*"))
     integ_map = map(convert_integration, input_files)
