@@ -1,5 +1,5 @@
 beartype==0.17.0
-black==24.1.1
+black==24.3.0
 click==8.1.7
 isort==5.13.2
 mypy-extensions==1.0.0
