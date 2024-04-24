@@ -8,7 +8,7 @@ The Service Map Widget for OpenSearch Dashboards uses Vega for complex visualiza
 This widget graphically presents service map interactions, ingested via [data-prepper service_map pipelines](https://opensearch.org/docs/2.4/data-prepper/pipelines/configuration/processors/service-map-stateful/), aiding in performance monitoring and troubleshooting.
 See additional [instruction](../../vega-visualizations.md) on how to use and build [vega based visualization](https://opensearch.org/docs/latest/dashboards/visualize/viz-index/#vega) in the dashboards.
 
-![Service Map Visualization](service-map.png)
+![Service Map Visualization](static/service-map.png)
 
 ## Vega Integration
 Vega's integration allows for customized, interactive graph creation, enabling detailed visual analysis of service maps.
@@ -88,6 +88,19 @@ Aggregates connections between services and their destinations.
     }
   }
   ```
+## Navigation
+The Service graph map offers a new navigation capability from the service graph into a dedicated dashboard including the 
+selected serviceName as part of the target dashboard's filter.
+
+This feature is using the `"href": {"signal": "datum.link"}` vega url navigation capability.
+
+Here is how the `link` field is structured:
+
+ - target URL: `http://localhost:5601/app/dashboards#/view/single-service-correlated-dashboard-1_0_0_ID`
+ - target dashboard (navigating using dashboard ID) : `single-service-correlated-dashboard-1_0_0_ID`
+ - filter in the target dashboard: `_a=(filters:!(....,query:(match_phrase:(serviceName:' + datum.name + ')))),...'`
+   - here the `datum.name` is the parameterized user mouse click selection
+
 
 ## Prerequisites
 Required indices: `otel-v1-apm-service-map`, `otel-v1-apm-span-*`.
