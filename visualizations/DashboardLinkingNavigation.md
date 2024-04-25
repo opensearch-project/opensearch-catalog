@@ -9,10 +9,14 @@ OpenSearch dashboards doesn’t allow this naturally and requires some tweaks fo
 - Understanding Dashboards
 - Having at least 2 dashboards to navigate between
 - Understanding Visualizations (the inner panels within a dashboard)
+- Dashboard config updates:
+  - Enable vega external URL navigation: `vis_type_vega.enableExternalUrls: true`
+  - Enable Dashboard's `Store URLs in session storage` under the advanced setting
+  ![advanced-setting.png](..%2Fdocs%2Fimg%2Fadvanced-setting.png)
 
 **Vega:**
 
-Lets begin by introducing vega:
+Let's begin by introducing vega:
 
 Vega is a powerful language for creating custom visualizations, and its integration into OpenSearch Dashboards enables users to craft complex and highly customized charts and graphs that go beyond the standard visualizations.
 
