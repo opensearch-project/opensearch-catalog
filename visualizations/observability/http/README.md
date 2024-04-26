@@ -8,8 +8,6 @@ The Http Network Graph Widget for OpenSearch Dashboards uses Vega for complex vi
 This widget graphically presents http network sankey graph, ingested via [data-prepper logs pipelines](https://opensearch.org/docs/2.4/data-prepper/pipelines/configuration/sources/otel-logs-source/) or using standard OTEL collector ingestion alternative.
 See additional [instruction](../../vega-visualizations.md) on how to use and build [vega based visualization](https://opensearch.org/docs/latest/dashboards/visualize/viz-index/#vega) in the dashboards.
 
-![Http Network Visualization](http-network-graph.png)
-
 ## Vega Integration
 Vega's integration allows for customized, interactive graph creation, enabling detailed visual analysis of http network graph.
 
