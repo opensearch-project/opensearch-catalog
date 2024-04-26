@@ -95,6 +95,9 @@ Avg duration per service per time bucket using the `date_histogram` aggregation 
 }
 ```
 
+## Screenshot 
+![](https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/visualizations/observability/service-duration-heatmap/static/service-duration.png)
+
 ## Prerequisites
 Required indices:  `otel-v1-apm-span-*`.
 
