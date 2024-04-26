@@ -103,6 +103,9 @@ Avg duration per service per time bucket using the `date_histogram` aggregation 
 }
 ```
 
+## Screenshot 
+![](https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/visualizations/observability/http/static/http-network-graph.png)
+
 ## Prerequisites
 Required indices:  `ss4o_logs-*-*` Or `ss4o_logs_vpc-*-*`.
 
