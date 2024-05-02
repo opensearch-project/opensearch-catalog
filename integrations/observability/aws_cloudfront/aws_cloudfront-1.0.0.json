@@ -6,7 +6,7 @@
   "license": "Apache-2.0",
   "type": "logs",
   "type-alias": "logs-aws-cloudfront",
-  "labels": ["log", "aws", "s3", "cloud", "cloudfront"],
+  "labels": ["log", "aws", "s3", "cloud", "cloudfront", "Flint S3"],
   "author": "OpenSearch",
   "sourceUrl": "https://github.com/opensearch-project/dashboards-observability/tree/main/server/adaptors/integrations/__data__/repository/aws_cloudfront/info",
   "statics": {
@@ -40,7 +40,23 @@
     }
   ],
   "assets": {
-    "savedObjects": {
+    "tables": [
+      {
+        "name": "create_table_cloudfront",
+        "version": "1.0.0",
+        "language": "sql"
+      },
+      {
+        "name": "create_mv_cloudfront",
+        "version": "1.0.0",
+        "language": "sql"
+      },
+      {
+        "name": "refresh_mv_cloudfront",
+        "version": "1.0.0",
+        "language": "sql"
+      }
+    ]    "savedObjects": {
       "name": "aws_cloudfront",
       "version": "1.0.0"
     }
