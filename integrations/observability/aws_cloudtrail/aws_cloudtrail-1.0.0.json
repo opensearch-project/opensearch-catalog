@@ -40,6 +40,16 @@
     }
   ],
   "assets": {
+    "tables": [
+      {
+        "name": "aws_cloudtrail_s3_table",
+        "version": "1.0.0"
+      },
+      {
+        "name": "aws_elb_s3_mv_index",
+        "version": "1.0.0"
+      }
+    ],
     "savedObjects": {
       "name": "aws_cloudtrail",
       "version": "1.0.0"
