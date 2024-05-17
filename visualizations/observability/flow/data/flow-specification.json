@@ -1,0 +1,75 @@
+{
+  "name": "source",
+  "values": [
+    { "level1": "OTEL", "details": "Install Integration",
+      "info":{
+        "name":"OTEL Integration",
+        "description":"Go here to read the documentation of the OTEL services",
+        "references":"https://opentelemetry.io/"
+      },
+      "url":"http://localhost:5601/app/integrations#/available/otel-services", "kpi": 75 },
+    {
+      "level1": "OTEL",
+      "level2": "OTEL Ingestion",
+      "details": "Inspect Signal Rates",
+      "info":{
+        "name":"OTEL Ingestion",
+        "description":"Go here to review the (OTEL) signals ingestion rate",
+        "references":"https://opensearch.org/docs/latest/data-prepper/"
+      },
+      "url":"http://localhost:5601/app/dashboards#/view/data-ingestion-rate-dashboard-1_0_0_ID",
+      "kpi": 80
+    },
+    {
+      "level1": "OTEL",
+      "level2": "OTEL Integrations",
+      "details": "Services Dashboard",
+      "url":"http://localhost:5601/app/dashboards#/view/otel-services-dashboard-1_0_0_ID",
+      "info":{
+        "name":"OTEL Services",
+        "description":"Go here to monitor the application's services",
+        "references":"https://opentelemetry.io/docs/demo/services/"
+      },
+      "kpi": 50
+    },
+    {
+      "level1": "OTEL",
+      "level2": "OTEL Integrations",
+      "level3" : "Single Services Dashboard",
+      "details": "Deep Dive Service Details",
+      "info":{
+        "name":"Single Service Deep Dive",
+        "description":"Go here to analyze and monitor a specific service",
+        "references":"https://opentelemetry.io/docs/demo/services/"
+      },
+      "url":"http://localhost:5601/app/dashboards#/view/single-service-correlated-dashboard-1_0_0_ID",
+      "kpi": 50
+    },
+    {
+      "level1": "OTEL",
+      "level2": "OTEL Integrations",
+      "level3" : "Single Services Dashboard",
+      "level4" : "Service System Details",
+      "details": "Service System Metrics",
+      "url":"http://localhost:5601/app/dashboards#/view/apm-system-metrics-dashboard-1_0_0_ID",
+      "info":{
+        "name":"APM System Metrics Monitor",
+        "description":"Go here to analyze the services system's metrics ",
+        "references":"https://opentelemetry.io/docs/concepts/signals/metrics/"
+      },
+      "kpi": 50
+    },
+    {
+      "level1": "OTEL",
+      "level2": "OTEL Integrations",
+      "level3" : "Single Services Dashboard",
+      "level4" : "Service Network Details",
+      "info":{
+        "name":"APM Network Metrics Monitor",
+        "description":"Go here to analyze the services network's metrics ",
+        "references":"https://opentelemetry.io/docs/concepts/signals/metrics/"
+      },
+      "details": "Service Network Metrics",
+      "url":"http://localhost:5601/app/dashboards#/view/apm-network-metrics-dashboard-1_0_0_ID",
+      "kpi": 50
+    }]}
