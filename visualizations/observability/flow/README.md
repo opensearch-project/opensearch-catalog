@@ -3,7 +3,7 @@
 
 ## Introduction
 The Otel Flow Use Case Widget for OpenSearch Dashboards uses Vega for complex visualization of Use case user flow interactions.
-It's designed to map out use-case steps and associate them with specific dashboards and allow filter carry over to drive the flow ahead/
+It's designed to map out use-case steps and associate them with specific dashboards and allow filter carry over to drive the flow ahead
 
 ## Info
 This widget graphically presents flow diagram interactions, showing multiple steps - each one has a description and a linked dashboard.
@@ -16,8 +16,7 @@ The flow data arrives from the OpenTelementry collector pipline which exports th
 ![](https://opensearch.org/docs/latest/images/data-prepper-pipeline.png)
 
 ## Vega Integration
-Vega's integration allows for customized, interactive graph creation, enabling detailed visual analysis of service maps.
-
+Vega's integration allows for customized, interactive flow creation, enabling detailed visual analysis and linking different dashboards representing steps in the flow.
 
 ## Data Model
 
