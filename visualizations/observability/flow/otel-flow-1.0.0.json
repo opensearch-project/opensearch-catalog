@@ -1,0 +1,90 @@
+{
+  "name": "otel-flow-widget",
+  "version": "1.0.0",
+  "displayName": "Otel Flow Widget Demo",
+  "description": "Otel Services Flow Widget OpenSearch Observability Use Case",
+  "license": "Apache-2.0",
+  "type": "services",
+  "labels": ["log", "traces", "metrics"],
+  "author": "OpenSearch",
+  "sourceUrl": "https://github.com/opensearch-project/opensearch-catalog/integrations/observability/otel-services/info",
+  "workflows": [
+    {
+      "name": "widget",
+      "label": "Widget ",
+      "description": "Install the flow widget",
+      "enabled_by_default": false
+    },
+    {
+      "name": "dashboards",
+      "label": "Dashboards & Visualizations",
+      "description": "The complete flow use case including the dashboards and navigation panel",
+      "enabled_by_default": true
+    }
+  ],
+  "statics": {
+    "logo": {
+      "annotation": "OpenTelemetry Logo",
+      "path": "logo.png"
+    },
+    "gallery": [
+      {
+        "annotation": "Services Step",
+        "path": "observability-services-step.png"
+      },
+      {
+        "annotation": "Ingestion Rate Step",
+        "path": "rate-ingestion-step.png"
+      },
+      {
+        "annotation": "Single service monitoring",
+        "path": "single-service-step.png"
+      },
+      {
+        "annotation": "Network Metrics Monitoring",
+        "path": "apm-network-metrics-step.png"
+      },
+      {
+        "annotation": "System Metrics Monitoring",
+        "path": "apm-system-metrics-step.png"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "logs",
+      "version": "1.0.0"
+    },
+    {
+      "name": "metrics",
+      "version": "1.0.0"
+    },
+    {
+      "name": "services",
+      "version": "1.0.0"
+    },
+    {
+      "name": "traces",
+      "version": "1.0.0"
+    }
+  ],
+  "assets": [
+    {
+      "name": "otel-flow-use-case-widget",
+      "version": "1.0.0",
+      "extension": "ndjson",
+      "type": "savedObjectBundle",
+      "workflows": ["widget"]
+    },
+    {
+      "name": "otel-service-flow-use-case-integration.ndjson",
+      "version": "1.0.0",
+      "extension": "ndjson",
+      "type": "savedObjectBundle",
+      "workflows": ["dashboards"]
+    }
+  ],
+  "sampleData": {
+    "path": "traces-samples.json"
+  }
+}

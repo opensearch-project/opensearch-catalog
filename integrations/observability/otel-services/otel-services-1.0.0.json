@@ -46,37 +46,17 @@
   "assets": {
     "savedObjects": [
       {
-        "name": "otel-services-dashboard",
+        "name": "otel-service-flow-use-case-integration",
         "version": "1.0.0"
       },
       {
-        "name": "otel-single-service-dashboard",
-        "version": "1.0.0"
-      },
-      {
-        "name": "otel-ingestion-rate-dashboard",
-        "version": "1.0.0"
-      },
-      {
-        "name": "otel-amp-network-metrics-dashboard",
-        "version": "1.0.0"
-      },
-      {
-        "name": "otel-apm-network-services",
-        "version": "1.0.0"
-      },
-      {
-        "name": "otel-amp-system-metrics-dashboard",
+        "name": "demo-langing-page",
         "version": "1.0.0"
       },
       {
         "name": "otel-architecture",
         "version": "1.0.0"
-      },
-      {
-        "name": "demo-loading-page",
-        "version": "1.0.0"
       }
-    ]
+     ]
   }
 }
