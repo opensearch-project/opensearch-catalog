@@ -266,6 +266,11 @@
           "type": "formula",
           "expr": "datum.key",
           "as": "group"
+        },
+        {
+          "type": "formula",
+          "expr": "'http://localhost:5601/app/dashboards#/view/single-service-correlated-dashboard-1_0_0_ID?_a=(filters:!((%27$state%27:(store:appState),meta:(alias:!n,disabled:!f,key:serviceName,negate:!f,params:(query:' + datum.serviceName + '),type:phrase),query:(match_phrase:(serviceName:' + datum.name + ')))),fullScreenMode:!f,options:(hidePanelTitles:!f,useMargins:!t),query:(language:kuery,query:%27%27),timeRestore:!f,title:single-service-correlated-dashboard,viewMode:view)'",
+          "as": "link"
         }
       ]
     },
@@ -532,6 +537,7 @@
       "encode": {
         "update": {
           "opacity": {"value": 1},
+          "href": {"signal": "datum.link"},
           "fill": {
             "signal": "nodeHover.id===datum.index || indexof(nodeHover.connections, datum.name)>-1 ?scale('color', datum.group):merge(hsl(scale('color', datum.group)), {l:0.64})"
           },

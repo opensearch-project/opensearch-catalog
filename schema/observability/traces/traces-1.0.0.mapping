@@ -47,6 +47,9 @@
         "enabled": true
       },
       "properties": {
+        "serviceName": {
+          "type": "keyword"
+        },
         "traceId": {
           "ignore_above": 256,
           "type": "keyword"
@@ -94,7 +97,7 @@
         "status": {
           "properties": {
             "code": {
-              "type": "keyword"
+              "type": "long"
             },
             "message": {
               "ignore_above": 128,
@@ -104,12 +107,8 @@
         },
         "attributes": {
           "type": "object",
-          "properties": {
-            "serviceName": {
-              "type": "keyword"
-            },
-            "data_stream": {
-              "properties": {
+          "data_stream": {
+            "properties": {
                 "dataset": {
                   "ignore_above": 128,
                   "type": "keyword"

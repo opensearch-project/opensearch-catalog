@@ -1,0 +1,42 @@
+{
+  "name": "traces-gantt-chart",
+  "version": "1.0.0",
+  "displayName": "Traces Gantt Chart",
+  "description": "Traces Gantt Chart for viewing the trace transaction",
+  "license": "Apache-2.0",
+  "type": "traces",
+  "labels": ["trace", "services"],
+  "author": "OpenSearch",
+  "sourceUrl": "https://github.com/opensearch-project/opensearch-catalog/tree/main/visualizations/observability/traces-gannt-chart",
+  "statics": {
+    "logo": {
+      "annotation": "Gantt Chart Logo",
+      "path": "logo.png"
+    },
+    "gallery": [
+      {
+        "annotation": "Traces Gantt Chart",
+        "path": "traces-gantt-chart.png"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "trace",
+      "version": "1.0.0"
+    },
+    {
+      "name": "services",
+      "version": "1.0.0"
+    }
+  ],
+  "assets": {
+    "savedObjects": {
+      "name": "traces-gantt-chart",
+      "version": "1.0.0"
+    }
+  },
+  "sampleData": {
+    "path": "bulk_data.json"
+  }
+}

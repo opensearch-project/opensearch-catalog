@@ -1,0 +1,158 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+
+  "data": {
+    "url" :{
+      "%context%": "true",
+      "%timefield%": "startTime",
+      "index": "otel-v1-apm-span-*",
+      "body": {
+        "size": 50
+      }
+    }
+    "format":{
+      "type": "json",
+      "property":"hits.hits"
+    }
+  },
+  "transform": [
+    {"calculate": "datum._source.durationInNanos / 1000000", "as": "durationInMs"},
+    {
+      "window": [
+        {
+          "op": "max",
+          "field": "durationInMs",
+          "as": "maxDuration"
+        }
+      ],
+      "frame": [null, null]
+    },
+    {
+      "calculate": "datum.durationInMs / datum.maxDuration",
+      "as": "normalizedDuration"
+    },
+    { "calculate": "datum._source.traceGroup", "as": "traceGroup"},
+    {      "calculate": "toDate(datum._source.startTime)", "as": "currentDate"},
+    {      "calculate": "toDate(datum._source.startTime)", "as": "startTime"},
+    {
+      "calculate": "format(datum.durationInMs, '.1f') + 'ms'",
+      "as": "formattedDuration"
+    },    {
+      "calculate": "toDate(datum._source.endTime)",  "as": "endTime" },
+    {
+      "window": [{"op": "row_number", "as": "running_number"}],
+      "groupby": ["_source.traceId"],
+      "sort": [{"field": "currentDate"}]
+    },
+    {
+      "calculate": "datum._source.traceId + ' | ' + datum._source.traceGroup + '/' + datum._source.serviceName + ' | Start:' + toDate(datum._source.startTime) + ' #' + datum['running_number']",
+      "as": "project_full_descr"
+    }
+  ],
+
+  "title": {
+    "text": "Order Gantt by: Trace > Span",
+    "fontSize": 14,
+    "anchor": "start",
+    "dy": -15,
+    "color": "#706D6C"
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "bar",
+        "tooltip": true,
+        "cornerRadiusTopRight": 4,
+        "cornerRadiusBottomRight": 4
+      },
+      "encoding": {
+        "y": {
+          "field": "project_full_descr",
+          "type": "nominal",
+          "sort": {"field": "startTime", "order": "ascending"},
+          "axis": {
+            "domain": true,
+            "grid": true,
+            "ticks": true,
+            "labels": true,
+            "labelLimit": 800,
+            "labelFontSize": 12,
+            "labelPadding": 10,
+            "labelExpr": "split(datum.label, '|')[1]"
+          },
+          "scale": {
+            "padding": 0.5
+          },
+          "title": null
+        },
+        "x": {
+          "field": "_source.startTime",
+          "type": "temporal",
+          "title": "time"
+        },
+        "x2": {"field": "_source.endTime"},
+        "color": {
+          "field": "_source.serviceName",
+          "type": "nominal",
+          "legend": {"title": "Service Name"},
+          "scale": {"scheme": "category10"}
+        },
+        "opacity": {
+          "field": "normalizedDuration",
+          "legend":null,
+          "type": "quantitative",
+          "scale": {"domain": [0, 1], "range": [0.2, 1]}
+        },
+        "tooltip": [
+          {"field": "_source.serviceName", "title": "Service Name"},
+          {"field": "formattedDuration", "title": "Duration"},
+          {"field": "_source.traceId", "title": "Trace ID"},
+          {"field": "_source.traceGroup", "title": "Trace Group"}
+        ]
+      }
+    },
+    {
+      "mark": {"type": "rule", "strokeDash": [2, 2], "strokeWidth": 2},
+      "encoding": {
+        "x": {
+          "field": "currentDate",
+          "type": "temporal"
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "right",
+        "dx": -24,
+        "dy": 0,
+        "fontSize": 9
+      },
+      "encoding": {
+        "x": {"field": "startTime"},
+        "y": {"field": "project_full_descr", "type": "nominal",
+          "sort": {"field": "startTime", "order": "ascending"}
+        },
+        "text": {"field": "formattedDuration"},
+        "color": {"value": "white"}
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 5,
+        "dy": 0,
+        "fontSize": 9
+      },
+      "encoding": {
+        "x": {"field": "endTime"},
+        "y": {"field": "project_full_descr", "type": "nominal", "sort": {"field": "startTime", "order": "ascending"}},
+        "text": {"field": "formattedDuration"},
+        "color": {"value": "black"}
+      }
+    },
+
+  ],
+  "config": {"view": {"stroke": null}}
+}

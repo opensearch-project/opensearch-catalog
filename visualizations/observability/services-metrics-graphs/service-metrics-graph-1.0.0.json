@@ -1,0 +1,85 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Metrics over time by name",
+  "config": {
+    "header": {
+      "titleFontSize": 18,
+      "titleFontWeight": "bold"
+    }
+  },
+  "data": {
+    "url": {
+      "%context%": "true",
+      "%timefield%": "time",
+      "index": "otel-metrics-*",
+      "body": {
+        "size": 800
+      }
+    },
+    "format":{
+      "type": "json",
+      "property":"hits.hits"
+    }
+  },
+  "transform": [
+    {
+      "calculate": "toDate(datum._source['time'])",
+      "as": "time"
+    },
+    {
+      "calculate": "datum._source.name",
+      "as": "name"
+    },
+    {
+      "calculate": "datum._source.serviceName",
+      "as": "serviceName"
+    },
+    {
+      "calculate": "datum._source.value",
+      "as": "value"
+    } ,
+    {
+      "filter": "datum.value !== null && datum.value !== ''"
+    }],
+  "facet": {
+    "title":"Service X",
+    "field": "name",
+    "type": "nominal",
+    "header":{
+      "labelColor":"steelblue",
+      "labelFontSize":16
+    }
+  },
+  "columns": 4,
+  "spec": {
+    "mark": "bar",
+    "encoding": {
+      "x": {
+        "field": "time",
+        "type": "temporal",
+        "axis": {"title": "Time"}
+      },
+      "y": {
+        "field": "value",
+        "type": "quantitative",
+        "axis": {"title": "Value"}
+      },
+      "tooltip": [
+        {"field": "serviceName", "type": "nominal"},
+        {"field": "name", "type": "nominal"},
+        {"field": "time", "type": "temporal"},
+        {"field": "value", "type": "quantitative"}
+      ],
+      "color": {
+        "field": "name",
+        "type": "nominal",
+        "legend": {"title": "Metrics"}
+      }
+    }
+  },
+  "resolve": {
+    "scale": {
+      "y": "independent","x": "independent"
+    }
+  }
+}

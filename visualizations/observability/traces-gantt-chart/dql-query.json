@@ -1,0 +1,12 @@
+[
+  {
+    "traces-by-query": {
+      "%context%": "true",
+      "%timefield%": "startTime",
+      "index": "otel-v1-apm-span-*",
+      "body": {
+        "size": 50
+      }
+    }
+  }
+]

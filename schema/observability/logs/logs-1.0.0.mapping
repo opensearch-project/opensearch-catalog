@@ -1,7 +1,6 @@
 {
   "index_patterns": ["ss4o_logs-*-*"],
   "priority": 900,
-  "data_stream": {},
   "template": {
     "mappings": {
       "_meta": {
@@ -26,14 +25,6 @@
         "enabled": true
       },
       "dynamic_templates": [
-        {
-          "resources_map": {
-            "mapping": {
-              "type": "keyword"
-            },
-            "path_match": "resource.*"
-          }
-        },
         {
           "instrumentation_scope_attributes_map": {
             "mapping": {

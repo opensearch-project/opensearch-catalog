@@ -7,6 +7,16 @@ from beartype import beartype
 
 
 @beartype
+def nested_update(base: dict, updates: dict) -> dict:
+    for k, v in updates.items():
+        if isinstance(v, dict):
+            base[k] = nested_update(base.get(k, {}), v)
+        else:
+            base[k] = v
+    return base
+
+
+@beartype
 def load_mapping(mapping: str) -> dict[str, dict]:
     with open(mapping, "r") as mapping_file:
         data = json.load(mapping_file)
@@ -39,5 +49,5 @@ def load_mapping(mapping: str) -> dict[str, dict]:
                 err=True,
                 fg="yellow",
             )
-        properties.update(load_mapping(item_glob[0]))
+        nested_update(properties, load_mapping(item_glob[0]))
     return properties

@@ -1,0 +1,82 @@
+{
+  "name": "OTEL-Services",
+  "version": "1.0.0",
+  "displayName": "Otel Services Demo",
+  "description": "Otel Services Demo App with OpenSearch Observability",
+  "license": "Apache-2.0",
+  "type-alias": "otel-services",
+  "type": "logs",
+  "labels": [
+    "log",
+    "traces",
+    "metrics",
+    "Flint S3"
+  ],
+  "author": "OpenSearch",
+  "sourceUrl": "https://github.com/opensearch-project/opensearch-catalog/integrations/observability/otel-services/info",
+  "statics": {
+    "logo": {
+      "annotation": "OpenTelemetry Logo",
+      "path": "logo.png"
+    },
+    "gallery": [
+      {
+        "annotation": "OTEL Demo Architecture",
+        "path": "dashboard1.png"
+      },
+      {
+        "annotation": "OTEL Demo Tutorial",
+        "path": "dashboard2.png"
+      },
+      {
+        "annotation": "OTEL Services Dashboard - 1",
+        "path": "dashboard3.png"
+      },
+      {
+        "annotation": "OTEL Traces Gantt Dashboard - 2",
+        "path": "dashboard4.png"
+      },
+      {
+        "annotation": "OTEL AMP Metrics Dashboard",
+        "path": "dashboard5.png"
+      }
+    ]
+  },
+  "components": [],
+  "assets": {
+    "savedObjects": [
+      {
+        "name": "otel-services-dashboard",
+        "version": "1.0.0"
+      },
+      {
+        "name": "otel-single-service-dashboard",
+        "version": "1.0.0"
+      },
+      {
+        "name": "otel-ingestion-rate-dashboard",
+        "version": "1.0.0"
+      },
+      {
+        "name": "otel-amp-network-metrics-dashboard",
+        "version": "1.0.0"
+      },
+      {
+        "name": "otel-apm-network-services",
+        "version": "1.0.0"
+      },
+      {
+        "name": "otel-amp-system-metrics-dashboard",
+        "version": "1.0.0"
+      },
+      {
+        "name": "otel-architecture",
+        "version": "1.0.0"
+      },
+      {
+        "name": "demo-loading-page",
+        "version": "1.0.0"
+      }
+    ]
+  }
+}

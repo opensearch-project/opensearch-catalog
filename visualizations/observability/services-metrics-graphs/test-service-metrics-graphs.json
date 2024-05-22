@@ -1,0 +1,5176 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Metrics over time by name",
+  "config": {
+    "header": {
+      "titleFontSize": 18,
+      "titleFontWeight": "bold"
+    }
+  },
+  "data": {
+    "values": [   {
+      "_index": "boo-metrics-foo-000001",
+      "_id": "jwa0o40Bt2BMYC1EPYiw",
+      "_score": 1,
+      "_source": {
+        "s3": {
+          "bucket": "foo-poc-application-logs-test",
+          "key": "app-logs/foo-data_ndjson.json.gz"
+        },
+        "kind": "GAUGE",
+        "flags": 0,
+        "description": "",
+        "resource.attributes.service@namespace": "foo",
+        "serviceName": "system.if",
+        "resource.attributes.service@name": "system.if",
+        "schemaUrl": "",
+        "metric.attributes.interface": "eno2",
+        "score": 3.99014,
+        "_idx": "boo-metrics",
+        "unit": "",
+        "metric.attributes.colo": "bf1",
+        "exemplars": [],
+        "name": "system.if.out.drops",
+        "startTime": "1970-01-01T00:00:00Z",
+        "id": "EjjQmI0B7F_HswaHoCXC",
+        "time": "2024-02-11T15:14:20Z",
+        "metric.attributes.host": "fsr401832.mail.bf1.foo.com",
+        "value": 0
+      }
+    },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "kQa0o40Bt2BMYC1EPYiw",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system.if",
+          "resource.attributes.service@name": "system.if",
+          "schemaUrl": "",
+          "metric.attributes.interface": "eno2",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "metric.attributes.colo": "bf1",
+          "exemplars": [],
+          "name": "system.if.in.packets",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "FjjQmI0B7F_HswaHoCXC",
+          "time": "2024-02-11T15:14:20Z",
+          "metric.attributes.host": "fsr401832.mail.bf1.foo.com",
+          "value": 0
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "kga0o40Bt2BMYC1EPYiw",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system.if",
+          "resource.attributes.service@name": "system.if",
+          "schemaUrl": "",
+          "metric.attributes.interface": "eno4",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "metric.attributes.colo": "bf1",
+          "exemplars": [],
+          "name": "system.if.out.bytes",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "GzjQmI0B7F_HswaHoCXC",
+          "time": "2024-02-11T15:14:20Z",
+          "metric.attributes.host": "fsr401832.mail.bf1.foo.com",
+          "value": 0
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "lAa0o40Bt2BMYC1EPYiw",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system.if",
+          "resource.attributes.service@name": "system.if",
+          "schemaUrl": "",
+          "metric.attributes.interface": "eno4",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "metric.attributes.colo": "bf1",
+          "exemplars": [],
+          "name": "system.if.out.packets",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "IjjQmI0B7F_HswaHoCXC",
+          "time": "2024-02-11T15:14:20Z",
+          "metric.attributes.host": "fsr401832.mail.bf1.foo.com",
+          "value": 0
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "oAa0o40Bt2BMYC1EPYiw",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system",
+          "resource.attributes.service@name": "system",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "metric.attributes.colo": "bf1",
+          "exemplars": [],
+          "name": "system.mem.unused.kb",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "aTjQmI0B7F_HswaHoCXC",
+          "time": "2024-02-11T15:14:20Z",
+          "metric.attributes.host": "fsr401832.mail.bf1.foo.com",
+          "value": 173647000
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "rAa0o40Bt2BMYC1EPYiw",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system.cpu",
+          "resource.attributes.service@name": "system.cpu",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "metric.attributes.colo": "bf1",
+          "exemplars": [],
+          "metric.attributes.cpu": "cpu41",
+          "name": "system.cpu.cpu.busy.pct",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "pTjQmI0B7F_HswaHoCXC",
+          "time": "2024-02-11T15:14:20Z",
+          "metric.attributes.host": "fsr401832.mail.bf1.foo.com",
+          "value": 12.4519
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "tQa0o40Bt2BMYC1EPYiw",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system",
+          "resource.attributes.service@name": "system",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "exemplars": [],
+          "name": "system.udp.no.port",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "0zjQmI0B7F_HswaHoCXC",
+          "time": "2024-02-11T15:12:27Z",
+          "metric.attributes.host": "nemesis-gateway--canary-production-gq1-69f644bb7b-gh5p6",
+          "value": 10.2001
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "tga0o40Bt2BMYC1EPYiw",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system",
+          "resource.attributes.service@name": "system",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "exemplars": [],
+          "name": "system.mem.unused.kb",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "2TjQmI0B7F_HswaHoCXC",
+          "time": "2024-02-11T15:12:27Z",
+          "metric.attributes.host": "nemesis-gateway--canary-production-gq1-69f644bb7b-gh5p6",
+          "value": 466584000
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "uwa0o40Bt2BMYC1EPYiw",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system",
+          "resource.attributes.service@name": "system",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "exemplars": [],
+          "name": "system.tcp6.inuse",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "7zjQmI0B7F_HswaHoCXC",
+          "time": "2024-02-11T15:12:27Z",
+          "metric.attributes.host": "nemesis-gateway--canary-production-gq1-69f644bb7b-gh5p6",
+          "value": 40
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "wQa0o40Bt2BMYC1EPYiw",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system",
+          "resource.attributes.service@name": "system",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "exemplars": [],
+          "name": "system.sys.context_switches",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "CzjQmI0B7F_HswaHoCbC",
+          "time": "2024-02-11T15:12:27Z",
+          "metric.attributes.host": "nemesis-gateway--canary-production-gq1-69f644bb7b-gh5p6",
+          "value": 48854.4
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "xAa0o40Bt2BMYC1EPYiw",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system",
+          "resource.attributes.service@name": "system",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "exemplars": [],
+          "name": "system.tcp.established",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "EDjQmI0B7F_HswaHoCbC",
+          "time": "2024-02-11T15:12:27Z",
+          "metric.attributes.host": "nemesis-gateway--canary-production-gq1-69f644bb7b-gh5p6",
+          "value": 196
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "ywa0o40Bt2BMYC1EPYiw",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system.cpu",
+          "resource.attributes.service@name": "system.cpu",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "exemplars": [],
+          "metric.attributes.cpu": "cpu54",
+          "name": "system.cpu.cpu.busy.pct",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "QjjQmI0B7F_HswaHoCbC",
+          "time": "2024-02-11T15:12:27Z",
+          "metric.attributes.host": "nemesis-gateway--canary-production-gq1-69f644bb7b-gh5p6",
+          "value": 0.833611
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "zga0o40Bt2BMYC1EPYiw",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system.cpu",
+          "resource.attributes.service@name": "system.cpu",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "exemplars": [],
+          "metric.attributes.cpu": "cpu23",
+          "name": "system.cpu.cpu.busy.pct",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "UTjQmI0B7F_HswaHoCbC",
+          "time": "2024-02-11T15:12:27Z",
+          "metric.attributes.host": "nemesis-gateway--canary-production-gq1-69f644bb7b-gh5p6",
+          "value": 0.934268
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "0ga0o40Bt2BMYC1EPYiw",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system.cpu",
+          "resource.attributes.service@name": "system.cpu",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "exemplars": [],
+          "metric.attributes.cpu": "cpu52",
+          "name": "system.cpu.cpu.busy.pct",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "bTjQmI0B7F_HswaHoCbC",
+          "time": "2024-02-11T15:12:27Z",
+          "metric.attributes.host": "nemesis-gateway--canary-production-gq1-69f644bb7b-gh5p6",
+          "value": 0.733456
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "2Aa0o40Bt2BMYC1EPYiw",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "metric.attributes.device": "sda",
+          "kind": "GAUGE",
+          "flags": 0,
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system.dev",
+          "resource.attributes.service@name": "system.dev",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "exemplars": [],
+          "name": "system.dev.writes",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "mDjQmI0B7F_HswaHoCbC",
+          "time": "2024-02-11T15:12:27Z",
+          "metric.attributes.host": "nemesis-gateway--canary-production-gq1-69f644bb7b-gh5p6",
+          "value": 15.6501
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "3wa0o40Bt2BMYC1EPYiw",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "metric.attributes.filesystem": "/etc/hosts",
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system.fs",
+          "resource.attributes.service@name": "system.fs",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "exemplars": [],
+          "name": "system.fs.inodes.used.pct",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "uDjQmI0B7F_HswaHoCbC",
+          "time": "2024-02-11T15:12:27Z",
+          "metric.attributes.host": "nemesis-gateway--canary-production-gq1-69f644bb7b-gh5p6",
+          "value": 0.0623744
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "5Qa0o40Bt2BMYC1EPYiw",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "metric.attributes.filesystem": "/home/y/logs/nemesis-gateway",
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system.fs",
+          "resource.attributes.service@name": "system.fs",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "exemplars": [],
+          "name": "system.fs.capacity.kb",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "2TjQmI0B7F_HswaHoCbC",
+          "time": "2024-02-11T15:12:27Z",
+          "metric.attributes.host": "nemesis-gateway--canary-production-gq1-69f644bb7b-gh5p6",
+          "value": 468167000
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "5wa0o40Bt2BMYC1EPYiw",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system.if",
+          "resource.attributes.service@name": "system.if",
+          "schemaUrl": "",
+          "metric.attributes.interface": "eth0",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "exemplars": [],
+          "name": "system.if.in.compressed",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "6zjQmI0B7F_HswaHoCbC",
+          "time": "2024-02-11T15:12:27Z",
+          "metric.attributes.host": "nemesis-gateway--canary-production-gq1-69f644bb7b-gh5p6",
+          "value": 0
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "6Aa0o40Bt2BMYC1EPYiw",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system.if",
+          "resource.attributes.service@name": "system.if",
+          "schemaUrl": "",
+          "metric.attributes.interface": "eth0",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "exemplars": [],
+          "name": "system.if.in.multicast",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "8TjQmI0B7F_HswaHoCbC",
+          "time": "2024-02-11T15:12:27Z",
+          "metric.attributes.host": "nemesis-gateway--canary-production-gq1-69f644bb7b-gh5p6",
+          "value": 0
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "6wa0o40Bt2BMYC1EPYiw",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system.if",
+          "resource.attributes.service@name": "system.if",
+          "schemaUrl": "",
+          "metric.attributes.interface": "lo",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "exemplars": [],
+          "name": "system.if.out.packets",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "BDjQmI0B7F_HswaHoCfC",
+          "time": "2024-02-11T15:12:27Z",
+          "metric.attributes.host": "nemesis-gateway--canary-production-gq1-69f644bb7b-gh5p6",
+          "value": 679.958
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "7Qa0o40Bt2BMYC1EPYiw",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system",
+          "resource.attributes.service@name": "system",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "exemplars": [],
+          "name": "system.udp.error.send",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "CTjQmI0B7F_HswaHoCfC",
+          "time": "2024-02-11T15:14:12Z",
+          "metric.attributes.host": "prod-finance-17.redis-ext-778979c97f-cjfcj",
+          "value": 0
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "8Qa0o40Bt2BMYC1ERYjU",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system",
+          "resource.attributes.service@name": "system",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "exemplars": [],
+          "name": "system.tcp.out.resets",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "GDjQmI0B7F_HswaHoCfC",
+          "time": "2024-02-11T15:14:12Z",
+          "metric.attributes.host": "prod-finance-17.redis-ext-778979c97f-cjfcj",
+          "value": 0.0333332
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "8ga0o40Bt2BMYC1ERYjU",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system",
+          "resource.attributes.service@name": "system",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "exemplars": [],
+          "name": "system.tcp.orphaned",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "GzjQmI0B7F_HswaHoCfC",
+          "time": "2024-02-11T15:14:12Z",
+          "metric.attributes.host": "prod-finance-17.redis-ext-778979c97f-cjfcj",
+          "value": 1
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "9Qa0o40Bt2BMYC1ERYjU",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system",
+          "resource.attributes.service@name": "system",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "exemplars": [],
+          "name": "system.mem.active.kb",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "KjjQmI0B7F_HswaHoCfC",
+          "time": "2024-02-11T15:14:12Z",
+          "metric.attributes.host": "prod-finance-17.redis-ext-778979c97f-cjfcj",
+          "value": 9205090
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "BQa0o40Bt2BMYC1ERYnU",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system.cpu",
+          "resource.attributes.service@name": "system.cpu",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "exemplars": [],
+          "metric.attributes.cpu": "cpu36",
+          "name": "system.cpu.cpu.busy.pct",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "hTjQmI0B7F_HswaHoCfC",
+          "time": "2024-02-11T15:14:12Z",
+          "metric.attributes.host": "prod-finance-17.redis-ext-778979c97f-cjfcj",
+          "value": 40.1108
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "Bwa0o40Bt2BMYC1ERYnU",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "metric.attributes.device": "sda",
+          "kind": "GAUGE",
+          "flags": 0,
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system.dev",
+          "resource.attributes.service@name": "system.dev",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "exemplars": [],
+          "name": "system.dev.busy",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "jjjQmI0B7F_HswaHoCfC",
+          "time": "2024-02-11T15:14:12Z",
+          "metric.attributes.host": "prod-finance-17.redis-ext-778979c97f-cjfcj",
+          "value": 0.203082
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "DQa0o40Bt2BMYC1ERYnU",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "metric.attributes.filesystem": "/",
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system.fs",
+          "resource.attributes.service@name": "system.fs",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "exemplars": [],
+          "name": "system.fs.inodes.free",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "rjjQmI0B7F_HswaHoCfC",
+          "time": "2024-02-11T15:14:12Z",
+          "metric.attributes.host": "prod-finance-17.redis-ext-778979c97f-cjfcj",
+          "value": 52386100
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "Dwa0o40Bt2BMYC1ERYnU",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "metric.attributes.filesystem": "/data",
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system.fs",
+          "resource.attributes.service@name": "system.fs",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "exemplars": [],
+          "name": "system.fs.inodes.used.pct",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "ujjQmI0B7F_HswaHoCfC",
+          "time": "2024-02-11T15:14:12Z",
+          "metric.attributes.host": "prod-finance-17.redis-ext-778979c97f-cjfcj",
+          "value": 0.0659142
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "EQa0o40Bt2BMYC1ERYnU",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "metric.attributes.filesystem": "/home/y/var/scoreboards",
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system.fs",
+          "resource.attributes.service@name": "system.fs",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "exemplars": [],
+          "name": "system.fs.capacity.kb",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "wjjQmI0B7F_HswaHoCfC",
+          "time": "2024-02-11T15:14:12Z",
+          "metric.attributes.host": "prod-finance-17.redis-ext-778979c97f-cjfcj",
+          "value": 468167000
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "FAa0o40Bt2BMYC1ERYnU",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system.if",
+          "resource.attributes.service@name": "system.if",
+          "schemaUrl": "",
+          "metric.attributes.interface": "eth0",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "exemplars": [],
+          "name": "system.if.speed",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "1jjQmI0B7F_HswaHoCfC",
+          "time": "2024-02-11T15:14:12Z",
+          "metric.attributes.host": "prod-finance-17.redis-ext-778979c97f-cjfcj",
+          "value": 10000
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "IAa0o40Bt2BMYC1ERYnU",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "metric.attributes.filesystem": "/grid/3",
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system.fs",
+          "resource.attributes.service@name": "system.fs",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "metric.attributes.colo": "bf1",
+          "exemplars": [],
+          "name": "system.fs.inodes.used",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "BjjQmI0B7F_HswaHoCjC",
+          "time": "2024-02-11T15:14:20Z",
+          "metric.attributes.host": "gsrd574n06.red.ygrid.foo.com",
+          "value": 2603
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "LQa0o40Bt2BMYC1ERYnU",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system.if",
+          "resource.attributes.service@name": "system.if",
+          "schemaUrl": "",
+          "metric.attributes.interface": "eth0",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "metric.attributes.colo": "bf1",
+          "exemplars": [],
+          "name": "system.if.in.drops",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "SDjQmI0B7F_HswaHoCjC",
+          "time": "2024-02-11T15:14:20Z",
+          "metric.attributes.host": "gsrd574n06.red.ygrid.foo.com",
+          "value": 0
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "OQa0o40Bt2BMYC1ERYnU",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system",
+          "resource.attributes.service@name": "system",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "metric.attributes.colo": "bf1",
+          "exemplars": [],
+          "name": "system.mem.buffers.kb",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "hzjQmI0B7F_HswaHoCjC",
+          "time": "2024-02-11T15:14:20Z",
+          "metric.attributes.host": "gsrd574n06.red.ygrid.foo.com",
+          "value": 1656430
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "QQa0o40Bt2BMYC1ERYnU",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system",
+          "resource.attributes.service@name": "system",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "metric.attributes.colo": "bf1",
+          "exemplars": [],
+          "name": "system.tcp.listenq.overflows",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "mzjQmI0B7F_HswaHoCjC",
+          "time": "2024-02-11T15:14:20Z",
+          "metric.attributes.host": "gsrd574n06.red.ygrid.foo.com",
+          "value": 0
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "Qga0o40Bt2BMYC1ERYnU",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system",
+          "resource.attributes.service@name": "system",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "metric.attributes.colo": "bf1",
+          "exemplars": [],
+          "name": "system.procs.zombie",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "nDjQmI0B7F_HswaHoCjC",
+          "time": "2024-02-11T15:14:20Z",
+          "metric.attributes.host": "gsrd574n06.red.ygrid.foo.com",
+          "value": 0
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "Uga0o40Bt2BMYC1ERYnU",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "metric.attributes.device": "sda",
+          "kind": "GAUGE",
+          "flags": 0,
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system.dev",
+          "resource.attributes.service@name": "system.dev",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "metric.attributes.colo": "bf1",
+          "exemplars": [],
+          "name": "system.dev.busy",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "CjjQmI0B7F_HswaHoCnC",
+          "time": "2024-02-11T15:14:20Z",
+          "metric.attributes.host": "gsrd574n06.red.ygrid.foo.com",
+          "value": 0.0108334
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "Vwa0o40Bt2BMYC1ERYnU",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system.if",
+          "resource.attributes.service@name": "system.if",
+          "schemaUrl": "",
+          "metric.attributes.interface": "lo",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "exemplars": [],
+          "name": "system.if.out.carrier",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "ITjQmI0B7F_HswaHoCnC",
+          "time": "2024-02-11T15:14:14Z",
+          "metric.attributes.host": "prod-evaluate-targeting-41.redis-ext-7dc67b74cd-p26gs",
+          "value": 0
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "WQa0o40Bt2BMYC1ERYnU",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system.if",
+          "resource.attributes.service@name": "system.if",
+          "schemaUrl": "",
+          "metric.attributes.interface": "lo",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "exemplars": [],
+          "name": "system.if.in.bytes",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "JDjQmI0B7F_HswaHoCnC",
+          "time": "2024-02-11T15:14:14Z",
+          "metric.attributes.host": "prod-evaluate-targeting-41.redis-ext-7dc67b74cd-p26gs",
+          "value": 2060.98
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "awa0o40Bt2BMYC1ERYnU",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system",
+          "resource.attributes.service@name": "system",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "exemplars": [],
+          "name": "system.tcp.established",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "ezjQmI0B7F_HswaHoCnC",
+          "time": "2024-02-11T15:14:14Z",
+          "metric.attributes.host": "prod-evaluate-targeting-41.redis-ext-7dc67b74cd-p26gs",
+          "value": 317
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "cAa0o40Bt2BMYC1ERYnU",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system.cpu",
+          "resource.attributes.service@name": "system.cpu",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "exemplars": [],
+          "metric.attributes.cpu": "cpu1",
+          "name": "system.cpu.cpu.busy.pct",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "pTjQmI0B7F_HswaHoCnC",
+          "time": "2024-02-11T15:14:14Z",
+          "metric.attributes.host": "prod-evaluate-targeting-41.redis-ext-7dc67b74cd-p26gs",
+          "value": 31.9324
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "cQa0o40Bt2BMYC1ERYnU",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system.cpu",
+          "resource.attributes.service@name": "system.cpu",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "exemplars": [],
+          "metric.attributes.cpu": "cpu61",
+          "name": "system.cpu.cpu.busy.pct",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "pzjQmI0B7F_HswaHoCnC",
+          "time": "2024-02-11T15:14:14Z",
+          "metric.attributes.host": "prod-evaluate-targeting-41.redis-ext-7dc67b74cd-p26gs",
+          "value": 21.1802
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "ega0o40Bt2BMYC1ERYnU",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "metric.attributes.filesystem": "/etc/hostname",
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system.fs",
+          "resource.attributes.service@name": "system.fs",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "exemplars": [],
+          "name": "system.fs.inodes.used",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "0jjQmI0B7F_HswaHoCnC",
+          "time": "2024-02-11T15:14:14Z",
+          "metric.attributes.host": "prod-evaluate-targeting-41.redis-ext-7dc67b74cd-p26gs",
+          "value": 153782
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "fQa0o40Bt2BMYC1ERYnU",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "metric.attributes.filesystem": "/dev/termination-log",
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system.fs",
+          "resource.attributes.service@name": "system.fs",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "exemplars": [],
+          "name": "system.fs.used.pct",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "4TjQmI0B7F_HswaHoCnC",
+          "time": "2024-02-11T15:14:14Z",
+          "metric.attributes.host": "prod-evaluate-targeting-41.redis-ext-7dc67b74cd-p26gs",
+          "value": 10.5217
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "kwa0o40Bt2BMYC1ERYnU",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "metric.attributes.filesystem": "/etc/hostname",
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system.fs",
+          "resource.attributes.service@name": "system.fs",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "exemplars": [],
+          "name": "system.fs.used.kb",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "TzjQmI0B7F_HswaHoCrC",
+          "time": "2024-02-11T15:14:25Z",
+          "metric.attributes.host": "xobni-nimbus--mtls-production-gq1-96d7f987b-gtmr6",
+          "value": 111112000
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "nQa0o40Bt2BMYC1ERYnU",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system",
+          "resource.attributes.service@name": "system",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "exemplars": [],
+          "name": "system.loadavg.5m",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "jDjQmI0B7F_HswaHoCrC",
+          "time": "2024-02-11T15:14:25Z",
+          "metric.attributes.host": "xobni-nimbus--mtls-production-gq1-96d7f987b-gtmr6",
+          "value": 6.76
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "nga0o40Bt2BMYC1ERYnU",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system",
+          "resource.attributes.service@name": "system",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "exemplars": [],
+          "name": "system.mem.unused.pct",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "jTjQmI0B7F_HswaHoCrC",
+          "time": "2024-02-11T15:14:25Z",
+          "metric.attributes.host": "xobni-nimbus--mtls-production-gq1-96d7f987b-gtmr6",
+          "value": 81.4962
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "oga0o40Bt2BMYC1ERYnU",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system",
+          "resource.attributes.service@name": "system",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "exemplars": [],
+          "name": "system.mem.used.pct",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "mzjQmI0B7F_HswaHoCrC",
+          "time": "2024-02-11T15:14:25Z",
+          "metric.attributes.host": "xobni-nimbus--mtls-production-gq1-96d7f987b-gtmr6",
+          "value": 18.5038
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "pga0o40Bt2BMYC1ERYnU",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system",
+          "resource.attributes.service@name": "system",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "exemplars": [],
+          "name": "system.mem.shmem.kb",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "vTjQmI0B7F_HswaHoCrD",
+          "time": "2024-02-11T15:14:25Z",
+          "metric.attributes.host": "xobni-nimbus--mtls-production-gq1-96d7f987b-gtmr6",
+          "value": 55910100
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "qAa0o40Bt2BMYC1ERYnU",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system.cpu",
+          "resource.attributes.service@name": "system.cpu",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "exemplars": [],
+          "metric.attributes.cpu": "cpu122",
+          "name": "system.cpu.cpu.busy.pct",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "0jjQmI0B7F_HswaHoCrD",
+          "time": "2024-02-11T15:14:25Z",
+          "metric.attributes.host": "xobni-nimbus--mtls-production-gq1-96d7f987b-gtmr6",
+          "value": 4.82551
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "rQa0o40Bt2BMYC1ERYnU",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system.cpu",
+          "resource.attributes.service@name": "system.cpu",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "exemplars": [],
+          "metric.attributes.cpu": "cpu102",
+          "name": "system.cpu.cpu.busy.pct",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "4zjQmI0B7F_HswaHoCrD",
+          "time": "2024-02-11T15:14:25Z",
+          "metric.attributes.host": "xobni-nimbus--mtls-production-gq1-96d7f987b-gtmr6",
+          "value": 4.3246
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "rga0o40Bt2BMYC1ERYnU",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system.cpu",
+          "resource.attributes.service@name": "system.cpu",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "exemplars": [],
+          "metric.attributes.cpu": "cpu125",
+          "name": "system.cpu.cpu.busy.pct",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "6zjQmI0B7F_HswaHoCrD",
+          "time": "2024-02-11T15:14:25Z",
+          "metric.attributes.host": "xobni-nimbus--mtls-production-gq1-96d7f987b-gtmr6",
+          "value": 4.83898
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "sQa0o40Bt2BMYC1ERYnU",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system.cpu",
+          "resource.attributes.service@name": "system.cpu",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "exemplars": [],
+          "metric.attributes.cpu": "cpu86",
+          "name": "system.cpu.cpu.busy.pct",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "-zjQmI0B7F_HswaHoCrD",
+          "time": "2024-02-11T15:14:25Z",
+          "metric.attributes.host": "xobni-nimbus--mtls-production-gq1-96d7f987b-gtmr6",
+          "value": 9.40743
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "uAa0o40Bt2BMYC1ERYnU",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system.cpu",
+          "resource.attributes.service@name": "system.cpu",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "exemplars": [],
+          "metric.attributes.cpu": "cpu37",
+          "name": "system.cpu.cpu.busy.pct",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "HDjQmI0B7F_HswaHoCvD",
+          "time": "2024-02-11T15:14:25Z",
+          "metric.attributes.host": "xobni-nimbus--mtls-production-gq1-96d7f987b-gtmr6",
+          "value": 5.60935
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "uwa0o40Bt2BMYC1ERYnU",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system.cpu",
+          "resource.attributes.service@name": "system.cpu",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "exemplars": [],
+          "metric.attributes.cpu": "cpu62",
+          "name": "system.cpu.cpu.busy.pct",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "KDjQmI0B7F_HswaHoCvD",
+          "time": "2024-02-11T15:14:25Z",
+          "metric.attributes.host": "xobni-nimbus--mtls-production-gq1-96d7f987b-gtmr6",
+          "value": 6.21874
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "vAa0o40Bt2BMYC1ERYnU",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system.cpu",
+          "resource.attributes.service@name": "system.cpu",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "exemplars": [],
+          "metric.attributes.cpu": "cpu18",
+          "name": "system.cpu.cpu.busy.pct",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "KTjQmI0B7F_HswaHoCvD",
+          "time": "2024-02-11T15:14:25Z",
+          "metric.attributes.host": "xobni-nimbus--mtls-production-gq1-96d7f987b-gtmr6",
+          "value": 4.40808
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "vQa0o40Bt2BMYC1ERYnU",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system.cpu",
+          "resource.attributes.service@name": "system.cpu",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "exemplars": [],
+          "metric.attributes.cpu": "cpu98",
+          "name": "system.cpu.cpu.busy.pct",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "LjjQmI0B7F_HswaHoCvD",
+          "time": "2024-02-11T15:14:25Z",
+          "metric.attributes.host": "xobni-nimbus--mtls-production-gq1-96d7f987b-gtmr6",
+          "value": 4.23545
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "vga0o40Bt2BMYC1ERYnU",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system.cpu",
+          "resource.attributes.service@name": "system.cpu",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "exemplars": [],
+          "metric.attributes.cpu": "cpu25",
+          "name": "system.cpu.cpu.busy.pct",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "MzjQmI0B7F_HswaHoCvD",
+          "time": "2024-02-11T15:14:25Z",
+          "metric.attributes.host": "xobni-nimbus--mtls-production-gq1-96d7f987b-gtmr6",
+          "value": 4.41103
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "2Qa0o40Bt2BMYC1ERYnU",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system.if",
+          "resource.attributes.service@name": "system.if",
+          "schemaUrl": "",
+          "metric.attributes.interface": "eth0",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "exemplars": [],
+          "name": "system.if.speed",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "uTjQmI0B7F_HswaHoCvD",
+          "time": "2024-02-11T15:14:12Z",
+          "metric.attributes.host": "prediction--tf-production-bf1-f6b45cb4d-hkbpq",
+          "value": 10000
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "3Qa0o40Bt2BMYC1ERYnU",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system.if",
+          "resource.attributes.service@name": "system.if",
+          "schemaUrl": "",
+          "metric.attributes.interface": "lo",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "exemplars": [],
+          "name": "system.if.in.fifo",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "yzjQmI0B7F_HswaHoCvD",
+          "time": "2024-02-11T15:14:12Z",
+          "metric.attributes.host": "prediction--tf-production-bf1-f6b45cb4d-hkbpq",
+          "value": 0
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "4Aa0o40Bt2BMYC1ERYnU",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system",
+          "resource.attributes.service@name": "system",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "exemplars": [],
+          "name": "system.tcp6.inuse",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "1DjQmI0B7F_HswaHoCvD",
+          "time": "2024-02-11T15:14:12Z",
+          "metric.attributes.host": "prediction--tf-production-bf1-f6b45cb4d-hkbpq",
+          "value": 37
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "4ga0o40Bt2BMYC1ERYnU",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system",
+          "resource.attributes.service@name": "system",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "exemplars": [],
+          "name": "system.mem.total.kb",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "3TjQmI0B7F_HswaHoCvD",
+          "time": "2024-02-11T15:14:12Z",
+          "metric.attributes.host": "prediction--tf-production-bf1-f6b45cb4d-hkbpq",
+          "value": 527378000
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "5wa0o40Bt2BMYC1ERYnU",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system",
+          "resource.attributes.service@name": "system",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "exemplars": [],
+          "name": "system.mem.cached.kb",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "5zjQmI0B7F_HswaHoCvD",
+          "time": "2024-02-11T15:14:12Z",
+          "metric.attributes.host": "prediction--tf-production-bf1-f6b45cb4d-hkbpq",
+          "value": 67762700
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "7Aa0o40Bt2BMYC1ERYnU",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system",
+          "resource.attributes.service@name": "system",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "exemplars": [],
+          "name": "system.cpu.steal",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "CzjQmI0B7F_HswaHoCzD",
+          "time": "2024-02-11T15:14:12Z",
+          "metric.attributes.host": "prediction--tf-production-bf1-f6b45cb4d-hkbpq",
+          "value": 0
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "8Aa0o40Bt2BMYC1ERYnU",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system",
+          "resource.attributes.service@name": "system",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "exemplars": [],
+          "name": "system.vm.pswpin",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "HTjQmI0B7F_HswaHoCzD",
+          "time": "2024-02-11T15:14:12Z",
+          "metric.attributes.host": "prediction--tf-production-bf1-f6b45cb4d-hkbpq",
+          "value": 0
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "8Qa0o40Bt2BMYC1ERYnU",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system",
+          "resource.attributes.service@name": "system",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "exemplars": [],
+          "name": "system.tcp.kernel_pages",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "HjjQmI0B7F_HswaHoCzD",
+          "time": "2024-02-11T15:14:12Z",
+          "metric.attributes.host": "prediction--tf-production-bf1-f6b45cb4d-hkbpq",
+          "value": 17430
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "8wa0o40Bt2BMYC1ERYnU",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system.cpu",
+          "resource.attributes.service@name": "system.cpu",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "exemplars": [],
+          "metric.attributes.cpu": "cpu115",
+          "name": "system.cpu.cpu.busy.pct",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "KTjQmI0B7F_HswaHoCzD",
+          "time": "2024-02-11T15:14:12Z",
+          "metric.attributes.host": "prediction--tf-production-bf1-f6b45cb4d-hkbpq",
+          "value": 24.7263
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "LAa0o40Bt2BMYC1ERYrV",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system",
+          "resource.attributes.service@name": "system",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "metric.attributes.colo": "gq1",
+          "exemplars": [],
+          "name": "system.udp4.inuse",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "JDjQmI0B7F_HswaHoC3D",
+          "time": "2024-02-11T15:14:18Z",
+          "metric.attributes.host": "fanos84.sports.gq1.foo.com",
+          "value": 15
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "MQa0o40Bt2BMYC1ERYrV",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "metric.attributes.device": "sda",
+          "kind": "GAUGE",
+          "flags": 0,
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system.dev",
+          "resource.attributes.service@name": "system.dev",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "metric.attributes.colo": "gq1",
+          "exemplars": [],
+          "name": "system.dev.reads",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "QTjQmI0B7F_HswaHoC3D",
+          "time": "2024-02-11T15:14:18Z",
+          "metric.attributes.host": "fanos84.sports.gq1.foo.com",
+          "value": 0
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "NQa0o40Bt2BMYC1ERYrV",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "metric.attributes.filesystem": "/opt/sentinelone/rpm_mount",
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system.fs",
+          "resource.attributes.service@name": "system.fs",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "metric.attributes.colo": "gq1",
+          "exemplars": [],
+          "name": "system.fs.inodes.used.pct",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "TDjQmI0B7F_HswaHoC3D",
+          "time": "2024-02-11T15:14:18Z",
+          "metric.attributes.host": "fanos84.sports.gq1.foo.com",
+          "value": 0.14329
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "Nga0o40Bt2BMYC1ERYrV",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "metric.attributes.filesystem": "/home",
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system.fs",
+          "resource.attributes.service@name": "system.fs",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "metric.attributes.colo": "gq1",
+          "exemplars": [],
+          "name": "system.fs.inodes.used",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "VTjQmI0B7F_HswaHoC3D",
+          "time": "2024-02-11T15:14:18Z",
+          "metric.attributes.host": "fanos84.sports.gq1.foo.com",
+          "value": 217610
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "OAa0o40Bt2BMYC1ERYrV",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "metric.attributes.filesystem": "/var",
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system.fs",
+          "resource.attributes.service@name": "system.fs",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "metric.attributes.colo": "gq1",
+          "exemplars": [],
+          "name": "system.fs.inodes.used.pct",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "YjjQmI0B7F_HswaHoC3D",
+          "time": "2024-02-11T15:14:18Z",
+          "metric.attributes.host": "fanos84.sports.gq1.foo.com",
+          "value": 0.14329
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "OQa0o40Bt2BMYC1ERYrV",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "metric.attributes.filesystem": "/var",
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system.fs",
+          "resource.attributes.service@name": "system.fs",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "metric.attributes.colo": "gq1",
+          "exemplars": [],
+          "name": "system.fs.used.pct",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "ZTjQmI0B7F_HswaHoC3D",
+          "time": "2024-02-11T15:14:18Z",
+          "metric.attributes.host": "fanos84.sports.gq1.foo.com",
+          "value": 15.1952
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "Oga0o40Bt2BMYC1ERYrV",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "metric.attributes.filesystem": "/tmp",
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system.fs",
+          "resource.attributes.service@name": "system.fs",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "metric.attributes.colo": "gq1",
+          "exemplars": [],
+          "name": "system.fs.capacity.kb",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "cjjQmI0B7F_HswaHoC3D",
+          "time": "2024-02-11T15:14:18Z",
+          "metric.attributes.host": "fanos84.sports.gq1.foo.com",
+          "value": 10475500
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "Owa0o40Bt2BMYC1ERYrV",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "metric.attributes.filesystem": "/tmp",
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system.fs",
+          "resource.attributes.service@name": "system.fs",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "metric.attributes.colo": "gq1",
+          "exemplars": [],
+          "name": "system.fs.inodes.used.pct",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "dTjQmI0B7F_HswaHoC3D",
+          "time": "2024-02-11T15:14:18Z",
+          "metric.attributes.host": "fanos84.sports.gq1.foo.com",
+          "value": 0.115623
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "Pga0o40Bt2BMYC1ERYrV",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system",
+          "resource.attributes.service@name": "system",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "metric.attributes.colo": "gq1",
+          "exemplars": [],
+          "name": "system.tcp.opens.passive",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "ljjQmI0B7F_HswaHoC3D",
+          "time": "2024-02-11T15:14:16Z",
+          "metric.attributes.host": "idx22.splunk.ops.search.gq1.foo.com",
+          "value": 2.23332
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "TQa0o40Bt2BMYC1ERYrV",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system.cpu",
+          "resource.attributes.service@name": "system.cpu",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "metric.attributes.colo": "gq1",
+          "exemplars": [],
+          "metric.attributes.cpu": "cpu9",
+          "name": "system.cpu.cpu.busy.pct",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "1zjQmI0B7F_HswaHoC3D",
+          "time": "2024-02-11T15:14:16Z",
+          "metric.attributes.host": "idx22.splunk.ops.search.gq1.foo.com",
+          "value": 1.92019
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "Uga0o40Bt2BMYC1ERYrV",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system.cpu",
+          "resource.attributes.service@name": "system.cpu",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "metric.attributes.colo": "gq1",
+          "exemplars": [],
+          "metric.attributes.cpu": "cpu19",
+          "name": "system.cpu.cpu.busy.pct",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "4TjQmI0B7F_HswaHoC3D",
+          "time": "2024-02-11T15:14:16Z",
+          "metric.attributes.host": "idx22.splunk.ops.search.gq1.foo.com",
+          "value": 6.30315
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "VQa0o40Bt2BMYC1ERYrV",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "metric.attributes.filesystem": "/home",
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system.fs",
+          "resource.attributes.service@name": "system.fs",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "metric.attributes.colo": "gq1",
+          "exemplars": [],
+          "name": "system.fs.inodes.used",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "8jjQmI0B7F_HswaHoC3D",
+          "time": "2024-02-11T15:14:16Z",
+          "metric.attributes.host": "idx22.splunk.ops.search.gq1.foo.com",
+          "value": 28693
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "WAa0o40Bt2BMYC1ERYrV",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "metric.attributes.filesystem": "/opt/sentinelone/rpm_mount",
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system.fs",
+          "resource.attributes.service@name": "system.fs",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "metric.attributes.colo": "gq1",
+          "exemplars": [],
+          "name": "system.fs.readonly",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "-zjQmI0B7F_HswaHoC3D",
+          "time": "2024-02-11T15:14:16Z",
+          "metric.attributes.host": "idx22.splunk.ops.search.gq1.foo.com",
+          "value": 1
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "Xwa0o40Bt2BMYC1ERYrV",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "metric.attributes.filesystem": "/var",
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system.fs",
+          "resource.attributes.service@name": "system.fs",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "metric.attributes.colo": "gq1",
+          "exemplars": [],
+          "name": "system.fs.used.kb",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "HDjQmI0B7F_HswaHoC7D",
+          "time": "2024-02-11T15:14:16Z",
+          "metric.attributes.host": "idx22.splunk.ops.search.gq1.foo.com",
+          "value": 1934010
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "YQa0o40Bt2BMYC1ERYrV",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system.if",
+          "resource.attributes.service@name": "system.if",
+          "schemaUrl": "",
+          "metric.attributes.interface": "lo",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "metric.attributes.colo": "gq1",
+          "exemplars": [],
+          "name": "system.if.out.collisions",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "LjjQmI0B7F_HswaHoC7D",
+          "time": "2024-02-11T15:14:16Z",
+          "metric.attributes.host": "idx22.splunk.ops.search.gq1.foo.com",
+          "value": 0
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "aQa0o40Bt2BMYC1ERYrV",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system.if",
+          "resource.attributes.service@name": "system.if",
+          "schemaUrl": "",
+          "metric.attributes.interface": "eth0",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "exemplars": [],
+          "name": "system.if.in.errors",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "WzjQmI0B7F_HswaHoC7D",
+          "time": "2024-02-11T15:14:16Z",
+          "metric.attributes.host": "scrappy--node18-production-ir2-89d57d785-nh8lk",
+          "value": 0
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "cQa0o40Bt2BMYC1ERYrV",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system",
+          "resource.attributes.service@name": "system",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "exemplars": [],
+          "name": "system.udp.no.port",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "jjjQmI0B7F_HswaHoC7D",
+          "time": "2024-02-11T15:14:16Z",
+          "metric.attributes.host": "scrappy--node18-production-ir2-89d57d785-nh8lk",
+          "value": 10.5165
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "hga0o40Bt2BMYC1ERYrV",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system.cpu",
+          "resource.attributes.service@name": "system.cpu",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "exemplars": [],
+          "metric.attributes.cpu": "cpu21",
+          "name": "system.cpu.cpu.busy.pct",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "8jjQmI0B7F_HswaHoC7D",
+          "time": "2024-02-11T15:14:16Z",
+          "metric.attributes.host": "scrappy--node18-production-ir2-89d57d785-nh8lk",
+          "value": 19.003
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "kAa0o40Bt2BMYC1ERYrV",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system.cpu",
+          "resource.attributes.service@name": "system.cpu",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "exemplars": [],
+          "metric.attributes.cpu": "cpu77",
+          "name": "system.cpu.cpu.busy.pct",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "KjjQmI0B7F_HswaHoC_D",
+          "time": "2024-02-11T15:14:16Z",
+          "metric.attributes.host": "scrappy--node18-production-ir2-89d57d785-nh8lk",
+          "value": 17.1013
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "kQa0o40Bt2BMYC1ERYrV",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system.cpu",
+          "resource.attributes.service@name": "system.cpu",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "exemplars": [],
+          "metric.attributes.cpu": "cpu82",
+          "name": "system.cpu.cpu.busy.pct",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "LTjQmI0B7F_HswaHoC_D",
+          "time": "2024-02-11T15:14:16Z",
+          "metric.attributes.host": "scrappy--node18-production-ir2-89d57d785-nh8lk",
+          "value": 15.704
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "nAa0o40Bt2BMYC1ERYrV",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "metric.attributes.filesystem": "/etc/hostname",
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system.fs",
+          "resource.attributes.service@name": "system.fs",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "exemplars": [],
+          "name": "system.fs.readonly",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "dTjQmI0B7F_HswaHoC_D",
+          "time": "2024-02-11T15:14:16Z",
+          "metric.attributes.host": "scrappy--node18-production-ir2-89d57d785-nh8lk",
+          "value": 0
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "owa0o40Bt2BMYC1ERYrV",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system.if",
+          "resource.attributes.service@name": "system.if",
+          "schemaUrl": "",
+          "metric.attributes.interface": "lo",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "metric.attributes.colo": "bf1",
+          "exemplars": [],
+          "name": "system.if.out.errors",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "njjQmI0B7F_HswaHoC_D",
+          "time": "2024-02-11T15:14:20Z",
+          "metric.attributes.host": "triton-aerospike015.prod.tgt.bf1.foo.com",
+          "value": 0
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "qga0o40Bt2BMYC1ERYrV",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system",
+          "resource.attributes.service@name": "system",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "metric.attributes.colo": "bf1",
+          "exemplars": [],
+          "name": "system.mem.cached.kb",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "ujjQmI0B7F_HswaHoC_D",
+          "time": "2024-02-11T15:14:20Z",
+          "metric.attributes.host": "triton-aerospike015.prod.tgt.bf1.foo.com",
+          "value": 295268000
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "rga0o40Bt2BMYC1ERYrV",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system",
+          "resource.attributes.service@name": "system",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "metric.attributes.colo": "bf1",
+          "exemplars": [],
+          "name": "system.tcp6.inuse",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "zzjQmI0B7F_HswaHoC_D",
+          "time": "2024-02-11T15:14:20Z",
+          "metric.attributes.host": "triton-aerospike015.prod.tgt.bf1.foo.com",
+          "value": 4
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "sQa0o40Bt2BMYC1ERYrV",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system",
+          "resource.attributes.service@name": "system",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "metric.attributes.colo": "bf1",
+          "exemplars": [],
+          "name": "system.cpu.idle.pct",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "1DjQmI0B7F_HswaHoC_D",
+          "time": "2024-02-11T15:14:20Z",
+          "metric.attributes.host": "triton-aerospike015.prod.tgt.bf1.foo.com",
+          "value": 99.392
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "tAa0o40Bt2BMYC1ERYrV",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system",
+          "resource.attributes.service@name": "system",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "metric.attributes.colo": "bf1",
+          "exemplars": [],
+          "name": "system.tcp.time_wait",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "4jjQmI0B7F_HswaHoC_D",
+          "time": "2024-02-11T15:14:20Z",
+          "metric.attributes.host": "triton-aerospike015.prod.tgt.bf1.foo.com",
+          "value": 1
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "twa0o40Bt2BMYC1ERYrV",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system",
+          "resource.attributes.service@name": "system",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "metric.attributes.colo": "bf1",
+          "exemplars": [],
+          "name": "system.udp.error.recv",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "6DjQmI0B7F_HswaHoC_D",
+          "time": "2024-02-11T15:14:20Z",
+          "metric.attributes.host": "triton-aerospike015.prod.tgt.bf1.foo.com",
+          "value": 0
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "xQa0o40Bt2BMYC1ERYrV",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system.cpu",
+          "resource.attributes.service@name": "system.cpu",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "metric.attributes.colo": "bf1",
+          "exemplars": [],
+          "metric.attributes.cpu": "cpu36",
+          "name": "system.cpu.cpu.busy.pct",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "LjjQmI0B7F_HswaHoDDD",
+          "time": "2024-02-11T15:14:20Z",
+          "metric.attributes.host": "triton-aerospike015.prod.tgt.bf1.foo.com",
+          "value": 0.0167448
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "yQa0o40Bt2BMYC1ERYrV",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system.cpu",
+          "resource.attributes.service@name": "system.cpu",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "metric.attributes.colo": "bf1",
+          "exemplars": [],
+          "metric.attributes.cpu": "cpu70",
+          "name": "system.cpu.cpu.busy.pct",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "ODjQmI0B7F_HswaHoDDD",
+          "time": "2024-02-11T15:14:20Z",
+          "metric.attributes.host": "triton-aerospike015.prod.tgt.bf1.foo.com",
+          "value": 0.366911
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "1ga0o40Bt2BMYC1ERYrV",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "metric.attributes.device": "nvme2n1",
+          "kind": "GAUGE",
+          "flags": 0,
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system.dev",
+          "resource.attributes.service@name": "system.dev",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "metric.attributes.colo": "bf1",
+          "exemplars": [],
+          "name": "system.dev.read.bytes",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "ejjQmI0B7F_HswaHoDDD",
+          "time": "2024-02-11T15:14:20Z",
+          "metric.attributes.host": "triton-aerospike015.prod.tgt.bf1.foo.com",
+          "value": 0
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "3Qa0o40Bt2BMYC1ERYrV",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "metric.attributes.device": "nvme3n1",
+          "kind": "GAUGE",
+          "flags": 0,
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system.dev",
+          "resource.attributes.service@name": "system.dev",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "metric.attributes.colo": "bf1",
+          "exemplars": [],
+          "name": "system.dev.read.bytes",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "jzjQmI0B7F_HswaHoDDD",
+          "time": "2024-02-11T15:14:20Z",
+          "metric.attributes.host": "triton-aerospike015.prod.tgt.bf1.foo.com",
+          "value": 0.033333
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "4Aa0o40Bt2BMYC1ERYrV",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "metric.attributes.filesystem": "/sdj",
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system.fs",
+          "resource.attributes.service@name": "system.fs",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "metric.attributes.colo": "bf1",
+          "exemplars": [],
+          "name": "system.fs.available.kb",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "mzjQmI0B7F_HswaHoDDD",
+          "time": "2024-02-11T15:14:20Z",
+          "metric.attributes.host": "triton-aerospike015.prod.tgt.bf1.foo.com",
+          "value": 187486000
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "4Qa0o40Bt2BMYC1ERYrV",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "metric.attributes.filesystem": "/sdj",
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system.fs",
+          "resource.attributes.service@name": "system.fs",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "metric.attributes.colo": "bf1",
+          "exemplars": [],
+          "name": "system.fs.capacity.kb",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "nDjQmI0B7F_HswaHoDDD",
+          "time": "2024-02-11T15:14:20Z",
+          "metric.attributes.host": "triton-aerospike015.prod.tgt.bf1.foo.com",
+          "value": 356341000
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "4ga0o40Bt2BMYC1ERYrV",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "metric.attributes.filesystem": "/sdj",
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system.fs",
+          "resource.attributes.service@name": "system.fs",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "metric.attributes.colo": "bf1",
+          "exemplars": [],
+          "name": "system.fs.inodes.free",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "nTjQmI0B7F_HswaHoDDD",
+          "time": "2024-02-11T15:14:20Z",
+          "metric.attributes.host": "triton-aerospike015.prod.tgt.bf1.foo.com",
+          "value": 178257000
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "4wa0o40Bt2BMYC1ERYrV",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "metric.attributes.filesystem": "/sdf",
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system.fs",
+          "resource.attributes.service@name": "system.fs",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "metric.attributes.colo": "bf1",
+          "exemplars": [],
+          "name": "system.fs.capacity.kb",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "qjjQmI0B7F_HswaHoDDD",
+          "time": "2024-02-11T15:14:20Z",
+          "metric.attributes.host": "triton-aerospike015.prod.tgt.bf1.foo.com",
+          "value": 356341000
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "5Qa0o40Bt2BMYC1ERYrV",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "metric.attributes.filesystem": "/sdg",
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system.fs",
+          "resource.attributes.service@name": "system.fs",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "metric.attributes.colo": "bf1",
+          "exemplars": [],
+          "name": "system.fs.inodes.used",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "rzjQmI0B7F_HswaHoDDD",
+          "time": "2024-02-11T15:14:20Z",
+          "metric.attributes.host": "triton-aerospike015.prod.tgt.bf1.foo.com",
+          "value": 164
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "6wa0o40Bt2BMYC1ERYrV",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "metric.attributes.filesystem": "/boot",
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system.fs",
+          "resource.attributes.service@name": "system.fs",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "metric.attributes.colo": "bf1",
+          "exemplars": [],
+          "name": "system.fs.available.kb",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "xzjQmI0B7F_HswaHoDDD",
+          "time": "2024-02-11T15:14:20Z",
+          "metric.attributes.host": "triton-aerospike015.prod.tgt.bf1.foo.com",
+          "value": 71666
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "7wa0o40Bt2BMYC1ERYrV",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system",
+          "resource.attributes.service@name": "system",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "exemplars": [],
+          "name": "system.mem.free.kb",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "7DjQmI0B7F_HswaHoDDD",
+          "time": "2024-02-11T15:14:23Z",
+          "metric.attributes.host": "graviton-ncp-content-gateway--production-bf1-6f5f74c87f-kkgtk",
+          "value": 51198400
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "8Aa0o40Bt2BMYC1ERYrV",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system",
+          "resource.attributes.service@name": "system",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "exemplars": [],
+          "name": "system.tcp.attempt.fails",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "7zjQmI0B7F_HswaHoDDD",
+          "time": "2024-02-11T15:14:23Z",
+          "metric.attributes.host": "graviton-ncp-content-gateway--production-bf1-6f5f74c87f-kkgtk",
+          "value": 0.400004
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "8Qa0o40Bt2BMYC1ERYrV",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system",
+          "resource.attributes.service@name": "system",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "exemplars": [],
+          "name": "system.tcp.closed",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "_zjQmI0B7F_HswaHoDDD",
+          "time": "2024-02-11T15:14:23Z",
+          "metric.attributes.host": "graviton-ncp-content-gateway--production-bf1-6f5f74c87f-kkgtk",
+          "value": 0
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "BAa0o40Bt2BMYC1ERYvV",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system.cpu",
+          "resource.attributes.service@name": "system.cpu",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "exemplars": [],
+          "metric.attributes.cpu": "cpu2",
+          "name": "system.cpu.cpu.busy.pct",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "XjjQmI0B7F_HswaHoDHD",
+          "time": "2024-02-11T15:14:23Z",
+          "metric.attributes.host": "graviton-ncp-content-gateway--production-bf1-6f5f74c87f-kkgtk",
+          "value": 12.2763
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "Ewa0o40Bt2BMYC1ERYvV",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "metric.attributes.filesystem": "/home/y/var/scoreboards",
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system.fs",
+          "resource.attributes.service@name": "system.fs",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "exemplars": [],
+          "name": "system.fs.available.kb",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "pjjQmI0B7F_HswaHoDHD",
+          "time": "2024-02-11T15:14:23Z",
+          "metric.attributes.host": "graviton-ncp-content-gateway--production-bf1-6f5f74c87f-kkgtk",
+          "value": 387341000
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "GAa0o40Bt2BMYC1ERYvV",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "metric.attributes.filesystem": "/etc/resolv.conf",
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system.fs",
+          "resource.attributes.service@name": "system.fs",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "exemplars": [],
+          "name": "system.fs.inodes.free",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "zTjQmI0B7F_HswaHoDHD",
+          "time": "2024-02-11T15:14:23Z",
+          "metric.attributes.host": "graviton-ncp-content-gateway--production-bf1-6f5f74c87f-kkgtk",
+          "value": 233953000
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "Hwa0o40Bt2BMYC1ERYvV",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system.if",
+          "resource.attributes.service@name": "system.if",
+          "schemaUrl": "",
+          "metric.attributes.interface": "eth0",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "exemplars": [],
+          "name": "system.if.out.collisions",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "5TjQmI0B7F_HswaHoDHD",
+          "time": "2024-02-11T15:14:23Z",
+          "metric.attributes.host": "graviton-ncp-content-gateway--production-bf1-6f5f74c87f-kkgtk",
+          "value": 0
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "Jwa0o40Bt2BMYC1ERYvV",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system.if",
+          "resource.attributes.service@name": "system.if",
+          "schemaUrl": "",
+          "metric.attributes.interface": "lo",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "exemplars": [],
+          "name": "system.if.out.bytes",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "_zjQmI0B7F_HswaHoDHD",
+          "time": "2024-02-11T15:14:23Z",
+          "metric.attributes.host": "graviton-ncp-content-gateway--production-bf1-6f5f74c87f-kkgtk",
+          "value": 8493800
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "Lga0o40Bt2BMYC1ERYvV",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "metric.attributes.filesystem": "/home",
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system.fs",
+          "resource.attributes.service@name": "system.fs",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "metric.attributes.colo": "gq1",
+          "exemplars": [],
+          "name": "system.fs.inodes.used",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "GzjQmI0B7F_HswaHoDLD",
+          "time": "2024-02-11T15:12:09Z",
+          "metric.attributes.host": "stbl114n12.blue.ygrid.foo.com",
+          "value": 8086
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "NAa0o40Bt2BMYC1ERYvV",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system.if",
+          "resource.attributes.service@name": "system.if",
+          "schemaUrl": "",
+          "metric.attributes.interface": "ens15",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "metric.attributes.colo": "gq1",
+          "exemplars": [],
+          "name": "system.if.in.packets",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "RTjQmI0B7F_HswaHoDLD",
+          "time": "2024-02-11T15:12:09Z",
+          "metric.attributes.host": "stbl114n12.blue.ygrid.foo.com",
+          "value": 99.2487
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "NQa0o40Bt2BMYC1ERYvV",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system.if",
+          "resource.attributes.service@name": "system.if",
+          "schemaUrl": "",
+          "metric.attributes.interface": "ens15",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "metric.attributes.colo": "gq1",
+          "exemplars": [],
+          "name": "system.if.in.fifo",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "RzjQmI0B7F_HswaHoDLD",
+          "time": "2024-02-11T15:12:09Z",
+          "metric.attributes.host": "stbl114n12.blue.ygrid.foo.com",
+          "value": 0
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "Nga0o40Bt2BMYC1ERYvV",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system",
+          "resource.attributes.service@name": "system",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "metric.attributes.colo": "gq1",
+          "exemplars": [],
+          "name": "system.loadavg.5m",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "WzjQmI0B7F_HswaHoDLD",
+          "time": "2024-02-11T15:12:09Z",
+          "metric.attributes.host": "stbl114n12.blue.ygrid.foo.com",
+          "value": 0.24
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "Nwa0o40Bt2BMYC1ERYvV",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system",
+          "resource.attributes.service@name": "system",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "metric.attributes.colo": "gq1",
+          "exemplars": [],
+          "name": "system.cpu.softirq",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "XDjQmI0B7F_HswaHoDLD",
+          "time": "2024-02-11T15:12:09Z",
+          "metric.attributes.host": "stbl114n12.blue.ygrid.foo.com",
+          "value": 0.0666659
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "OAa0o40Bt2BMYC1ERYvV",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system",
+          "resource.attributes.service@name": "system",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "metric.attributes.colo": "gq1",
+          "exemplars": [],
+          "name": "system.tcp.opens.active",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "XTjQmI0B7F_HswaHoDLD",
+          "time": "2024-02-11T15:12:09Z",
+          "metric.attributes.host": "stbl114n12.blue.ygrid.foo.com",
+          "value": 0.683325
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "OQa0o40Bt2BMYC1ERYvV",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system",
+          "resource.attributes.service@name": "system",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "metric.attributes.colo": "gq1",
+          "exemplars": [],
+          "name": "system.cpu.busy.pct",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "YzjQmI0B7F_HswaHoDLD",
+          "time": "2024-02-11T15:12:09Z",
+          "metric.attributes.host": "stbl114n12.blue.ygrid.foo.com",
+          "value": 1.25674
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "Pga0o40Bt2BMYC1ERYvV",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system",
+          "resource.attributes.service@name": "system",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "metric.attributes.colo": "gq1",
+          "exemplars": [],
+          "name": "system.udp.error.recv",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "iTjQmI0B7F_HswaHoDLD",
+          "time": "2024-02-11T15:12:09Z",
+          "metric.attributes.host": "stbl114n12.blue.ygrid.foo.com",
+          "value": 0
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "Pwa0o40Bt2BMYC1ERYvV",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system",
+          "resource.attributes.service@name": "system",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "metric.attributes.colo": "gq1",
+          "exemplars": [],
+          "name": "system.udp.out.dgrams",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "jzjQmI0B7F_HswaHoDLD",
+          "time": "2024-02-11T15:12:09Z",
+          "metric.attributes.host": "stbl114n12.blue.ygrid.foo.com",
+          "value": 8.3999
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "Rwa0o40Bt2BMYC1ERYvV",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system.cpu",
+          "resource.attributes.service@name": "system.cpu",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "metric.attributes.colo": "gq1",
+          "exemplars": [],
+          "metric.attributes.cpu": "cpu10",
+          "name": "system.cpu.cpu.busy.pct",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "szjQmI0B7F_HswaHoDLD",
+          "time": "2024-02-11T15:12:09Z",
+          "metric.attributes.host": "stbl114n12.blue.ygrid.foo.com",
+          "value": 1.334
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "Sga0o40Bt2BMYC1ERYvV",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system.cpu",
+          "resource.attributes.service@name": "system.cpu",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "metric.attributes.colo": "gq1",
+          "exemplars": [],
+          "metric.attributes.cpu": "cpu18",
+          "name": "system.cpu.cpu.busy.pct",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "yTjQmI0B7F_HswaHoDLD",
+          "time": "2024-02-11T15:12:09Z",
+          "metric.attributes.host": "stbl114n12.blue.ygrid.foo.com",
+          "value": 0.36685
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "TAa0o40Bt2BMYC1ERYvV",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system.cpu",
+          "resource.attributes.service@name": "system.cpu",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "metric.attributes.colo": "gq1",
+          "exemplars": [],
+          "metric.attributes.cpu": "cpu28",
+          "name": "system.cpu.cpu.busy.pct",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "0jjQmI0B7F_HswaHoDLD",
+          "time": "2024-02-11T15:12:09Z",
+          "metric.attributes.host": "stbl114n12.blue.ygrid.foo.com",
+          "value": 0.116706
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "TQa0o40Bt2BMYC1ERYvV",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system.cpu",
+          "resource.attributes.service@name": "system.cpu",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "metric.attributes.colo": "gq1",
+          "exemplars": [],
+          "metric.attributes.cpu": "cpu44",
+          "name": "system.cpu.cpu.busy.pct",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "1DjQmI0B7F_HswaHoDLD",
+          "time": "2024-02-11T15:12:09Z",
+          "metric.attributes.host": "stbl114n12.blue.ygrid.foo.com",
+          "value": 0.100017
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "Uwa0o40Bt2BMYC1ERYvV",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system.if",
+          "resource.attributes.service@name": "system.if",
+          "schemaUrl": "",
+          "metric.attributes.interface": "ens15",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "metric.attributes.colo": "bf1",
+          "exemplars": [],
+          "name": "system.if.in.compressed",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "7DjQmI0B7F_HswaHoDLE",
+          "time": "2024-02-11T15:14:22Z",
+          "metric.attributes.host": "kubenode312.prod1.omega.bf1.foo.com",
+          "value": 0
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "XQa0o40Bt2BMYC1ERYvV",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system",
+          "resource.attributes.service@name": "system",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "metric.attributes.colo": "bf1",
+          "exemplars": [],
+          "name": "system.tcp.opens.active",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "GjjQmI0B7F_HswaHoDPE",
+          "time": "2024-02-11T15:14:22Z",
+          "metric.attributes.host": "kubenode312.prod1.omega.bf1.foo.com",
+          "value": 12.4834
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "ZAa0o40Bt2BMYC1ERYvV",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system",
+          "resource.attributes.service@name": "system",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "metric.attributes.colo": "bf1",
+          "exemplars": [],
+          "name": "system.udp.no.port",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "ODjQmI0B7F_HswaHoDPE",
+          "time": "2024-02-11T15:14:22Z",
+          "metric.attributes.host": "kubenode312.prod1.omega.bf1.foo.com",
+          "value": 0
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "aQa0o40Bt2BMYC1ERYvV",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system",
+          "resource.attributes.service@name": "system",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "metric.attributes.colo": "bf1",
+          "exemplars": [],
+          "name": "system.sys.context_switches",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "SDjQmI0B7F_HswaHoDPE",
+          "time": "2024-02-11T15:14:22Z",
+          "metric.attributes.host": "kubenode312.prod1.omega.bf1.foo.com",
+          "value": 93989.2
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "dAa0o40Bt2BMYC1ERYvV",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system.cpu",
+          "resource.attributes.service@name": "system.cpu",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "metric.attributes.colo": "bf1",
+          "exemplars": [],
+          "metric.attributes.cpu": "cpu15",
+          "name": "system.cpu.cpu.busy.pct",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "azjQmI0B7F_HswaHoDPE",
+          "time": "2024-02-11T15:14:22Z",
+          "metric.attributes.host": "kubenode312.prod1.omega.bf1.foo.com",
+          "value": 21.9086
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "dwa0o40Bt2BMYC1ERYvV",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system.cpu",
+          "resource.attributes.service@name": "system.cpu",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "metric.attributes.colo": "bf1",
+          "exemplars": [],
+          "metric.attributes.cpu": "cpu0",
+          "name": "system.cpu.cpu.busy.pct",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "dzjQmI0B7F_HswaHoDPE",
+          "time": "2024-02-11T15:14:22Z",
+          "metric.attributes.host": "kubenode312.prod1.omega.bf1.foo.com",
+          "value": 34.2732
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "eAa0o40Bt2BMYC1ERYvV",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system.cpu",
+          "resource.attributes.service@name": "system.cpu",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "metric.attributes.colo": "bf1",
+          "exemplars": [],
+          "metric.attributes.cpu": "cpu6",
+          "name": "system.cpu.cpu.busy.pct",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "gjjQmI0B7F_HswaHoDPE",
+          "time": "2024-02-11T15:14:22Z",
+          "metric.attributes.host": "kubenode312.prod1.omega.bf1.foo.com",
+          "value": 29.9782
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "ega0o40Bt2BMYC1ERYvV",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system.cpu",
+          "resource.attributes.service@name": "system.cpu",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "metric.attributes.colo": "bf1",
+          "exemplars": [],
+          "metric.attributes.cpu": "cpu13",
+          "name": "system.cpu.cpu.busy.pct",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "iTjQmI0B7F_HswaHoDPE",
+          "time": "2024-02-11T15:14:22Z",
+          "metric.attributes.host": "kubenode312.prod1.omega.bf1.foo.com",
+          "value": 40.6465
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "fwa0o40Bt2BMYC1ERYvV",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "metric.attributes.filesystem": "/opt/sentinelone/rpm_mount",
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system.fs",
+          "resource.attributes.service@name": "system.fs",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "metric.attributes.colo": "bf1",
+          "exemplars": [],
+          "name": "system.fs.inodes.used",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "qDjQmI0B7F_HswaHoDPE",
+          "time": "2024-02-11T15:14:22Z",
+          "metric.attributes.host": "kubenode312.prod1.omega.bf1.foo.com",
+          "value": 149830
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "gwa0o40Bt2BMYC1ERYvV",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "metric.attributes.filesystem": "/",
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system.fs",
+          "resource.attributes.service@name": "system.fs",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "metric.attributes.colo": "bf1",
+          "exemplars": [],
+          "name": "system.fs.capacity.kb",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "tDjQmI0B7F_HswaHoDPE",
+          "time": "2024-02-11T15:14:22Z",
+          "metric.attributes.host": "kubenode312.prod1.omega.bf1.foo.com",
+          "value": 468167000
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "hwa0o40Bt2BMYC1ERYvV",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system",
+          "resource.attributes.service@name": "system",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "metric.attributes.colo": "sg3",
+          "exemplars": [],
+          "name": "system.vm.pgpgout",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "wzjQmI0B7F_HswaHoDPE",
+          "time": "2024-02-11T15:07:22Z",
+          "metric.attributes.host": "jcache600017.mail.sg3.foo.com",
+          "value": 427.997
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "iAa0o40Bt2BMYC1ERYvV",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system",
+          "resource.attributes.service@name": "system",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "metric.attributes.colo": "sg3",
+          "exemplars": [],
+          "name": "system.mem.inactive.kb",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "xzjQmI0B7F_HswaHoDPE",
+          "time": "2024-02-11T15:07:22Z",
+          "metric.attributes.host": "jcache600017.mail.sg3.foo.com",
+          "value": 16654600
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "kAa0o40Bt2BMYC1ERYvV",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system",
+          "resource.attributes.service@name": "system",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "metric.attributes.colo": "sg3",
+          "exemplars": [],
+          "name": "system.cpu.user",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "_jjQmI0B7F_HswaHoDPE",
+          "time": "2024-02-11T15:07:22Z",
+          "metric.attributes.host": "jcache600017.mail.sg3.foo.com",
+          "value": 117.414
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "kQa0o40Bt2BMYC1ERYvV",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system",
+          "resource.attributes.service@name": "system",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "metric.attributes.colo": "sg3",
+          "exemplars": [],
+          "name": "system.sys.uptime",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "CDjQmI0B7F_HswaHoDTE",
+          "time": "2024-02-11T15:07:22Z",
+          "metric.attributes.host": "jcache600017.mail.sg3.foo.com",
+          "value": 18530700
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "mwa0o40Bt2BMYC1ERYvV",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "metric.attributes.device": "sda",
+          "kind": "GAUGE",
+          "flags": 0,
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system.dev",
+          "resource.attributes.service@name": "system.dev",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "metric.attributes.colo": "sg3",
+          "exemplars": [],
+          "name": "system.dev.write.busy.pct",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "LjjQmI0B7F_HswaHoDTE",
+          "time": "2024-02-11T15:07:22Z",
+          "metric.attributes.host": "jcache600017.mail.sg3.foo.com",
+          "value": 6.1932
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "nQa0o40Bt2BMYC1ERYvV",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "metric.attributes.filesystem": "/opt",
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system.fs",
+          "resource.attributes.service@name": "system.fs",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "metric.attributes.colo": "sg3",
+          "exemplars": [],
+          "name": "system.fs.capacity.kb",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "PDjQmI0B7F_HswaHoDTE",
+          "time": "2024-02-11T15:07:22Z",
+          "metric.attributes.host": "jcache600017.mail.sg3.foo.com",
+          "value": 3845690000
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "oAa0o40Bt2BMYC1ERYvV",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "metric.attributes.filesystem": "/",
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system.fs",
+          "resource.attributes.service@name": "system.fs",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "metric.attributes.colo": "sg3",
+          "exemplars": [],
+          "name": "system.fs.used.pct",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "SjjQmI0B7F_HswaHoDTE",
+          "time": "2024-02-11T15:07:22Z",
+          "metric.attributes.host": "jcache600017.mail.sg3.foo.com",
+          "value": 11.1993
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "sQa0o40Bt2BMYC1ERYvV",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system.if",
+          "resource.attributes.service@name": "system.if",
+          "schemaUrl": "",
+          "metric.attributes.interface": "ens15",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "metric.attributes.colo": "sg3",
+          "exemplars": [],
+          "name": "system.if.out.compressed",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "ozjQmI0B7F_HswaHoDTE",
+          "time": "2024-02-11T15:07:22Z",
+          "metric.attributes.host": "jcache600017.mail.sg3.foo.com",
+          "value": 0
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "uQa0o40Bt2BMYC1ERYvV",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system",
+          "resource.attributes.service@name": "system",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "exemplars": [],
+          "name": "system.tcp.in.segs",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "yzjQmI0B7F_HswaHoDTE",
+          "time": "2024-02-11T15:14:11Z",
+          "metric.attributes.host": "prod-picknwin-1.redis-ext-95bbcdb57-zpzqz",
+          "value": 12.6666
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "xga0o40Bt2BMYC1ERYvV",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system",
+          "resource.attributes.service@name": "system",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "exemplars": [],
+          "name": "system.cpu.iowait",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "-TjQmI0B7F_HswaHoDTE",
+          "time": "2024-02-11T15:14:11Z",
+          "metric.attributes.host": "prod-picknwin-1.redis-ext-95bbcdb57-zpzqz",
+          "value": 1014.48
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "yQa0o40Bt2BMYC1ERYvV",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system",
+          "resource.attributes.service@name": "system",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "exemplars": [],
+          "name": "system.vm.pswpout",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "BzjQmI0B7F_HswaHoDXE",
+          "time": "2024-02-11T15:14:11Z",
+          "metric.attributes.host": "prod-picknwin-1.redis-ext-95bbcdb57-zpzqz",
+          "value": 0
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "ywa0o40Bt2BMYC1ERYvV",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system",
+          "resource.attributes.service@name": "system",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "exemplars": [],
+          "name": "system.tcp.out.segs",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "DDjQmI0B7F_HswaHoDXE",
+          "time": "2024-02-11T15:14:11Z",
+          "metric.attributes.host": "prod-picknwin-1.redis-ext-95bbcdb57-zpzqz",
+          "value": 13.2333
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "zga0o40Bt2BMYC1ERYvV",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system.cpu",
+          "resource.attributes.service@name": "system.cpu",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "exemplars": [],
+          "metric.attributes.cpu": "cpu23",
+          "name": "system.cpu.cpu.busy.pct",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "NTjQmI0B7F_HswaHoDXE",
+          "time": "2024-02-11T15:14:11Z",
+          "metric.attributes.host": "prod-picknwin-1.redis-ext-95bbcdb57-zpzqz",
+          "value": 26.1821
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "zwa0o40Bt2BMYC1ERYvV",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system.cpu",
+          "resource.attributes.service@name": "system.cpu",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "exemplars": [],
+          "metric.attributes.cpu": "cpu47",
+          "name": "system.cpu.cpu.busy.pct",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "NjjQmI0B7F_HswaHoDXE",
+          "time": "2024-02-11T15:14:11Z",
+          "metric.attributes.host": "prod-picknwin-1.redis-ext-95bbcdb57-zpzqz",
+          "value": 24.5277
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "1wa0o40Bt2BMYC1ERYvV",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "metric.attributes.device": "sda",
+          "kind": "GAUGE",
+          "flags": 0,
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system.dev",
+          "resource.attributes.service@name": "system.dev",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "exemplars": [],
+          "name": "system.dev.write.busy.pct",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "ZjjQmI0B7F_HswaHoDXE",
+          "time": "2024-02-11T15:14:11Z",
+          "metric.attributes.host": "prod-picknwin-1.redis-ext-95bbcdb57-zpzqz",
+          "value": 1.25166
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "2Aa0o40Bt2BMYC1ERYvV",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "metric.attributes.device": "sda",
+          "kind": "GAUGE",
+          "flags": 0,
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system.dev",
+          "resource.attributes.service@name": "system.dev",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "exemplars": [],
+          "name": "system.dev.read.busy.pct",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "aTjQmI0B7F_HswaHoDXE",
+          "time": "2024-02-11T15:14:11Z",
+          "metric.attributes.host": "prod-picknwin-1.redis-ext-95bbcdb57-zpzqz",
+          "value": 42.1897
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "3Aa0o40Bt2BMYC1ERYvV",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "metric.attributes.filesystem": "/dev/termination-log",
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system.fs",
+          "resource.attributes.service@name": "system.fs",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "exemplars": [],
+          "name": "system.fs.inodes.used.pct",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "hTjQmI0B7F_HswaHoDXE",
+          "time": "2024-02-11T15:14:11Z",
+          "metric.attributes.host": "prod-picknwin-1.redis-ext-95bbcdb57-zpzqz",
+          "value": 0.065426
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "4Aa0o40Bt2BMYC1ERYvV",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "metric.attributes.filesystem": "/etc/hosts",
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system.fs",
+          "resource.attributes.service@name": "system.fs",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "exemplars": [],
+          "name": "system.fs.used.kb",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "lzjQmI0B7F_HswaHoDXE",
+          "time": "2024-02-11T15:14:11Z",
+          "metric.attributes.host": "prod-picknwin-1.redis-ext-95bbcdb57-zpzqz",
+          "value": 44714500
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "5Qa0o40Bt2BMYC1ERYvV",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "metric.attributes.filesystem": "/etc/resolv.conf",
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system.fs",
+          "resource.attributes.service@name": "system.fs",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "exemplars": [],
+          "name": "system.fs.used.kb",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "pzjQmI0B7F_HswaHoDXE",
+          "time": "2024-02-11T15:14:11Z",
+          "metric.attributes.host": "prod-picknwin-1.redis-ext-95bbcdb57-zpzqz",
+          "value": 44714500
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "7Aa0o40Bt2BMYC1ERYvV",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system",
+          "resource.attributes.service@name": "system",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "metric.attributes.colo": "tw1",
+          "exemplars": [],
+          "name": "system.mem.unused.kb",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "yDjQmI0B7F_HswaHoDXE",
+          "time": "2024-02-11T15:14:18Z",
+          "metric.attributes.host": "b-bw1.bill.tw1.foo.com",
+          "value": 4120720
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "9Aa0o40Bt2BMYC1ERYvV",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system.cpu",
+          "resource.attributes.service@name": "system.cpu",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "metric.attributes.colo": "tw1",
+          "exemplars": [],
+          "metric.attributes.cpu": "cpu2",
+          "name": "system.cpu.cpu.busy.pct",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "ATjQmI0B7F_HswaHoDbE",
+          "time": "2024-02-11T15:14:18Z",
+          "metric.attributes.host": "b-bw1.bill.tw1.foo.com",
+          "value": 2.8777
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "9Qa0o40Bt2BMYC1ERYvV",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system.cpu",
+          "resource.attributes.service@name": "system.cpu",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "metric.attributes.colo": "tw1",
+          "exemplars": [],
+          "metric.attributes.cpu": "cpu0",
+          "name": "system.cpu.cpu.busy.pct",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "AzjQmI0B7F_HswaHoDbE",
+          "time": "2024-02-11T15:14:18Z",
+          "metric.attributes.host": "b-bw1.bill.tw1.foo.com",
+          "value": 2.08821
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "_ga0o40Bt2BMYC1ERYvV",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system.if",
+          "resource.attributes.service@name": "system.if",
+          "schemaUrl": "",
+          "metric.attributes.interface": "eth0",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "metric.attributes.colo": "tw1",
+          "exemplars": [],
+          "name": "system.if.in.fifo",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "QDjQmI0B7F_HswaHoDbE",
+          "time": "2024-02-11T15:14:18Z",
+          "metric.attributes.host": "b-bw1.bill.tw1.foo.com",
+          "value": 0
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "Aga0o40Bt2BMYC1ERYzV",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system",
+          "resource.attributes.service@name": "system",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "metric.attributes.colo": "bf1",
+          "exemplars": [],
+          "name": "system.cpu.thread.count",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "VTjQmI0B7F_HswaHoDbE",
+          "time": "2024-02-11T15:14:24Z",
+          "metric.attributes.host": "sgs14.cbs.cb.bf1.foo.com",
+          "value": 24
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "BAa0o40Bt2BMYC1ERYzV",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system",
+          "resource.attributes.service@name": "system",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "metric.attributes.colo": "bf1",
+          "exemplars": [],
+          "name": "system.cpu.idle.pct",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "YDjQmI0B7F_HswaHoDbE",
+          "time": "2024-02-11T15:14:24Z",
+          "metric.attributes.host": "sgs14.cbs.cb.bf1.foo.com",
+          "value": 94.6124
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "CAa0o40Bt2BMYC1ERYzV",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system",
+          "resource.attributes.service@name": "system",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "metric.attributes.colo": "bf1",
+          "exemplars": [],
+          "name": "system.procs.zombie",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "aTjQmI0B7F_HswaHoDbE",
+          "time": "2024-02-11T15:14:24Z",
+          "metric.attributes.host": "sgs14.cbs.cb.bf1.foo.com",
+          "value": 0
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "Cga0o40Bt2BMYC1ERYzV",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system",
+          "resource.attributes.service@name": "system",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "metric.attributes.colo": "bf1",
+          "exemplars": [],
+          "name": "system.tcp.out.resets",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "bzjQmI0B7F_HswaHoDbE",
+          "time": "2024-02-11T15:14:24Z",
+          "metric.attributes.host": "sgs14.cbs.cb.bf1.foo.com",
+          "value": 1.2
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "EAa0o40Bt2BMYC1ERYzV",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system",
+          "resource.attributes.service@name": "system",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "metric.attributes.colo": "bf1",
+          "exemplars": [],
+          "name": "system.tcp.syn_recv",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "ijjQmI0B7F_HswaHoDbE",
+          "time": "2024-02-11T15:14:24Z",
+          "metric.attributes.host": "sgs14.cbs.cb.bf1.foo.com",
+          "value": 0
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "IQa0o40Bt2BMYC1ERYzV",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "metric.attributes.filesystem": "/var",
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system.fs",
+          "resource.attributes.service@name": "system.fs",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "metric.attributes.colo": "bf1",
+          "exemplars": [],
+          "name": "system.fs.inodes.free",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "3zjQmI0B7F_HswaHoDbE",
+          "time": "2024-02-11T15:14:24Z",
+          "metric.attributes.host": "sgs14.cbs.cb.bf1.foo.com",
+          "value": 251127
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "Iwa0o40Bt2BMYC1ERYzV",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "metric.attributes.filesystem": "/home",
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system.fs",
+          "resource.attributes.service@name": "system.fs",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "metric.attributes.colo": "bf1",
+          "exemplars": [],
+          "name": "system.fs.available.kb",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "8DjQmI0B7F_HswaHoDbE",
+          "time": "2024-02-11T15:14:24Z",
+          "metric.attributes.host": "sgs14.cbs.cb.bf1.foo.com",
+          "value": 403445000
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "JQa0o40Bt2BMYC1ERYzV",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system.if",
+          "resource.attributes.service@name": "system.if",
+          "schemaUrl": "",
+          "metric.attributes.interface": "lo",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "metric.attributes.colo": "bf1",
+          "exemplars": [],
+          "name": "system.if.in.drops",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "-DjQmI0B7F_HswaHoDbE",
+          "time": "2024-02-11T15:14:24Z",
+          "metric.attributes.host": "sgs14.cbs.cb.bf1.foo.com",
+          "value": 0
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "KQa0o40Bt2BMYC1ERYzV",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system.if",
+          "resource.attributes.service@name": "system.if",
+          "schemaUrl": "",
+          "metric.attributes.interface": "enp5s0f1",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "metric.attributes.colo": "bf1",
+          "exemplars": [],
+          "name": "system.if.in.bytes",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "BjjQmI0B7F_HswaHoDfE",
+          "time": "2024-02-11T15:14:24Z",
+          "metric.attributes.host": "sgs14.cbs.cb.bf1.foo.com",
+          "value": 0
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "Lga0o40Bt2BMYC1ERYzV",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system.if",
+          "resource.attributes.service@name": "system.if",
+          "schemaUrl": "",
+          "metric.attributes.interface": "enp5s0f0",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "metric.attributes.colo": "bf1",
+          "exemplars": [],
+          "name": "system.if.out.collisions",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "HzjQmI0B7F_HswaHoDfE",
+          "time": "2024-02-11T15:14:24Z",
+          "metric.attributes.host": "sgs14.cbs.cb.bf1.foo.com",
+          "value": 0
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "Mwa0o40Bt2BMYC1ERYzV",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system",
+          "resource.attributes.service@name": "system",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "exemplars": [],
+          "name": "system.mem.unused.kb",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "PzjQmI0B7F_HswaHoDfE",
+          "time": "2024-02-11T15:14:20Z",
+          "metric.attributes.host": "prod-default.supervisor-stream-nrt-xgmp-frontpage-6f858c74fs2tv",
+          "value": 126416000
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "OAa0o40Bt2BMYC1ERYzV",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system",
+          "resource.attributes.service@name": "system",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "exemplars": [],
+          "name": "system.udp.out.dgrams",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "YTjQmI0B7F_HswaHoDfE",
+          "time": "2024-02-11T15:14:20Z",
+          "metric.attributes.host": "prod-default.supervisor-stream-nrt-xgmp-frontpage-6f858c74fs2tv",
+          "value": 7.78332
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "OQa0o40Bt2BMYC1ERYzV",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system",
+          "resource.attributes.service@name": "system",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "exemplars": [],
+          "name": "system.tcp.orphaned",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "ZDjQmI0B7F_HswaHoDfE",
+          "time": "2024-02-11T15:14:20Z",
+          "metric.attributes.host": "prod-default.supervisor-stream-nrt-xgmp-frontpage-6f858c74fs2tv",
+          "value": 3
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "Pwa0o40Bt2BMYC1ERYzV",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system",
+          "resource.attributes.service@name": "system",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "exemplars": [],
+          "name": "system.cpu.softirq",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "czjQmI0B7F_HswaHoDfE",
+          "time": "2024-02-11T15:14:20Z",
+          "metric.attributes.host": "prod-default.supervisor-stream-nrt-xgmp-frontpage-6f858c74fs2tv",
+          "value": 30.6998
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "QQa0o40Bt2BMYC1ERYzV",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system",
+          "resource.attributes.service@name": "system",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "exemplars": [],
+          "name": "system.mem.nfs_unstable",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "dTjQmI0B7F_HswaHoDfE",
+          "time": "2024-02-11T15:14:20Z",
+          "metric.attributes.host": "prod-default.supervisor-stream-nrt-xgmp-frontpage-6f858c74fs2tv",
+          "value": 0
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "Qga0o40Bt2BMYC1ERYzV",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system.cpu",
+          "resource.attributes.service@name": "system.cpu",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "exemplars": [],
+          "metric.attributes.cpu": "cpu71",
+          "name": "system.cpu.cpu.busy.pct",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "djjQmI0B7F_HswaHoDfE",
+          "time": "2024-02-11T15:14:20Z",
+          "metric.attributes.host": "prod-default.supervisor-stream-nrt-xgmp-frontpage-6f858c74fs2tv",
+          "value": 9.74255
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "RAa0o40Bt2BMYC1ERYzV",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system.cpu",
+          "resource.attributes.service@name": "system.cpu",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "exemplars": [],
+          "metric.attributes.cpu": "cpu47",
+          "name": "system.cpu.cpu.busy.pct",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "hjjQmI0B7F_HswaHoDfE",
+          "time": "2024-02-11T15:14:20Z",
+          "metric.attributes.host": "prod-default.supervisor-stream-nrt-xgmp-frontpage-6f858c74fs2tv",
+          "value": 10.5512
+        }
+      },
+      {
+        "_index": "boo-metrics-foo-000001",
+        "_id": "Swa0o40Bt2BMYC1ERYzV",
+        "_score": 1,
+        "_source": {
+          "s3": {
+            "bucket": "foo-poc-application-logs-test",
+            "key": "app-logs/foo-data_ndjson.json.gz"
+          },
+          "kind": "GAUGE",
+          "flags": 0,
+          "description": "",
+          "resource.attributes.service@namespace": "foo",
+          "serviceName": "system.cpu",
+          "resource.attributes.service@name": "system.cpu",
+          "schemaUrl": "",
+          "score": 3.99014,
+          "_idx": "boo-metrics",
+          "unit": "",
+          "exemplars": [],
+          "metric.attributes.cpu": "cpu53",
+          "name": "system.cpu.cpu.busy.pct",
+          "startTime": "1970-01-01T00:00:00Z",
+          "id": "pjjQmI0B7F_HswaHoDfE",
+          "time": "2024-02-11T15:14:20Z",
+          "metric.attributes.host": "prod-default.supervisor-stream-nrt-xgmp-frontpage-6f858c74fs2tv",
+          "value": 11.6498
+        }
+      }],
+    "format":{
+      "type": "json"
+    }
+  },
+  "transform": [
+    {
+      "calculate": "toDate(datum._source['time'])",
+      "as": "time"
+    },
+    {
+      "calculate": "datum._source.name",
+      "as": "name"
+    },
+    {
+      "calculate": "datum._source.serviceName",
+      "as": "serviceName"
+    },
+    {
+      "calculate": "datum._source.value",
+      "as": "value"
+    } ,
+    {
+      "filter": "datum.value !== null && datum.value !== ''"
+    }],
+  "facet": {
+    "title":"Service X",
+    "field": "name",
+    "type": "nominal",
+    "header":{
+      "labelColor":"steelblue",
+      "labelFontSize":16
+    }
+  },
+  "columns": 4,
+  "spec": {
+    "mark": "bar",
+    "encoding": {
+      "x": {
+        "field": "time",
+        "type": "temporal",
+        "axis": {"title": "Time"}
+      },
+      "y": {
+        "field": "value",
+        "type": "quantitative",
+        "axis": {"title": "Value"}
+      },
+      "tooltip": [
+        {"field": "serviceName", "type": "nominal"},
+        {"field": "name", "type": "nominal"},
+        {"field": "time", "type": "temporal"},
+        {"field": "value", "type": "quantitative"}
+      ],
+      "color": {
+        "field": "name",
+        "type": "nominal",
+        "legend": {"title": "Metrics"}
+      }
+    }
+  },
+  "resolve": {
+    "scale": {
+      "y": "independent","x": "independent"
+    }
+  }
+}
