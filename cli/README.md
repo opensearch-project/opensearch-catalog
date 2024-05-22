@@ -34,6 +34,52 @@ $ python3 -m src.main
 
 See `osints --help` for a summary of all commands.
 
+```
+> osints --help
+Usage: osints [OPTIONS] COMMAND [ARGS]...
+
+  Various tools for working with OpenSearch Integrations
+
+Options:
+  --help  Show this message and exit.
+
+Commands:
+  bundle   Convert local integration folders into an ndjson bundle.
+  diff     Type check your integration given a sample data record and the...
+  scanviz  Type check your integration visualizations against your schemas.
+```
+
+The most important ones are `bundle` and `diff`.
+
+```
+> osints bundle --help
+Usage: osints bundle [OPTIONS]
+
+  Convert local integration folders into an ndjson bundle.
+
+Options:
+  --integrations DIRECTORY  The directory to scan for integrations
+  --output PATH             The destination file to put the bundle (.ndjson)
+  --help                    Show this message and exit.
+
+> osints diff --help
+Usage: osints diff [OPTIONS]
+
+  Type check your integration given a sample data record and the appropriate
+  SS4O schema.
+
+Options:
+  --mapping PATH  The mapping for the format the data should have
+  --data PATH     The location of data to validate
+  --json          Output machine-readable JSON instead of the default diff
+                  format
+  --show-missing  Output fields that are expected in the mappings but missing
+                  in the data
+  --check-all     Check every available data record and report the first one
+                  with errors (default: only check first record)
+  --help          Show this message and exit.
+```
+
 ### Usage: `diff`
 
 Here's an example usage of `diff` on the [current (buggy) version of the Nginx integration](https://github.com/opensearch-project/dashboards-observability/tree/6d5bd478704dc7342b1471767ced7036bb23f335/server/adaptors/integrations/__data__/repository/nginx):
