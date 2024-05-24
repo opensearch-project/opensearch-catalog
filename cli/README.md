@@ -11,7 +11,7 @@ Use the package manager [pip](https://pip.pypa.io/en/stable/) to install the CLI
 
 ```bash
 $ cd cli
-$ pip install .
+$ pip install -r requirements.txt
 ...
 Successfully installed osints-0.1.0
 $ osints

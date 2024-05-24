@@ -43,13 +43,13 @@ def try_attach_assets(config: dict, path: Path, info: None | tuple[str, str]) ->
             "text",
         ):  # If no path and text encoding, rely on language for extension
             full_path = (
-                path
-                / subdir
-                / f"{config['name']}-{config['version']}.{config['extension']}"
+                    path
+                    / subdir
+                    / f"{config['name']}-{config['version']}.{config['extension']}"
             )
         case (None, _):  # Otherwise, use encoding as extension with name
             full_path = (
-                path / subdir / f"{config['name']}-{config['version']}.{encoding}"
+                    path / subdir / f"{config['name']}-{config['version']}.{encoding}"
             )
         case (_, _):  # If a path is present, use it regardless of specified encoding
             full_path = path / subdir / config["path"]
@@ -65,12 +65,18 @@ def try_attach_assets(config: dict, path: Path, info: None | tuple[str, str]) ->
         case "ndjson":
             config["data"] = min_json(ndjson.loads(data))
         case "text":
-            config["data"] = data
+            try:
+                # TODO need to include ext info when deriving the encoding in attach_assets_in_place
+                ndjson.loads(data)
+                data = [entry for entry in ndjson.loads(data) if "attributes" in entry]
+                config["data"] = min_json(data)
+            except:
+                config["data"] = str(base64.b64encode(bytes(data, encoding='utf-8')), encoding='utf-8')
     return True
 
 
 def attach_assets_in_place(
-    config: typing.Any, path: Path, info: None | tuple[str, str] = None
+        config: typing.Any, path: Path, info: None | tuple[str, str] = None
 ) -> None:
     if not isinstance(config, list) and not isinstance(config, dict):
         return
@@ -81,6 +87,7 @@ def attach_assets_in_place(
     if try_attach_assets(config, path, info):
         return
     for key, value in config.items():
+        # TODO add ext info for assets
         info = CONFIG_FIELD_DIR_INFO.get(key, info)
         attach_assets_in_place(value, path, info)
 

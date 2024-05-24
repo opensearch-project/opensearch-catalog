@@ -50,10 +50,5 @@ Happy Learning!
 
 #### 2. [Observability Introduction](Observability Introduction.md) 
 
-#### 3. [Memory Leak Investigation Tutorial](Memory Leak Tutorial.md) 
+#### 3. [DemoLandingPage.md](DemoLandingPage.md) 
 
-
----
-## References
-
-[Cloud Native OpenTelemetry community you-tube lecture](https://www.youtube.com/watch?v=kD0EAjly9jc)

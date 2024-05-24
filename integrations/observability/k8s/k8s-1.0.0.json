@@ -1,12 +1,11 @@
 {
   "name": "k8s",
   "version": "1.0.0",
-  "displayName": "Kubernetes Dashboard",
-  "description": "Kubernetes web logs collector",
+  "displayName": "Kubernetes",
+  "description": "Analyze Kubernetes Pod and container logs.",
   "license": "Apache-2.0",
-  "type": "logs",
-  "type-alias": "logs-k8s",
-  "labels": ["log", "k8s", "cloud", "container"],
+  "type": "logs-k8s",
+  "labels": ["Observability", "Logs", "Cloud"],
   "author": "OpenSearch",
   "sourceUrl": "https://github.com/opensearch-project/dashboards-observability/tree/main/server/adaptors/integrations/__data__/repository/k8s/info",
   "statics": {
@@ -35,16 +34,16 @@
       "version": "1.0.0"
     },
     {
-      "name": "logs",
+      "name": "logs-k8s",
       "version": "1.0.0"
     }
   ],
-  "assets": {
-    "savedObjects": {
-      "name": "k8s",
-      "version": "1.0.0"
-    }
-  },
+  "assets": [{
+    "name": "k8s",
+    "version": "1.0.0",
+    "extension": "ndjson",
+    "type": "savedObjectBundle"
+  }],
   "sampleData": {
     "path": "sample.json"
   }
