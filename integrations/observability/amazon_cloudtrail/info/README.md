@@ -28,3 +28,6 @@ AWS CloudTrail log integration includes dashboards, visualizations, queries, and
 The Dashboard uses the index alias `logs-cloudtrail` for shortening the index name - be advised.
 
 ![Dashboard](../static/dashboard.png)
+
+### Release
+ - [Cloud Trail S3 Flint integration release](https://github.com/opensearch-project/opensearch-catalog/releases/tag/amazon_cloudtrail-1.1.0)
