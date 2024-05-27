@@ -10,7 +10,7 @@
 ---
 ### Use Cases Dashboards
 <div class='row'>
-  <img src="https://raw.githubusercontent.com/opensearch-project/OpenSearch-Dashboards/8d50974a66e7accee6469c3a7a86812979ca5471/src/core/server/core_app/assets/logos/opensearch_spinner.svg" style="width: 15px; height: 15px;"><a href="https://github.com/opensearch-project/opensearch-catalog/blob/main/integrations/observability/apache">Otel Services Dashboards 1.0.0 Release</a>, <a href="https://github.com/opensearch-project/opensearch-catalog/blob/main/integrations/observability/apache">Use Case Repo Link</a><img src="https://raw.githubusercontent.com/opensearch-project/OpenSearch-Dashboards/8d50974a66e7accee6469c3a7a86812979ca5471/src/core/server/core_app/assets/logos/opensearch_spinner.svg" style="width: 15px; height: 15px;">
+<img src="https://raw.githubusercontent.com/opensearch-project/OpenSearch-Dashboards/8d50974a66e7accee6469c3a7a86812979ca5471/src/core/server/core_app/assets/logos/opensearch_spinner.svg" style="width: 15px; height: 15px;"><a href="[https://github.com/opensearch-project/opensearch-catalog/blob/main/integrations/observability/apache](https://github.com/opensearch-project/opensearch-catalog/releases/tag/otel_services_dashboard-1.0.0)">Otel Services Dashboards 1.0.0 Release</a>, <a href="[https://github.com/opensearch-project/opensearch-catalog/blob/main/integrations/observability/apache](https://github.com/opensearch-project/opensearch-catalog/tree/main/integrations/observability/otel-services)">Use Case Repo Link</a><img src="https://raw.githubusercontent.com/opensearch-project/OpenSearch-Dashboards/8d50974a66e7accee6469c3a7a86812979ca5471/src/core/server/core_app/assets/logos/opensearch_spinner.svg" style="width: 15px; height: 15px;">
 </div>
 
 ---
