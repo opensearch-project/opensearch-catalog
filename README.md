@@ -7,9 +7,10 @@ _For deeper dive into the catalog repository - please check our [main catalog do
 The OpenSearch Catalog is designed to make it easier for developers and community to contribute, search and install artifacts like:
  
 ### Integrations
- - [Integrations](https://opensearch.org/docs/latest/integrations/)
+ - [Integrations Repo](https://opensearch.org/docs/latest/integrations/)
+ - [Integration Release Catalog](https://github.com/opensearch-project/opensearch-catalog/blob/main/docs/integrations/Release.md)
  - [Integrations Readme](https://github.com/opensearch-project/opensearch-catalog/blob/main/docs/integrations/README.md)
- - [Integration Observability Catalog](https://htmlpreview.github.io/?https://github.com/opensearch-project/opensearch-catalog/blob/main/integrations/observability/catalog.html)
+ - [Integration Observability Catalog Show](https://htmlpreview.github.io/?https://github.com/opensearch-project/opensearch-catalog/blob/main/integrations/observability/catalog.html)
 
 The Integration catalog is a concept that focuses on grouping similar integration together to allow a meaningful way of introducing a common group into the user's working space.
 
