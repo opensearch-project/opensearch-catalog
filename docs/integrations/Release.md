@@ -10,32 +10,29 @@
 ---
 ### Use Cases Dashboards
 <div class='row'>
-  <a href="https://github.com/opensearch-project/opensearch-catalog/blob/main/integrations/observability/apache">Otel Services Dashboards 1.0.0 Release</a>
-    
-  <a href="https://github.com/opensearch-project/opensearch-catalog/blob/main/integrations/observability/apache">OTEL Services Use Case Repo Link</a>
-  <div class="col-md-2 grid-item text-center">
-    <a href="https://github.com/opensearch-project/opensearch-catalog/blob/main/integrations/observability/apache">
-      <img src="https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/otel-services/static/logo.png" style="width: 75px; height: 75px;" alt="OTEL Services Dashboard Logo">
-    </a>
-    <a href="https://github.com/opensearch-project/opensearch-catalog/blob/main/integrations/observability/apache">
-      <img src="https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/otel-services/static/logo.png" style="width: 75px; height: 75px;" alt="OTEL Services Dashboard Logo">
-    </a>
-    <a href="https://github.com/opensearch-project/opensearch-catalog/blob/main/integrations/observability/apache">
-      <img src="https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/otel-services/static/logo.png" style="width: 75px; height: 75px;" alt="OTEL Services Dashboard Logo">
-    </a>
-  </div>
+  <img src="https://raw.githubusercontent.com/opensearch-project/OpenSearch-Dashboards/8d50974a66e7accee6469c3a7a86812979ca5471/src/core/server/core_app/assets/logos/opensearch_spinner.svg" style="width: 15px; height: 15px;"><a href="https://github.com/opensearch-project/opensearch-catalog/blob/main/integrations/observability/apache">Otel Services Dashboards 1.0.0 Release</a>, <a href="https://github.com/opensearch-project/opensearch-catalog/blob/main/integrations/observability/apache">Use Case Repo Link</a><img src="https://raw.githubusercontent.com/opensearch-project/OpenSearch-Dashboards/8d50974a66e7accee6469c3a7a86812979ca5471/src/core/server/core_app/assets/logos/opensearch_spinner.svg" style="width: 15px; height: 15px;">
 </div>
 
 ---
 ### Integrations
 
 <div class='row'>
-<a href="https://github.com/opensearch-project/opensearch-catalog/blob/main/integrations/observability/apache">Apache Integration 1.0.0 Release</a>
+    <img src="https://raw.githubusercontent.com/opensearch-project/OpenSearch-Dashboards/8d50974a66e7accee6469c3a7a86812979ca5471/src/core/server/core_app/assets/logos/opensearch_spinner.svg" style="width: 15px; height: 15px;"> <a href="https://github.com/opensearch-project/opensearch-catalog/releases/apache-1.0.0">Apache Integration 1.0.0 Release</a>,  <a href="https://github.com/opensearch-project/opensearch-catalog/blob/main/integrations/observability/apache"> Integration Repo Link</a><img src="https://raw.githubusercontent.com/opensearch-project/OpenSearch-Dashboards/8d50974a66e7accee6469c3a7a86812979ca5471/src/core/server/core_app/assets/logos/opensearch_spinner.svg" style="width: 15px; height: 15px;">
 
-<a href="https://github.com/opensearch-project/opensearch-catalog/blob/main/integrations/observability/apache">Apache Integration Repo Link</a>
-    <div class="col-md-2 grid-item text-center">
-        <a href="https://github.com/opensearch-project/opensearch-catalog/blob/main/integrations/observability/apache">
-            <img src="https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/apache/static/logo.png" style="width: 75px; height: 75px;" alt="Apache Integration Logo">
-        </a>
-    </div>
+<img src="https://raw.githubusercontent.com/opensearch-project/OpenSearch-Dashboards/8d50974a66e7accee6469c3a7a86812979ca5471/src/core/server/core_app/assets/logos/opensearch_spinner.svg" style="width: 15px; height: 15px;"><a href="https://github.com/opensearch-project/opensearch-catalog/releases/tag/nginx-1.0.0">Nginx Integration 1.0.0 Release</a>,  <a href="https://github.com/opensearch-project/opensearch-catalog/tree/main/integrations/observability/nginx"> Integration Repo Link</a><img src="https://raw.githubusercontent.com/opensearch-project/OpenSearch-Dashboards/8d50974a66e7accee6469c3a7a86812979ca5471/src/core/server/core_app/assets/logos/opensearch_spinner.svg" style="width: 15px; height: 15px;">
+
+<img src="https://raw.githubusercontent.com/opensearch-project/OpenSearch-Dashboards/8d50974a66e7accee6469c3a7a86812979ca5471/src/core/server/core_app/assets/logos/opensearch_spinner.svg" style="width: 15px; height: 15px;"><a href="https://github.com/opensearch-project/opensearch-catalog/releases/tag/haproxy-1.0.0">HAPropxy Integration 1.0.0 Release</a>,  <a href="https://github.com/opensearch-project/opensearch-catalog/tree/main/integrations/observability/haproxy"> Integration Repo Link</a><img src="https://raw.githubusercontent.com/opensearch-project/OpenSearch-Dashboards/8d50974a66e7accee6469c3a7a86812979ca5471/src/core/server/core_app/assets/logos/opensearch_spinner.svg" style="width: 15px; height: 15px;">
+
+<img src="https://raw.githubusercontent.com/opensearch-project/OpenSearch-Dashboards/8d50974a66e7accee6469c3a7a86812979ca5471/src/core/server/core_app/assets/logos/opensearch_spinner.svg" style="width: 15px; height: 15px;"><a href="https://github.com/opensearch-project/opensearch-catalog/releases/tag/amazon_waf-1.0.0">Amazon WAF Integration 1.0.0 Release</a>,  <a href="https://github.com/opensearch-project/opensearch-catalog/tree/main/integrations/observability/aws_waf"> Integration Repo Link</a><img src="https://raw.githubusercontent.com/opensearch-project/OpenSearch-Dashboards/8d50974a66e7accee6469c3a7a86812979ca5471/src/core/server/core_app/assets/logos/opensearch_spinner.svg" style="width: 15px; height: 15px;">
+
+<img src="https://raw.githubusercontent.com/opensearch-project/OpenSearch-Dashboards/8d50974a66e7accee6469c3a7a86812979ca5471/src/core/server/core_app/assets/logos/opensearch_spinner.svg" style="width: 15px; height: 15px;"><a href="https://github.com/opensearch-project/opensearch-catalog/releases/tag/amazon_s3_access-logs-1.0.0">S3 Access Log Integration 1.0.0 Release</a>,  <a href="https://github.com/opensearch-project/opensearch-catalog/tree/main/integrations/observability/aws_s3"> Integration Repo Link</a><img src="https://raw.githubusercontent.com/opensearch-project/OpenSearch-Dashboards/8d50974a66e7accee6469c3a7a86812979ca5471/src/core/server/core_app/assets/logos/opensearch_spinner.svg" style="width: 15px; height: 15px;">
+
+<img src="https://raw.githubusercontent.com/opensearch-project/OpenSearch-Dashboards/8d50974a66e7accee6469c3a7a86812979ca5471/src/core/server/core_app/assets/logos/opensearch_spinner.svg" style="width: 15px; height: 15px;"><a href="https://github.com/opensearch-project/opensearch-catalog/releases/tag/amazon_elb-1.0.0">Amazon ELB Logs Integration 1.0.0 Release</a>,  <a href="https://github.com/opensearch-project/opensearch-catalog/tree/main/integrations/observability/aws_elb"> Integration Repo Link</a><img src="https://raw.githubusercontent.com/opensearch-project/OpenSearch-Dashboards/8d50974a66e7accee6469c3a7a86812979ca5471/src/core/server/core_app/assets/logos/opensearch_spinner.svg" style="width: 15px; height: 15px;">
+
+<img src="https://raw.githubusercontent.com/opensearch-project/OpenSearch-Dashboards/8d50974a66e7accee6469c3a7a86812979ca5471/src/core/server/core_app/assets/logos/opensearch_spinner.svg" style="width: 15px; height: 15px;"><a href="https://github.com/opensearch-project/opensearch-catalog/releases/tag/amazon_vpc_flow_1.2.0">Amazon VPC Flow Logs Integration 1.2.0 Release</a>,  <a href="https://github.com/opensearch-project/opensearch-catalog/tree/main/integrations/observability/aws_vpc"> Integration Repo Link</a><img src="https://raw.githubusercontent.com/opensearch-project/OpenSearch-Dashboards/8d50974a66e7accee6469c3a7a86812979ca5471/src/core/server/core_app/assets/logos/opensearch_spinner.svg" style="width: 15px; height: 15px;">
+
+<img src="https://raw.githubusercontent.com/opensearch-project/OpenSearch-Dashboards/8d50974a66e7accee6469c3a7a86812979ca5471/src/core/server/core_app/assets/logos/opensearch_spinner.svg" style="width: 15px; height: 15px;"><a href="https://github.com/opensearch-project/opensearch-catalog/releases/tag/amazon_cloudtrail-1.1.0">Amazon CloudTrail Integration 1.2.0 Release</a>,  <a href="https://github.com/opensearch-project/opensearch-catalog/tree/main/integrations/observability/aws_cloudtrail"> Integration Repo Link</a><img src="https://raw.githubusercontent.com/opensearch-project/OpenSearch-Dashboards/8d50974a66e7accee6469c3a7a86812979ca5471/src/core/server/core_app/assets/logos/opensearch_spinner.svg" style="width: 15px; height: 15px;">
+
+<img src="https://raw.githubusercontent.com/opensearch-project/OpenSearch-Dashboards/8d50974a66e7accee6469c3a7a86812979ca5471/src/core/server/core_app/assets/logos/opensearch_spinner.svg" style="width: 15px; height: 15px;"><a href="https://github.com/opensearch-project/opensearch-catalog/releases/tag/amazon_cloudfront-1.0.0">Amazon CloudFront Integration 1.0.0 Release</a>,  <a href="https://github.com/opensearch-project/opensearch-catalog/tree/main/integrations/observability/aws_cloudfront"> Integration Repo Link</a><img src="https://raw.githubusercontent.com/opensearch-project/OpenSearch-Dashboards/8d50974a66e7accee6469c3a7a86812979ca5471/src/core/server/core_app/assets/logos/opensearch_spinner.svg" style="width: 15px; height: 15px;">
+
 </div>
