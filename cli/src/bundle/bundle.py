@@ -4,7 +4,7 @@ import json
 import sys
 import typing
 import uuid
-from datetime import datetime
+from datetime import datetime, UTC as TIMEZONE_UTC
 from glob import glob
 from pathlib import Path
 
@@ -17,7 +17,7 @@ NAMESPACE_OS_CATALOG: uuid.UUID = uuid.UUID("f21aff9f-a6b3-43eb-85af-5ce18a88043
 CONFIG_FIELD_DIR_INFO: dict[str, tuple[str, str]] = {
     "statics": ("static", "bin"),
     "components": ("schemas", "mapping.json"),
-    "assets": ("assets", "text"),
+    "assets": ("assets", None), # Use asset extension
     "sampleData": ("data", "json"),
 }
 OS_OBJECT_SIZE_LIMIT = 1_048_576  # 1 MB
@@ -40,16 +40,16 @@ def try_attach_assets(config: dict, path: Path, info: None | tuple[str, str]) ->
     match (config.get("path"), encoding):
         case (
             None,
-            "text",
-        ):  # If no path and text encoding, rely on language for extension
+            None
+        ):  # If no path or text encoding, rely on language for extension
             full_path = (
-                    path
-                    / subdir
-                    / f"{config['name']}-{config['version']}.{config['extension']}"
+                path
+                / subdir
+                / f"{config['name']}-{config['version']}.{config['extension']}"
             )
         case (None, _):  # Otherwise, use encoding as extension with name
             full_path = (
-                    path / subdir / f"{config['name']}-{config['version']}.{encoding}"
+                path / subdir / f"{config['name']}-{config['version']}.{encoding}"
             )
         case (_, _):  # If a path is present, use it regardless of specified encoding
             full_path = path / subdir / config["path"]
@@ -64,19 +64,24 @@ def try_attach_assets(config: dict, path: Path, info: None | tuple[str, str]) ->
             config["data"] = min_json(json.loads(data))
         case "ndjson":
             config["data"] = min_json(ndjson.loads(data))
-        case "text":
-            try:
-                # TODO need to include ext info when deriving the encoding in attach_assets_in_place
-                ndjson.loads(data)
-                data = [entry for entry in ndjson.loads(data) if "attributes" in entry]
-                config["data"] = min_json(data)
-            except:
-                config["data"] = str(base64.b64encode(bytes(data, encoding='utf-8')), encoding='utf-8')
+        case None:
+            match config["extension"]:
+                case "ndjson":
+                    # Filter attributes to avoid accidentally bundling metadata
+                    data = [entry for entry in ndjson.loads(data) if "attributes" in entry]
+                    config["data"] = min_json(data)
+                case "json":
+                    data = [entry for entry in json.loads(data) if "attributes" in entry]
+                    config["data"] = min_json(data)
+                case _unknown:
+                    # Integrations source requires b64 encoded body data so we need to do a slightly
+                    # awkward conversion here
+                    config["data"] = str(base64.b64encode(bytes(data, encoding='utf-8')), encoding='utf-8')
     return True
 
 
 def attach_assets_in_place(
-        config: typing.Any, path: Path, info: None | tuple[str, str] = None
+    config: typing.Any, path: Path, info: None | tuple[str, str] = None
 ) -> None:
     if not isinstance(config, list) and not isinstance(config, dict):
         return
@@ -87,7 +92,6 @@ def attach_assets_in_place(
     if try_attach_assets(config, path, info):
         return
     for key, value in config.items():
-        # TODO add ext info for assets
         info = CONFIG_FIELD_DIR_INFO.get(key, info)
         attach_assets_in_place(value, path, info)
 
@@ -117,7 +121,7 @@ def bundle_integration(integration: dict):
     return {
         "type": "integration-template",
         "id": str(obj_id),
-        "updated_at": datetime.utcnow().isoformat(),
+        "updated_at": datetime.now(TIMEZONE_UTC).isoformat(),
         "attributes": integration,
     }
 
