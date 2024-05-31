@@ -28,7 +28,3 @@ AWS VPC flow logs integration includes dashboards, visualisations, queries and a
 The Dashboard uses the index alias `logs-vpc` for shortening the index name - be advised.
 
 ![](../static/dashboard1.png)
-
-### Release
-- [VPC parquet protocol S3 Flint integration release](https://github.com/opensearch-project/opensearch-catalog/releases/tag/amazon_vpc_flow_1.2.0)
-- [VPC Security Lake (OCSF) 1.0 parquet protocol S3 Flint integration release](https://github.com/opensearch-project/opensearch-catalog/releases/tag/amazon_vpc_flow-1.1.0)
