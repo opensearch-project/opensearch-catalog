@@ -1,6 +1,6 @@
 {
   "name": "amazon_s3",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "displayName": "Amazon S3",
   "description": "Analyze Amazon S3 server logs.",
   "license": "Apache-2.0",
