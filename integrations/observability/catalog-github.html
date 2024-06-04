@@ -1,0 +1,222 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenSearch Observability Catalog</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <style>
+        .color-red { color: red; }
+        .color-blue { color: blue; }
+        .color-green { color: green; }
+        .color-orange { color: orange; }
+        .color-purple { color: purple; }
+        .color-yellow { color: yellow; }
+        .color-pink { color: pink; }
+        .color-violet { color: violet; }
+        .label-item {
+            display: inline-block;
+            margin-right: 10px;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #7e94ce;
+            background-image: url('https://opensearch.org/assets/media/herobanners/release-hero-bg-mobile.png');
+            background-size: cover;
+            background-attachment: fixed;
+            color: #ffffff;
+        }
+        .modal-content {
+            background-color: #105179;
+            background-image: url('https://opensearch.org/assets/media/herobanners/release-hero-bg-mobile.png');
+            background-size: cover;
+            background-attachment: fixed;
+        }
+        .container {
+            max-width: 800px;
+            padding: 8px; /* Add padding to the container */
+        }
+        .grid-item {
+            border: 2px solid #8ea4de;
+            padding: 5px;
+            margin: 8px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transform: perspective(500px) rotateY(0deg);
+        }
+        .grid-item:hover {
+            background-color: #16415b;
+            cursor: pointer;
+            transform: scale(1.025);
+            transform: perspective(500px) rotateY(20deg);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+        }
+        h2 {
+            text-align: center;
+        }
+        .collapsible {
+            cursor: pointer;
+        }
+        .content {
+            overflow: hidden;
+            transition: max-height 0.2s ease-out;
+            max-height: 1000px;
+        }
+
+    </style>
+
+</head>
+<body>
+
+<div class="container">
+    <img src="https://opensearch.org/assets/brand/PNG/Logo/opensearch_logo_darkmode.png" style="width: 750px; height: 250px;" alt="Logo" />
+    <h1>OpenSearch Observability Catalog</h1>
+    <p><strong>Version:</strong> 1.0</p>
+    <p><strong>URL:</strong> <a href="https://github.com/opensearch-project/opensearch-catalog/tree/main/integrations/observability">https://github.com/opensearch-project/opensearch-catalog/tree/main/integrations/observability</a></p>
+    <p><strong>License:</strong> Apache-2.0</p>
+    <p><strong>Author:</strong> OpenSearch</p>
+    <p><strong>Labels:</strong> <span class='label-item color-red'><span class='label-icon'>▶</span> log</span> <span class='label-item color-orange'><span class='label-icon'>❖</span> http</span> <span class='label-item color-blue'><span class='label-icon'>⋔</span> aws</span> <span class='label-item color-purple'><span class='label-icon'>✧</span> cloud</span> <span class='label-item color-violet'><span class='label-icon'>⤀</span> container</span> <span class='label-item color-green'><span class='label-icon'>❊</span> communication</span> </p>
+</div>
+
+
+<script>
+    function showIframe(iframeId) {
+        var iframe = document.getElementById(iframeId);
+        iframe.style.display = iframe.style.display === 'none' ? 'block' : 'none';
+    }
+    function toggleSection(sectionId) {
+        var content = document.getElementById(sectionId);
+        if (content.style.maxHeight && content.style.maxHeight !== "1200px") {
+            content.style.maxHeight = "1200px";
+        } else {
+            content.style.maxHeight = "0px";
+        }
+    }
+</script>
+
+<h2 class='collapsible' onclick='toggleSection("integrations-section")'>Integrations</h2><div class='container content' id='integrations-section'><div class='row'>
+    <div class="col-md-2 grid-item text-center">
+        <a href="https://github.com/opensearch-project/opensearch-catalog/tree/main/integrations/observability/apache" target="_blank">
+            <img src="https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/apache/static/logo.png" style="width: 75px; height: 75px; cursor: pointer;" alt="Apache Integration Logo">
+        </a>
+        <p>Apache Integration</p>
+    </div>
+
+    <div class="col-md-2 grid-item text-center">
+        <a href="https://github.com/opensearch-project/opensearch-catalog/tree/main/integrations/observability/amazon_cloudfront" target="_blank">
+            <img src="https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/amazon_cloudfront/static/logo.png" style="width: 75px; height: 75px; cursor: pointer;" alt="Amazon CloudFront Integration Logo" data-toggle="modal" data-target="#modalinteg-1">
+        </a>
+        <p>Amazon CloudFront Integration</p>
+    </div>
+
+    <div class="col-md-2 grid-item text-center">
+        <a href="https://github.com/opensearch-project/opensearch-catalog/tree/main/integrations/observability/aws_cloudtrail" target="_blank">
+            <img src="https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/aws_cloudtrail/static/logo.png" style="width: 75px; height: 75px; cursor: pointer;" alt="Amazon CloudTrail Integration Logo" data-toggle="modal" data-target="#modalinteg-2">
+        </a>
+        <p>Amazon CloudTrail Integration</p>
+    </div>
+
+    <div class="col-md-2 grid-item text-center">
+        <a href="https://github.com/opensearch-project/opensearch-catalog/tree/main/integrations/observability/amazon_elb" target="_blank">
+            <img src="https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/amazon_elb/static/logo.svg" style="width: 75px; height: 75px; cursor: pointer;" alt="Amazon ELB Integration Logo" data-toggle="modal" data-target="#modalinteg-3">
+        </a>
+        <p>Amazon ELB Integration</p>
+    </div>
+
+    <div class="col-md-2 grid-item text-center">
+        <a href="https://github.com/opensearch-project/opensearch-catalog/tree/main/integrations/observability/amazon_rds" target="_blank">
+            <img src="https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/amazon_rds/static/logo.png" style="width: 75px; height: 75px; cursor: pointer;" alt="Amazon RDS Integration Logo" data-toggle="modal" data-target="#modalinteg-4">
+        </a>
+        <p>Amazon RDS Integration</p>
+    </div>
+
+</div><div class="row">
+    <div class="col-md-2 grid-item text-center">
+        <a href="https://github.com/opensearch-project/opensearch-catalog/tree/main/integrations/observability/amazon_s3" target="_blank">
+            <img src="https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/amazon_s3/static/logo.png" style="width: 75px; height: 75px; cursor: pointer;" alt="Amazon S3 Integration Logo" data-toggle="modal" data-target="#modalinteg-5">
+        </a>
+        <p>Amazon S3 Integration</p>
+    </div>
+
+    <div class="col-md-2 grid-item text-center">
+        <a href="https://github.com/opensearch-project/opensearch-catalog/tree/main/integrations/observability/amazon_vpc_flow" target="_blank">
+            <img src="https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/amazon_vpc_flow/static/logo.svg" style="width: 75px; height: 75px; cursor: pointer;" alt="Amazon VPC Flow Integration Logo" data-toggle="modal" data-target="#modalinteg-6">
+        </a>
+        <p>Amazon VPC Flow Integration</p>
+    </div>
+
+    <div class="col-md-2 grid-item text-center">
+        <a href="https://github.com/opensearch-project/opensearch-catalog/tree/main/integrations/observability/aws_waf" target="_blank">
+            <img src="https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/aws_waf/static/logo.jpg" style="width: 75px; height: 75px; cursor: pointer;" alt="Amazon WAF Integration Logo" data-toggle="modal" data-target="#modalinteg-7">
+        </a>
+        <p>Amazon WAF Integration</p>
+    </div>
+
+    <div class="col-md-2 grid-item text-center">
+        <a href="https://github.com/opensearch-project/opensearch-catalog/tree/main/integrations/observability/k8s" target="_blank">
+            <img src="https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/k8s/static/logo.png" style="width: 75px; height: 75px; cursor: pointer;" alt="Kubernetes Integration Logo" data-toggle="modal" data-target="#modalinteg-8">
+        </a>
+        <p>Kubernetes Integration</p>
+    </div>
+
+    <div class="col-md-2 grid-item text-center">
+        <a href="https://github.com/opensearch-project/opensearch-catalog/tree/main/integrations/observability/nginx" target="_blank">
+            <img src="https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/nginx/static/logo.svg" style="width: 75px; height: 75px; cursor: pointer;" alt="Nginx Integration Logo" data-toggle="modal" data-target="#modalinteg-9">
+        </a>
+        <p>Nginx Integration</p>
+    </div>
+
+    <div class="col-md-2 grid-item text-center">
+        <a href="https://github.com/opensearch-project/opensearch-catalog/tree/main/integrations/observability/otel-services" target="_blank">
+            <img src="https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/otel-services/static/logo.png" style="width: 75px; height: 75px; cursor: pointer;" alt="OTEL Services Dashboard Logo" data-toggle="modal" data-target="#modalinteg-11">
+        </a>
+        <p>OTEL Services Dashboard</p>
+    </div>
+
+</div></div>
+<h2 class='collapsible' onclick='toggleSection("visualizations-section")'>Visualizations</h2><div class='container content' id='visualizations-section'><div class='row'>
+    <div class="col-md-2 grid-item text-center">
+        <a href="https://github.com/opensearch-project/opensearch-catalog/tree/main/visualizations/observability/service-duration-heatmap" target="_blank">
+            <img src="https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/visualizations/observability/service-duration-heatmap/static/logo.png" style="width: 75px; height: 75px; cursor: pointer;" alt="Services Duration Heat-Map Logo" data-toggle="modal" data-target="#modalvis-0">
+        </a>
+        <p>Services Duration Heat-Map</p>
+    </div>
+
+
+    <div class="col-md-2 grid-item text-center">
+        <a href="https://github.com/opensearch-project/opensearch-catalog/tree/main/visualizations/observability/service-map" target="_blank">
+            <img src="https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/visualizations/observability/service-map/static/logo.png" style="width: 75px; height: 75px; cursor: pointer;" alt="Services Map Graph Logo" data-toggle="modal" data-target="#modalvis-1">
+        </a>
+        <p>Services Map Graph</p>
+    </div>
+
+
+    <div class="col-md-2 grid-item text-center">
+        <a href="https://github.com/opensearch-project/opensearch-catalog/tree/main/visualizations/observability/traces-gantt-chart" target="_blank">
+            <img src="https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/visualizations/observability/traces-gantt-chart/static/logo.png" style="width: 75px; height: 75px; cursor: pointer;" alt="Traces Gantt Chart Logo" data-toggle="modal" data-target="#modalvis-2">
+        </a>
+        <p>Traces Gantt Chart</p>
+    </div>
+
+    <div class="col-md-2 grid-item text-center">
+        <a href="https://github.com/opensearch-project/opensearch-catalog/tree/main/visualizations/observability/services-metrics-graphs" target="_blank">
+            <img src="https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/visualizations/observability/services-metrics-graphs/static/logo.png" style="width: 75px; height: 75px; cursor: pointer;" alt="Services Metrics Graphs Logo" data-toggle="modal" data-target="#modalvis-3">
+        </a>
+        <p>Services Metrics Graphs</p>
+    </div>
+
+    <div class="col-md-2 grid-item text-center">
+        <a href="https://github.com/opensearch-project/opensearch-catalog/tree/main/visualizations/observability/http" target="_blank">
+            <img src="https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/visualizations/observability/http/static/logo.webp" style="width: 75px; height: 75px; cursor: pointer;" alt="HTTP Visualizations Logo" data-toggle="modal" data-target="#modalvis-4">
+        </a>
+        <p>HTTP Visualizations</p>
+    </div>
+
+</div></div></body></html>
