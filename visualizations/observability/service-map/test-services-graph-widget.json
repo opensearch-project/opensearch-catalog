@@ -6,10 +6,18 @@
   "autosize": "pad",
   "background": "#f4f7ff",
   "signals": [
+    {"name": "w", "value": 25},
+    {"name": "h", "value": 25},
+    {"name": "aspect", "value": true},
+    {"name": "smooth", "value": true},
+    {"name": "align", "value": "left"},
+    {"name": "baseline", "value": "top"},
     {"name": "xrange", "update": "[0, width]"},
     {"name": "yrange", "update": "[height, 0]"},
     {"name": "xext", "update": "[0, width]"},
     {"name": "yext", "update": "[height, 0]"},
+    {"name": "scaledImgW", "update": "(w/ span(xdom))*width"},
+    {"name": "scaledImgH", "update": "abs(h/ span(ydom))*height"},
     {
       "name": "down",
       "value": null,
@@ -171,20 +179,11 @@
     },
     {
       "name": "nodeRadius",
-      "value": 8,
-      "bind": {"input": "range", "min": 1, "max": 50, "step": 1},
+      "value": 18,
       "on": [{"events": {"signal": "nodeRadiusKey"}, "update": "nodeRadiusKey"}]
     },
-    {
-      "name": "nodeCharge",
-      "value": -30,
-      "bind": {"input": "range", "min": -100, "max": 10, "step": 1}
-    },
-    {
-      "name": "linkDistance",
-      "value": 30,
-      "bind": {"input": "range", "min": 5, "max": 300, "step": 1}
-    },
+    {"name": "nodeCharge", "value": -350},
+    {"name": "linkDistance", "value": 250},
     {
       "description": "State variable for active node fix status.",
       "name": "fix",
@@ -237,103 +236,106 @@
       "values": [
         {
           "key": "frontend",
-          "doc_count": 18
+          "doc_count": 18,
+          "errors": 4,
+          "duration": "500ms",
+          "requests": "34k"
         },
         {
           "key": "checkoutservice",
-          "doc_count": 12
+          "doc_count": 12,
+          "errors": 14,
+          "duration": "20ms",
+          "requests": "100k"
         },
         {
           "key": "productcatalogservice",
-          "doc_count": 8
+          "doc_count": 8,
+          "errors": 0,
+          "duration": "1500ms",
+          "requests": "3k"
         },
         {
           "key": "cartservice",
-          "doc_count": 7
+          "doc_count": 7,
+          "errors": 21,
+          "duration": "320ms",
+          "requests": "544k"
         },
         {
           "key": "featureflagservice",
-          "doc_count": 6
+          "doc_count": 6,
+          "errors": 124,
+          "duration": "4500ms",
+          "requests": "500"
         },
         {
           "key": "paymentservice",
-          "doc_count": 6
+          "doc_count": 6,
+          "errors": 3,
+          "duration": "860ms",
+          "requests": "2500k"
         },
         {
           "key": "currencyservice",
-          "doc_count": 5
+          "doc_count": 5,
+          "errors": 0,
+          "duration": "20ms",
+          "requests": "3k"
         },
         {
           "key": "recommendationservice",
-          "doc_count": 5
+          "doc_count": 5,
+          "errors": 4,
+          "duration": "590ms",
+          "requests": "64k"
         },
         {
           "key": "shippingservice",
-          "doc_count": 5
+          "doc_count": 5,
+          "errors": 23,
+          "duration": "9200ms",
+          "requests": "134k"
         },
         {
           "key": "emailservice",
-          "doc_count": 5
+          "doc_count": 5,
+          "errors": 1,
+          "duration": "4500ms",
+          "requests": "3k"
         },
         {
           "key": "accountingservice",
-          "doc_count": 5
+          "doc_count": 5,
+          "errors": 7,
+          "duration": "700ms",
+          "requests": "875"
         }
       ],
-      "format": {
-        "type": "json"
-      },
+      "format": {"type": "json"},
       "transform": [
-        {
-          "type": "formula",
-          "expr": "datum.doc_count",
-          "as": "traceCounts"
-        },
-        {
-          "type": "formula",
-          "expr": "datum.key",
-          "as": "name"
-        },
-        {
-          "type": "formula",
-          "expr": "datum.key",
-          "as": "group"
-        }
+        {"type": "formula", "expr": "datum.doc_count", "as": "traceCounts"},
+        {"type": "formula", "expr": "datum.key", "as": "name"},
+        {"type": "formula", "expr": "datum.key", "as": "group"},
+        {"type": "collect", "sort": {"field": "errors", "order": "descending"}},
+        {"type": "formula", "expr": "datum.errors", "as": "max_errors"}
       ]
     },
     {
       "name": "link-data-raw",
-      "async":true,
+      "async": true,
       "values": [
         {
           "key": "frontend",
           "doc_count": 18,
           "target": {
             "buckets": [
-              {
-                "key": "cartservice",
-                "doc_count": 3
-              },
-              {
-                "key": "productcatalogservice",
-                "doc_count": 3
-              },
-              {
-                "key": "currencyservice",
-                "doc_count": 2
-              },
-              {
-                "key": "adservice",
-                "doc_count": 1
-              },
-              {
-                "key": "checkoutservice",
-                "doc_count": 1
-              },
-              {
-                "key": "recommendationservice",
-                "doc_count": 1
-              }
+              {"key": "cartservice", "doc_count": 3},
+              {"key": "productcatalogservice", "doc_count": 3},
+              {"key": "currencyservice", "doc_count": 2},
+              {"key": "adservice", "doc_count": 1},
+              {"key": "checkoutservice", "doc_count": 1},
+              {"key": "recommendationservice", "doc_count": 1}
             ]
           }
         },
@@ -344,65 +346,28 @@
             "doc_count_error_upper_bound": 0,
             "sum_other_doc_count": 0,
             "buckets": [
-              {
-                "key": "cartservice",
-                "doc_count": 2
-              },
-              {
-                "key": "shippingservice",
-                "doc_count": 2
-              },
-              {
-                "key": "accountingservice",
-                "doc_count": 1
-              },
-              {
-                "key": "currencyservice",
-                "doc_count": 1
-              },
-              {
-                "key": "emailservice",
-                "doc_count": 1
-              },
-              {
-                "key": "frauddetectionservice",
-                "doc_count": 1
-              },
-              {
-                "key": "paymentservice",
-                "doc_count": 1
-              },
-              {
-                "key": "productcatalogservice",
-                "doc_count": 1
-              }
+              {"key": "cartservice", "doc_count": 2},
+              {"key": "shippingservice", "doc_count": 2},
+              {"key": "accountingservice", "doc_count": 1},
+              {"key": "currencyservice", "doc_count": 1},
+              {"key": "emailservice", "doc_count": 1},
+              {"key": "frauddetectionservice", "doc_count": 1},
+              {"key": "paymentservice", "doc_count": 1},
+              {"key": "productcatalogservice", "doc_count": 1}
             ]
           }
-        } ],
-      "format": {
-        "type": "json"
-      },
-      "transform":[
+        }
+      ],
+      "format": {"type": "json"},
+      "transform": [
         {
           "type": "flatten",
           "fields": ["target.buckets"],
           "as": ["targetBucket"]
         },
-        {
-          "type": "formula",
-          "expr": "datum.doc_count",
-          "as": "value"
-        },
-        {
-          "type": "formula",
-          "expr": "datum.key",
-          "as": "source"
-        },
-        {
-          "type": "formula",
-          "expr": "datum.targetBucket.key",
-          "as": "target"
-        },
+        {"type": "formula", "expr": "datum.doc_count", "as": "value"},
+        {"type": "formula", "expr": "datum.key", "as": "source"},
+        {"type": "formula", "expr": "datum.targetBucket.key", "as": "target"},
         {
           "type": "lookup",
           "from": "node-data-raw",
@@ -455,7 +420,7 @@
     },
     {
       "name": "node-data",
-      "source" :"node-data-raw",
+      "source": "node-data-raw",
       "transform": [
         {
           "type": "lookup",
@@ -511,6 +476,12 @@
     }
   ],
   "scales": [
+    {
+      "name": "strokeWidthScale",
+      "type": "linear",
+      "domain": {"data": "node-data", "field": "errors"},
+      "range": [1, 100]
+    },
     {
       "name": "color",
       "type": "ordinal",
@@ -610,6 +581,36 @@
       }
     },
     {
+      "name": "nodes-circle",
+      "type": "symbol",
+      "zindex": 1,
+      "from": {"data": "node-data"},
+      "encode": {
+        "update": {
+          "opacity": {"value": 1},
+          "fill": {"value": "transparent"},
+          "stroke": {
+            "signal": "nodeHover.id===datum.index || indexof(nodeHover.connections, datum.name)>-1 ?scale('color', datum.group):merge(hsl(scale('color', datum.group)), {l:0.84})"
+          },
+          "strokeWidth": {"scale": "strokeWidthScale", "field": "errors"},
+          "strokeOpacity": {"value": 0.5},
+          "size": {"signal": "10 * nodeRadius * nodeRadius"},
+          "cursor": {"value": "pointer"},
+          "x": {
+            "signal": "fix[0]!=null && node===datum.index ?fix[0]:scale('xscale', datum.x)"
+          },
+          "y": {
+            "signal": "fix[1]!=null && node===datum.index ?fix[1]:scale('yscale', datum.y)"
+          }
+        },
+        "hover": {
+          "tooltip": {
+            "signal": "{title: datum.name, 'Average errors': datum.errors   }"
+          }
+        }
+      }
+    },
+    {
       "name": "nodes",
       "type": "symbol",
       "zindex": 1,
@@ -634,7 +635,11 @@
             "signal": "fix[1]!=null && node===datum.index ?fix[1]:scale('yscale', datum.y)"
           }
         },
-        "hover": {"tooltip": {"signal": "datum.name"}}
+        "hover": {
+          "tooltip": {
+            "signal": "{title: datum.name, 'Average errors': datum.errors ,'Average duration': datum.duration , 'Average requests rate': datum.requests  }"
+          }
+        }
       }
     },
     {
