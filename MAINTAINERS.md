@@ -10,12 +10,13 @@ This document contains a list of maintainers in this repo. See [opensearch-proje
 | Khushboo Rajput  | [khushbr](https://github.com/khushbr)                 | Amazon      |
 | Praveen Sameneni | [praveensameneni](https://github.com/praveensameneni) | Amazon      |
 | Anan Zhuang      | [ananzh](https://github.com/ananzh)                   | Amazon      |
-| Sean Neumann     | [seanneumann](https://github.com/seanneumann)         | Amazon      |
 | Miki Barahmand   | [AMoo-Miki](https://github.com/AMoo-Miki)             | Amazon      |
 | Lior Perry       | [YANG-DB](https://github.com/YANG-DB/)                | Amazon      |
+| Simeon Widdis    | [Swiddis](https://github.com/Swiddis)                 | Amazon      |
 
 ## Emeritus
 
 | Maintainer       | GitHub ID                                             | Affiliation |
 | ---------------- | ----------------------------------------------------- | ----------- |
 | Drew Baugher     | [dbbaughe](https://github.com/dbbaughe)               | Amazon      |
+| Sean Neumann     | [seanneumann](https://github.com/seanneumann)         | Contributor      |
