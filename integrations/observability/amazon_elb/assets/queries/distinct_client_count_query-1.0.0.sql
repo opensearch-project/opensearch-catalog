@@ -1,2 +1,0 @@
--- # List all client IP addresses that accessed the Application Load Balancer, and how many times they accessed the Application Load Balancer 
-SELECT distinct client_ip, count() as count from alb_logs  GROUP by client_ip  ORDER by count() DESC;

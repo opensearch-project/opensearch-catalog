@@ -1,13 +1,13 @@
 {
-  "name": "amazon_elb",
-  "version": "1.0.0",
-  "displayName": "Elastic Load Balancing",
-  "description": "Analyze access logs for Elastic Load Balancing.",
+  "name": "haproxy",
+  "version": "1.1.0",
+  "displayName": "HAProxy",
+  "description": "Analyze HAProxy access logs.",
   "license": "Apache-2.0",
-  "type": "logs_elb",
-  "labels": ["Observability", "Logs", "AWS", "Flint S3", "Cloud"],
+  "type": "logs",
+  "labels": ["Observability", "Logs", "Flint S3"],
   "author": "OpenSearch",
-  "sourceUrl": "https://github.com/opensearch-project/opensearch-catalog/releases/tag/amazon_elb-1.0.0",
+  "sourceUrl": "https://github.com/opensearch-project/opensearch-catalog/releases/tag/haproxy-1.0.0",
   "workflows": [
     {
       "name": "queries",
@@ -24,13 +24,17 @@
   ],
   "statics": {
     "logo": {
-      "annotation": "ELB Logo",
+      "annotation": "HAProxy Logo",
       "path": "logo.svg"
     },
     "gallery": [
       {
-        "annotation": "ELB Dashboard",
+        "annotation": "HAProxy Dashboard",
         "path": "dashboard1.png"
+      },
+      {
+        "annotation": "HAProxy Dashboard view",
+        "path": "dashboard2.png"
       }
     ]
   },
@@ -44,25 +48,13 @@
       "version": "1.0.0"
     },
     {
-      "name": "cloud",
-      "version": "1.0.0"
-    },
-    {
-      "name": "aws_elb",
-      "version": "1.0.0"
-    },
-    {
-      "name": "url",
-      "version": "1.0.0"
-    },
-    {
-      "name": "logs_elb",
+      "name": "logs",
       "version": "1.0.0"
     }
   ],
   "assets": [
     {
-      "name": "aws_elb",
+      "name": "haproxy",
       "version": "1.0.0",
       "extension": "ndjson",
       "type": "savedObjectBundle",
@@ -75,25 +67,11 @@
       "type": "query"
     },
     {
-      "name": "create_skipping_index",
-      "version": "1.0.0",
-      "extension": "sql",
-      "type": "query",
-      "workflows": ["queries"]
-    },
-    {
       "name": "create_mv",
       "version": "1.0.0",
       "extension": "sql",
       "type": "query",
       "workflows": ["dashboards"]
-    },
-    {
-      "name": "example_queries",
-      "version": "1.0.0",
-      "extension": "ndjson",
-      "type": "savedObjectBundle",
-      "workflows": ["queries"]
     }
   ],
   "sampleData": {

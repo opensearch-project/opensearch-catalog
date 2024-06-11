@@ -7,7 +7,7 @@
   "type": "logs_apache",
   "labels": ["Observability", "Logs", "Flint S3"],
   "author": "OpenSearch",
-  "sourceUrl": "https://github.com/opensearch-project/dashboards-observability/tree/main/server/adaptors/integrations/__data__/repository/apache/info",
+  "sourceUrl": "https://github.com/opensearch-project/opensearch-catalog/releases/tag/apache-1.0.0",
   "workflows": [
     {
       "name": "queries",
