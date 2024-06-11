@@ -1,7 +1,5 @@
 {
-  "index_patterns": [
-    "ss4o_traces-*-*"
-  ],
+  "index_patterns": ["ss4o_traces-*-*"],
   "template": {
     "mappings": {
       "_meta": {
@@ -47,6 +45,9 @@
         "enabled": true
       },
       "properties": {
+        "serviceName": {
+          "type": "keyword"
+        },
         "traceId": {
           "ignore_above": 256,
           "type": "keyword"
@@ -105,9 +106,6 @@
         "attributes": {
           "type": "object",
           "properties": {
-            "serviceName": {
-              "type": "keyword"
-            },
             "data_stream": {
               "properties": {
                 "dataset": {
@@ -183,9 +181,6 @@
           "type": "keyword"
         }
       }
-    },
-    "aliases" : {
-      "otel-v1-apm-span" : {}
     }
   },
   "composed_of": [],

@@ -28,4 +28,4 @@ AWS ELB access logs integration includes dashboards, visualisations, queries and
 
 ### Dashboard
 
-![](https://github.com/opensearch-project/opensearch-catalog/blob/main/integrations/observability/aws_elb/static/dashboard1.png?raw=true)
+![ELB Dashboard](../static/dashboard1.png)
