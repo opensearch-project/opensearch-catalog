@@ -12,7 +12,7 @@ OpenSearch dashboards doesn’t allow this naturally and requires some tweaks fo
 - Dashboard config updates:
   - Enable vega external URL navigation: `vis_type_vega.enableExternalUrls: true`
   - Enable Dashboard's `Store URLs in session storage` under the advanced setting
-  ![advanced-setting.png](..%2Fdocs%2Fimg%2Fadvanced-setting.png)
+  ![advanced-setting.png](../docs/img/advanced-setting.png)
 
 **Vega:**
 
