@@ -37,19 +37,18 @@ Enable Store URLs in session storage for allowing to view and edit Vega based vi
 
 ## Installing OTEL Services Demo
 
-Install OpenTelemetry Integration - navigate to the Integration sections and select the OTEL-Demo Integration
-- Go to the [available integrations ](http://localhost:5601/app/integrations#/available) dialog
-- Select the [OTEL-Demo Integration](http://localhost:5601/app/integrations#/available/otel-services)  
-  ![integration-otel-services-selection.png](img/integration-otel-services-selection.png)
-  ![integration-otel-services-info.png](img/integration-otel-services-info.png)
+Install OpenTelemetry Dashboards workflow - navigate to the [Observability Catalog Release Page](https://github.com/opensearch-project/opensearch-catalog/blob/main/docs/integrations/Release.md) sections and select the [Otel Services Dashboards 1.0.0 Release](https://github.com/opensearch-project/opensearch-catalog/releases/tag/otel_services_dashboard-1.0.0)
+- Go to the Dashboard Management and select `Saved Objects`
+- Select the `Import` Icon and choose the Otel Services Dashboards 1.0.0 Release file
+- In the import Dialog: Check for existing objects, Automatically overwrite conflicts and press the import button
 
-- Run the set-up integration and choose the `otel-*` index name as the integration data source
+This will load all the OpenTelemetry Services flow dashboards and you can immediately navigate to any of the imported dashboards and monitor the ingested telemetry data.
+>  _For detailed instructions see [here](https://github.com/opensearch-project/opensearch-catalog/releases/tag/otel_services_dashboard-1.0.0)_
 
-![integration-otel-services-setup.png](img/integration-otel-services-setup.png)
+![integration-otel-services-setup.png](img/dashboard-mng.png)
 
-- View all the Generated Dashboards:
+![integration-otel-services-dashboards.png](img/import-savedObj.png)
 
-![integration-otel-services-dashboards.png](img/integration-otel-services-dashboards.png)
 
 ## Ingestion Rate Dashboard
 This dashboard show the 3 signals ingestion rate as they are shipped via data-prepper into OpenSearch indices
