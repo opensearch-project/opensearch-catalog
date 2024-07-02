@@ -6,7 +6,7 @@ CREATE EXTERNAL TABLE IF NOT EXISTS {table_name} (
     dstaddr string,
     srcport int,
     dstport int,
-    protocol int,
+    protocol bigint,
     packets bigint,
     bytes bigint,
     start bigint,
