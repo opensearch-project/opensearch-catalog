@@ -101,6 +101,11 @@
     }
   ],
   "getting-started": {
+    "ingestion": ["fluent-bit"],
+    "structured": "true",
+    "technology": "nginx",
+    "protocol": ["syslog","otel"],
+    "live-sample": "true",
     "workflows": [
       {
         "name": "fluent-bit",
@@ -109,6 +114,7 @@
           {
             "name": "Fluent-Bit Parser",
             "type": "console-cmd",
+            "phase": "ingestion",
             "label": "Log Parsing",
             "info": ["https://github.com/opensearch-project/opensearch-catalog/tree/main/integrations/observability/nginx/getting-started/fluent-bit/parsers.conf"],
             "description": "Setup Fluent-Bit parser config file parsing Nginx access log fields",
@@ -117,6 +123,7 @@
           {
             "name": "Fluent-Bit Log Converter",
             "type": "console-cmd",
+            "phase": "transformation",
             "label": "Log Parsing",
             "info": ["https://github.com/opensearch-project/opensearch-catalog/tree/main/integrations/observability/nginx/getting-started/fluent-bit/otel-converter.lua"],
             "description": "Setup Fluent-Bit logs converter lua script config file converting Nginx access log into Simple schema format",
@@ -125,6 +132,7 @@
           {
             "name": "Fluent-Bit Setup",
             "type": "console-cmd",
+            "phase": "ingestion",
             "label": "Agent Set-Up",
             "info": ["https://github.com/opensearch-project/opensearch-catalog/tree/main/integrations/observability/nginx/getting-started/fluent-bit/fluent-bit.conf"],
             "description": "Setup Fluent-Bit conf file including logs parsing and OpenSearch access",
@@ -151,6 +159,7 @@
           {
             "name": "Create docker-network",
             "label": "Environment setting",
+            "phase": "docker",
             "type": "console-cmd",
             "content": "docker network create opensearch-net",
             "description": "Before running any docker-compose files, create the opensearch-net network"
@@ -158,6 +167,7 @@
           {
             "name": "Setup docker .env file",
             "label": "Environment Parameters",
+            "phase": "docker",
             "type": "file-url",
             "input-params": [
               {
@@ -178,6 +188,7 @@
           {
             "name": "Setup fluent-bit folder",
             "label": "Environment Parameters",
+            "phase": "docker",
             "type": "file-url",
             "info": ["https://github.com/opensearch-project/opensearch-catalog/tree/main/integrations/observability/nginx/getting-started/fluent-bit/fluent-bit.conf",
                      "https://github.com/opensearch-project/opensearch-catalog/tree/main/integrations/observability/nginx/getting-started/fluent-bit/otel-converter.lua",
@@ -190,6 +201,7 @@
             "name": "Run docker-compose",
             "label": "live container",
             "type": "file-url",
+            "phase": "docker",
             "info": ["https://github.com/opensearch-project/opensearch-catalog/tree/main/integrations/observability/nginx/getting-started/nginx-node.yml"],
             "description": "Run docker-compose for the nginx live example and see the generated index",
             "content": "wget -O nginx-node.yml https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/nginx/getting-started/nginx-node.yml && docker-compose -f nginx-node.yml up -d\n"
