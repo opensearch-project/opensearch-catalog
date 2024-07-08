@@ -101,6 +101,70 @@
       ]
     }
   ],
+  "getting-started": {
+    "ingestion": ["otel-collector","data-prepper"],
+    "structured": "true",
+    "technology": "OpenTelemetry",
+    "protocol": ["otel"],
+    "live-sample": "true",
+    "workflows": [
+      {
+        "name": "docker-compose",
+        "description": "This is a docker-composed based getting started live example ",
+        "info": "https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/otel-services/info/GettingStarted.md",
+        "steps": [
+          {
+            "name": "Setup open-telemetry local repository",
+            "label": "Staging",
+            "phase": "docker",
+            "type": "console-cmd",
+            "info": ["https://github.com/opensearch-project/opentelemetry-demo.git"
+            ],
+            "content": "git clone https://github.com/opensearch-project/opentelemetry-demo.git",
+            "description": "Setup open-telemetry demo repository locally "
+          },
+          {
+            "name": "Create docker-network",
+            "label": "Environment setting",
+            "phase": "docker",
+            "type": "console-cmd",
+            "content": "docker network create opensearch-net",
+            "description": "Before running any docker-compose files, create the opensearch-net network"
+          },
+          {
+            "name": "Update docker .env file",
+            "label": "Environment Parameters",
+            "phase": "docker",
+            "type": "console-cmd",
+            "input-params": [
+              {
+                "name": "OPENSEARCH_HOST",
+                "description": "Opensearch host",
+                "type": "host-name"
+              },
+              {
+                "name": "OPENSEARCH_DASHBOARD_HOST",
+                "description": "Opensearch Dashboard host",
+                "type": "host-name"
+              }
+            ],
+            "info": ["https://github.com/opensearch-project/opentelemetry-demo/blob/main/.env"],
+            "content": "wget https://raw.githubusercontent.com/opensearch-project/opentelemetry-demo/main/.env",
+            "description": "Setup docker-compose env variables "
+          },
+          {
+            "name": "Run docker-compose",
+            "label": "live container",
+            "type": "console-cmd",
+            "phase": "docker",
+            "info": ["https://github.com/opensearch-project/opentelemetry-demo/blob/main/docker-compose.yml"],
+            "description": "Run docker-compose for the otel live example and see the generated indices",
+            "content": "docker-compose up -d --scale opensearch-node1=0 --scale opensearch-node2=0 --scale  opensearch-dashboards=0"
+          }
+        ]
+      }
+    ]
+  },
   "sampleData": {
     "path": "traces-samples.json"
   }
