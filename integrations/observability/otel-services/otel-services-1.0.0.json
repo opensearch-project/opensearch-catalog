@@ -118,8 +118,7 @@
             "label": "Staging",
             "phase": "docker",
             "type": "console-cmd",
-            "info": ["https://github.com/opensearch-project/opentelemetry-demo.git"
-            ],
+            "info": ["https://github.com/opensearch-project/opentelemetry-demo.git"],
             "content": "git clone https://github.com/opensearch-project/opentelemetry-demo.git",
             "description": "Setup open-telemetry demo repository locally "
           },
