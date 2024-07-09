@@ -100,6 +100,7 @@
     "structured": "true",
     "technology": "OpenTelemetry",
     "protocol": ["otel"],
+    "info": "https://github.com/opensearch-project/opensearch-catalog/tree/main/integrations/observability/otel-services/info/Tutorial.md",
     "live-sample": "true",
     "workflows": [
       {
