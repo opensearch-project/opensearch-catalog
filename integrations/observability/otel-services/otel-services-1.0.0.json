@@ -14,12 +14,6 @@
   "sourceUrl": "https://github.com/opensearch-project/dashboards-observability/tree/main/server/adaptors/integrations/__data__/repository/otel-services/info",
   "workflows": [
     {
-      "name": "queries",
-      "label": "Queries (recommended)",
-      "description": "Tables and pre-written queries for quickly getting insights on your data.",
-      "enabled_by_default": false
-    },
-    {
       "name": "dashboards",
       "label": "Dashboards & Visualizations",
       "description": "Dashboards and indices that enable you to easily visualize important metrics.",
@@ -74,7 +68,7 @@
   ],
   "assets": [
     {
-      "name": "otel-service-flow-use-case-integration",
+      "name": "getting-started-demo",
       "version": "1.0.0",
       "extension": "ndjson",
       "type": "savedObjectBundle",
