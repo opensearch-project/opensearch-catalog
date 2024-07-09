@@ -110,6 +110,7 @@
     }
   ],
   "getting-started": {
+    "info": "https://github.com/opensearch-project/opensearch-catalog/tree/main/integrations/observability/nginx/info/Getting-Started.md",
     "ingestion": ["fluent-bit"],
     "structured": "true",
     "technology": "nginx",
