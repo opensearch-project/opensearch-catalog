@@ -281,8 +281,11 @@ docker-compose up -d --scale opensearch-node1=0 --scale opensearch-node2=0 --sca
 ```
 
 **Description:**
+
 This command starts the Docker containers for the OpenTelemetry Collector and Data Prepper, creating a live environment for data collection and analysis.
 The `--scale opensearch-node1=0 --scale opensearch-node2=0 --scale opensearch-dashboards=0` command removes the opensearch & dashboard from being started in case they are already running.
+
+---
 
 ## Additional Info
  - [Getting Started Info Document](https://github.com/opensearch-project/opensearch-catalog/blob/main/integrations/observability/otel-services/info/GettingStarted.md)
