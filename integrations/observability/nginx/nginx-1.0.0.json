@@ -58,6 +58,15 @@
   ],
   "assets": [
     {
+      "name": "getting-started-tutorial",
+      "version": "1.0.0",
+      "extension": "ndjson",
+      "type": "savedObjectBundle",
+      "workflows": [
+        "dashboards"
+      ]
+    },
+    {
       "name": "nginx",
       "version": "1.0.0",
       "extension": "ndjson",
