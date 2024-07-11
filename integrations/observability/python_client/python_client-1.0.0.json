@@ -19,12 +19,12 @@
   "statics": {
     "logo": {
       "annotation": "Python Logo",
-      "path": "logo.svg"
+      "path": "logo.png"
     },
     "gallery": [
       {
         "annotation": "Python Client Tutorial Dashboard",
-        "path": "dashboard1.png"
+        "path": "dashboard.png"
       }
     ]
   },
