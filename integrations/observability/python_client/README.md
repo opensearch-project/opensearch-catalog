@@ -1,77 +1,696 @@
-# Python Client Integration
-The next integration contains instructions and tutorial of setting up python opensearch client and logging applicative telemetry into opensearch.
+```markdown
+# OpenSearch Java Client Documentation
 
-## Logging with OpenSearch in Python: 
+The OpenSearch Java client allows you to interact with your OpenSearch clusters through Java methods and data structures rather than HTTP methods and raw JSON. This guide illustrates how to connect to OpenSearch, index documents, and run queries.
 
-Logging is an important aspect of software development,OpenSearch, is a robust and scalable solution, stands out for storing and analyzing logs efficiently.
-This guide walks you through integrating OpenSearch as a storage and analytics into component used in your Python project for effective logging.
+## Installing the Client
 
-### Install Python Libraries
-Install the OpenSearch Python client to interact with OpenSearch:
+### Using Apache HttpClient 5 Transport
+Add the following dependencies to your `pom.xml`:
+```xml
+<dependency>
+  <groupId>org.opensearch.client</groupId>
+  <artifactId>opensearch-java</artifactId>
+  <version>2.8.1</version>
+</dependency>
+<dependency>
+  <groupId>org.apache.httpcomponents.client5</groupId>
+  <artifactId>httpclient5</artifactId>
+  <version>5.2.1</version>
+</dependency>
+```
+For Gradle:
+```gradle
+dependencies {
+  implementation 'org.opensearch.client:opensearch-java:2.8.1'
+  implementation 'org.apache.httpcomponents.client5:httpclient5:5.2.1'
+}
+```
 
+### Using RestClient Transport
+Add the following dependencies to your `pom.xml`:
+```xml
+<dependency>
+  <groupId>org.opensearch.client</groupId>
+  <artifactId>opensearch-rest-client</artifactId>
+  <version>2.15.0</version>
+</dependency>
+<dependency>
+  <groupId>org.opensearch.client</groupId>
+  <artifactId>opensearch-java</artifactId>
+  <version>2.6.0</version>
+</dependency>
+```
+For Gradle:
+```gradle
+dependencies {
+  implementation 'org.opensearch.client:opensearch-rest-client:2.15.0'
+  implementation 'org.opensearch.client:opensearch-java:2.6.0'
+}
+```
+
+## Security
+Configure the application's truststore to connect to the Security plugin:
 ```bash
-pip install opensearch-py
-```
-See additional documentation [here](https://opensearch.org/docs/latest/clients/python-low-level/).
-
-## Integrating OpenSearch with Your Python Project
-
-### Step 1: Import the OpenSearch Client
-In your Python project, import the necessary module:
-
-```python
-from opensearchpy import OpenSearch
+keytool -import <path-to-cert> -alias <alias-to-call-cert> -keystore <truststore-name>
 ```
 
-### Step 2: Establish a Connection
-Create a connection to your OpenSearch cluster:
+## Sample Data
+Define an `IndexData` class:
+```java
+static class IndexData {
+  private String firstName;
+  private String lastName;
 
-```python
-os = OpenSearch([{'host': 'opensearch_host', 'port': 9200}])
-```
+  public IndexData(String firstName, String lastName) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+  }
 
-### Step 3: Indexing Logs
-Index your logs into OpenSearch:
+  public String getFirstName() { return firstName; }
+  public void setFirstName(String firstName) { this.firstName = firstName; }
+  public String getLastName() { return lastName; }
+  public void setLastName(String lastName) { this.lastName = lastName; }
 
-```python
-log_entry = {
-    'timestamp': '2024-02-05T12:00:00',
-    'level': 'info',
-    'message': 'Your log message here.',
-    'source': 'your_python_project'
+  @Override
+  public String toString() {
+    return String.format("IndexData{first name='%s', last name='%s'}", firstName, lastName);
+  }
 }
-
-index_name = 'index_name'
-
-os.index(index=index_name, body=log_entry)
 ```
 
-### Step 4: Querying Logs
-Retrieve logs using OpenSearch's powerful search capabilities:
+## Initializing the Client with SSL and TLS
 
-```python
-query = {
-    'query': {
-        'match': {'level': 'error'}
-    }
+### Using Apache HttpClient 5 Transport
+```java
+import javax.net.ssl.SSLContext;
+import org.apache.hc.client5.http.auth.AuthScope;
+import org.apache.hc.client5.http.auth.UsernamePasswordCredentials;
+import org.apache.hc.client5.http.impl.auth.BasicCredentialsProvider;
+import org.apache.hc.core5.http.HttpHost;
+import org.apache.hc.core5.ssl.SSLContextBuilder;
+import org.opensearch.client.opensearch.OpenSearchClient;
+import org.opensearch.client.transport.httpclient5.ApacheHttpClient5TransportBuilder;
+
+public class OpenSearchClientExample {
+  public static void main(String[] args) throws Exception {
+    System.setProperty("javax.net.ssl.trustStore", "/full/path/to/keystore");
+    System.setProperty("javax.net.ssl.trustStorePassword", "password-to-keystore");
+
+    final HttpHost host = new HttpHost("https", "localhost", 9200);
+    final BasicCredentialsProvider credentialsProvider = new BasicCredentialsProvider();
+    credentialsProvider.setCredentials(new AuthScope(host), new UsernamePasswordCredentials("admin", "admin".toCharArray()));
+
+    final SSLContext sslcontext = SSLContextBuilder.create().loadTrustMaterial(null, (chains, authType) -> true).build();
+    final ApacheHttpClient5TransportBuilder builder = ApacheHttpClient5TransportBuilder.builder(host)
+      .setHttpClientConfigCallback(httpClientBuilder -> {
+        return httpClientBuilder.setDefaultCredentialsProvider(credentialsProvider);
+      });
+
+    final OpenSearchClient client = new OpenSearchClient(builder.build());
+  }
 }
-
-result = os.search(index=index_name, body=query)
-print(result)
 ```
 
-## Best Practices for Effective Logging
+### Using RestClient Transport
+```java
+import org.apache.http.HttpHost;
+import org.apache.http.auth.AuthScope;
+import org.apache.http.auth.UsernamePasswordCredentials;
+import org.apache.http.impl.client.BasicCredentialsProvider;
+import org.opensearch.client.RestClient;
+import org.opensearch.client.RestClientBuilder;
+import org.opensearch.client.opensearch.OpenSearchClient;
+import org.opensearch.client.transport.rest_client.RestClientTransport;
 
-1. **Descriptive Log Messages**: Include clear and detailed information.
-2. **Appropriate Log Levels**: Use different levels (INFO, DEBUG, ERROR) to categorize log messages.
-3. **Timestamps**: Always include timestamps for chronological analysis.
-4. **Contextual Information**: Add details like module, function, or user IDs.
-5. **Avoid Redundant Logging**: Balance between sufficient information and avoiding overload.
-6. **Secure Sensitive Information**: Do not log sensitive data in plain text.
-7. **Structured Logging**: Use JSON for consistent log formats.
+public class OpenSearchClientExample {
+  public static void main(String[] args) throws Exception {
+    System.setProperty("javax.net.ssl.trustStore", "/full/path/to/keystore");
+    System.setProperty("javax.net.ssl.trustStorePassword", "password-to-keystore");
 
-## Advanced Features of OpenSearch
+    final HttpHost host = new HttpHost("https", "localhost", 9200);
+    final BasicCredentialsProvider credentialsProvider = new BasicCredentialsProvider();
+    credentialsProvider.setCredentials(new AuthScope(host), new UsernamePasswordCredentials("admin", "admin".toCharArray()));
 
-- **Index Patterns and Mappings**: Optimize log data structure for better analysis and retrieval.
-- **Visualization with Dashboards (Kibana)**: Create interactive dashboards for real-time log insights.
+    final RestClient restClient = RestClient.builder(host).setHttpClientConfigCallback(httpClientBuilder -> {
+      return httpClientBuilder.setDefaultCredentialsProvider(credentialsProvider);
+    }).build();
 
+    final OpenSearchClient client = new OpenSearchClient(new RestClientTransport(restClient, new JacksonJsonpMapper()));
+  }
+}
+```
+
+## Connecting to Amazon OpenSearch Service
+```java
+SdkHttpClient httpClient = ApacheHttpClient.builder().build();
+OpenSearchClient client = new OpenSearchClient(new AwsSdk2Transport(httpClient, "search-...us-west-2.es.amazonaws.com", "es", Region.US_WEST_2, AwsSdk2TransportOptions.builder().build()));
+InfoResponse info = client.info();
+System.out.println(info.version().distribution() + ": " + info.version().number());
+httpClient.close();
+```
+
+## Connecting to Amazon OpenSearch Serverless
+```java
+SdkHttpClient httpClient = ApacheHttpClient.builder().build();
+OpenSearchClient client = new OpenSearchClient(new AwsSdk2Transport(httpClient, "search-...us-west-2.aoss.amazonaws.com", "aoss", Region.US_WEST_2, AwsSdk2TransportOptions.builder().build()));
+InfoResponse info = client.info();
+System.out.println(info.version().distribution() + ": " + info.version().number());
+httpClient.close();
+```
+
+## Creating an Index
+```java
+String index = "sample-index";
+CreateIndexRequest createIndexRequest = new CreateIndexRequest.Builder().index(index).build();
+client.indices().create(createIndexRequest);
+
+IndexSettings indexSettings = new IndexSettings.Builder().autoExpandReplicas("0-all").build();
+PutIndicesSettingsRequest putIndicesSettingsRequest = new PutIndicesSettingsRequest.Builder().index(index).value(indexSettings).build();
+client.indices().putSettings(putIndicesSettingsRequest);
+```
+
+## Indexing Data
+```java
+IndexData indexData = new IndexData("first_name", "Bruce");
+IndexRequest<IndexData> indexRequest = new IndexRequest.Builder<IndexData>().index(index).id("1").document(indexData).build();
+client.index(indexRequest);
+```
+
+## Searching for Documents
+```java
+SearchResponse<IndexData> searchResponse = client.search(s -> s.index(index), IndexData.class);
+for (int i = 0; i< searchResponse.hits().hits().size(); i++) {
+  System.out.println(searchResponse.hits().hits().get(i).source());
+}
+```
+
+## Deleting a Document
+```java
+client.delete(b -> b.index(index).id("1"));
+```
+
+## Deleting an Index
+```java
+DeleteIndexRequest deleteIndexRequest = new DeleteIndexRequest.Builder().index(index).build();
+DeleteIndexResponse deleteIndexResponse = client.indices().delete(deleteIndexRequest);
+```
+
+## Sample Program
+The following sample program creates a client, adds an index with non-default settings, inserts a document, searches for the document, deletes the document, and then deletes the index:
+```java
+import org.apache.http.HttpHost;
+import org.apache.http.auth.AuthScope;
+import org.apache.http.auth.UsernamePasswordCredentials;
+import org.apache.http.impl.client.BasicCredentialsProvider;
+import org.apache.http.impl.nio.client.HttpAsyncClientBuilder;
+import org.opensearch.client.RestClient;
+import org.opensearch.client.RestClientBuilder;
+import org.opensearch.client.base.RestClientTransport;
+import org.opensearch.client.base.Transport;
+import org.opensearch.client.json.jackson.JacksonJsonpMapper;
+import org.opensearch.client.opensearch.OpenSearchClient;
+import org.opensearch.client.opensearch._global.IndexRequest;
+import org.opensearch.client.opensearch._global.IndexResponse;
+import org.opensearch.client.opensearch._global.SearchResponse;
+import org.opensearch.client.opensearch.indices.*;
+import org.opensearch.client.opensearch.indices.put_settings.IndexSettingsBody;
+
+import java.io.IOException;
+
+public class OpenSearchClientExample {
+  public static void main(String[] args) {
+    RestClient restClient = null;
+    try {
+      System.setProperty("javax.net.ssl.trustStore", "/full/path/to/keystore");
+      System.setProperty("javax.net.ssl.trustStorePassword", "password-to-keystore");
+
+      final BasicCredentialsProvider credentialsProvider = new BasicCredentialsProvider();
+      credentialsProvider.setCredentials(AuthScope.ANY, new UsernamePasswordCredentials("admin", "admin"));
+
+      restClient = RestClient.builder(new HttpHost
+
+```markdown
+# OpenSearch Java Client Documentation
+
+The OpenSearch Java client allows you to interact with your OpenSearch clusters through Java methods and data structures. This guide illustrates how to connect to OpenSearch, index documents, and run queries.
+
+## Installing the Client
+
+### Using Apache HttpClient 5 Transport
+Add the following dependencies to your `pom.xml`:
+```xml
+<dependency>
+  <groupId>org.opensearch.client</groupId>
+  <artifactId>opensearch-java</artifactId>
+  <version>2.8.1</version>
+</dependency>
+<dependency>
+  <groupId>org.apache.httpcomponents.client5</groupId>
+  <artifactId>httpclient5</artifactId>
+  <version>5.2.1</version>
+</dependency>
+```
+For Gradle:
+```gradle
+dependencies {
+  implementation 'org.opensearch.client:opensearch-java:2.8.1'
+  implementation 'org.apache.httpcomponents.client5:httpclient5:5.2.1'
+}
+```
+
+### Using RestClient Transport
+Add the following dependencies to your `pom.xml`:
+```xml
+<dependency>
+  <groupId>org.opensearch.client</groupId>
+  <artifactId>opensearch-rest-client</artifactId>
+  <version>2.15.0</version>
+</dependency>
+<dependency>
+  <groupId>org.opensearch.client</groupId>
+  <artifactId>opensearch-java</artifactId>
+  <version>2.6.0</version>
+</dependency>
+```
+For Gradle:
+```gradle
+dependencies {
+  implementation 'org.opensearch.client:opensearch-rest-client:2.15.0'
+  implementation 'org.opensearch.client:opensearch-java:2.6.0'
+}
+```
+
+## Security
+Configure the application's truststore to connect to the Security plugin:
+```bash
+keytool -import <path-to-cert> -alias <alias-to-call-cert> -keystore <truststore-name>
+```
+
+## Sample Data
+Define an `IndexData` class:
+```java
+static class IndexData {
+  private String firstName;
+  private String lastName;
+
+  public IndexData(String firstName, String lastName) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+  }
+
+  public String getFirstName() { return firstName; }
+  public void setFirstName(String firstName) { this.firstName = firstName; }
+  public String getLastName() { return lastName; }
+  public void setLastName(String lastName) { this.lastName = lastName; }
+
+  @Override
+  public String toString() {
+    return String.format("IndexData{first name='%s', last name='%s'}", firstName, lastName);
+  }
+}
+```
+
+## Initializing the Client with SSL and TLS
+
+### Using Apache HttpClient 5 Transport
+```java
+import javax.net.ssl.SSLContext;
+import org.apache.hc.client5.http.auth.AuthScope;
+import org.apache.hc.client5.http.auth.UsernamePasswordCredentials;
+import org.apache.hc.client5.http.impl.auth.BasicCredentialsProvider;
+import org.apache.hc.core5.http.HttpHost;
+import org.apache.hc.core5.ssl.SSLContextBuilder;
+import org.opensearch.client.opensearch.OpenSearchClient;
+import org.opensearch.client.transport.httpclient5.ApacheHttpClient5TransportBuilder;
+
+public class OpenSearchClientExample {
+  public static void main(String[] args) throws Exception {
+    System.setProperty("javax.net.ssl.trustStore", "/full/path/to/keystore");
+    System.setProperty("javax.net.ssl.trustStorePassword", "password-to-keystore");
+
+    final HttpHost host = new HttpHost("https", "localhost", 9200);
+    final BasicCredentialsProvider credentialsProvider = new BasicCredentialsProvider();
+    credentialsProvider.setCredentials(new AuthScope(host), new UsernamePasswordCredentials("admin", "admin".toCharArray()));
+
+    final SSLContext sslcontext = SSLContextBuilder.create().loadTrustMaterial(null, (chains, authType) -> true).build();
+    final ApacheHttpClient5TransportBuilder builder = ApacheHttpClient5TransportBuilder.builder(host)
+      .setHttpClientConfigCallback(httpClientBuilder -> {
+        return httpClientBuilder.setDefaultCredentialsProvider(credentialsProvider);
+      });
+
+    final OpenSearchClient client = new OpenSearchClient(builder.build());
+  }
+}
+```
+
+### Using RestClient Transport
+```java
+import org.apache.http.HttpHost;
+import org.apache.http.auth.AuthScope;
+import org.apache.http.auth.UsernamePasswordCredentials;
+import org.apache.http.impl.client.BasicCredentialsProvider;
+import org.opensearch.client.RestClient;
+import org.opensearch.client.RestClientBuilder;
+import org.opensearch.client.opensearch.OpenSearchClient;
+import org.opensearch.client.transport.rest_client.RestClientTransport;
+
+public class OpenSearchClientExample {
+  public static void main(String[] args) throws Exception {
+    System.setProperty("javax.net.ssl.trustStore", "/full/path/to/keystore");
+    System.setProperty("javax.net.ssl.trustStorePassword", "password-to-keystore");
+
+    final HttpHost host = new HttpHost("https", "localhost", 9200);
+    final BasicCredentialsProvider credentialsProvider = new BasicCredentialsProvider();
+    credentialsProvider.setCredentials(new AuthScope(host), new UsernamePasswordCredentials("admin", "admin".toCharArray()));
+
+    final RestClient restClient = RestClient.builder(host).setHttpClientConfigCallback(httpClientBuilder -> {
+      return httpClientBuilder.setDefaultCredentialsProvider(credentialsProvider);
+    }).build();
+
+    final OpenSearchClient client = new OpenSearchClient(new RestClientTransport(restClient, new JacksonJsonpMapper()));
+  }
+}
+```
+
+## Connecting to Amazon OpenSearch Service
+```java
+SdkHttpClient httpClient = ApacheHttpClient.builder().build();
+OpenSearchClient client = new OpenSearchClient(new AwsSdk2Transport(httpClient, "search-...us-west-2.es.amazonaws.com", "es", Region.US_WEST_2, AwsSdk2TransportOptions.builder().build()));
+InfoResponse info = client.info();
+System.out.println(info.version().distribution() + ": " + info.version().number());
+httpClient.close();
+```
+
+## Connecting to Amazon OpenSearch Serverless
+```java
+SdkHttpClient httpClient = ApacheHttpClient.builder().build();
+OpenSearchClient client = new OpenSearchClient(new AwsSdk2Transport(httpClient, "search-...us-west-2.aoss.amazonaws.com", "aoss", Region.US_WEST_2, AwsSdk2TransportOptions.builder().build()));
+InfoResponse info = client.info();
+System.out.println(info.version().distribution() + ": " + info.version().number());
+httpClient.close();
+```
+
+## Creating an Index
+```java
+String index = "sample-index";
+CreateIndexRequest createIndexRequest = new CreateIndexRequest.Builder().index(index).build();
+client.indices().create(createIndexRequest);
+
+IndexSettings indexSettings = new IndexSettings.Builder().autoExpandReplicas("0-all").build();
+PutIndicesSettingsRequest putIndicesSettingsRequest = new PutIndicesSettingsRequest.Builder().index(index).value(indexSettings).build();
+client.indices().putSettings(putIndicesSettingsRequest);
+```
+
+## Indexing Data
+```java
+IndexData indexData = new IndexData("first_name", "Bruce");
+IndexRequest<IndexData> indexRequest = new IndexRequest.Builder<IndexData>().index(index).id("1").document(indexData).build();
+client.index(indexRequest);
+```
+
+## Searching for Documents
+```java
+SearchResponse<IndexData> searchResponse = client.search(s -> s.index(index), IndexData.class);
+for (int i = 0; i< searchResponse.hits().hits().size(); i++) {
+  System.out.println(searchResponse.hits().hits().get(i).source());
+}
+```
+
+## Deleting a Document
+```java
+client.delete(b -> b.index(index).id("1"));
+```
+
+## Deleting an Index
+```java
+DeleteIndexRequest deleteIndexRequest = new DeleteIndexRequest.Builder().index(index).build();
+DeleteIndexResponse deleteIndexResponse = client.indices().delete(deleteIndexRequest);
+```
+
+## Sample Program
+The following sample program creates a client, adds an index with non-default settings, inserts a document, searches for the document, deletes the document, and then deletes the index:
+```java
+import org.apache.http.HttpHost;
+import org.apache.http.auth.AuthScope;
+import org.apache.http.auth.UsernamePasswordCredentials;
+import org.apache.http.impl.client.BasicCredentialsProvider;
+import org.apache.http.impl.nio.client.HttpAsyncClientBuilder;
+import org.opensearch.client.RestClient;
+import org.opensearch.client.RestClientBuilder;
+import org.opensearch.client.base.RestClientTransport;
+import org.opensearch.client.base.Transport;
+import org.opensearch.client.json.jackson.JacksonJsonpMapper;
+import org.opensearch.client.opensearch.OpenSearchClient;
+import org.opensearch.client.opensearch._global.IndexRequest;
+import org.opensearch.client.opensearch._global.IndexResponse;
+import org.opensearch.client.opensearch._global.SearchResponse;
+import org.opensearch.client.opensearch.indices.*;
+import org.opensearch.client.opensearch.indices.put_settings.IndexSettingsBody;
+
+import java.io.IOException;
+
+public class OpenSearchClientExample {
+  public static void main(String[] args) {
+    RestClient restClient = null;
+    try {
+      System.setProperty("javax.net.ssl.trustStore", "/full/path/to/keystore");
+      System.setProperty("javax.net.ssl.trustStorePassword", "password-to-keystore");
+
+      final BasicCredentialsProvider credentialsProvider = new BasicCredentialsProvider();
+      credentialsProvider.setCredentials(AuthScope.ANY, new UsernamePasswordCredentials("admin", "admin"));
+
+      restClient = RestClient.builder(new HttpHost("localhost", 9200,
+
+```markdown
+# OpenSearch Java Client Documentation
+
+The OpenSearch Java client allows interaction with OpenSearch clusters using Java methods and data structures.
+
+## Installing the Client
+
+### Using Apache HttpClient 5 Transport
+Add to `pom.xml`:
+```xml
+<dependency>
+  <groupId>org.opensearch.client</groupId>
+  <artifactId>opensearch-java</artifactId>
+  <version>2.8.1</version>
+</dependency>
+<dependency>
+  <groupId>org.apache.httpcomponents.client5</groupId>
+  <artifactId>httpclient5</artifactId>
+  <version>5.2.1</version>
+</dependency>
+```
+For Gradle:
+```gradle
+dependencies {
+  implementation 'org.opensearch.client:opensearch-java:2.8.1'
+  implementation 'org.apache.httpcomponents.client5:httpclient5:5.2.1'
+}
+```
+
+### Using RestClient Transport
+Add to `pom.xml`:
+```xml
+<dependency>
+  <groupId>org.opensearch.client</groupId>
+  <artifactId>opensearch-rest-client</artifactId>
+  <version>2.15.0</version>
+</dependency>
+<dependency>
+  <groupId>org.opensearch.client</groupId>
+  <artifactId>opensearch-java</artifactId>
+  <version>2.6.0</version>
+</dependency>
+```
+For Gradle:
+```gradle
+dependencies {
+  implementation 'org.opensearch.client:opensearch-rest-client:2.15.0'
+  implementation 'org.opensearch.client:opensearch-java:2.6.0'
+}
+```
+
+## Security
+Configure the application's truststore to connect to the Security plugin:
+```bash
+keytool -import <path-to-cert> -alias <alias-to-call-cert> -keystore <truststore-name>
+```
+
+## Sample Data
+Define an `IndexData` class:
+```java
+static class IndexData {
+  private String firstName;
+  private String lastName;
+
+  public IndexData(String firstName, String lastName) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+  }
+
+  public String getFirstName() { return firstName; }
+  public void setFirstName(String firstName) { this.firstName = firstName; }
+  public String getLastName() { return lastName; }
+  public void setLastName(String lastName) { this.lastName = lastName; }
+
+  @Override
+  public String toString() {
+    return String.format("IndexData{first name='%s', last name='%s'}", firstName, lastName);
+  }
+}
+```
+
+## Initializing the Client with SSL and TLS
+
+### Using Apache HttpClient 5 Transport
+```java
+import javax.net.ssl.SSLContext;
+import org.apache.hc.client5.http.auth.AuthScope;
+import org.apache.hc.client5.http.auth.UsernamePasswordCredentials;
+import org.apache.hc.client5.http.impl.auth.BasicCredentialsProvider;
+import org.apache.hc.core5.http.HttpHost;
+import org.apache.hc.core5.ssl.SSLContextBuilder;
+import org.opensearch.client.opensearch.OpenSearchClient;
+import org.opensearch.client.transport.httpclient5.ApacheHttpClient5TransportBuilder;
+
+public class OpenSearchClientExample {
+  public static void main(String[] args) throws Exception {
+    System.setProperty("javax.net.ssl.trustStore", "/full/path/to/keystore");
+    System.setProperty("javax.net.ssl.trustStorePassword", "password-to-keystore");
+
+    final HttpHost host = new HttpHost("https", "localhost", 9200);
+    final BasicCredentialsProvider credentialsProvider = new BasicCredentialsProvider();
+    credentialsProvider.setCredentials(new AuthScope(host), new UsernamePasswordCredentials("admin", "admin".toCharArray()));
+
+    final SSLContext sslcontext = SSLContextBuilder.create().loadTrustMaterial(null, (chains, authType) -> true).build();
+    final ApacheHttpClient5TransportBuilder builder = ApacheHttpClient5TransportBuilder.builder(host)
+      .setHttpClientConfigCallback(httpClientBuilder -> {
+        return httpClientBuilder.setDefaultCredentialsProvider(credentialsProvider);
+      });
+
+    final OpenSearchClient client = new OpenSearchClient(builder.build());
+  }
+}
+```
+
+### Using RestClient Transport
+```java
+import org.apache.http.HttpHost;
+import org.apache.http.auth.AuthScope;
+import org.apache.http.auth.UsernamePasswordCredentials;
+import org.apache.http.impl.client.BasicCredentialsProvider;
+import org.opensearch.client.RestClient;
+import org.opensearch.client.RestClientBuilder;
+import org.opensearch.client.opensearch.OpenSearchClient;
+import org.opensearch.client.transport.rest_client.RestClientTransport;
+
+public class OpenSearchClientExample {
+  public static void main(String[] args) throws Exception {
+    System.setProperty("javax.net.ssl.trustStore", "/full/path/to/keystore");
+    System.setProperty("javax.net.ssl.trustStorePassword", "password-to-keystore");
+
+    final HttpHost host = new HttpHost("https", "localhost", 9200);
+    final BasicCredentialsProvider credentialsProvider = new BasicCredentialsProvider();
+    credentialsProvider.setCredentials(new AuthScope(host), new UsernamePasswordCredentials("admin", "admin".toCharArray()));
+
+    final RestClient restClient = RestClient.builder(host).setHttpClientConfigCallback(httpClientBuilder -> {
+      return httpClientBuilder.setDefaultCredentialsProvider(credentialsProvider);
+    }).build();
+
+    final OpenSearchClient client = new OpenSearchClient(new RestClientTransport(restClient, new JacksonJsonpMapper()));
+  }
+}
+```
+
+## Connecting to Amazon OpenSearch Service
+```java
+SdkHttpClient httpClient = ApacheHttpClient.builder().build();
+OpenSearchClient client = new OpenSearchClient(new AwsSdk2Transport(httpClient, "search-...us-west-2.es.amazonaws.com", "es", Region.US_WEST_2, AwsSdk2TransportOptions.builder().build()));
+InfoResponse info = client.info();
+System.out.println(info.version().distribution() + ": " + info.version().number());
+httpClient.close();
+```
+
+## Connecting to Amazon OpenSearch Serverless
+```java
+SdkHttpClient httpClient = ApacheHttpClient.builder().build();
+OpenSearchClient client = new OpenSearchClient(new AwsSdk2Transport(httpClient, "search-...us-west-2.aoss.amazonaws.com", "aoss", Region.US_WEST_2, AwsSdk2TransportOptions.builder().build()));
+InfoResponse info = client.info();
+System.out.println(info.version().distribution() + ": " + info.version().number());
+httpClient.close();
+```
+
+## Creating an Index
+```java
+String index = "sample-index";
+CreateIndexRequest createIndexRequest = new CreateIndexRequest.Builder().index(index).build();
+client.indices().create(createIndexRequest);
+
+IndexSettings indexSettings = new IndexSettings.Builder().autoExpandReplicas("0-all").build();
+PutIndicesSettingsRequest putIndicesSettingsRequest = new PutIndicesSettingsRequest.Builder().index(index).value(indexSettings).build();
+client.indices().putSettings(putIndicesSettingsRequest);
+```
+
+## Indexing Data
+```java
+IndexData indexData = new IndexData("first_name", "Bruce");
+IndexRequest<IndexData> indexRequest = new IndexRequest.Builder<IndexData>().index(index).id("1").document(indexData).build();
+client.index(indexRequest);
+```
+
+## Searching for Documents
+```java
+SearchResponse<IndexData> searchResponse = client.search(s -> s.index(index), IndexData.class);
+for (int i = 0; i< searchResponse.hits().hits().size(); i++) {
+  System.out.println(searchResponse.hits().hits().get(i).source());
+}
+```
+
+## Deleting a Document
+```java
+client.delete(b -> b.index(index).id("1"));
+```
+
+## Deleting an Index
+```java
+DeleteIndexRequest deleteIndexRequest = new DeleteIndexRequest.Builder().index(index).build();
+DeleteIndexResponse deleteIndexResponse = client.indices().delete(deleteIndexRequest);
+```
+
+## Sample Program
+The following sample program creates a client, adds an index with non-default settings, inserts a document, searches for the document, deletes the document, and then deletes the index:
+```java
+import org.apache.http.HttpHost;
+import org.apache.http.auth.AuthScope;
+import org.apache.http.auth.UsernamePasswordCredentials;
+import org.apache.http.impl.client.BasicCredentialsProvider;
+import org.apache.http.impl.nio.client.HttpAsyncClientBuilder;
+import org.opensearch.client.RestClient;
+import org.opensearch.client.RestClientBuilder;
+import org.opensearch.client.base.RestClientTransport;
+import org.opensearch.client.base.Transport;
+import org.opensearch.client.json.jackson.JacksonJsonpMapper;
+import org.opensearch.client.opensearch.OpenSearchClient;
+import org.opensearch.client.opensearch._global.IndexRequest;
+import org.opensearch.client.opensearch._global.IndexResponse;
+import org.opensearch.client.opensearch._global.SearchResponse;
+import org.opensearch.client.opensearch.indices.*;
+import org.opensearch.client.opensearch.indices.put_settings.IndexSettingsBody;
+
+import java.io.IOException;
+
+public class OpenSearchClientExample {
+  public static void main(String[] args) {
+    RestClient restClient = null;
+    try {
+      System.setProperty("javax.net.ssl.trustStore", "/full/path/to/keystore");
+      System.setProperty("javax.net.ssl.trustStorePassword", "password-to-keystore");
+
+      final BasicCredentialsProvider credentialsProvider = new BasicCredentialsProvider();
+      credentialsProvider.setCredentials(AuthScope.ANY, new UsernamePasswordCredentials("admin", "admin"));
+
+      restClient = RestClient.builder(new HttpHost("localhost", 9200,
+```
