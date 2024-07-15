@@ -223,14 +223,14 @@
       {
         "type": "http",
         "info": ["https://opensearch.org/docs/latest/im-plugin/index-templates","https://github.com/opensearch-project/opensearch-catalog/blob/main/docs/schema/observability/Naming-convention.md"],
-        "content": "PUT _component_template/http_template",
+        "content": "PUT _component_template/http",
         "description": "Setup simple schema http component template in the dev console",
         "index-template": "https://github.com/opensearch-project/opensearch-catalog/tree/main/integrations/observability/nginx/schema/http-1.0.0.mapping.json",
       },
       {
         "type": "communication",
         "info": ["https://opensearch.org/docs/latest/im-plugin/index-templates","https://github.com/opensearch-project/opensearch-catalog/blob/main/docs/schema/observability/Naming-convention.md"],
-        "content": "PUT _component_template/communication_template",
+        "content": "PUT _component_template/communication",
         "description": "Setup simple schema communication component template in the dev console",
         "index-template": "https://github.com/opensearch-project/opensearch-catalog/tree/main/integrations/observability/nginx/schema/communication-1.0.0.mapping.json",
       },
@@ -240,9 +240,16 @@
         "content": "PUT _index_template/ss4o_logs_template",
         "description": "Setup simple schema logs index template in the dev console",
         "index-template": "https://github.com/opensearch-project/opensearch-catalog/tree/main/integrations/observability/nginx/schema/logs-1.0.0.mapping.json",
-        "index-pattern": "ss4o_logs-*-*"
+        "index-pattern-name": "ss4o_logs-*-*"
       }
-    ]
+    ],
+    "index-patterns": {
+      "type": ["logs"],
+      "info": ["https://opensearch.org/docs/latest/dashboards/management/index-patterns/"],
+      "description": "Import index patterns `.ndjson` file to the saved objects",
+      "index-pattern": "https://github.com/opensearch-project/opensearch-catalog/tree/main/integrations/observability/nginx/assets/nginx-index-patterns-1.0.0.ndjson",
+      "index-patterns-name": ["ss4o_logs-*-*"]
+    }
   },
   "sampleData": {
     "path": "sample.json"
