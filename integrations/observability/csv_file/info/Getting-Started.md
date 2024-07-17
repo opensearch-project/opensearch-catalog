@@ -123,3 +123,67 @@ Under the `getting-started` section you can examine a live docker-compose sample
 Use the [docker-compose](../getting-started/fluent-bit/docker-complete.yml) you can find a complete:
 
 `docker compose -f docker-complete.yml up -d` would instantiate the services and start sending the csv sample logs into an index. 
+
+---
+# Data-Prepper CSV Processor Tutorial
+
+The `csv` processor parses comma-separated values (CSVs) from the event into columns.
+
+## Configuration Options
+
+- **source** (String): The field in the event to be parsed. Default is `message`.
+- **quote_character** (String): The text qualifier for a single column. Default is `"`.
+- **delimiter** (String): The character separating each column. Default is `,`.
+- **delete_header** (Boolean): Deletes the event header after parsing. Default is true.
+- **column_names_source_key** (String): Specifies the CSV column names.
+- **column_names** (List): User-specified column names.
+
+## Usage Examples
+
+### User-specified Column Names
+
+```yaml
+csv-pipeline:
+  source:
+    file:
+      path: "/full/path/to/ingest.csv"
+      record_type: "event"
+  processor:
+    - csv:
+        column_names: ["col1", "col2"]
+  sink:
+    - stdout:
+```
+
+### Automatically Detect Column Names
+
+```yaml
+csv-s3-pipeline:
+  source:
+    s3:
+      notification_type: "sqs"
+      codec:
+        newline:
+          skip_lines: 1
+          header_destination: "header"
+      compression: none
+      sqs:
+        queue_url: "https://sqs.<region>.amazonaws.com/<account id>/<queue name>"
+      aws:
+        region: "<region>"
+  processor:
+    - csv:
+        column_names_source_key: "header"
+  sink:
+    - stdout:
+```
+
+## Metrics
+
+- **recordsIn**: Ingress records count.
+- **recordsOut**: Egress records count.
+- **timeElapsed**: Execution time.
+- **csvInvalidEvents**: Count of invalid events.
+
+For more details, visit the [CSV Processor Documentation](https://opensearch.org/docs/latest/data-prepper/pipelines/configuration/processors/csv/).
+```
