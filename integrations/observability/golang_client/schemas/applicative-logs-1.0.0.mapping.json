@@ -1,5 +1,5 @@
 {
-  "index_patterns": ["your_golang_project_logs-*"],
+  "index_patterns": ["applicative_logs-*"],
   "template": {
     "settings": {
       "number_of_shards": 1

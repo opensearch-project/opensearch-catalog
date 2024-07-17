@@ -158,7 +158,7 @@
       "content": "PUT _index_template/application_logs_template",
       "description": "Setup applicative logs index template in the dev console",
       "index-template": "https://github.com/opensearch-project/opensearch-catalog/tree/main/integrations/observability/golang_client/schemas/applicative-logs-1.0.0.mapping.json",
-      "index-pattern-name": "ss4o_logs-*-*"
+      "index-pattern-name": "applicative_logs-*"
     }
   ],
   "index-patterns": {
@@ -171,7 +171,7 @@
     "description": "Import index patterns `.ndjson` file to the saved objects",
     "index-pattern": "https://github.com/opensearch-project/opensearch-catalog/tree/main/integrations/observability/golang_client/assets/tutorial-1.0.0.ndjson",
     "index-patterns-name": [
-      "applicative_logs*"
+      "applicative_logs-*"
     ]
   },
   "sampleData": {
