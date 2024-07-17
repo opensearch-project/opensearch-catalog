@@ -23,6 +23,10 @@
     },
     "gallery": [
       {
+        "annotation": "Fluent-Bit getting started tutorial",
+        "path": "fluent-bit-getting-started-dashboard.png"
+      },
+      {
         "annotation": "Data-Prepper Logo",
         "path": "data-pepper.png"
       },
@@ -34,7 +38,7 @@
   },
   "components": [],
   "assets": [
-    { "name": "getting_started", "version": "1.0.0", "extension": "ndjson", "type": "savedObjectBundle", "workflows": ["dashboards"] }
+    { "name": "fluent-bit-csv-upload", "version": "1.0.0", "extension": "ndjson", "type": "savedObjectBundle", "workflows": ["dashboards"] }
   ],
   "sampleData": {
     "path": "logs.csv"
