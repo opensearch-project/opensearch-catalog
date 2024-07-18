@@ -46,7 +46,7 @@
     "live-sample": "true",
     "workflows": [
       {
-        "name": "fluent-bit",
+        "name": "Fluent-bit file upload",
         "description": "This is a fluent-bit based CSV file upload getting started instructions tutorial",
         "steps": [
           {
@@ -82,8 +82,8 @@
         ]
       },
       {
-        "name": "docker-compose",
-        "description": "This is a docker-composed based getting started live example ",
+        "name": "QuickStart",
+        "description": "This is a docker-composed based getting started live example with CSV file upload",
         "steps": [
           {
             "name": "Create docker-network",
