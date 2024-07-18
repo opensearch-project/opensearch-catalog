@@ -118,7 +118,7 @@
     "live-sample": "true",
     "workflows": [
       {
-        "name": "fluent-bit",
+        "name": "Connect to Nginx",
         "description": "This is a fluent-bit based getting started instructions tutorial",
         "steps": [
           {
@@ -163,8 +163,8 @@
         ]
       },
       {
-        "name": "docker-compose",
-        "description": "This is a docker-composed based getting started live example ",
+        "name": "Quick Start",
+        "description": "This is a fluent-bit based docker quick starting instructions tutorial with a live example",
         "steps": [
           {
             "name": "Create docker-network",
