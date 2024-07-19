@@ -28,7 +28,9 @@
     "gallery": [
       {
         "annotation": "golang Client Tutorial Dashboard",
-        "path": "dashboard.png"
+        "path": "dashboard.png",
+        "labels": ["dashboard","tutorial"],
+        "savedObject-id": "golang-getting-started-tutorial-1.0.0"
       }
     ]
   },
