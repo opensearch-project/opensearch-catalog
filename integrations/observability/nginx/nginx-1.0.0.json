@@ -34,11 +34,9 @@
     "gallery": [
       {
         "annotation": "NginX Dashboard",
-        "path": "dashboard1.png"
-      },
-      {
-        "annotation": "NginX Dashboard view",
-        "path": "dashboard2.png"
+        "path": "dashboard1.png",
+        "tags": ["dashboard"],
+        "savedObject-id": "nginx-dashboard-1.0.0"
       }
     ]
   },
