@@ -24,7 +24,9 @@
     "gallery": [
       {
         "annotation": "Fluent-Bit getting started tutorial",
-        "path": "fluent-bit-getting-started-dashboard.png"
+        "path": "fluent-bit-getting-started-dashboard.png",
+        "tags":["dashboard","tutorial"],
+        "savedObject-id": "csv-getting-started-tutorial-1.0.0"
       },
       {
         "annotation": "Data-Prepper Logo",
