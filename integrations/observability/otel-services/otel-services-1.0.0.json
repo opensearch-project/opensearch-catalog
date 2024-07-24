@@ -11,7 +11,7 @@
     "metrics"
   ],
   "author": "OpenSearch",
-  "sourceUrl": "https://github.com/opensearch-project/dashboards-observability/tree/main/server/adaptors/integrations/__data__/repository/otel-services/info",
+  "sourceUrl": "https://github.com/opensearch-project/opensearch-catalog/tree/main/integrations/observability/otel-services/info",
   "workflows": [
     {
       "name": "queries",
