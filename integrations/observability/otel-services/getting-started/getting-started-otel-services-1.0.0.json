@@ -271,6 +271,6 @@
     }
   },
   "sampleData": {
-    "path": "traces-samples.json"
+    "path": ["traces-samples.json","services-samples.json","metrics-samples.json","logs-samples.json"]
   }
 }
