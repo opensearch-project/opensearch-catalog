@@ -30,7 +30,6 @@
       }
     ]
   },
-  "components": [],
   "assets": [
     { "name": "tutorial", "version": "1.0.0", "extension": "ndjson", "type": "savedObjectBundle", "workflows": ["dashboards"] }
   ],
