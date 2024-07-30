@@ -7,7 +7,7 @@
   "type": "logs",
   "labels": ["Logs", "Unstructured"],
   "author": "OpenSearch",
-  "sourceUrl": "https://github.com/opensearch-project/dashboards-observability/tree/main/server/adaptors/integrations/__data__/repository/csv_file/info",
+  "sourceUrl": "https://github.com/opensearch-project/opensearch-catalog/tree/main/integrations/observability/getting-started/csv_file",
   "statics": {
     "logo": {
       "annotation": "CSV Logo",
