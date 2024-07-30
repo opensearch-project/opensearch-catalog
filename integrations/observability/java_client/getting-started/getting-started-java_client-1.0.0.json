@@ -179,32 +179,32 @@
           }
         ]
       }
-    ],
-    "schema": [
-      {
-        "type": "logs",
-        "info": [
-          "https://opensearch.org/docs/latest/im-plugin/index-templates"
-        ],
-        "content": "PUT _index_template/application_logs_template",
-        "description": "Setup applicative logs index template in the dev console",
-        "index-template": "https://github.com/opensearch-project/opensearch-catalog/tree/main/integrations/observability/java_client/schemas/applicative-logs-1.0.0.mapping.json",
-        "index-pattern-name": "applicative_logs-*"
-      }
-    ],
-    "index-patterns": {
-      "type": [
-        "logs"
-      ],
+    ]
+  },
+  "schema": [
+    {
+      "type": "logs",
       "info": [
-        "https://opensearch.org/docs/latest/dashboards/management/index-patterns/"
+        "https://opensearch.org/docs/latest/im-plugin/index-templates"
       ],
-      "description": "Import index patterns `.ndjson` file to the saved objects",
-      "index-pattern": "https://github.com/opensearch-project/opensearch-catalog/tree/main/integrations/observability/java_client/assets/tutorial-1.0.0.ndjson",
-      "index-patterns-name": [
-        "applicative_logs-*"
-      ]
+      "content": "PUT _index_template/application_logs_template",
+      "description": "Setup applicative logs index template in the dev console",
+      "index-template": "https://github.com/opensearch-project/opensearch-catalog/tree/main/integrations/observability/java_client/schemas/applicative-logs-1.0.0.mapping.json",
+      "index-pattern-name": "applicative_logs-*"
     }
+  ],
+  "index-patterns": {
+    "type": [
+      "logs"
+    ],
+    "info": [
+      "https://opensearch.org/docs/latest/dashboards/management/index-patterns/"
+    ],
+    "description": "Import index patterns `.ndjson` file to the saved objects",
+    "index-pattern": "https://github.com/opensearch-project/opensearch-catalog/tree/main/integrations/observability/java_client/assets/tutorial-1.0.0.ndjson",
+    "index-patterns-name": [
+      "applicative_logs-*"
+    ]
   },
   "sampleData": {
     "path": "sample.json"
