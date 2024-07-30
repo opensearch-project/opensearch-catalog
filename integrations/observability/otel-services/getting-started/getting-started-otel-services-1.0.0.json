@@ -222,53 +222,53 @@
           }
         ]
       }
-    ],
-    "schema": [
-      {
-        "type": "logs",
-        "info": ["https://opensearch.org/docs/latest/im-plugin/index-templates","https://github.com/opensearch-project/opensearch-catalog/blob/main/docs/schema/observability/Naming-convention.md"],
-        "content": "PUT _index_template/ss4o_logs_template",
-        "description": "Setup simple schema logs index template in the dev console, and than upload the index pattern corresponding to that template",
-        "index-template": "https://github.com/opensearch-project/opensearch-catalog/tree/main/integrations/observability/otel-services/schema/logs-1.0.0.mapping.json",
-        "alias": "otel-events",
-        "index-pattern-name": "ss4o_logs-*-*"
-      },
-      {
-        "type": "traces",
-        "info": ["https://opensearch.org/docs/latest/im-plugin/index-templates","https://github.com/opensearch-project/opensearch-catalog/blob/main/docs/schema/observability/Naming-convention.md"],
-        "content": "PUT _index_template/ss4o_traces_template",
-        "description": "Setup simple schema traces index template in the dev console, and than upload the index pattern corresponding to that template",
-        "index-template": "https://github.com/opensearch-project/opensearch-catalog/tree/main/integrations/observability/otel-services/schema/traces-1.0.0.mapping.json",
-        "alias": "otel-v1-apm-span",
-        "index-pattern-name": "ss4o_traces-*-*"
-      },
-      {
-        "type": "services",
-        "info": ["https://opensearch.org/docs/latest/im-plugin/index-templates","https://github.com/opensearch-project/opensearch-catalog/blob/main/docs/schema/observability/Naming-convention.md"],
-        "content": "PUT _index_template/ss4o_services_template",
-        "description": "Setup simple schema services index template in the dev console, and than upload the index pattern corresponding to that template",
-        "index-template": "https://github.com/opensearch-project/opensearch-catalog/tree/main/integrations/observability/otel-services/schema/services-1.0.0.mapping.json",
-        "alias": "otel-v1-apm-service-map",
-        "index-pattern-name": "ss4o_services-*-*"
-      },
-      {
-        "type": "metrics",
-        "info": ["https://opensearch.org/docs/latest/im-plugin/index-templates","https://github.com/opensearch-project/opensearch-catalog/blob/main/docs/schema/observability/Naming-convention.md"],
-        "content": "PUT _index_template/ss4o_metrics_template",
-        "description": "Setup simple schema metrics index template in the dev console, and than upload the index pattern corresponding to that template",
-        "index-template": "https://github.com/opensearch-project/opensearch-catalog/tree/main/integrations/observability/otel-services/schema/metrics-1.0.0.mapping.json",
-        "alias": "otel-metrics",
-        "index-pattern-name": "ss4o_metrics-*-*"
-      }
-    ],
-    "index-patterns": {
-      "type": ["logs","services","traces","metrics"],
-      "info": ["https://opensearch.org/docs/latest/dashboards/management/index-patterns/"],
-      "description": "Import index patterns `.ndjson` file to the saved objects",
-      "index-pattern": "https://github.com/opensearch-project/opensearch-catalog/tree/main/integrations/observability/otel-services/assets/otel-index-patterns-1.0.0.ndjson",
-      "index-patterns-name": ["otel-v1-apm-span*","ss4o_metrics*","otel-events-*","otel-v1-apm-service-map"]
-
+    ]
+  },
+  "schema": [
+    {
+      "type": "logs",
+      "info": ["https://opensearch.org/docs/latest/im-plugin/index-templates","https://github.com/opensearch-project/opensearch-catalog/blob/main/docs/schema/observability/Naming-convention.md"],
+      "content": "PUT _index_template/ss4o_logs_template",
+      "description": "Setup simple schema logs index template in the dev console, and than upload the index pattern corresponding to that template",
+      "index-template": "https://github.com/opensearch-project/opensearch-catalog/tree/main/integrations/observability/otel-services/schema/logs-1.0.0.mapping.json",
+      "alias": "otel-events",
+      "index-pattern-name": "ss4o_logs-*-*"
+    },
+    {
+      "type": "traces",
+      "info": ["https://opensearch.org/docs/latest/im-plugin/index-templates","https://github.com/opensearch-project/opensearch-catalog/blob/main/docs/schema/observability/Naming-convention.md"],
+      "content": "PUT _index_template/ss4o_traces_template",
+      "description": "Setup simple schema traces index template in the dev console, and than upload the index pattern corresponding to that template",
+      "index-template": "https://github.com/opensearch-project/opensearch-catalog/tree/main/integrations/observability/otel-services/schema/traces-1.0.0.mapping.json",
+      "alias": "otel-v1-apm-span",
+      "index-pattern-name": "ss4o_traces-*-*"
+    },
+    {
+      "type": "services",
+      "info": ["https://opensearch.org/docs/latest/im-plugin/index-templates","https://github.com/opensearch-project/opensearch-catalog/blob/main/docs/schema/observability/Naming-convention.md"],
+      "content": "PUT _index_template/ss4o_services_template",
+      "description": "Setup simple schema services index template in the dev console, and than upload the index pattern corresponding to that template",
+      "index-template": "https://github.com/opensearch-project/opensearch-catalog/tree/main/integrations/observability/otel-services/schema/services-1.0.0.mapping.json",
+      "alias": "otel-v1-apm-service-map",
+      "index-pattern-name": "ss4o_services-*-*"
+    },
+    {
+      "type": "metrics",
+      "info": ["https://opensearch.org/docs/latest/im-plugin/index-templates","https://github.com/opensearch-project/opensearch-catalog/blob/main/docs/schema/observability/Naming-convention.md"],
+      "content": "PUT _index_template/ss4o_metrics_template",
+      "description": "Setup simple schema metrics index template in the dev console, and than upload the index pattern corresponding to that template",
+      "index-template": "https://github.com/opensearch-project/opensearch-catalog/tree/main/integrations/observability/otel-services/schema/metrics-1.0.0.mapping.json",
+      "alias": "otel-metrics",
+      "index-pattern-name": "ss4o_metrics-*-*"
     }
+  ],
+  "index-patterns": {
+    "type": ["logs","services","traces","metrics"],
+    "info": ["https://opensearch.org/docs/latest/dashboards/management/index-patterns/"],
+    "description": "Import index patterns `.ndjson` file to the saved objects",
+    "index-pattern": "https://github.com/opensearch-project/opensearch-catalog/tree/main/integrations/observability/otel-services/assets/otel-index-patterns-1.0.0.ndjson",
+    "index-patterns-name": ["otel-v1-apm-span*","ss4o_metrics*","otel-events-*","otel-v1-apm-service-map"]
+
   },
   "sampleData": {
     "path": ["traces-samples.json","services-samples.json","metrics-samples.json","logs-samples.json"]
