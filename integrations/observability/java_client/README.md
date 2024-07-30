@@ -1,4 +1,3 @@
-```markdown
 # OpenSearch Java Client Documentation
 
 The OpenSearch Java client allows you to interact with your OpenSearch clusters through Java methods and data structures rather than HTTP methods and raw JSON. This guide illustrates how to connect to OpenSearch, index documents, and run queries.
