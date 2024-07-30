@@ -44,6 +44,7 @@
     { "name": "logs", "version": "1.0.0" }
   ],
   "assets": [
+    { "name": "getting-started-tutorial", "version": "1.0.0", "extension": "ndjson", "type": "savedObjectBundle", "workflows": ["dashboards"] },
     { "name": "nginx", "version": "1.0.0", "extension": "ndjson", "type": "savedObjectBundle", "workflows": ["dashboards"] },
     { "name": "create_table", "version": "1.0.0", "extension": "sql", "type": "query" },
     { "name": "create_skipping_index", "version": "1.0.0", "extension": "sql", "type": "query", "workflows": ["queries"] },
