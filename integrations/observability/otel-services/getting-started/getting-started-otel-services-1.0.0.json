@@ -50,24 +50,6 @@
       }
     ]
   },
-  "components": [
-    {
-      "name": "logs",
-      "version": "1.0.0"
-    },
-    {
-      "name": "metrics",
-      "version": "1.0.0"
-    },
-    {
-      "name": "services",
-      "version": "1.0.0"
-    },
-    {
-      "name": "traces",
-      "version": "1.0.0"
-    }
-  ],
   "assets": [
     {
       "name": "getting-started-demo",
@@ -93,7 +75,7 @@
     "structured": "true",
     "technology": "OpenTelemetry",
     "protocol": ["otel"],
-    "info": "https://github.com/opensearch-project/opensearch-catalog/tree/main/integrations/observability/otel-services/info/Tutorial.md",
+    "info": "https://github.com/opensearch-project/opensearch-catalog/tree/main/integrations/observability/otel-services/getting-started/GettingStarted.md",
     "live-sample": "true",
     "workflows": [
       {
