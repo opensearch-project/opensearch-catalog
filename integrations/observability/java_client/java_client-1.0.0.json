@@ -1,0 +1,38 @@
+{
+  "name": "java-client",
+  "version": "1.0.0",
+  "displayName": "java client",
+  "description": "java applicative logs",
+  "license": "Apache-2.0",
+  "type": "logs",
+  "labels": ["Observability", "Logs", "java"],
+  "author": "OpenSearch",
+  "sourceUrl": "https://github.com/opensearch-project/opensearch-catalog/tree/main/integrations/observability/java_client",
+  "workflows": [
+    {
+      "name": "dashboards",
+      "label": "Dashboards & Visualizations",
+      "description": "Dashboards and indices that enable you to easily visualize important metrics.",
+      "enabled_by_default": true
+    }
+  ],
+  "statics": {
+    "logo": {
+      "annotation": "java Logo",
+      "path": "logo.svg"
+    },
+    "gallery": [
+      {
+        "annotation": "java Client Tutorial Dashboard",
+        "path": "dashboard.png"
+      }
+    ]
+  },
+  "components": [],
+  "assets": [
+    { "name": "tutorial", "version": "1.0.0", "extension": "ndjson", "type": "savedObjectBundle", "workflows": ["dashboards"] }
+  ],
+  "sampleData": {
+    "path": "sample.json"
+  }
+}

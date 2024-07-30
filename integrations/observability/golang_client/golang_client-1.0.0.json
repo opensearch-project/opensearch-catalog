@@ -1,0 +1,50 @@
+{
+  "name": "golang-client",
+  "version": "1.0.0",
+  "displayName": "golang client",
+  "description": "golang applicative logs",
+  "license": "Apache-2.0",
+  "type": "logs",
+  "labels": [
+    "Observability",
+    "Logs",
+    "golang"
+  ],
+  "author": "OpenSearch",
+  "sourceUrl": "https://github.com/opensearch-project/opensearch-catalog/tree/main/integrations/observability/golang_client",
+  "workflows": [
+    {
+      "name": "dashboards",
+      "label": "Dashboards & Visualizations",
+      "description": "Dashboards and indices that enable you to easily visualize important metrics.",
+      "enabled_by_default": false
+    }
+  ],
+  "statics": {
+    "logo": {
+      "annotation": "golang Logo",
+      "path": "logo.png"
+    },
+    "gallery": [
+      {
+        "annotation": "golang Client Tutorial Dashboard",
+        "path": "dashboard.png"
+      }
+    ]
+  },
+  "components": [],
+  "assets": [
+    {
+      "name": "tutorial",
+      "version": "1.0.0",
+      "extension": "ndjson",
+      "type": "savedObjectBundle",
+      "workflows": [
+        "dashboards"
+      ]
+    }
+  ],
+  "sampleData": {
+    "path": "sample.json"
+  }
+}

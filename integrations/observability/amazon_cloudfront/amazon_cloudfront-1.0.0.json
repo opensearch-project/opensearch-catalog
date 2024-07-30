@@ -7,7 +7,7 @@
   "type": "logs-aws_cloudfront",
   "labels": ["Observability", "Logs", "AWS", "Cloud", "Flint S3"],
   "author": "OpenSearch",
-  "sourceUrl": "https://github.com/opensearch-project/dashboards-observability/tree/main/server/adaptors/integrations/__data__/repository/aws_cloudfront/info",
+  "sourceUrl": "https://github.com/opensearch-project/opensearch-catalog/tree/main/integrations/observability/amazon_cloudfront/info",
   "statics": {
     "logo": {
       "annotation": "CloudFront Logo",
