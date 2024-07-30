@@ -1,0 +1,46 @@
+{
+  "name": "csv",
+  "version": "1.0.0",
+  "displayName": "csv-file",
+  "description": "Upload a CSV file",
+  "license": "Apache-2.0",
+  "type": "logs",
+  "labels": ["Logs", "Unstructured"],
+  "author": "OpenSearch",
+  "sourceUrl": "https://github.com/opensearch-project/opensearch-catalog/tree/main/integrations/observability/csv_file",
+  "workflows": [
+    {
+      "name": "dashboards",
+      "label": "Dashboards & Visualizations",
+      "description": "Dashboards and indices that enable you to easily visualize important metrics.",
+      "enabled_by_default": false
+    }
+  ],
+  "statics": {
+    "logo": {
+      "annotation": "CSV Logo",
+      "path": "logo.svg"
+    },
+    "gallery": [
+      {
+        "annotation": "Fluent-Bit getting started tutorial",
+        "path": "fluent-bit-getting-started-dashboard.png"
+      },
+      {
+        "annotation": "Data-Prepper Logo",
+        "path": "data-pepper.png"
+      },
+      {
+        "annotation": "Fluent-Bit Logo",
+        "path": "fluentbit.png"
+      }
+    ]
+  },
+  "components": [],
+  "assets": [
+    { "name": "fluent-bit-csv-upload", "version": "1.0.0", "extension": "ndjson", "type": "savedObjectBundle", "workflows": ["dashboards"] }
+  ],
+  "sampleData": {
+    "path": "logs.csv"
+  }
+}

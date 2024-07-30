@@ -64,7 +64,7 @@
       }
     },
     "aliases" : {
-      "open otel-v1-apm-service-map" : {}
+      "otel-v1-apm-service-map" : {}
     },
     "settings": {
       "index": {
