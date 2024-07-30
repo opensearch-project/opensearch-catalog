@@ -26,20 +26,6 @@
       }
     ]
   },
-  "components": [
-    {
-      "name": "communication",
-      "version": "1.0.0"
-    },
-    {
-      "name": "http",
-      "version": "1.0.0"
-    },
-    {
-      "name": "logs",
-      "version": "1.0.0"
-    }
-  ],
   "assets": [
     {
       "name": "getting-started-tutorial",
