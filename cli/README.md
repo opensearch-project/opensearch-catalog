@@ -24,6 +24,17 @@ $ pip install --editable .
 $ osints
 ```
 
+You can also install this as a python `venv` virtual python environment:
+
+```bash
+python3 -m venv venv && source ./venv/bin/activate && pip install -r requirements.txt
+````
+
+And then :
+```bash
+pip install .
+```
+
 Or you can skip the install entirely and run it as a module:
 
 ```bash

@@ -7,7 +7,7 @@
   "type": "logs-k8s",
   "labels": ["Observability", "Logs", "Cloud"],
   "author": "OpenSearch",
-  "sourceUrl": "https://github.com/opensearch-project/dashboards-observability/tree/main/server/adaptors/integrations/__data__/repository/k8s/info",
+  "sourceUrl": "https://github.com/opensearch-project/opensearch-catalog/tree/main/integrations/observability/k8s/info",
   "statics": {
     "logo": {
       "annotation": "Kubernetes Logo",

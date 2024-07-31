@@ -7,7 +7,7 @@
   "type": "logs",
   "labels": ["Observability", "Logs", "Flint S3"],
   "author": "OpenSearch",
-  "sourceUrl": "https://github.com/opensearch-project/dashboards-observability/tree/main/server/adaptors/integrations/__data__/repository/nginx/info",
+  "sourceUrl": "https://github.com/opensearch-project/opensearch-catalog/tree/main/integrations/observability/nginx/info",
   "workflows": [
     {
       "name": "queries",
@@ -44,6 +44,7 @@
     { "name": "logs", "version": "1.0.0" }
   ],
   "assets": [
+    { "name": "getting-started-tutorial", "version": "1.0.0", "extension": "ndjson", "type": "savedObjectBundle", "workflows": ["dashboards"] },
     { "name": "nginx", "version": "1.0.0", "extension": "ndjson", "type": "savedObjectBundle", "workflows": ["dashboards"] },
     { "name": "create_table", "version": "1.0.0", "extension": "sql", "type": "query" },
     { "name": "create_skipping_index", "version": "1.0.0", "extension": "sql", "type": "query", "workflows": ["queries"] },
