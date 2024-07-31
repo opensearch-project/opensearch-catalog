@@ -113,14 +113,14 @@ If you prefer to test this setup using Docker Compose, you can use the following
 Under the `getting-started` section you can examine a live docker-compose sample:
 ```yaml
 /csv_file/getting-started/fluent-bit
-|-- docker-complete.yml
+|-- docker-compose.yml
 |-- data/
     |-- fluent-bit.conf
     |-- parsers.conf
     |-- logs.csv
 
 ```
-Use the [docker-compose](fluent-bit/docker-complete.yml) you can find a complete:
+Use the [docker-compose](docker-compose.yml) you can find a complete:
 
 `docker compose -f docker-complete.yml up -d` would instantiate the services and start sending the csv sample logs into an index. 
 

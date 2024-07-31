@@ -31,22 +31,20 @@ services:
       memlock:
         soft: -1
         hard: -1
-    volumes:
-      - opensearch-data:/usr/share/opensearch/data
     ports:
       - 9200:9200
       - 9600:9600
     networks:
       - opensearch-net
-
   fluent-bit:
-    image: fluent/fluent-bit:latest
     container_name: fluent-bit
+    image: fluent/fluent-bit:latest
     volumes:
-      - ./data:/fluent-bit/data
-    command: ["/fluent-bit/bin/fluent-bit", "-c", "/fluent-bit/data/fluent-bit.conf"]
-    depends_on:
-      - opensearch-node1
+      - ./logs:/logs
+      - ./fluent-bit:/fluent-bit/etc
+    ports:
+      - "24224:24224"
+      - "24224:24224/udp"
     networks:
       - opensearch-net
 
