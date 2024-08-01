@@ -1,0 +1,20 @@
+  exporters:
+    otlp:
+      endpoint: "<your-DataPrepper-url>"
+      tls:
+        cert_file: "./cert.pem"
+        key_file: "./key.pem"
+  metrics-pipeline:
+    source:
+    otel_metrics_source:
+      ssl: true
+      sslKeyCertChainFile: "./cert.pem"
+      sslKeyFile: "./key.pem"
+    processor:
+      - otel_metrics:
+    sink:
+      - opensearch:
+          hosts: [ "<your-OpenSearch-url>" ]
+          username: "otelWriter"
+          password: "<your-password>"
+          index: "ss4o_metrics-k8s-%{yyyy.MM.dd}"
