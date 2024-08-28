@@ -1,28 +1,34 @@
 {
     "id": "rollover-expiration-policy",
-    "seqNo": 61420,
+    "seqNo": 62652,
     "primaryTerm": 1,
     "policy": {
         "policy_id": "rollover-expiration-policy",
         "description": "A sample description of the policy",
-        "last_updated_time": 1724666614211,
+        "last_updated_time": 1724846473789,
         "schema_version": 21,
-        "error_notification": null,
+        "error_notification": {
+            "channel": {
+                "id": "gmJ6kpEBF-og_hBde60R"
+            },
+            "message_template": {
+                "source": "",
+                "lang": "mustache"
+            }
+        },
         "default_state": "rollover",
         "states": [
             {
                 "name": "rollover",
                 "actions": [
                     {
-                        "timeout": "6h",
                         "retry": {
                             "count": 3,
                             "backoff": "exponential",
-                            "delay": "1h"
+                            "delay": "1m"
                         },
                         "rollover": {
                             "min_size": "40gb",
-                            "min_doc_count": 5,
                             "min_index_age": "1d",
                             "copy_alias": false
                         }

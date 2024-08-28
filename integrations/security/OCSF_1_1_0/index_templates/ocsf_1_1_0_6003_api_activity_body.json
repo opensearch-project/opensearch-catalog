@@ -4,6 +4,7 @@
     ],
     "template":{
         "settings":{
+            "index.plugins.index_state_management.rollover_alias": "ocsf-1.1.0-6003-api_activity",
             "index.number_of_shards":3,
             "index.number_of_replicas":1,
             "index.mapping.total_fields.limit": 3000

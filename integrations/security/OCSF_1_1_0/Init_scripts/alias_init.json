@@ -1,0 +1,93 @@
+PUT /%3Cocsf-1.1.0-2002-vulnerability_finding-%7Bnow%2Fd%7D-000000%3E
+
+POST _aliases
+{
+  "actions": [
+    {
+      "add": {
+        "index": "ocsf-1.1.0-2002-vulnerability_finding-*",
+        "alias": "ocsf-1.1.0-2002-vulnerability_finding"
+      }
+    }
+  ]
+}
+
+
+PUT /%3Cocsf-1.1.0-2003-compliance_finding-%7Bnow%2Fd%7D-000000%3E
+POST _aliases
+{
+  "actions": [
+    {
+      "add": {
+        "index": "ocsf-1.1.0-2003-compliance_finding-*",
+        "alias": "ocsf-1.1.0-2003-compliance_finding"
+      }
+    }
+  ]
+}
+
+
+PUT /%3Cocsf-1.1.0-2004-vulnerability_finding-%7Bnow%2Fd%7D-000000%3E
+POST _aliases
+{
+  "actions": [
+    {
+      "add": {
+        "index": "ocsf-1.1.0-2004-vulnerability_finding-*",
+        "alias": "ocsf-1.1.0-2004-vulnerability_finding"
+      }
+    }
+  ]
+}
+
+PUT /%3Cocsf-1.1.0-3002-authentication-%7Bnow%2Fd%7D-000000%3E
+POST _aliases
+{
+    "actions": [
+      {
+        "add": {
+          "index": "ocsf-1.1.0-3002-authentication-*",
+          "alias": "ocsf-1.1.0-3002-authentication"
+        }
+      }
+    ]
+  }
+
+PUT /%3Cocsf-1.1.0-4001-network_activity-%7Bnow%2Fd%7D-000000%3E
+POST _aliases
+{
+    "actions": [
+      {
+        "add": {
+          "index": "ocsf-1.1.0-4001-network_activity-*",
+          "alias": "ocsf-1.1.0-4001-network_activity"
+        }
+      }
+    ]
+  }
+
+PUT /%3Cocsf-1.1.0-4003-dns_activity-%7Bnow%2Fd%7D-000000%3E
+POST _aliases
+{
+    "actions": [
+      {
+        "add": {
+          "index": "ocsf-1.1.0-4003-dns_activity-*",
+          "alias": "ocsf-1.1.0-4003-dns_activity"
+        }
+      }
+    ]
+  }
+
+PUT /%3Cocsf-1.1.0-6003-api_activity-%7Bnow%2Fd%7D-000000%3E
+POST _aliases
+{
+    "actions": [
+      {
+        "add": {
+          "index": "ocsf-1.1.0-6003-api_activity-*",
+          "alias": "ocsf-1.1.0-6003-api_activity"
+        }
+      }
+    ]
+  }
