@@ -1,0 +1,26 @@
+{
+    "image":{
+        "properties":{
+            "name":{
+                "type": "keyword",
+                "ignore_above":128
+            },
+            "tag":{
+                "type": "keyword",
+                "ignore_above":128
+            },
+            "labels":{
+                "type": "keyword",
+                "ignore_above":128
+            },
+            "path":{
+                "type": "keyword",
+                "ignore_above":256
+            },
+            "uid":{
+                "type": "keyword",
+                "ignore_above":64
+            }
+        }
+    }
+}

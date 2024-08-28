@@ -1,0 +1,25 @@
+{
+    "epss":{
+        "properties":{
+            "created_time":{
+                "type":"date",
+                "format":"yyyy-MM-dd HH:mm:ss||yyyy-MM-dd||epoch_millis"
+            },
+            "created_time_dt":{
+                "type":"date",
+                "format":"yyyy-MM-dd HH:mm:ss||yyyy-MM-dd||epoch_millis"
+            },
+            "score":{
+                "type":"keyword",
+                "ignore_above":16
+            },
+            "percentile":{
+                "type":"float"
+            },
+            "version":{
+                "type":"keyword",
+                "ignore_above":16
+            }
+        }
+    }
+}

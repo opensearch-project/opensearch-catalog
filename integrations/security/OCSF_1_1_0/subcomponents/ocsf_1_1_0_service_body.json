@@ -1,0 +1,22 @@
+{
+    "service":{
+        "properties":{
+            "labels":{
+                "type":"keyword",
+                "ignore_above":64
+            },
+            "name":{
+                "type":"keyword",
+                "ignore_above":64
+            },
+            "uid":{
+                "type":"keyword",
+                "ignore_above":64
+            },
+            "version":{
+                "type":"keyword",
+                "ignore_above":32
+            }
+        }
+    }
+}

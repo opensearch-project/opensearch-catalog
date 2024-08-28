@@ -1,0 +1,32 @@
+{
+    "template":{
+        "mappings":{
+            "properties":{
+                "entity_result":{
+                    "properties":{
+                        "data":{
+                            "type":"object"
+                        },
+                        "name":{
+                            "type":"keyword",
+                            "ignore_above":256
+                        },
+                        "type":{
+                            "type":"keyword",
+                            "ignore_above":256
+                        },
+                        "uid":{
+                            "type":"keyword",
+                            "ignore_above":256
+                        },
+                        "version":{
+                            "type":"keyword",
+                            "ignore_above":32
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+

@@ -1,0 +1,19 @@
+{
+    "cwe":{
+        "properties":{
+            "uid":{
+                "type":"keyword",
+                "ignore_above":64
+            },
+            "caption":{
+                "type":"keyword",
+                "ignore_above":64
+            },
+            "src_url":{
+                "type":"keyword",
+                "ignore_above":1024
+            }
+        }
+    }
+
+}

@@ -1,0 +1,13 @@
+{
+    "kill_chain":{
+        "properties":{
+            "phase":{
+                "type":"keyword",
+                "ignore_above":32
+            },
+            "phase_id":{
+                "type":"integer"
+            }
+        }
+    }
+}

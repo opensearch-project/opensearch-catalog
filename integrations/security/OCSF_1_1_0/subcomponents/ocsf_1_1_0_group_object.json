@@ -1,0 +1,35 @@
+{
+    "groups":{
+        "properties":{
+            "type":{
+                "type":"keyword",
+                "ignore_above":64
+            },
+            "desc":{
+                "type":"text",
+                "fields":{
+                    "keyword":{
+                        "type":"keyword",
+                        "ignore_above":256
+                    }
+                }
+            },
+            "domain":{
+                "type":"keyword",
+                "ignore_above":64
+            },
+            "name":{
+                "type":"keyword",
+                "ignore_above":64
+            },
+            "privileges":{
+                "type":"keyword",
+                "ignore_above":64
+            },
+            "uid":{
+                "type":"keyword",
+                "ignore_above":64
+            }
+        }
+    }
+}

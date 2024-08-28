@@ -1,0 +1,18 @@
+{
+    "feature":{
+        "properties":{
+            "name":{
+                "type":"keyword",
+                "ignore_above":256
+            },
+            "uid":{
+                "type":"keyword",
+                "ignore_above":256
+            },
+            "version":{
+                "type":"keyword",
+                "ignore_above":256
+            }
+        }
+    }
+}

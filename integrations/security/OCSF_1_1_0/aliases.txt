@@ -1,0 +1,7 @@
+ocsf-1.1.0-6003-api_activity
+ocsf-1.1.0-4003-dns_activity
+ocsf-1.1.0-4001-network_activity
+ocsf-1.1.0-3002-authentication
+ocsf-1.1.0-2004-detection_finding
+ocsf-1.1.0-2003-compliance_finding
+ocsf-1.1.0-2002-vulnerability_finding

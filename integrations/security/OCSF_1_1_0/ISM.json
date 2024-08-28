@@ -1,0 +1,71 @@
+{
+    "id": "rollover-expiration-policy",
+    "seqNo": 61420,
+    "primaryTerm": 1,
+    "policy": {
+        "policy_id": "rollover-expiration-policy",
+        "description": "A sample description of the policy",
+        "last_updated_time": 1724666614211,
+        "schema_version": 21,
+        "error_notification": null,
+        "default_state": "rollover",
+        "states": [
+            {
+                "name": "rollover",
+                "actions": [
+                    {
+                        "timeout": "6h",
+                        "retry": {
+                            "count": 3,
+                            "backoff": "exponential",
+                            "delay": "1h"
+                        },
+                        "rollover": {
+                            "min_size": "40gb",
+                            "min_doc_count": 5,
+                            "min_index_age": "1d",
+                            "copy_alias": false
+                        }
+                    }
+                ],
+                "transitions": []
+            },
+            {
+                "name": "hot",
+                "actions": [],
+                "transitions": [
+                    {
+                        "state_name": "delete",
+                        "conditions": {
+                            "min_index_age": "15d"
+                        }
+                    }
+                ]
+            },
+            {
+                "name": "delete",
+                "actions": [
+                    {
+                        "timeout": "5h",
+                        "retry": {
+                            "count": 3,
+                            "backoff": "exponential",
+                            "delay": "1h"
+                        },
+                        "delete": {}
+                    }
+                ],
+                "transitions": []
+            }
+        ],
+        "ism_template": [
+            {
+                "index_patterns": [
+                    "ocsf-*"
+                ],
+                "priority": 9,
+                "last_updated_time": 1724666614211
+            }
+        ]
+    }
+}

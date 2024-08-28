@@ -1,0 +1,41 @@
+{
+    "request":{
+        "properties":{
+            "base_score":{
+                "type":"float"
+            },
+            "depth":{
+                "type":"keyword",
+                "ignore_above":16
+            },
+            "metrics":{
+                "properties":{
+                    "name":{
+                        "type":"keyword",
+                        "ignore_above":64
+                    },
+                    "value":{
+                        "type":"keyword",
+                        "ignore_above":256
+                    }
+                }
+            },
+            "overall_score":{
+                "type":"float"
+            },
+            "severity":{
+                "type":"keyword",
+                "ignore_above":32
+            },
+            "vector_string":{
+                "type":"keyword",
+                "ignore_above":128
+            },
+            "version":{
+                "type":"keyword",
+                "ignore_above":64
+            }
+        }
+    }
+}
+

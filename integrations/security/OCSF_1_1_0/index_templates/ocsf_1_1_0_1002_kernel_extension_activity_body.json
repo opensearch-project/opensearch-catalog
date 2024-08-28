@@ -1,0 +1,50 @@
+{
+    "index_patterns":[
+        "ocsf-1.1.0-1002*"
+    ],
+    "template":{
+        "settings":{
+            "number_of_shards":3,
+            "number_of_replicas":1,
+            "index.mapping.total_fields.limit": 3000 
+        },
+        "mappings":{
+            "properties":{
+                "action":{
+                    "type":"keyword",
+                    "ignore_above":64
+                },
+                "action_id":{
+                    "type":"integer"
+                },
+                "dispostion":{
+                    "type":"keyword",
+                    "ignore_above":64
+                },
+                "disposition_id":{
+                    "type":"integer"
+                }
+            }
+        }
+    },
+    "composed_of":[
+        "ocsf_1_1_0_base_event",
+        "ocsf_1_1_0_api",
+        "ocsf_1_1_0_actor",
+        "ocsf_1_1_0_authorizations",
+        "ocsf_1_1_0_attacks",
+        "ocsf_1_1_0_cloud",
+        "ocsf_1_1_0_device",
+	    "ocsf_1_1_0_driver",
+        "ocsf_1_1_0_enrichments",
+        "ocsf_1_1_0_firewall_rule",
+        "ocsf_1_1_0_malware",
+        "ocsf_1_1_0_metadata",
+        "ocsf_1_1_0_observables"
+    ],
+    "version":1,
+    "_meta":{
+        "description":"Kernel Extension Activity - 1002 - schema version OCSF v1.1.0"
+    }
+}
+
