@@ -192,7 +192,7 @@ curl -X PUT "$ES_ENDPOINT/_plugins/_ism/policies/rollover-expiration-policy" \
 -H "Content-Type: application/json" -u "$ES_USERNAME:$ES_PASSWORD" -d '{
     "policy": {
         "policy_id": "rollover-expiration-policy",
-        "description": "This policy rollsover the index ",
+        "description": "This policy rollsover the index daily or if it reaches 40gb. It also expires logs older than 15 days",
         "default_state": "rollover",
         "states": [
             {

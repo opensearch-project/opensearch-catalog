@@ -1,7 +1,4 @@
 {
-    "id": "rollover-expiration-policy",
-    "seqNo": 62652,
-    "primaryTerm": 1,
     "policy": {
         "policy_id": "rollover-expiration-policy",
         "description": "A sample description of the policy",
