@@ -12,6 +12,17 @@ POST _aliases
   ]
 }
 
+PUT /%3Cocsf-1.1.0-2002-vulnerability_finding-%7Bnow%2Fd%7D-000000%3E/_settings
+{
+  "index": {
+    "plugins": {
+      "index_state_management": {
+        "rollover_alias": "ocsf-1.1.0-4001-network_activity"
+      }
+    }
+  }
+}
+
 
 PUT /%3Cocsf-1.1.0-2003-compliance_finding-%7Bnow%2Fd%7D-000000%3E
 POST _aliases
@@ -25,6 +36,17 @@ POST _aliases
     }
   ]
 }
+PUT /%3Cocsf-1.1.0-2003-compliance_finding-%7Bnow%2Fd%7D-000000%3E/_settings
+{
+  "index": {
+    "plugins": {
+      "index_state_management": {
+        "rollover_alias": "ocsf-1.1.0-4001-network_activity"
+      }
+    }
+  }
+}
+
 
 
 PUT /%3Cocsf-1.1.0-2004-vulnerability_finding-%7Bnow%2Fd%7D-000000%3E
@@ -39,6 +61,16 @@ POST _aliases
     }
   ]
 }
+PUT /%3Cocsf-1.1.0-2004-vulnerability_finding-%7Bnow%2Fd%7D-000000%3E/_settings
+{
+  "index": {
+    "plugins": {
+      "index_state_management": {
+        "rollover_alias": "ocsf-1.1.0-4001-network_activity"
+      }
+    }
+  }
+}
 
 PUT /%3Cocsf-1.1.0-3002-authentication-%7Bnow%2Fd%7D-000000%3E
 POST _aliases
@@ -51,6 +83,16 @@ POST _aliases
         }
       }
     ]
+  }
+PUT /%3Cocsf-1.1.0-3002-authentication-%7Bnow%2Fd%7D-000000%3E/_settings
+  {
+    "index": {
+      "plugins": {
+        "index_state_management": {
+          "rollover_alias": "ocsf-1.1.0-4001-network_activity"
+        }
+      }
+    }
   }
 
 PUT /%3Cocsf-1.1.0-4001-network_activity-%7Bnow%2Fd%7D-000000%3E
@@ -65,6 +107,16 @@ POST _aliases
       }
     ]
   }
+PUT /%3Cocsf-1.1.0-4001-network_activity-%7Bnow%2Fd%7D-000000%3E/_settings
+{
+"index": {
+    "plugins": {
+    "index_state_management": {
+        "rollover_alias": "ocsf-1.1.0-4001-network_activity"
+    }
+    }
+}
+}
 
 PUT /%3Cocsf-1.1.0-4003-dns_activity-%7Bnow%2Fd%7D-000000%3E
 POST _aliases
@@ -77,6 +129,16 @@ POST _aliases
         }
       }
     ]
+  }
+PUT /%3Cocsf-1.1.0-4003-dns_activity-%7Bnow%2Fd%7D-000000%3E/_settings
+  {
+    "index": {
+      "plugins": {
+        "index_state_management": {
+          "rollover_alias": "ocsf-1.1.0-4003-dns_activity"
+        }
+      }
+    }
   }
 
 PUT /%3Cocsf-1.1.0-6003-api_activity-%7Bnow%2Fd%7D-000000%3E
