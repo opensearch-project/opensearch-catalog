@@ -12,13 +12,8 @@
                             "type":"integer"
                         },
                         "hostname":{
-                            "type":"text",
-                            "fields":{
-                                "keyword":{
-                                    "type":"keyword",
-                                    "ignore_above":256
-                                }
-                            }
+                            "type":"keyword",
+                            "ignore_above":256
                         },
                         "packet_uid":{
                             "type":"integer"

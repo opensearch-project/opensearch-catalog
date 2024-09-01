@@ -38,7 +38,7 @@ curl -X PUT $ES_ENDPOINT/%3Cocsf-1.1.0-2002-vulnerability_finding-%7Bnow%2Fd%7D-
   "index": {
     "plugins": {
       "index_state_management": {
-        "rollover_alias": "ocsf-1.1.0-4001-network_activity"
+        "rollover_alias": "ocsf-1.1.0-2002-vulnerability_finding"
       }
     }
   }
@@ -62,31 +62,31 @@ curl -X PUT $ES_ENDPOINT/%3Cocsf-1.1.0-2003-compliance_finding-%7Bnow%2Fd%7D-000
   "index": {
     "plugins": {
       "index_state_management": {
-        "rollover_alias": "ocsf-1.1.0-4001-network_activity"
+        "rollover_alias": "ocsf-1.1.0-2003-compliance_finding"
       }
     }
   }
 }'
 
-# Create the vulnerability_finding-2004 index and alias
-curl -X PUT $ES_ENDPOINT/%3Cocsf-1.1.0-2004-vulnerability_finding-%7Bnow%2Fd%7D-000000%3E -H 'Content-Type: application/json' -u "$ES_USERNAME:$ES_PASSWORD" -d '{}'
+# Create the detection_finding index and alias
+curl -X PUT $ES_ENDPOINT/%3Cocsf-1.1.0-2004-detection_finding-%7Bnow%2Fd%7D-000000%3E -H 'Content-Type: application/json' -u "$ES_USERNAME:$ES_PASSWORD" -d '{}'
 curl -X POST $ES_ENDPOINT/_aliases -H 'Content-Type: application/json' -u "$ES_USERNAME:$ES_PASSWORD" -d '{
   "actions": [
     {
       "add": {
-        "index": "ocsf-1.1.0-2004-vulnerability_finding-*",
-        "alias": "ocsf-1.1.0-2004-vulnerability_finding"
+        "index": "ocsf-1.1.0-2004-detection_finding-*",
+        "alias": "ocsf-1.1.0-2004-detection_finding"
       }
     }
   ]
 }'
 
-# Set the vulnerability_finding-2004 index settings
-curl -X PUT $ES_ENDPOINT/%3Cocsf-1.1.0-2004-vulnerability_finding-%7Bnow%2Fd%7D-000000%3E/_settings -H 'Content-Type: application/json' -u "$ES_USERNAME:$ES_PASSWORD" -d '{
+# Set the detection_finding-2004 index settings
+curl -X PUT $ES_ENDPOINT/%3Cocsf-1.1.0-2004-detection_finding-%7Bnow%2Fd%7D-000000%3E/_settings -H 'Content-Type: application/json' -u "$ES_USERNAME:$ES_PASSWORD" -d '{
   "index": {
     "plugins": {
       "index_state_management": {
-        "rollover_alias": "ocsf-1.1.0-4001-network_activity"
+        "rollover_alias": "ocsf-1.1.0-2004-detection_finding"
       }
     }
   }
@@ -110,7 +110,7 @@ curl -X PUT $ES_ENDPOINT/%3Cocsf-1.1.0-3002-authentication-%7Bnow%2Fd%7D-000000%
   "index": {
     "plugins": {
       "index_state_management": {
-        "rollover_alias": "ocsf-1.1.0-4001-network_activity"
+        "rollover_alias": "ocsf-1.1.0-3002-authentication"
       }
     }
   }
