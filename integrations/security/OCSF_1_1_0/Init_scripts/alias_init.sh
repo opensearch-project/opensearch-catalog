@@ -20,6 +20,81 @@ while getopts ":e:u:p:" opt; do
   esac
 done
 
+# Create the ISM policy
+curl -X PUT "$ES_ENDPOINT/_plugins/_ism/policies/rollover-expiration-policy" \
+-H "Content-Type: application/json" -u "$ES_USERNAME:$ES_PASSWORD" -d '{
+    "policy": {
+        "policy_id": "rollover-expiration-policy",
+        "description": "This policy rollsover the index daily or if it reaches 40gb. It also expires logs older than 15 days",
+        "default_state": "rollover",
+        "states": [
+            {
+                "name": "rollover",
+                "actions": [
+                    {
+                        "retry": {
+                            "count": 3,
+                            "backoff": "exponential",
+                            "delay": "1m"
+                        },
+                        "rollover": {
+                            "min_size": "40gb",
+                            "min_index_age": "1d",
+                            "copy_alias": false
+                        }
+                    }
+                ],
+                "transitions": []
+            },
+            {
+                "name": "hot",
+                "actions": [],
+                "transitions": [
+                    {
+                        "state_name": "delete",
+                        "conditions": {
+                            "min_index_age": "15d"
+                        }
+                    }
+                ]
+            },
+            {
+                "name": "delete",
+                "actions": [
+                    {
+                        "timeout": "5h",
+                        "retry": {
+                            "count": 3,
+                            "backoff": "exponential",
+                            "delay": "1h"
+                        },
+                        "delete": {}
+                    }
+                ],
+                "transitions": []
+            }
+        ],
+        "ism_template": [
+            {
+                "index_patterns": [
+                    "ocsf-*"
+                ],
+                "priority": 9
+            }
+        ],
+        "error_notification": {
+            "channel": {
+                "id": "gmJ6kpEBF-og_hBde60R"
+            },
+            "message_template": {
+                "source": "",
+                "lang": "mustache"
+            }
+        }
+    }
+}'
+
+
 # Create the vulnerability_finding index and alias
 curl -X PUT $ES_ENDPOINT/%3Cocsf-1.1.0-2002-vulnerability_finding-%7Bnow%2Fd%7D-000000%3E -H 'Content-Type: application/json' -u "$ES_USERNAME:$ES_PASSWORD" -d '{}'
 curl -X POST $ES_ENDPOINT/_aliases -H 'Content-Type: application/json' -u "$ES_USERNAME:$ES_PASSWORD" -d '{
@@ -186,77 +261,4 @@ curl -X PUT $ES_ENDPOINT/%3Cocsf-1.1.0-6003-api_activity-%7Bnow%2Fd%7D-000000%3E
       }
     }
   }
-}'
-
-curl -X PUT "$ES_ENDPOINT/_plugins/_ism/policies/rollover-expiration-policy" \
--H "Content-Type: application/json" -u "$ES_USERNAME:$ES_PASSWORD" -d '{
-    "policy": {
-        "policy_id": "rollover-expiration-policy",
-        "description": "This policy rollsover the index daily or if it reaches 40gb. It also expires logs older than 15 days",
-        "default_state": "rollover",
-        "states": [
-            {
-                "name": "rollover",
-                "actions": [
-                    {
-                        "retry": {
-                            "count": 3,
-                            "backoff": "exponential",
-                            "delay": "1m"
-                        },
-                        "rollover": {
-                            "min_size": "40gb",
-                            "min_index_age": "1d",
-                            "copy_alias": false
-                        }
-                    }
-                ],
-                "transitions": []
-            },
-            {
-                "name": "hot",
-                "actions": [],
-                "transitions": [
-                    {
-                        "state_name": "delete",
-                        "conditions": {
-                            "min_index_age": "15d"
-                        }
-                    }
-                ]
-            },
-            {
-                "name": "delete",
-                "actions": [
-                    {
-                        "timeout": "5h",
-                        "retry": {
-                            "count": 3,
-                            "backoff": "exponential",
-                            "delay": "1h"
-                        },
-                        "delete": {}
-                    }
-                ],
-                "transitions": []
-            }
-        ],
-        "ism_template": [
-            {
-                "index_patterns": [
-                    "ocsf-*"
-                ],
-                "priority": 9
-            }
-        ],
-        "error_notification": {
-            "channel": {
-                "id": "gmJ6kpEBF-og_hBde60R"
-            },
-            "message_template": {
-                "source": "",
-                "lang": "mustache"
-            }
-        }
-    }
 }'
