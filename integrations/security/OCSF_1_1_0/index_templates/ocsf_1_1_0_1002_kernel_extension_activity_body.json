@@ -4,7 +4,7 @@
     ],
     "template":{
         "settings":{
-            "number_of_shards":3,
+            "number_of_shards":1,
             "number_of_replicas":1,
             "index.mapping.total_fields.limit": 3000 
         },
@@ -35,7 +35,7 @@
         "ocsf_1_1_0_attacks",
         "ocsf_1_1_0_cloud",
         "ocsf_1_1_0_device",
-	    "ocsf_1_1_0_driver",
+	"ocsf_1_1_0_driver",
         "ocsf_1_1_0_enrichments",
         "ocsf_1_1_0_firewall_rule",
         "ocsf_1_1_0_malware",
