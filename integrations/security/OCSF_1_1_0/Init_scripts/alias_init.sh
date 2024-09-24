@@ -38,7 +38,7 @@ curl -X PUT "$ES_ENDPOINT/_plugins/_ism/policies/rollover-expiration-policy" \
                             "delay": "1m"
                         },
                         "rollover": {
-                            "min_size_shard_size": "40gb",
+                            "min_size": "40gb",
                             "min_index_age": "1d",
                             "copy_alias": false
                         }
