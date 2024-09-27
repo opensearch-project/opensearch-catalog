@@ -29,4 +29,7 @@ CREATE EXTERNAL TABLE IF NOT EXISTS {table_name} (
     flow_direction string,
     traffic_path int
 ) USING parquet
+OPTIONS (
+  recursiveFileLookup='true'
+)
 LOCATION '{s3_bucket_location}'
