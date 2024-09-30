@@ -5,7 +5,8 @@ They are script-based and you will need to run the scripts from a host that can 
 
 ## Prerequisites
 * You will need to have set up Amazon Security Lake and an S3-based Subscriber.
-* you will need to have created an OpenSearch cluster. You can follow the guidance from this [blog post](https://aws.amazon.com/blogs/security/how-to-deploy-an-amazon-opensearch-cluster-to-ingest-logs-from-amazon-security-lake/) to size and deploy your OpenSearch cluster.
+* you will need to have created an OpenSearch cluster. You can follow the guidance from this [blog post](https://aws.amazon.com/blogs/security/how-to-deploy-an-amazon-opensearch-cluster-to-ingest-logs-from-amazon-security-lake/) to size and deploy your OpenSearch cluster. This cluster cannot be serverless.
+* The `Max clause count` in your cluster's **Advanced cluster settings** must be set to `4096.
 
 ## Install instructions
 ### 1. Download the files
