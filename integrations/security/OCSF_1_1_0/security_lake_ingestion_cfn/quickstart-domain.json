@@ -5,8 +5,8 @@
         "EngineVersion":{
             "Description":"Search engine version (Elasticsearch or OpenSearch).",
             "Type" : "String",
-            "Default" : "OpenSearch_2.5",
-            "AllowedValues" : ["Elasticsearch_6.8","Elasticsearch_7.9","Elasticsearch_7.10","OpenSearch_1.0","OpenSearch_1.1","OpenSearch_1.2","OpenSearch_1.3","OpenSearch_2.3","OpenSearch_2.5","OpenSearch_2.7","OpenSearch_2.9","OpenSearch_2.11","OpenSearch_2.13"]        
+            "Default" : "OpenSearch_2.15",
+            "AllowedValues" : ["Elasticsearch_6.8","Elasticsearch_7.9","Elasticsearch_7.10","OpenSearch_1.0","OpenSearch_1.1","OpenSearch_1.2","OpenSearch_1.3","OpenSearch_2.3","OpenSearch_2.5","OpenSearch_2.7","OpenSearch_2.9","OpenSearch_2.11","OpenSearch_2.13", "OpenSearch_2.15"]        
         },
         "DataNodeInstanceType": {
          "Type": "String",
