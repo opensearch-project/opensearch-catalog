@@ -1,0 +1,121 @@
+{
+    "AWSTemplateFormatVersion":"2010-09-09", 
+    "Description":"OpenSearch for Amazon Security Lake - Kickoff Stack. **Attention** This template creates AWS resources that will incur charges on your account.",
+    "Parameters":{
+        "SearchEngineVersion":{
+            "Description":"Search engine version.",
+            "Type" : "String",
+            "Default" : "OpenSearch_2.13",
+            "AllowedValues" : ["OpenSearch_2.5","OpenSearch_2.7","OpenSearch_2.9","OpenSearch_2.11","OpenSearch_2.13"]        
+        },
+        "DataNodeInstanceType": {
+            "Type": "String",
+            "Default": "r6g.large.search",
+            "Description": "The instance type for the data nodes"
+          },
+        "MasterNodeInstanceType": {
+        "Type": "String",
+        "Default": "m6g.large.search",
+        "Description": "The instance type for the master nodes"
+        },                                        
+        "EBSVolumeSize": {
+        "Type": "Number",
+        "Default": 100,
+        "Description": "The size of the EBS volume in GiB"
+        }
+    },
+    "Resources":{
+        "slr":{
+            "Type" : "AWS::CloudFormation::Stack",
+            "Properties" : {
+                "TemplateURL" : "https://aws-security-blog-content.s3.amazonaws.com/public/sample/2353-how-opensearch-security-analytics-amazon-security-lake/quickstart-slr.json",
+                "Parameters" : {
+                    "NetworkStackName" : { "Fn::GetAtt" : [ "network", "Outputs.StackName" ] }
+                }
+            }   
+        },
+        "network": {
+            "Type" : "AWS::CloudFormation::Stack",
+            "Properties" : {
+                "TemplateURL" : "https://aws-security-blog-content.s3.amazonaws.com/public/sample/2353-how-opensearch-security-analytics-amazon-security-lake/quickstart-network.json",
+                "Parameters" : {
+                    "EnvironmentTag" : {"Fn::Select":["4",{"Fn::Split":["-",{"Fn::Select":["2",{"Fn::Split":["/",{"Ref":"AWS::StackId"}]}]}]}]},
+                    "CIDRPrefix" : "10.1"
+                }
+            }            
+        },      
+        "cognito" : {
+            "Type" : "AWS::CloudFormation::Stack",
+            "DependsOn": "slr",
+            "Properties" : {
+                "TemplateURL" : "https://aws-security-blog-content.s3.amazonaws.com/public/sample/2353-how-opensearch-security-analytics-amazon-security-lake/quickstart-cognito.json",
+                "Parameters" : {
+                    "NetworkStackName" : {"Fn::GetAtt":["network","Outputs.StackName"]}
+                }
+            }   
+        },
+        "ossearch" : {
+            "Type" : "AWS::CloudFormation::Stack",
+            "Properties" : {
+                "TemplateURL" : "https://aws-security-blog-content.s3.amazonaws.com/public/sample/2353-how-opensearch-security-analytics-amazon-security-lake/quickstart-domain.json",
+                "Parameters" : {
+                    "EngineVersion" : {"Ref": "SearchEngineVersion"},
+                    "DataNodeInstanceType" : {"Ref": "DataNodeInstanceType"},
+                    "MasterNodeInstanceType" : {"Ref": "MasterNodeInstanceType"},
+                    "EBSVolumeSize": {"Ref": "EBSVolumeSize"},
+                    "NetworkStackName" : { "Fn::GetAtt" : [ "network", "Outputs.StackName" ] },
+                    "CognitoStackName" : { "Fn::GetAtt" : [ "cognito", "Outputs.StackName" ] },
+                    "SearchDomainName" : {"Fn::Join":["",["os-engine-",{"Fn::Select":["4",{"Fn::Split":["-",{"Fn::Select":["2",{"Fn::Split":["/",{"Ref":"AWS::StackId"}]}]}]}]}]]}
+                }
+            }            
+        },
+        "osproxy" : {
+            "Type" : "AWS::CloudFormation::Stack",
+            "Properties" : {
+                "TemplateURL" : "https://aws-security-blog-content.s3.amazonaws.com/public/sample/2353-how-opensearch-security-analytics-amazon-security-lake/quickstart-dashboards-proxy.json",
+                "Parameters" : {
+                    "NetworkStackName" : { "Fn::GetAtt" : [ "network", "Outputs.StackName" ] },
+                    "SearchStackName" : { "Fn::GetAtt" : [ "ossearch", "Outputs.StackName" ] },
+                    "CognitoStackName" : { "Fn::GetAtt" : [ "cognito", "Outputs.StackName" ] }
+                }
+            }                                      
+        }
+        },      
+    "Outputs":{
+        "NetworkStack":{
+            "Description":"NetworkStackName",
+            "Value": { "Fn::GetAtt" : [ "network", "Outputs.StackName" ] },
+            "Export" : { "Name" : {"Fn::Sub": "${AWS::StackName}-NetworkStackName" }}
+        },
+        "OSSearchEndpoint":{
+            "Description":"SearchEndpoint",
+            "Value": { "Fn::GetAtt" : [ "ossearch", "Outputs.SearchEndpoint" ] },
+            "Export" : { "Name" : {"Fn::Sub": "${AWS::StackName}-SearchEndpoint" }}
+        },
+        "OSSearchDomainName":{
+            "Description":"Domain name for the search cluster.",
+            "Value": { "Fn::GetAtt" : [ "ossearch", "Outputs.SearchDomainName" ] },
+            "Export" : { "Name" : {"Fn::Sub": "${AWS::StackName}-SearchDomainName" }}
+        },
+        "DashboardsProxyURL":{
+            "Description":"Dashboards Proxy URL.",     
+            "Value": { "Fn::GetAtt" : [ "osproxy", "Outputs.DashboardsProxyURL" ] },       
+            "Export" : { "Name" : {"Fn::Sub": "${AWS::StackName}-DashboardsProxyURL" }}
+        },
+        "DashboardsProxyRoleArn":{
+            "Description":"Dashboards proxy role ARN for FGAC role mapping.",
+            "Value": { "Fn::GetAtt" : [ "osproxy", "Outputs.DashboardsProxyRoleArn" ] },
+            "Export" : { "Name" : {"Fn::Sub": "${AWS::StackName}-DashboardsProxyRoleArn" }}
+        }, 
+        "CognitoUser":{
+            "Description":"This is the cognito user.",
+            "Value": { "Fn::GetAtt" : [ "cognito", "Outputs.CognitoUser" ] },
+            "Export" : { "Name" : {"Fn::Sub": "${AWS::StackName}-CognitoUser" }}
+        },
+        "CognitoPassword":{
+            "Description":"This is the cognito password.",
+            "Value": { "Fn::GetAtt" : [ "cognito", "Outputs.CognitoPassword" ] },
+            "Export" : { "Name" : {"Fn::Sub": "${AWS::StackName}-CognitoPassword" }}
+        }      
+    }
+}
