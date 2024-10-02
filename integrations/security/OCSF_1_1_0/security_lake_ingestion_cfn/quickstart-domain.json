@@ -176,7 +176,7 @@
                 "InternalUserDatabaseEnabled": true,
                 "MasterUserOptions":{
                      "MasterUserName": "admin",
-                     "MasterUserPassword": "Password"
+                     "MasterUserPassword": "1Password!"
                     }
                 },
             "NodeToNodeEncryptionOptions":{

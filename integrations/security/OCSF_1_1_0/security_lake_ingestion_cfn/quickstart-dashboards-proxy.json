@@ -140,38 +140,7 @@
                 "AWS::CloudFormation::Init":{
                     "configSets":{
                         "default":["step1","step2"]
-                    },  
-                    "step0": {
-                        "commands": {
-                          "1-create-alias": {
-                            "command": {
-                                "Fn::Join": [
-                                    "", [
-                                        "#!/bin/bash\n",
-                                        "ES_ENDPOINT=", { "Fn::ImportValue": { "Fn::Sub": "${SearchStackName}-SearchEndpoint" } }, "\n",
-                                        "ES_USERNAME=", { "Ref": "admin" }, "\n",
-                                        "ES_PASSWORD=", { "Ref": "Password" }, "\n",
-                                        "# Create the ISM policy\n",
-                                        "curl -X PUT \"$ES_ENDPOINT/_plugins/_ism/policies/rollover-expiration-policy\" \\\n",
-                                        "  -H \"Content-Type: application/json\" -u \"$ES_USERNAME:$ES_PASSWORD\" -d '{\"policy\": {\"policy_id\": \"rollover-expiration-policy\",\"description\": \"This policy rollsover the index daily or if it reaches 40gb. It also expires logs older than 15 days\",\"default_state\": \"rollover\",\"states\": [{\"name\": \"rollover\",\"actions\": [{\"retry\": {\"count\": 3,\"backoff\": \"exponential\",\"delay\": \"1m\"},\"rollover\": {\"min_size\": \"40gb\",\"min_index_age\": \"1d\",\"copy_alias\": false}}],\"transitions\": []},{\"name\": \"hot\",\"actions\": [],\"transitions\": [{\"state_name\": \"delete\",\"conditions\": {\"min_index_age\": \"15d\"}}]},{\"name\": \"delete\",\"actions\": [{\"timeout\": \"5h\",\"retry\": {\"count\": 3,\"backoff\": \"exponential\",\"delay\": \"1h\"},\"delete\": {}}],\"transitions\": []}],\"ism_template\": [{\"index_patterns\": [\"ocsf-*\"],\"priority\": 9}],\"error_notification\": {\"channel\": {\"id\": \"gmJ6kpEBF-og_hBde60R\"},\"message_template\": {\"source\": \"\",\"lang\": \"mustache\"}}}}'",
-
-                                        "\n# Create the vulnerability_finding index and alias\n",
-                                        "curl -X PUT $ES_ENDPOINT/%3Cocsf-1.1.0-2002-vulnerability_finding-%7Bnow%2Fd%7D-000000%3E -H 'Content-Type: application/json' -u \"$ES_USERNAME:$ES_PASSWORD\" -d '{}'\n",
-                                        "curl -X POST $ES_ENDPOINT/_aliases -H 'Content-Type: application/json' -u \"$ES_USERNAME:$ES_PASSWORD\" -d '{\"actions\": [{\"add\": {\"index\": \"ocsf-1.1.0-2002-vulnerability_finding-*\",\"alias\": \"ocsf-1.1.0-2002-vulnerability_finding\"}}]}'\n",
-
-                                        "\n# Set the vulnerability_finding index settings\n",
-                                        "curl -X PUT $ES_ENDPOINT/%3Cocsf-1.1.0-2002-vulnerability_finding-%7Bnow%2Fd%7D-000000%3E/_settings -H 'Content-Type: application/json' -u \"$ES_USERNAME:$ES_PASSWORD\" -d '{\"index\": {\"plugins\": {\"index_state_management\": {\"rollover_alias\": \"ocsf-1.1.0-2002-vulnerability_finding\"}}}}'",
-
-                                        "\n# Create the compliance_finding index and alias\n",
-                                        "curl -X PUT $ES_ENDPOINT/%3Cocsf-1.1.0-2003-compliance_finding-%7Bnow%2Fd%7D-000000%3E -H 'Content-Type: application/json' -u \"$ES_USERNAME:$ES_PASSWORD\" -d '{}'\n",
-                                        "curl -X POST $ES_ENDPOINT/_aliases -H 'Content-Type: application/json' -u \"$ES_USERNAME:$ES_PASSWORD\" -d '{\"actions\": [{\"add\": {\"index\": \"ocsf-1.1.0-2003-compliance_finding-*\",\"alias\": \"ocsf-1.1.0-2003-compliance_finding\"}}]}'\n"
-                                    ]
-                                ]
-                              },
-                              "ignoreErrors": "false"
-                            }
-                          }
-                      },
+                    },
                     "step1":{
                         "files":{
                             "/usr/share/es-scripts/es-proxy-downloader.sh":{
