@@ -139,6 +139,9 @@
          "Properties":{
             "DomainName":{"Ref":"SearchDomainName"},
             "EngineVersion":{"Ref": "EngineVersion"},
+            "AdvancedOptions": {
+               "indices.query.bool.max_clause_count": "4096"
+             },
             "ClusterConfig": {
                "ZoneAwarenessEnabled" : true,
                "ZoneAwarenessConfig" : {
@@ -170,14 +173,12 @@
             },
             "AdvancedSecurityOptions":{
                 "Enabled":"true",
+                "InternalUserDatabaseEnabled": true,
                 "MasterUserOptions":{
-                    "MasterUserARN":{
-                        "Fn::ImportValue":{
-                            "Fn::Sub":"${CognitoStackName}-AuthRoleARN"
-                        }
+                     "MasterUserName": "admin",
+                     "MasterUserPassword": "Password"
                     }
-                }
-            },
+                },
             "NodeToNodeEncryptionOptions":{
                "Enabled":"true"
             },
