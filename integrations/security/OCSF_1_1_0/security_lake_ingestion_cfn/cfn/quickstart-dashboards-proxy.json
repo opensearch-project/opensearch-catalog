@@ -175,7 +175,6 @@
                         },
                         "files":{
                             "/etc/nginx/conf.d/default.conf":{
-
                                 "content":{
                                     "Fn::Join":[
                                         "",
@@ -317,6 +316,118 @@
                     }
                 ]
             }
+        },
+        "OSInitLambdaRole": {
+            "Type": "AWS::IAM::Role",
+            "Properties": {
+            "RoleName": { 
+                "Fn::Join": [ "", [ {"Fn::ImportValue" : {"Fn::Sub": "${NetworkStackName}-EnvTag"}}, "-OS_INIT-role"]]
+            },
+            "AssumeRolePolicyDocument": {
+                "Version": "2012-10-17",
+                "Statement": [
+                {
+                    "Effect": "Allow",
+                    "Principal": {
+                    "Service": "lambda.amazonaws.com"
+                    },
+                    "Action": "sts:AssumeRole"
+                }
+                ]
+            },
+            "ManagedPolicyArns": [
+                "arn:aws:iam::aws:policy/service-role/AWSLambdaVPCAccessExecutionRole",
+                "arn:aws:iam::aws:policy/AmazonS3ReadOnlyAccess"
+            ],
+            "Policies": [
+                {
+                "PolicyName": { "Fn::Join": [ "", [ {"Fn::ImportValue" : {"Fn::Sub": "${NetworkStackName}-EnvTag"}}, "-dashboards-proxy-policy"]]},
+                "PolicyDocument": {
+                    "Version": "2012-10-17",
+                    "Statement": [
+                        {
+                            "Effect":"Allow",
+                            "Action":"ec2:Describe*",
+                            "Resource":"*"
+                        },
+                        {
+                            "Effect": "Allow",
+                            "Action": ["es:ESHttp*"],
+                            "Resource": {"Fn::Join":["",["arn:aws:es:",{"Ref":"AWS::Region"},":",{"Ref":"AWS::AccountId"},":domain/",{"Fn::ImportValue" : {"Fn::Sub": "${SearchStackName}-SearchDomainName"}},"/*"]]}
+                        }
+                    ]
+                }
+            }
+        ]
+        }
+            },     
+        "OSInitLambdaFunction": {
+            "Type": "AWS::Lambda::Function",
+            "Properties": {
+                "FunctionName": {
+                    "Fn::Join": ["",[{"Fn::ImportValue" : {"Fn::Sub": "${NetworkStackName}-EnvTag"}},"-OS_INIT"]]
+                },
+                "Handler": "os_init_function.lambda_handler",
+                "Runtime": "python3.12",
+                "Code": {
+                    "S3Bucket": "os-cluster-cfn-staging-bucket-1234",
+                    "S3Key": "assets/os_init_function.py.zip"
+                },
+                "VpcConfig": {
+                    "SecurityGroupIds": [
+                        {
+                          "Ref": "ProxySecurityGroup"
+                        }
+                    ],
+                "SubnetIds": {
+                    "Fn::Split": [
+                    ",",
+                    {
+                        "Fn::Join": [
+                        ",",
+                        [
+                            {
+                            "Fn::ImportValue": {
+                                "Fn::Sub": "${NetworkStackName}-PrivateSubnetApp0"
+                            }
+                            },
+                            {
+                            "Fn::ImportValue": {
+                                "Fn::Sub": "${NetworkStackName}-PrivateSubnetApp1"
+                            }
+                            }
+                        ]
+                        ]
+                    }
+                    ]
+                }
+            },
+            "MemorySize": 256,
+            "Timeout": 180,
+            "Environment": {
+                "Variables": {
+                "ES_ENDPOINT": {
+                    "Fn::Join": [
+                        "",
+                        [
+                        "https://",
+                        {
+                            "Fn::ImportValue": {
+                            "Fn::Sub": "${SearchStackName}-SearchEndpoint"}
+                        }
+                    ]
+                ]
+                },
+                "ES_USERNAME": "",
+                "SENSITIVE_ES_PASSWORD": ""
+                }
+            },
+            "Role": {
+                "Fn::GetAtt": [
+                  "OSInitLambdaRole",
+                  "Arn"]
+            }
+        }
         }
     },
     "Outputs":{

@@ -2,7 +2,7 @@
     "AWSTemplateFormatVersion":"2010-09-09",
     "Description":"OpenSearch Foundational - Domain Stack.  **Attention** This template creates AWS resources that will incur charges on your account.",
     "Parameters":{
-        "EngineVersion":{
+      "EngineVersion":{
             "Description":"Search engine version (Elasticsearch or OpenSearch).",
             "Type" : "String",
             "Default" : "OpenSearch_2.15",
@@ -17,7 +17,7 @@
          "Type": "String",
          "Default": "r6g.large.search",
          "Description": "The instance type for the master nodes"
-         },                                             
+         },                                     
         "EBSVolumeSize": {
          "Type": "Number",
          "Default": 10,
@@ -37,7 +37,7 @@
             "MinLength":3,
             "MaxLength":28
         }
-      },
+   },
     "Resources":{
       "SearchSecurityGroup":{
          "Type":"AWS::EC2::SecurityGroup",
@@ -146,7 +146,7 @@
                "ZoneAwarenessEnabled" : true,
                "ZoneAwarenessConfig" : {
                   "AvailabilityZoneCount" : 3
-                },
+               },
                "InstanceType": {
                  "Ref": "DataNodeInstanceType"
                },
@@ -172,13 +172,15 @@
                "RoleArn":{"Fn::GetAtt":["RoleForAmazonOpenSearchServiceCognito","Arn"]}
             },
             "AdvancedSecurityOptions":{
-                "Enabled":"true",
-                "InternalUserDatabaseEnabled": true,
-                "MasterUserOptions":{
-                     "MasterUserName": "admin",
-                     "MasterUserPassword": "1Password!"
-                    }
-                },
+               "Enabled":"true",
+               "MasterUserOptions":{
+                   "MasterUserARN":{
+                       "Fn::ImportValue":{
+                           "Fn::Sub":"${CognitoStackName}-AuthRoleARN"
+                       }
+                   }
+               }
+           },
             "NodeToNodeEncryptionOptions":{
                "Enabled":"true"
             },

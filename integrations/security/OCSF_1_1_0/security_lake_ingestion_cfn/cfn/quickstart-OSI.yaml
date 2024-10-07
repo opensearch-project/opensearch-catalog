@@ -1,0 +1,88 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: CloudFormation Template for Creating an IAM Role with Inline Policies
+
+Parameters:
+  AccountId:
+    Type: String
+    Description: AWS Account ID where the Security Lake data is stored
+  SecurityLakeBucketName:
+    Type: String
+    Description: Name of the S3 bucket which stores your Seucrity Lake data
+  SqsQueueName:
+    Type: String
+    Description: Name of the SQS queue from your Security Lake subscriber.
+  Region:
+    Type: String
+    Description: AWS region for the SQS queue
+  DomainName:
+    Type: String
+    Description: Name of the OpenSearch domain
+
+Resources:
+  OSIPipelineRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+        - Effect: Allow
+          Principal:
+            Service: osis-pipelines.amazonaws.com
+          Action: 'sts:AssumeRole'
+      RoleName: !Join
+        - '-'
+        - - 'OpenSearchIngestionRole'
+          - !Select
+            - 0
+            - !Split
+              - ''
+              - !Select
+                - 0
+                - !Ref 'AWS::StackId'
+      Policies:
+      - PolicyName: Read-from-Security-Lake
+        PolicyDocument:
+          Version: '2012-10-17'
+          Statement:
+          - Sid: ReadFromS3
+            Effect: Allow
+            Action: 's3:GetObject'
+            Resource: !Sub 'arn:aws:s3:::${SecurityLakeBucketName}/*'
+          - Sid: ReceiveAndDeleteSqsMessages
+            Effect: Allow
+            Action:
+            - 'sqs:DeleteMessage'
+            - 'sqs:ReceiveMessage'
+            - 'sqs:changemessagevisibility'
+            Resource: !Sub 'arn:aws:sqs:${Region}:${AccountId}:${SqsQueueName}'
+      - PolicyName: Write-to-OpenSearch
+        PolicyDocument:
+          Version: '2012-10-17'
+          Statement:
+          - Effect: Allow
+            Action: 'es:DescribeDomain'
+            Resource: !Sub 'arn:aws:es:*:${AccountId}:domain/*'
+          - Effect: Allow
+            Action: 'es:ESHttp*'
+            Resource: !Sub 'arn:aws:es:*:${AccountId}:domain/${DomainName}/*'
+
+  OSIPipelineLogs:
+    Type: AWS::Logs::LogGroup
+    Properties:
+      LogGroupName: !Join
+        - '-'
+        - - 'Security-Lake-OSI-Logs'
+          - !Select
+            - 0
+            - !Split
+              - ''
+              - !Select
+                - 0
+                - !Ref 'AWS::StackId'
+
+Outputs:
+  IAMRoleArn:
+    Description: ARN of the created OSIPipelineRole role
+    Value: !GetAtt OSIPipelineRole.Arn
+
+                    
