@@ -1,87 +1,272 @@
-import requests
-import subprocess
-import os
+from urllib.parse import urlparse
+import boto3
+from botocore.exceptions import ClientError
 import zipfile
-
-# Sample command: ./alias_init.sh -e <OpenSearch Cluster Endpoint> -u <myusername> -p <mypassword>
-es_endpoint = "https://search-os-test-domain-2-oct-standby-e5pueph5voy3mirwv2h5pquhkq.aos.ap-southeast-1.on.aws"
-es_username = "kevlw"
-es_password = "123Legoland!"
-
-# GitHub raw URL
-url = "https://raw.githubusercontent.com/Kevlw-AWS/opensearch-catalog-security/security-lake/integrations/security/OCSF_1_1_0/Init_scripts/alias_init.sh"
-
-# Save the file to a local path
-local_file = "alias_init.sh"
-
-# Use the requests library to download the file
-response = requests.get(url)
-
-with open(local_file, "w") as f:
-    f.write(response.text)
-
-print(f"File saved to: {local_file}")
-
-# Make the script executable
 import os
-os.chmod(local_file, 0o755)
+import json
+from boto3 import Session
+from opensearchpy import AWSV4SignerAuth, OpenSearch, RequestsHttpConnection
+from datetime import datetime
 
-# Run the script with the provided arguments
-subprocess.run(["/bin/bash", local_file, "-e", es_endpoint, "-u", es_username, "-p", es_password], check=True)
+## Set up connection to OpenSearch cluster
+OSEndpoint = os.environ.get('ES_ENDPOINT')
+print (OSEndpoint)
+region = os.environ.get('AWS_REGION')
+print (region)
 
-print("Script executed successfully")
+url = urlparse(OSEndpoint)
 
-# Download the component_templates.zip file
-component_templates_url = "https://raw.githubusercontent.com/Kevlw-AWS/opensearch-catalog-security/security-lake/integrations/security/OCSF_1_1_0/schemas/component_templates.zip"
-component_templates_local = "component_templates.zip"
+credentials = Session().get_credentials()
 
-response = requests.get(component_templates_url)
-with open(component_templates_local, "wb") as f:
-    f.write(response.content)
+auth = AWSV4SignerAuth(credentials, region)
 
-print(f"Downloaded {component_templates_local}")
+client = OpenSearch(
+hosts=[{
+    'host': url.netloc,
+    'port': url.port or 443
+}],
+http_auth=auth,
+use_ssl=True,
+verify_certs=True,
+connection_class=RequestsHttpConnection
+)
+info = client.info()
+print(f"{info['version']['distribution']}: {info['version']['number']}")
 
-# Extract the component templates from the zip file
-with zipfile.ZipFile(component_templates_local, 'r') as zip_ref:
-    zip_ref.extractall('.')
+def ISM_INIT():
+    ## This function creates the 
+    ism_policy = {
+        "policy": {
+            "policy_id": "rollover-expiration-policy",
+            "description": "This policy rollsover the index daily or if it reaches 40gb. It also expires logs older than 15 days",
+            "default_state": "rollover",
+            "states": [
+                {
+                    "name": "rollover",
+                    "actions": [
+                        {
+                            "retry": {
+                                "count": 3,
+                                "backoff": "exponential",
+                                "delay": "1m"
+                            },
+                            "rollover": {
+                                "min_size": "40gb",
+                                "min_index_age": "1d",
+                                "copy_alias": False
+                            }
+                        }
+                    ],
+                    "transitions": []
+                },
+                {
+                    "name": "hot",
+                    "actions": [],
+                    "transitions": [
+                        {
+                            "state_name": "delete",
+                            "conditions": {
+                                "min_index_age": "15d"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "delete",
+                    "actions": [
+                        {
+                            "timeout": "5h",
+                            "retry": {
+                                "count": 3,
+                                "backoff": "exponential",
+                                "delay": "1h"
+                            },
+                            "delete": {}
+                        }
+                    ],
+                    "transitions": []
+                }
+            ],
+            "ism_template": [
+                {
+                    "index_patterns": [
+                        "ocsf-*"
+                    ],
+                    "priority": 9
+                }
+            ],
+            "error_notification": {
+                "channel": {
+                    "id": "gmJ6kpEBF-og_hBde60R"
+                },
+                "message_template": {
+                    "source": "",
+                    "lang": "mustache"
+                }
+            }
+        }
+    }
+    try:
+        client.plugins.index_management.put_policy(policy = "rollover-expiration-policy", body=ism_policy)
+        print ("ISM Policy created")
+    except Exception as e:
+        print(f"Error creating ISM Policy: {e}")
+        pass
 
-print("Extracted component templates")
+def alias_init():
+    index_date = datetime.now().strftime("%Y.%m.%d")
+    index_list = ["ocsf-1.1.0-2002-vulnerability_finding", "ocsf-1.1.0-2003-compliance_finding", "ocsf-1.1.0-2004-detection_finding", "ocsf-1.1.0-3001-account_change","ocsf-1.1.0-3002-authentication", "ocsf-1.1.0-4001-network_activity","ocsf-1.1.0-4002-http_activity", "ocsf-1.1.0-2003-compliance_finding","ocsf-1.1.0-4003-dns_activity","ocsf-1.1.0-6003-api_activity",]
+    for index in index_list:
+    # Create the vulnerability_finding index 
+        try: 
+            index_name = f"{index}-{index_date}-000000"
+            client.indices.create(index=index_name, body = {})
+            print (f"created index {index}")
+        except Exception as e:
+            print(f"Error creating vulnerability_finding index: {e}")
+            pass
 
-# Change to the component_templates directory
-os.chdir("component_templates")
+        # Create the vulnerability finding alias
+        try:
+            alias_name = index
+            index = f"{index}-*"
+            client.indices.put_alias(index=index, name=alias_name)
+            print (f"created alias {alias_name}")
+        except Exception as e:
+            print(f"Error creating vulnerability_finding alias: {e}")
+            pass
 
-# Run the bash command
-for file in os.listdir():
-    if file.endswith(".json"):
-        template_name = os.path.splitext(file)[0].replace("_body", "")
-        command = f"curl -u {es_username}:{es_password} -X PUT -H 'Content-Type: application/json' -d @{file} {es_endpoint}/_component_template/{template_name}"
-        subprocess.run(command, shell=True, check=True)
-        print(f"Created component template: {template_name}")
+        ## Set the vulnerability finding index settings
+        settings = {
+            "settings": {
+                "index": {
+                    "plugins": {
+                    "index_state_management": {
+                        "rollover_alias": f"{index}"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+        client.indices.put_settings(index=index_name, body=settings)
+        print (f"Applied settings to {index_name}")
+
+def install_component_templates():
+    # Set up the S3 client
+    s3 = boto3.client('s3')
+
+    # Specify the bucket and file to download
+    bucket_name = 'os-cluster-cfn-staging-bucket-1234'
+    file_key = 'assets/component_templates.zip'
+
+    try:
+        # Use the get_object API to download the file
+        response = s3.get_object(Bucket=bucket_name, Key=file_key)
+
+        # Get the file content from the response
+        file_content = response['Body'].read()
+
+        # Save the file content to a local file
+        local_file_path = '/tmp/component_templates.zip'
+        with open(local_file_path, 'wb') as f:
+            f.write(file_content)
+
+        # Unzip the file
+        with zipfile.ZipFile(local_file_path, 'r') as zip_ref:
+            zip_ref.extractall('/tmp')
+
+        print(f'File downloaded and unzipped successfully: {file_key}')
+
+        for root, dirs, files in os.walk('/tmp/component_templates'):
+            for file in files:
+                if file.endswith('_body.json'):
+                    file_path = os.path.join(root, file)
+                    template_name = os.path.splitext(file)[0][:-5]  # Remove the "_body" suffix
+
+                    with open(file_path, 'r') as f:
+                        template_content = json.load(f)
+
+                        try:
+                            response = client.cluster.put_component_template(name=template_name, body=template_content)
+                            if response['acknowledged']:
+                                print(f'Created component template: {template_name}')
+                            else:
+                                print(f'Error creating component template: {template_name} - {response}')
+                        except Exception as e:
+                            print(f'Error creating component template: {template_name} - {e}')
+        
+    except ClientError as e:
+        error_code = e.response['Error']['Code']
+        if error_code == 'NoSuchKey':
+            print(f'Error: The file {file_key} does not exist in the bucket {bucket_name}')
+        else:
+            print(f'Error downloading file: {e}')
+
+    return {
+        'statusCode': 200,
+        'body': 'File download complete'
+    }
+
+def install_index_templates():
+    # Set up the S3 client
+    s3 = boto3.client('s3')
+
+    # Specify the bucket and file to download
+    bucket_name = 'os-cluster-cfn-staging-bucket-1234'
+    file_key = 'assets/index_templates.zip'
+
+    try:
+        # Use the get_object API to download the file
+        response = s3.get_object(Bucket=bucket_name, Key=file_key)
+
+        # Get the file content from the response
+        file_content = response['Body'].read()
+
+        # Save the file content to a local file
+        local_file_path = '/tmp/index_templates.zip'
+        with open(local_file_path, 'wb') as f:
+            f.write(file_content)
+
+        # Unzip the file
+        with zipfile.ZipFile(local_file_path, 'r') as zip_ref:
+            zip_ref.extractall('/tmp')
+
+        print(f'File downloaded and unzipped successfully: {file_key}')
+
+        for root, dirs, files in os.walk('/tmp/component_templates'):
+            for file in files:
+                if file.endswith('_body.json'):
+                    file_path = os.path.join(root, file)
+                    template_name = os.path.splitext(file)[0][:-5]  # Remove the "_body" suffix
+
+                    with open(file_path, 'r') as f:
+                        template_content = json.load(f)
+
+                        try:
+                            response = client.cluster.put_index_template(name=template_name, body=template_content)
+                            if response['acknowledged']:
+                                print(f'Created index template: {template_name}')
+                            else:
+                                print(f'Error creating component template: {template_name} - {response}')
+                        except Exception as e:
+                            print(f'Error creating index template: {template_name} - {e}')
+        
+    except ClientError as e:
+        error_code = e.response['Error']['Code']
+        if error_code == 'NoSuchKey':
+            print(f'Error: The file {file_key} does not exist in the bucket {bucket_name}')
+        else:
+            print(f'Error downloading file: {e}')
+
+    return {
+        'statusCode': 200,
+        'body': 'OS Initialisation complete'
+    }
 
 
-# Download the index_templates.zip file
-index_templates_url = "https://raw.githubusercontent.com/Kevlw-AWS/opensearch-catalog-security/blob/security-lake/integrations/security/OCSF_1_1_0/schemas/index_templates.zip"
-component_templates_local = "index_templates.zip"
-
-response = requests.get(component_templates_url)
-with open(component_templates_local, "wb") as f:
-    f.write(response.content)
-
-print(f"Downloaded {component_templates_local}")
-
-# Extract the component templates from the zip file
-with zipfile.ZipFile(component_templates_local, 'r') as zip_ref:
-    zip_ref.extractall('.')
-
-print("Extracted component templates")
-
-# Change to the component_templates directory
-os.chdir("component_templates")
-
-# Run the bash command
-for file in os.listdir():
-    if file.endswith(".json"):
-        template_name = os.path.splitext(file)[0].replace("_body", "")
-        command = f"curl -u {es_username}:{es_password} -X PUT -H 'Content-Type: application/json' -d @{file} {es_endpoint}/_component_template/{template_name}"
-        subprocess.run(command, shell=True, check=True)
-        print(f"Created component template: {template_name}")
+def lambda_handler(event, context):
+    ISM_INIT()
+    alias_init()
+    install_component_templates()
+    install_component_templates()
