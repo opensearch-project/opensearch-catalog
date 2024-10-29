@@ -5,7 +5,7 @@
                 "entity":{
                     "properties":{
                         "data":{
-                            "type":"object"
+                            "type":"text"
                         },
                         "name":{
                             "type":"keyword",

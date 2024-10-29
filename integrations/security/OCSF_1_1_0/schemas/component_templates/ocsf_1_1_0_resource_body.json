@@ -13,7 +13,7 @@
                             "ignore_above":64
                         },
                         "data":{
-                            "type":"object"
+                            "type":"text"
                         },
                         "group":{
                             "properties":{

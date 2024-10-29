@@ -5,7 +5,7 @@
                 "entity_result":{
                     "properties":{
                         "data":{
-                            "type":"object"
+                            "type":"text"
                         },
                         "name":{
                             "type":"keyword",

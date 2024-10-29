@@ -34,7 +34,7 @@ info = client.info()
 print(f"{info['version']['distribution']}: {info['version']['number']}")
 
 def ISM_INIT():
-    ## This function creates the 
+    ## This function creates the ISM policy
     ism_policy = {
         "policy": {
             "policy_id": "rollover-expiration-policy",
@@ -48,7 +48,7 @@ def ISM_INIT():
                             "retry": {
                                 "count": 3,
                                 "backoff": "exponential",
-                                "delay": "1m"
+                                "delay": "1h"
                             },
                             "rollover": {
                                 "min_size": "40gb",
@@ -57,7 +57,14 @@ def ISM_INIT():
                             }
                         }
                     ],
-                    "transitions": []
+                    "transitions": [
+                    {
+                        "state_name": "delete",
+                        "conditions": {
+                            "min_index_age": "15d"
+                        }
+                    }
+                ]
                 },
                 {
                     "name": "hot",
@@ -94,16 +101,7 @@ def ISM_INIT():
                     ],
                     "priority": 9
                 }
-            ],
-            "error_notification": {
-                "channel": {
-                    "id": "gmJ6kpEBF-og_hBde60R"
-                },
-                "message_template": {
-                    "source": "",
-                    "lang": "mustache"
-                }
-            }
+            ]
         }
     }
     try:
@@ -115,28 +113,28 @@ def ISM_INIT():
 
 def alias_init():
     index_date = datetime.now().strftime("%Y.%m.%d")
-    index_list = ["ocsf-1.1.0-2002-vulnerability_finding", "ocsf-1.1.0-2003-compliance_finding", "ocsf-1.1.0-2004-detection_finding", "ocsf-1.1.0-3001-account_change","ocsf-1.1.0-3002-authentication", "ocsf-1.1.0-4001-network_activity","ocsf-1.1.0-4002-http_activity", "ocsf-1.1.0-2003-compliance_finding","ocsf-1.1.0-4003-dns_activity","ocsf-1.1.0-6003-api_activity",]
+    index_list = ["ocsf-1.1.0-2002-vulnerability_finding", "ocsf-1.1.0-2003-compliance_finding", "ocsf-1.1.0-2004-detection_finding", "ocsf-1.1.0-3001-account_change","ocsf-1.1.0-3002-authentication", "ocsf-1.1.0-4001-network_activity","ocsf-1.1.0-4002-http_activity","ocsf-1.1.0-4003-dns_activity","ocsf-1.1.0-6003-api_activity",]
     for index in index_list:
-    # Create the vulnerability_finding index 
+    # Create the index 
         try: 
-            index_name = f"{index}-{index_date}-000000"
+            index_name = f"<{index}-{{now/d}}-000000>"
             client.indices.create(index=index_name, body = {})
             print (f"created index {index}")
         except Exception as e:
-            print(f"Error creating vulnerability_finding index: {e}")
+            print(f"Error creating {index} index: {e}")
             pass
 
-        # Create the vulnerability finding alias
+        # Create the alias
         try:
             alias_name = index
-            index = f"{index}-*"
-            client.indices.put_alias(index=index, name=alias_name)
+            alias_index = f"{index}-*"
+            client.indices.put_alias(index=alias_index, name=alias_name)
             print (f"created alias {alias_name}")
         except Exception as e:
-            print(f"Error creating vulnerability_finding alias: {e}")
+            print(f"Error creating {alias_name} alias: {e}")
             pass
 
-        ## Set the vulnerability finding index settings
+        ## Set the index settings
         settings = {
             "settings": {
                 "index": {
@@ -152,13 +150,25 @@ def alias_init():
         client.indices.put_settings(index=index_name, body=settings)
         print (f"Applied settings to {index_name}")
 
+    ## Increase docvalue setting
+    index_name = "ocsf-1.1.0*"
+    settings = {
+        "index.max_docvalue_fields_search": "300"
+    }
+
+    client.indices.put_settings(
+        index=index_name,
+        body=settings
+    )
+    print (f"Increased docvalue_fields to 300")
+
 def install_component_templates():
     # Set up the S3 client
     s3 = boto3.client('s3')
 
     # Specify the bucket and file to download
-    bucket_name = 'os-cluster-cfn-staging-bucket-1234'
-    file_key = 'assets/component_templates.zip'
+    bucket_name = 'ws-assets-prod-iad-r-sin-694a125e41645312'
+    file_key = '4192e8ce-704a-4400-8d18-81cac3e20e09/assets/component_templates.zip'
 
     try:
         # Use the get_object API to download the file
@@ -213,8 +223,8 @@ def install_index_templates():
     s3 = boto3.client('s3')
 
     # Specify the bucket and file to download
-    bucket_name = 'os-cluster-cfn-staging-bucket-1234'
-    file_key = 'assets/index_templates.zip'
+    bucket_name = 'ws-assets-prod-iad-r-sin-694a125e41645312'
+    file_key = '4192e8ce-704a-4400-8d18-81cac3e20e09/assets/index_templates.zip'
 
     try:
         # Use the get_object API to download the file
@@ -234,7 +244,7 @@ def install_index_templates():
 
         print(f'File downloaded and unzipped successfully: {file_key}')
 
-        for root, dirs, files in os.walk('/tmp/component_templates'):
+        for root, dirs, files in os.walk('/tmp/index_templates'):
             for file in files:
                 if file.endswith('_body.json'):
                     file_path = os.path.join(root, file)
@@ -244,11 +254,11 @@ def install_index_templates():
                         template_content = json.load(f)
 
                         try:
-                            response = client.cluster.put_index_template(name=template_name, body=template_content)
+                            response = client.indices.put_index_template(name=template_name, body=template_content)
                             if response['acknowledged']:
                                 print(f'Created index template: {template_name}')
                             else:
-                                print(f'Error creating component template: {template_name} - {response}')
+                                print(f'Error creating index template: {template_name} - {response}')
                         except Exception as e:
                             print(f'Error creating index template: {template_name} - {e}')
         
@@ -266,7 +276,8 @@ def install_index_templates():
 
 
 def lambda_handler(event, context):
+    install_component_templates()
+    install_index_templates()
     ISM_INIT()
     alias_init()
-    install_component_templates()
-    install_component_templates()
+

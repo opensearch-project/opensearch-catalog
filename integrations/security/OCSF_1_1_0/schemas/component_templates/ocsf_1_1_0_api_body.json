@@ -86,7 +86,7 @@
                                     }
                                 },
                                 "data":{
-                                    "type":"object"
+                                    "type":"text"
                                 },
                                 "flags":{
                                     "type":"keyword",

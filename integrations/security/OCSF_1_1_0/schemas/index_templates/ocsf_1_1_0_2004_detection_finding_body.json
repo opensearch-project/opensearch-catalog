@@ -5,8 +5,8 @@
     "template":{
         "settings":{
             "index.plugins.index_state_management.rollover_alias": "ocsf-1.1.0-2004-detection_finding",
-            "index.number_of_shards":1,
-            "index.number_of_replicas":1,
+            "number_of_shards":1,
+            "number_of_replicas":1,
             "index.mapping.total_fields.limit": 3000 
         },
         "mappings":{
@@ -61,20 +61,20 @@
         "ocsf_1_1_0_base_event",
         "ocsf_1_1_0_api",
         "ocsf_1_1_0_actor",
-	"ocsf_1_1_0_attacks",
-	"ocsf_1_1_0_authorizations",
+	    "ocsf_1_1_0_attacks",
+	    "ocsf_1_1_0_authorizations",
         "ocsf_1_1_0_cloud",
         "ocsf_1_1_0_device",
         "ocsf_1_1_0_enrichments",
-	"ocsf_1_1_0_evidences",
+	    "ocsf_1_1_0_evidences",
         "ocsf_1_1_0_finding_info",
-	"ocsf_1_1_0_firewall_rule",
-	"ocsf_1_1_0_malware",
+	    "ocsf_1_1_0_firewall_rule",
+	    "ocsf_1_1_0_malware",
         "ocsf_1_1_0_metadata",
         "ocsf_1_1_0_observables",
         "ocsf_1_1_0_remediation",
-        "ocsf_1_1_0_resource",
-	"ocsf_1_1_0_vulnerabilities"
+        "ocsf_1_1_0_resources",
+	    "ocsf_1_1_0_vulnerabilities"
     ],
     "version":1,
     "_meta":{

@@ -86,7 +86,7 @@
                                             }
                                         },
                                         "data":{
-                                            "type":"object"
+                                            "type":"text"
                                         },
                                         "flags":{
                                             "type":"keyword",
@@ -4122,7 +4122,7 @@
                             }
                         },
                         "data":{
-                            "type":"object"
+                            "type":"text"
                         },
                         "name":{
                             "type":"keyword",
