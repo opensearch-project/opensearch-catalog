@@ -1,7 +1,4 @@
 # OCSF 1.1.0 integration with OpenSearch
-These instructions are based on this existing [blog post](https://aws.amazon.com/blogs/big-data/generate-security-insights-from-amazon-security-lake-data-using-amazon-opensearch-ingestion/).
-
-They are script-based and you will need to run the scripts from a host that can connect to the OpenSearch cluster. You will need to use a proxy if your OpenSearch cluster is in a private subnet. 
 
 ## Prerequisites
 * You will need to have set up Amazon Security Lake and an S3-based Subscriber.
@@ -51,7 +48,9 @@ Follow the instructions from the `Configure OpenSearch Ingestion` section in the
 
 
 ### Script-based Install
-The method uses scripts to set up the cluster.
+The method uses scripts to set up the cluster. These instructions are based on this existing [blog post](https://aws.amazon.com/blogs/big-data/generate-security-insights-from-amazon-security-lake-data-using-amazon-opensearch-ingestion/).
+
+You will need to run the scripts from a host that can connect to the OpenSearch cluster. You will need to use a proxy if your OpenSearch cluster is in a private subnet. 
 
 ### 1. Download the files
 Download the `alias_init.sh` and the `schemas` folder from this repository to your local machine or proxy.
