@@ -166,9 +166,9 @@ def install_component_templates():
     # Set up the S3 client
     s3 = boto3.client('s3')
 
-    # Specify the bucket and file to download
-    bucket_name = 'ws-assets-prod-iad-r-sin-694a125e41645312'
-    file_key = '4192e8ce-704a-4400-8d18-81cac3e20e09/assets/component_templates.zip'
+    # Specify the bucket and component template file to download
+    bucket_name = ''
+    file_key = ''
 
     try:
         # Use the get_object API to download the file
@@ -222,9 +222,9 @@ def install_index_templates():
     # Set up the S3 client
     s3 = boto3.client('s3')
 
-    # Specify the bucket and file to download
-    bucket_name = 'ws-assets-prod-iad-r-sin-694a125e41645312'
-    file_key = '4192e8ce-704a-4400-8d18-81cac3e20e09/assets/index_templates.zip'
+    # Specify the bucket and index template file to download
+    bucket_name = ''
+    file_key = ''
 
     try:
         # Use the get_object API to download the file

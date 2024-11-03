@@ -1,0 +1,201 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: CloudFormation Template for Creating an OSI pipeline to connect Security Lake and OpenSearch
+
+Parameters:
+  NetworkStackName:
+    Type: String
+    Description: Name of an active CloudFormation stack that contains the networking resources
+  SearchStackName: 
+    "Description": "Name of an active CloudFormation stack that contains the search resources."
+    "Type": "String"
+  SecLakeSubscriberSqsQueueArn:
+    Type: String
+    Description: ARN of the SQS queue from your Security Lake subscriber. It should look like this - arn:aws:sqs:ap-southeast-1:xxxxxxxx:AmazonSecurityLake-xxxxx-xxxx-xxxx-xxx-bd11d35431d9-Main-Queue
+  Region:
+    Type: String
+    Description: AWS region for the SQS queue
+  OpenSearchDomainArn:
+    Type: String
+    Description: ARN of the OpenSearch domain.
+  SecLakeSubscriberSqsQueueURL:
+    Description: SecLake Subscriber SQS Queue URL set up in Log Archive Account.
+    Type: String
+  SecurityLakeBucketName:
+    Description: SecLake Subscriber S3 Bucket name
+    Type: String
+  OpenSearchDomainEndpoint:
+    Type: String
+    Description: The OpenSearch Domain Endpoint
+
+Resources:
+  OpenSearchIngestionLogGroup:
+    Type: AWS::Logs::LogGroup
+    Properties:
+      LogGroupName: !Sub "/aws/vendedlogs/OpenSearchIngestion/${AWS::StackName}-pipeline"
+      RetentionInDays: 365
+
+  OpensearchIngestionPipelineSecurityGroup:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: "Allow outbound from OSI Pipeline to Domain"
+      SecurityGroupEgress:
+        - IpProtocol: tcp
+          Description: "Allow outbound from OSI Pipeline to Domain"
+          FromPort: 443
+          ToPort: 443
+          CidrIp: 
+            Fn::ImportValue:
+              Fn::Sub: '${NetworkStackName}-VPCCIDRBlock'
+      VpcId: 
+        Fn::ImportValue:
+          Fn::Sub: '${NetworkStackName}-VPCID'
+
+  OpensearchIngestionPipelineRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+        - Effect: Allow
+          Principal:
+            Service: osis-pipelines.amazonaws.com
+          Action: 'sts:AssumeRole'
+      RoleName: 
+        Fn::Join:
+          - "-"
+          - - "OpenSearchIngestionPipelineRole"
+            - Fn::Select:
+              - 0
+              - Fn::Split:
+                - "-"
+                - Fn::Select:
+                  - 2
+                  - Fn::Split:
+                    - "/"
+                    - Ref: "AWS::StackId"
+
+      Policies:
+      - PolicyName: Read-from-Security-Lake
+        PolicyDocument:
+          Version: '2012-10-17'
+          Statement:
+          - Sid: ReadFromS3
+            Effect: Allow
+            Action: 's3:GetObject'
+            Resource: !Sub 'arn:aws:s3:::${SecurityLakeBucketName}/*'
+          - Sid: ReceiveAndDeleteSqsMessages
+            Effect: Allow
+            Action:
+            - 'sqs:DeleteMessage'
+            - 'sqs:ReceiveMessage'
+            - 'sqs:changemessagevisibility'
+            Resource: !Sub '${SecLakeSubscriberSqsQueueArn}'
+      - PolicyName: Write-to-OpenSearch
+        PolicyDocument:
+          Version: '2012-10-17'
+          Statement:
+          - Effect: Allow
+            Action: 'es:DescribeDomain'
+            Resource: !Join 
+              - ''
+              - - 'arn:aws:es:*:'
+                - !Ref AWS::AccountId
+                - ':domain/*'
+          - Effect: Allow
+            Action: 'es:ESHttp*'
+            Resource: !Sub '${OpenSearchDomainArn}/*'
+      - PolicyName: WriteToCloudWatchLogs
+        PolicyDocument:
+          Version: '2012-10-17'
+          Statement:
+            - Effect: Allow
+              Action:
+                - 'logs:CreateLogGroup'
+                - 'logs:CreateLogStream'
+                - 'logs:PutLogEvents'
+                - 'logs:DescribeLogStreams'
+              Resource: !Sub 'arn:aws:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/vendedlogs/OpenSearchIngestion/${AWS::StackName}-pipeline:*'
+  
+  OpensearchIngestionPipeline:
+    Type: "AWS::OSIS::Pipeline"
+    Properties:
+      PipelineConfigurationBody: !Sub |
+        version: "2"
+        s3-log-pipeline:
+          source:
+            s3:
+              # Prevent data loss by only considering logs to be processed successfully after they are received by the opensearch sink
+              acknowledgments: true
+              notification_type: "sqs"
+              compression: "none"
+              notification_source: "eventbridge"
+              codec:
+                parquet:
+              sqs:
+                queue_url: "${SecLakeSubscriberSqsQueueURL}"
+                visibility_timeout: "60s"
+                visibility_duplication_protection: true
+              aws:
+                # Provide the region to use for aws credentials
+                region: "${AWS::Region}"
+                # Provide the role to assume for requests to SQS and S3
+                sts_role_arn: "${OpensearchIngestionPipelineRole.Arn}"
+          processor:
+            - drop_events:
+                drop_when: '/status_code != "OK" and /metadata/product/name == "Amazon VPC"'
+            - lowercase_string:
+                with_keys: [ "/metadata/product/name", "/class_name" ]
+            - substitute_string:
+                entries:
+                  - source: "/metadata/product/name"
+                    from: "\\s"
+                    to: "_"
+                  - source: "/class_name"
+                    from: "\\s"
+                    to: "_"
+            - delete_entries:
+                with_keys: [ "s3" ]
+          sink:
+            - opensearch:
+                hosts: [ "${OpenSearchDomainEndpoint}" ] 
+                aws:
+                  sts_role_arn: "${OpensearchIngestionPipelineRole.Arn}"
+                  region: "${AWS::Region}"
+                  serverless: false
+                index: "ocsf-${!/metadata/version}-${!/class_uid}-${!/class_name}"
+      BufferOptions:
+        PersistentBufferEnabled: false
+      MinUnits: 2
+      PipelineName: 
+        Fn::Join:
+          - "-"
+          - - "osi"
+            - Fn::Select:
+              - 0
+              - Fn::Split:
+                - "-"
+                - Fn::Select:
+                  - 2
+                  - Fn::Split:
+                    - "/"
+                    - Ref: "AWS::StackId"
+      MaxUnits: 4
+      LogPublishingOptions:
+        IsLoggingEnabled: true
+        CloudWatchLogDestination:
+          LogGroup: !Ref OpenSearchIngestionLogGroup
+      VpcOptions:
+        SubnetIds:
+          - Fn::ImportValue:
+              Fn::Sub: '${NetworkStackName}-PrivateSubnetApp0'
+          - Fn::ImportValue:
+              Fn::Sub: '${NetworkStackName}-PrivateSubnetApp1'
+          - Fn::ImportValue:
+              Fn::Sub: '${NetworkStackName}-PrivateSubnetApp2'
+        SecurityGroupIds:
+          - Ref: OpensearchIngestionPipelineSecurityGroup
+
+Outputs:
+  IAMRoleArn:
+    Description: ARN of the created OOpensearchIngestionPipelineRole role
+    Value: !GetAtt OpensearchIngestionPipelineRole.Arn             

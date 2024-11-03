@@ -1,0 +1,129 @@
+{
+    "AWSTemplateFormatVersion":"2010-09-09",
+    "Description":"OpenSearch Foundational - Service Linked Role Stack.  **Attention** This template creates AWS IAM resources.",
+    "Parameters":{
+        "NetworkStackName":{
+            "Description":"Name of an active CloudFormation stack that contains the networking resources.",
+            "Type":"String"
+        }
+    },
+    "Resources":{
+	"LambdaSLRExecutionRole": {
+	    "Type": "AWS::IAM::Role",
+	    "Properties": {
+		"RoleName": { "Fn::Join": [ "", [ {"Fn::ImportValue" : {"Fn::Sub": "${NetworkStackName}-EnvTag"}}, "_lambda_slr_role"]]},
+		"Path": "/",
+		"AssumeRolePolicyDocument": {
+		    "Version": "2012-10-17",
+		    "Statement": [{
+			"Effect": "Allow",
+			"Principal": { "Service": "lambda.amazonaws.com"},
+			"Action": "sts:AssumeRole"
+		    }] 
+		},
+		"Policies": [{
+		    "PolicyName": { "Fn::Join": [ "", [ {"Fn::ImportValue" : {"Fn::Sub": "${NetworkStackName}-EnvTag"}}, "_lambda_slr_policy"]]},
+		    "PolicyDocument": {
+			"Version":"2012-10-17",
+			"Statement":[
+			{
+			    "Effect": "Allow",
+			    "Action": "lambda:InvokeFunction",
+			    "Resource": "arn:aws:lambda:*:*:function:*"
+			},
+			{
+			    "Effect":"Allow",
+			    "Action":[
+				"logs:CreateLogGroup",
+				"logs:CreateLogStream",
+				"logs:PutLogEvents"
+			    ],
+			    "Resource":"arn:aws:logs:*:*:*:*"
+			},
+			{
+			    "Effect": "Allow",
+			    "Action": [ "iam:CreateServiceLinkedRole" ],
+			    "Resource": [ "*" ]
+			}]
+		    }
+		} 
+		]
+	    }
+	},
+	"ServiceLinkedRoleFunction": {
+	    "Type": "AWS::Lambda::Function",
+	    "DependsOn": ["LambdaSLRExecutionRole"],
+	    "Properties" : {
+		"Handler": "index.handler",
+		"Role": { "Fn::GetAtt" : [ "LambdaSLRExecutionRole", "Arn" ]},
+		"Runtime": "python3.9",
+		"Timeout": 300,
+		"Code": {
+		  "ZipFile": {"Fn::Join": ["",[
+	          "from __future__ import print_function\n",
+		  "\n",
+		  "import json\n",
+		  "\n",
+		  "import boto3\n",
+		  "import cfnresponse\n",
+		  "\n",
+		  "def handler(event, context):\n",
+		  "    if event['RequestType'] == 'Create':\n",
+		  "        try:\n",
+		  "            create_service_linked_role()\n",
+		  "        except Exception as e:\n",
+		  "            send_response(event, context, cfnresponse.FAILED)\n",
+		  "    send_response(event, context, cfnresponse.SUCCESS)\n",
+		  "\n",
+		  "def create_service_linked_role():\n",
+		  "    print('creating boto client')\n",
+		  "    iam_client = boto3.client('iam')\n",
+		  "    try:\n",
+		  "        print('creating service linked role for es.amazon.com')\n",
+		  "        bury_to_skip_exists = iam_client.create_service_linked_role(\n",
+		  "            AWSServiceName='es.amazonaws.com'\n",
+		  "        )\n",
+		  "        print('api call to create_service_linked_role completed')\n",
+		  "        print(bury_to_skip_exists)\n",
+		  "    except Exception as e:\n",
+		  "        print('Exception: {0}'.format(e))\n",
+		  "        print('burying exception as role probably exists already and will skip')\n",
+		  "    try:\n",
+		  "        print('creating service linked role for osis.amazon.com')\n",
+		  "        bury_to_skip_exists = iam_client.create_service_linked_role(\n",
+		  "            AWSServiceName='osis.amazonaws.com'\n",
+		  "        )\n",
+		  "        print('api call to create_service_linked_role completed')\n",
+		  "        print(bury_to_skip_exists)\n",
+		  "    except Exception as e:\n",
+		  "        print('Exception: {0}'.format(e))\n",
+		  "        print('burying exception as role probably exists already and will skip')\n",
+		  "\n",
+		  "def send_response(event, context, status_code):\n",
+		  "    response_data = {}\n",
+		  "    response_data['Data'] = 'done'\n",
+		  "    cfnresponse.send(event, context, status_code, response_data, \"CustomResourcePhysicalID\")\n",
+		  "\n"
+		  ]]
+       	          }
+              }
+          }
+      },
+      "ServiceLinkedRoleFunctionInvocation": {
+          "Type": "Custom::WiringFunctionInvocation",
+          "DependsOn": "ServiceLinkedRoleFunction",
+          "Properties": {
+              "ServiceToken": { "Fn::GetAtt": [ "ServiceLinkedRoleFunction", "Arn" ]},
+              "Region": { "Ref": "AWS::Region"}
+          }
+      }
+   },
+   "Outputs":{
+      "StackName":{
+         "Description":"This is the stack name.",
+         "Value":{"Ref":"AWS::StackName"},
+         "Export":{"Name":{"Fn::Sub":"${AWS::StackName}-StackName"}}
+      }
+   }
+}
+

@@ -1,77 +1,65 @@
+# README
 # OCSF 1.1.0 integration with OpenSearch
 
-## Prerequisites
-* You will need to have set up Amazon Security Lake and an S3-based Subscriber.
-* you will need to have created an OpenSearch cluster. You can follow the guidance from this [blog post](https://aws.amazon.com/blogs/security/how-to-deploy-an-amazon-opensearch-cluster-to-ingest-logs-from-amazon-security-lake/) to size and deploy your OpenSearch cluster. This cluster cannot be serverless.
-* The `Max clause count` in your cluster's **Advanced cluster settings** must be set to `4096.
+## Introduction
+The contents of this repo will help you spin up an OpenSearch cluster that ingests logs from Amazon Security Lake. It consists of: CloudFormation templates, OpenSearch index and component templates, OpenSearch initialisation scripts, and OpenSearch saved objects (visualisations and index templates).
 
-## Install instructions
-### Automated Install
-The automated install method uses a Lambda function to load the OpenSearch cluster with the relevant mappings, ISM policy, and indexes. This is the recommended method.
+This README will provide instructions on how to set up the CloudFormation template before elaborating on each individual component.
 
-#### Set up Lambda function
-1. Create a python Lambda function in your AWS account. If you deployed your OpenSearch cluster in a VPC, you will need to deploy this function in the same VPC. 
+You should deploy this solution in your Audit / Security Tooling account and Amazon Security Lake in your Log Archive account.
 
-2. Copy and paste the function code from the `os_init_function.py` file from the `Init_scripts` folder into the Lambda function. 
+## Deploying the CloudFormation template:
+This will deploy
+* An OpenSearch cluster across 3 AZs in a single VPC.
+* A proxy that uses Amazon Cognito and Secrets Manager to authenticate access to the cluster
+* Service-linked roles for OpenSearch and OpenSearch Ingestion Pipelines.
+* Lambda functions to help initialise the cluster.
+* The OpenSearch Ingestion Pipeline.
 
-3. Add the `opensearch-py` package to the function. You can get the package from [klayers](https://github.com/keithrozario/Klayers). 
+### Prerequisites
+1. You will need to have set up Amazon Security Lake in your Log Archive account.
+2. Create a Security Lake subscriber. Select **S3** for **Data Access** and **SQS Queue** for **S3 notification type**.
+3. Get the Security Lake S3 bucket name from the S3 bucket ARN and store it in a text editor. The bucket name should look like `aws-security-data-lake-<region>-xxxxx`. 
+4.	Go to the Amazon Simple Queue Service (SQS) console and select the SQS queue created as part of the Security Lake subscriber. It should look like `AmazonSecurityLake-xxxxxxxxx-Main-Queue`. Note the queue’s ARN and URL in your text editor. 
 
-4. Under the Lambda function's `configuration` panel, go to `General Configuration`. Change the function's `Timeout` to 3 minutes.
+### Deploy CFN templates
+1. Download the `quickstart-kickoff.json` file from the `cfn` folder.
+2. Deploy the `quickstart-kickoff.json` in CloudFormation in your Audit / Security Tooling account. 
+3. Enter the IP address range that you want to allow to access the proxy’s security group. You should limit this to your corporate IP range. You can set it as 0.0.0.0/0 if you would like to expose it to the public internet.
+4. Fill in the details of the Security Lake bucket and the subscriber SQS queue ARN, URL, and region. 
+5. On the **Configure stack options** page, select **Preserve successfully provisioned resources** under **Stack failure options**. This will allow you to more easily troubleshoot the stack if there is a failure. Check the acknowledgements in the Capabilities section.
+6. Deploy the resources. It will take 20-30 minutes to deploy the multiple nested templates. Wait for the main stack to achieve the `CREATE_COMPLETE` status
+7.	Go to the Outputs pane of the main CloudFormation stack. Save these values in a text editor to refer to later. 
 
-5. Under `Permissions`, open the role that is attached to the function. Add the `AmazonS3ReadOnlyAccess` AWS-managed policy. Add an inline policy that contains the permissions below
-```
-{
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Action": "ec2:Describe*",
-            "Resource": "*",
-            "Effect": "Allow"
-        },
-        {
-            "Action": [
-                "es:ESHttp*"
-            ],
-            "Resource": "arn:aws:es:ap-southeast-1:<your AWS account ID>:domain/<your OpenSearch domain name>/*",
-            "Effect": "Allow"
-        }
-    ]
-}
-```
+### Initialize the cluster
+1. Open the `DashboardsProxyURL` value in a new tab. Because the proxy relies on a self-signed certificate, you will get an insecure certificate warning. You can safely ignore this warning and proceed. For a production workload, you should issue a trusted private certificate from your internal public key infrastructure or use AWS Private Certificate Authority.
+2. You will be presented with the Amazon Cognito sign-in page. Use the CognitoUser as the username . 
+3. Access AWS Secrets Manager to find the password. Select the secret that was created as part of the stack. 
+4. After logging into the OpenSearch cluster, choose the menu icon (three stacked horizontal lines) on the top left and select **Security** in the Management section. 
+5. Select **Roles**. On the Roles page, search for the all_access role and select it. 
+6. Select **Mapped users** then select **Manage mapping**. 
+7.	On the Map user screen, select **Add another backend role**. Paste the value for the `OpenSearchInitRoleARN` from the list of CloudFormation outputs. Select **Map**.
+8. Leave this tab open and return to the AWS Console. Go to the AWS Lambda console and select the function named xxxxxx-OS_INIT.
+9. In the function screen, select **Test** then **Create new test event**, then **Invoke**. The function should run for about 30 seconds. The execution results should show the component templates that have been created. This Lambda function creates the component and index templates to ingest OCSF data, a set of indices and aliases that correspond with the OCSF classes generated by Security Lake, and a rollover policy that will rollover the index daily or if it becomes larger than 40GB. 
 
-6. Under the environment variables section, add an environment variable. The key should be `ES_ENDPOINT` and the value should be your OpenSearch endpoint. 
+### Start the pipeline
+1.	Return to the **Map user** page on the OpenSearch console. 
+2.	Select **Add another backend role**. Paste the value of the `PipelineRole` from the CloudFormation template output. Select Map. This will allow the OpenSearch Ingestion to write to the cluster. 
 
-7. Invoke the function through the AWS console.
+### Upload the Index Patterns and Dashboards
+1. Download the `Security-lake-objects.ndjson` from the `assets` folder. 
+2. Go to the **Dashboards Management** page and select **Saved objects**. Click on **Import** and select the `Security-lake-objects.ndjson` file.
 
-#### Create the OSI Pipeline
-Follow the instructions from the `Configure OpenSearch Ingestion` section in the existing [blog post](https://aws.amazon.com/blogs/big-data/generate-security-insights-from-amazon-security-lake-data-using-amazon-opensearch-ingestion/). However, use the configuration specified in the `OSI-pipeline.yaml` file instead of the blog post. Update the `queue_url`, `sts_role_arn`, `region`, and `host` fields. 
+## Components
 
 
-### Script-based Install
-The method uses scripts to set up the cluster. These instructions are based on this existing [blog post](https://aws.amazon.com/blogs/big-data/generate-security-insights-from-amazon-security-lake-data-using-amazon-opensearch-ingestion/).
-
-You will need to run the scripts from a host that can connect to the OpenSearch cluster. You will need to use a proxy if your OpenSearch cluster is in a private subnet. 
-
-### 1. Download the files
-Download the `alias_init.sh` and the `schemas` folder from this repository to your local machine or proxy.
-
-### 2. Initialise aliases
-After the cluster has been deployed, set up the aliases and the state management policies necessary for Security Analytics to work. Run the `alias_init.sh` file with this command, replacing the information with your own.
-```
-./alias_init.sh -e <OpenSearch Cluster Endpoint> -u <AdminUsername> -p <AdminPassword>
-#!/bin/bash
-```
-
-### 3. Install Templates
-Install the component and then the index templates with these commands
-
-```
-ls component_templates | awk -F'_body' '{print $1}' | xargs -I{} curl  -u adminuser:password -X PUT -H 'Content-Type: application/json' -d @component_templates/{}_body.json https://my-opensearch-domain.es.amazonaws.com/_component_template/{}
-```
-
-```
-ls index_templates | awk -F'_body' '{print $1}' | xargs -I{} curl  -uadminuser:password -X PUT -H 'Content-Type: application/json' -d @index_templates/{}_body.json https://my-opensearch-domain.es.amazonaws.com/_index_template/{}
-```
-
-### 5. Create the OSI pipeline
-Follow the instructions from the `Configure OpenSearch Ingestion` section in the existing [blog post](https://aws.amazon.com/blogs/big-data/generate-security-insights-from-amazon-security-lake-data-using-amazon-opensearch-ingestion/). However, use the configuration specified in the `OSI-pipeline.yaml` file instead of the blog post. Update the `queue_url`, `sts_role_arn`, `region`, and `host` fields. 
+## Modifying the stack
+### Modifying the files 
+1. Prepare an S3 bucket to store the files needed for this deployment. We recommend creating three folders in the bucket: `cfn`, `Lambda`, and `templates`. 
+2. Download the `component_templates.zip` and the `index_templates.zip` files in the `schemas` folder and upload it to the `templates` folder in your bucket.
+3. Download the `os_init_function.py` from the `init_scripts` folder file and modify the  `install_component_templates()` and `install_index_templates()` sections to point to the files that you just uploaded. 
+4. Zip the `os_init_function.py` file and upload it to the `Lambda` folder. 
+5. Download the the `Klayers-p312-opensearch-py-94f72145-b3aa-4698-b962-5ca70864c436` file from the `init_scripts` folder and upload it to your `Lambda` folder.
+6. Open the `quickstart-dashboards-proxy.json` file from the `cfn` folder. Modify the `LambdaFunctionMappings` section to point to the function that you uploaded.
+7. Upload all the files in the `cfn` folder to the `cfn` folder in the bucket you created.
+8. Modify the `TemplateURL` values in the `quickstart-kickoff.json` CloudFormation template file to point to the files in the `cfn` folder. 
