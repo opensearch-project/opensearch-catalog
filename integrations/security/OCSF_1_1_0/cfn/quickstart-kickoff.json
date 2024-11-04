@@ -34,10 +34,6 @@
         "SecLakeSubscriberSqsQueueArn": {
             "Type": "String",
             "Description": "ARN of the SQS queue from your Security Lake subscriber. It should look like this - arn:aws:sqs:ap-southeast-1:xxxxxxxx:AmazonSecurityLake-xxxxx-xxxx-xxxx-xxx-bd11d35431d9-Main-Queue"
-            },
-        "Region": {
-            "Type": "String",
-            "Description": "AWS region where the SQS queue is hosted"
             }
     },
     "Resources":{
@@ -106,7 +102,6 @@
                     "SearchStackName" : { "Fn::GetAtt" : [ "ossearch", "Outputs.StackName" ] },
                     "SecurityLakeBucketName" : {"Ref": "SecurityLakeBucketName"},
                     "SecLakeSubscriberSqsQueueArn": {"Ref": "SecLakeSubscriberSqsQueueArn"},
-                    "Region": {"Ref": "Region"},
                     "SecLakeSubscriberSqsQueueURL": {"Ref": "SecLakeSubscriberSqsQueueURL"},
                     "OpenSearchDomainEndpoint": {"Fn::Sub": "https://${ossearch.Outputs.SearchEndpoint}"},
                     "OpenSearchDomainArn" : {"Fn::GetAtt": [ "ossearch", "Outputs.SearchDomainARN" ]
