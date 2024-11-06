@@ -101,11 +101,18 @@
                 "type_name":{
                     "type":"keyword",
                     "ignore_above":64
-                },
-                "unmapped":{
-                    "type":"object"
                 }
-            }
+            },
+            "dynamic_templates": [
+                {
+                  "fields": {
+                    "mapping": {
+                      "type": "keyword"
+                   },
+                   "path_match": "unmapped.*"
+                  }
+                }
+            ]
         }
     }
 }
