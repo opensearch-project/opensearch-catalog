@@ -4,8 +4,10 @@
     ],
     "template":{
         "settings":{
+            "index.plugins.index_state_management.rollover_alias": "ocsf-1.1.0-4002-http_activity",
             "number_of_shards":1,
             "number_of_replicas":1,
+            "index.max_docvalue_fields_search":400,
             "index.mapping.total_fields.limit":4000
         },
         "mappings":{
