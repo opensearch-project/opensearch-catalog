@@ -1,43 +1,43 @@
 version: "2"
-s3-log-pipeline:
-  source:
-    s3:
-      # Prevent data loss by only considering logs to be processed successfully after they are received by the opensearch sink
-      acknowledgments: true
-      notification_type: "sqs"
-      compression: "none"
-      notification_source: "eventbridge"
-      codec:
-        parquet:
-      sqs:
-        queue_url: "https://sqs.ap-southeast-1.amazonaws.com/123456789101/AmazonSecurityLake-cb16d590-63d5-4dfe-9847-da34180cdc32-Main-Queue"
-        visibility_timeout: "60s"
-        visibility_duplication_protection: true
-      aws:
-        # Provide the region to use for aws credentials
-        region: "ap-southeast-1"
-        # Provide the role to assume for requests to SQS and S3
-        sts_role_arn: "arn:aws:iam::123456789101:role/OpenSearchIngestionPipelineRole-1b22bf50"
-  processor:
-    - drop_events:
-        drop_when: '/status_code != "OK" and /metadata/product/name == "Amazon VPC"'
-    - lowercase_string:
-        with_keys: [ "/metadata/product/name", "/class_name" ]
-    - substitute_string:
-        entries:
-          - source: "/metadata/product/name"
-            from: "\\s"
-            to: "_"
-          - source: "/class_name"
-            from: "\\s"
-            to: "_"
-    - delete_entries:
-        with_keys: [ "s3" ]
-  sink:
-    - opensearch:
-        hosts: [ "https://vpc-securitylake-os-0ae017851369-12345.ap-southeast-1.es.amazonaws.com" ] 
-        aws:
-          sts_role_arn: "arn:aws:iam::802621438795:role/OpenSearchIngestionPipelineRole-1b22bf50"
-          region: "ap-southeast-1"
-          serverless: false
-        index: "ocsf-${/metadata/version}-${/class_uid}-${/class_name}"
+    s3-log-pipeline:
+      source:
+        s3:
+          # Prevent data loss by only considering logs to be processed successfully after they are received by the opensearch sink
+          acknowledgments: true
+          notification_type: "sqs"
+          compression: "none"
+          notification_source: "eventbridge"
+          codec:
+            parquet:
+          sqs:
+            queue_url: "${SecLakeSubscriberSqsQueueURL}"
+            visibility_timeout: "60s"
+            visibility_duplication_protection: true
+          aws:
+            # Provide the region to use for aws credentials
+            region: "${AWS::Region}"
+            # Provide the role to assume for requests to SQS and S3
+            sts_role_arn: "${OpensearchIngestionPipelineRole.Arn}"
+      processor:
+        - drop_events:
+            drop_when: '/status_code != "OK" and /metadata/product/name == "Amazon VPC"'
+        - lowercase_string:
+            with_keys: [ "/metadata/product/name", "/class_name" ]
+        - substitute_string:
+            entries:
+              - source: "/metadata/product/name"
+                from: "\\s"
+                to: "_"
+              - source: "/class_name"
+                from: "\\s"
+                to: "_"
+        - delete_entries:
+            with_keys: [ "s3" ]
+      sink:
+        - opensearch:
+            hosts: [ "${OpenSearchDomainEndpoint}" ] 
+            aws:
+              sts_role_arn: "${OpensearchIngestionPipelineRole.Arn}"
+              region: "${AWS::Region}"
+              serverless: false
+            index: "ocsf-${!/metadata/version}-${!/class_uid}-${!/class_name}"

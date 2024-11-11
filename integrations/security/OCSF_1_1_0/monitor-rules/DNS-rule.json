@@ -1,0 +1,83 @@
+{
+    "name": "test-dns-monitor",
+    "type": "monitor",
+    "monitor_type": "query_level_monitor",
+    "enabled": true,
+    "schedule": {
+       "period": {
+          "unit": "MINUTES",
+          "interval": 5
+       }
+    },
+    "inputs": [
+       {
+          "search": {
+             "indices": [
+                "ocsf-1.1.0-4003-dns_activity"
+             ],
+             "query": {
+                "size": 0,
+                "query": {
+                   "term": {
+                      "query.hostname": {
+                         "value": "sts.ap-southeast-1.amazonaws.com.",
+                         "boost": 1
+                      }
+                   }
+                }
+             }
+          }
+       }
+    ],
+    "triggers": [
+       {
+          "query_level_trigger": {
+             "id": "KDmbrZEB1JSVvIsUizRJ",
+             "name": "test",
+             "severity": "1",
+             "condition": {
+                "script": {
+                   "source": "ctx.results[0].hits.total.value > 0",
+                   "lang": "painless"
+                }
+             },
+             "actions": []
+          }
+       }
+    ],
+    "ui_metadata": {
+       "schedule": {
+          "timezone": null,
+          "frequency": "interval",
+          "period": {
+             "unit": "MINUTES",
+             "interval": 5
+          },
+          "daily": 0,
+          "weekly": {
+             "tue": false,
+             "wed": false,
+             "thur": false,
+             "sat": false,
+             "fri": false,
+             "mon": false,
+             "sun": false
+          },
+          "monthly": {
+             "type": "day",
+             "day": 1
+          },
+          "cronExpression": "0 */1 * * *"
+       },
+       "monitor_type": "query_level_monitor",
+       "search": {
+          "searchType": "query",
+          "timeField": "",
+          "aggregations": [],
+          "groupBy": [],
+          "bucketValue": 1,
+          "bucketUnitOfTime": "h",
+          "filters": []
+       }
+    }
+ }

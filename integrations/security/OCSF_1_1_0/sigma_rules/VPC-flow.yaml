@@ -1,0 +1,16 @@
+id: TO3e-ZIBFzhlW7bijSXv
+logsource:
+  product: vpcflow
+title: OCSF-1.1.0-VPC-flow-IP-rule
+description: 'Detects when an IP address is in the dst_endpoint.ip field '
+tags: []
+falsepositives: []
+level: low
+status: experimental
+references: []
+author: Kevin Low
+detection:
+  condition: Selection_1
+  Selection_1:
+    dst_endpoint.ip|all:
+      - 192.168.51.45
