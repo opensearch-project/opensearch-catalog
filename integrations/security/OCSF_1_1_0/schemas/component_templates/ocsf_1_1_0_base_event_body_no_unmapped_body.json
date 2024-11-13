@@ -101,9 +101,6 @@
                 "type_name":{
                     "type":"keyword",
                     "ignore_above":64
-                },
-                "unmapped":{
-                    "type":"object"
                 }
             }
         }

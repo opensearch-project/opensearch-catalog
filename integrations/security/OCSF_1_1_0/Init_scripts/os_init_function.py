@@ -150,25 +150,13 @@ def alias_init():
         client.indices.put_settings(index=index_name, body=settings)
         print (f"Applied settings to {index_name}")
 
-    ## Increase docvalue setting
-    index_name = "ocsf-1.1.0*"
-    settings = {
-        "index.max_docvalue_fields_search": "300"
-    }
-
-    client.indices.put_settings(
-        index=index_name,
-        body=settings
-    )
-    print (f"Increased docvalue_fields to 300")
-
 def install_component_templates():
     # Set up the S3 client
     s3 = boto3.client('s3')
 
-    # Specify the bucket and component template file to download
-    bucket_name = ''
-    file_key = ''
+    # Specify the bucket and file to download
+    bucket_name = 'ws-assets-prod-iad-r-sin-694a125e41645312'
+    file_key = '4192e8ce-704a-4400-8d18-81cac3e20e09/assets/component_templates.zip'
 
     try:
         # Use the get_object API to download the file
@@ -222,9 +210,9 @@ def install_index_templates():
     # Set up the S3 client
     s3 = boto3.client('s3')
 
-    # Specify the bucket and index template file to download
-    bucket_name = ''
-    file_key = ''
+    # Specify the bucket and file to download
+    bucket_name = 'ws-assets-prod-iad-r-sin-694a125e41645312'
+    file_key = '4192e8ce-704a-4400-8d18-81cac3e20e09/assets/index_templates.zip'
 
     try:
         # Use the get_object API to download the file
@@ -280,4 +268,3 @@ def lambda_handler(event, context):
     install_index_templates()
     ISM_INIT()
     alias_init()
-
