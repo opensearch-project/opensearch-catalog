@@ -5,8 +5,7 @@
                 "query_info":{
                     "properties":{
                         "data":{
-                            "type":"text",
-                            "ignore_above":256
+                            "type":"text"
                         },
                         "name":{
                             "type":"keyword",

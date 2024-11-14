@@ -5,8 +5,7 @@
                 "web_resources":{
                     "properties":{
                         "data":{
-                            "type":"text",
-                            "ignore_above":128
+                            "type":"text"
                         },
                         "desc":{
                             "type":"text",
