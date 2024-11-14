@@ -103,7 +103,7 @@
                                     "type":"date",
                                     "format":"yyyy-MM-dd'T'HH:mm:ss.SSSZ||epoch_millis"
                                 },
-                                "accesssor":{
+                                "accessor":{
                                     "properties":{
                                         "account":{
                                             "properties":{

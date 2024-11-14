@@ -262,7 +262,7 @@
                                         }
                                     }
                                 },
-                                "idp:":{
+                                "idp":{
                                     "properties":{
                                         "name":{
                                             "type":"keyword",
@@ -384,7 +384,7 @@
                                                     "type":"date",
                                                     "format":"yyyy-MM-dd'T'HH:mm:ss.SSSZ||epoch_millis"
                                                 },
-                                                "accesssor":{
+                                                "accessor":{
                                                     "properties":{
                                                         "account":{
                                                             "properties":{
@@ -1761,7 +1761,7 @@
                                                             "type":"date",
                                                             "format":"yyyy-MM-dd'T'HH:mm:ss.SSSZ||epoch_millis"
                                                         },
-                                                        "accesssor":{
+                                                        "accessor":{
                                                             "properties":{
                                                                 "account":{
                                                                     "properties":{
