@@ -52,27 +52,6 @@
             }
           }
         },
-        "attributes": {
-          "type": "object",
-          "properties": {
-            "data_stream": {
-              "properties": {
-                "dataset": {
-                  "ignore_above": 128,
-                  "type": "keyword"
-                },
-                "namespace": {
-                  "ignore_above": 128,
-                  "type": "keyword"
-                },
-                "type": {
-                  "ignore_above": 56,
-                  "type": "keyword"
-                }
-              }
-            }
-          }
-        },
         "body": {
           "type": "text"
         },
