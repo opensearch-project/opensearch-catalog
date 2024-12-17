@@ -40,4 +40,4 @@ version: "2"
               sts_role_arn: "${OpensearchIngestionPipelineRole.Arn}"
               region: "${AWS::Region}"
               serverless: false
-            index: "ocsf-${!/metadata/version}-${!/class_uid}-${!/class_name}"
+            index: "ocsf-${/metadata/version}-${/class_uid}-${/class_name}"
