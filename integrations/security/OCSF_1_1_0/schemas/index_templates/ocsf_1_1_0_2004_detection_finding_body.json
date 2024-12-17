@@ -7,8 +7,8 @@
             "index.plugins.index_state_management.rollover_alias": "ocsf-1.1.0-2004-detection_finding",
             "number_of_shards":1,
             "number_of_replicas":1,
-            "index.max_docvalue_fields_search":400,
-            "index.mapping.total_fields.limit":4000 
+            "index.max_docvalue_fields_search":500,
+            "index.mapping.total_fields.limit":5000 
         },
         "mappings":{
             "properties":{
@@ -54,12 +54,16 @@
                 },
                 "impact_score":{
                     "type":"integer"
-                }
+                },
+                "unmapped":{
+                    "type":"object",
+                    "enabled":false
+            }
             }
         }
     },
     "composed_of":[
-        "ocsf_1_1_0_base_event",
+        "ocsf_1_1_0_base_event_no_unmapped",
         "ocsf_1_1_0_api",
         "ocsf_1_1_0_actor",
 	    "ocsf_1_1_0_attacks",
