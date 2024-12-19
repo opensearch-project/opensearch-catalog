@@ -10,14 +10,14 @@ s3-log-pipeline:
       codec:
         parquet:
       sqs:
-        queue_url: "https://sqs.ap-southeast-1.amazonaws.com/123456789101/AmazonSecurityLake-Main-Queue"
+        queue_url: "https://sqs.us-east-1.amazonaws.com/123456789012/AmazonSecurityLake-2c7ac5af-efc2-4244-8185-a05b14f3ffd4-Main-Queue"
         visibility_timeout: "60s"
         visibility_duplication_protection: true
       aws:
         # Provide the region to use for aws credentials
-        region: "ap-southeast-1"
+        region: "<<us-east-1>>"
         # Provide the role to assume for requests to SQS and S3
-        sts_role_arn: "arn:aws:iam::123456789101:role/OpenSearchIngestionPipelineRole"
+        sts_role_arn: "<<arn:aws:iam::123456789012:role/Example-Role>>"
   processor:
     - drop_events:
         drop_when: '/status_code != "OK" and /metadata/product/name == "Amazon VPC"'
@@ -35,10 +35,10 @@ s3-log-pipeline:
         with_keys: [ "s3" ]
   sink:
     - opensearch:
-        hosts: [ "https://vpc-securitylake-XXXXXXXXX.ap-southeast-1.es.amazonaws.com"] 
+        hosts: [ "<<https://search-mydomain-1a2a3a4a5a6a7a8a9a0a9a8a7a.us-east-1.es.amazonaws.com>>"] 
         aws:
-          sts_role_arn: "arn:aws:iam::123456789101:role/OpenSearchIngestionPipelineRole"
-          region: "ap-southeast-1"
+          sts_role_arn: "<<arn:aws:iam::123456789012:role/Example-Role>>"
+          region: "<<us-east-1>>"
           serverless: false
         index: "ocsf-${/metadata/version}-${/class_uid}-${/class_name}"
         # Optional: Enable the S3 DLQ to capture any failed requests in an S3 bucket. Delete this entire block if you don't want a DLQ.
