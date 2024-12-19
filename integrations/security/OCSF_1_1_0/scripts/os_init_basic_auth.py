@@ -2,40 +2,46 @@
 # Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so.
 # THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
+# Before running the script:
+# Change the variables in the Initialise variables section to match your cluster details 
+# Upload the component_templates.zip and index_templates.zip to an S3 bucket and update the variables in the Initialise variables section
+
 from urllib.parse import urlparse
 import boto3
 from botocore.exceptions import ClientError
 import zipfile
 import os
 import json
-from boto3 import Session
-from opensearchpy import AWSV4SignerAuth, OpenSearch, RequestsHttpConnection
+from opensearchpy import OpenSearch, RequestsHttpConnection
 from datetime import datetime
 
 ## Initialise variables
 OSEndpoint = 'ES_ENDPOINT'
-region = 'AWS_REGION'
+OS_USERNAME = 'OS_USERNAME'
+OS_PASSWORD = 'OS_PASSWORD'
 # Specify the bucket and location of the component and index templates
 bucket_name = 'SPECIFY THE BUCKET NAME'
 component_templates = 'PREFIX/component_templates.zip'
 index_templates = 'PREFIX/index_templates.zip'
 
+print(OSEndpoint)
+region = os.environ.get('AWS_REGION')
+print(region)
+
 url = urlparse(OSEndpoint)
 
-credentials = Session().get_credentials()
-
-auth = AWSV4SignerAuth(credentials, region)
-
+# Modified client configuration to use basic auth
 client = OpenSearch(
-hosts=[{
-    'host': url.netloc,
-    'port': url.port or 443
-}],
-http_auth=auth,
-use_ssl=True,
-verify_certs=True,
-connection_class=RequestsHttpConnection
+    hosts=[{
+        'host': url.netloc,
+        'port': url.port or 443
+    }],
+    http_auth=(OS_USERNAME, OS_PASSWORD),  # Using basic auth instead of AWS4Auth
+    use_ssl=True,
+    verify_certs=True,
+    connection_class=RequestsHttpConnection
 )
+
 info = client.info()
 print(f"{info['version']['distribution']}: {info['version']['number']}")
 
@@ -210,9 +216,8 @@ def install_index_templates():
     # Set up the S3 client
     s3 = boto3.client('s3')
 
-    # Specify the bucket and file to download
-    bucket_name = 'SPECIFY THE BUCKET NAME'
-    file_key = 'PREFIX/index_templates.zip'
+    # Specify the bucket and location of the component templates
+    file_key = index_templates
 
     try:
         # Use the get_object API to download the file
