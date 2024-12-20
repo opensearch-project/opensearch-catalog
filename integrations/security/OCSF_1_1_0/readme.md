@@ -29,7 +29,8 @@ There are two scripts - one that uses basic auth (`scripts/os_init_basic_auth.py
 The OpenSearch objects (`assets/OCSF_objects.ndjson`) contains visualizations, dashboards, and index patterns to help you get started with exploring OCSF data. Visualizations include: 
 
 * OCSF High level overview (All OCSF categories) page
-![OpenSearch Dashboard](./images/all_ocsf_overview.png)
+![OpenSearch Dashboard](integrations/security/OCSF_1_1_0/Images/all_ocsf_overview.png)
+
 
 * OCSF Findings (2000 series) overview page
 ![OpenSearch Dashboard](./images/ocsf_findings_overview_2000_series.png)
