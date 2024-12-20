@@ -33,16 +33,16 @@ The OpenSearch objects (`assets/OCSF_objects.ndjson`) contains visualizations, d
 
 
 * OCSF Findings (2000 series) overview page
-![OpenSearch Dashboard](./images/ocsf_findings_overview_2000_series.png)
+![OpenSearch Dashboard](https://github.com/Kevlw-AWS/opensearch-catalog-security/blob/security-lake/integrations/security/OCSF_1_1_0/Images/ocsf_findings_overview_2000_series.png)
 
 * Network Activity (4001) Org level overview
-![OpenSearch Dashboard](images/ocsf_4001_overview.png)
+![OpenSearch Dashboard](https://github.com/Kevlw-AWS/opensearch-catalog-security/blob/security-lake/integrations/security/OCSF_1_1_0/Images/ocsf_4001_overview.png)
 
 * Network Activity (4001) Account Level Drill Down
-![OpenSearch Dashboard](images/ocsf_4001_drilldown.png)
+![OpenSearch Dashboard](https://github.com/Kevlw-AWS/opensearch-catalog-security/blob/security-lake/integrations/security/OCSF_1_1_0/Images/ocsf_4001_drilldown.png)
 
 * DNS Activity (4003) Org level overview
-![OpenSearch Dashboard](images/ocsf_4003_overview.png)
+![OpenSearch Dashboard](https://github.com/Kevlw-AWS/opensearch-catalog-security/blob/security-lake/integrations/security/OCSF_1_1_0/Images/ocsf_4003_overview.png)
 
 ## Installation instructions
 1. Download the index and component template zip files. Upload it to an S3 bucket or save it to your local machine.
