@@ -1,65 +1,51 @@
 # README
 # OCSF 1.1.0 integration with OpenSearch
 
-## Introduction
-The contents of this repo will help you spin up an OpenSearch cluster that ingests logs from Amazon Security Lake. It consists of: CloudFormation templates, OpenSearch index and component templates, OpenSearch initialisation scripts, and OpenSearch saved objects (visualisations and index templates).
+## Overview
+This section provides resources that will help you ingest [Open Cybersecurity Schema Framework](https://schema.ocsf.io/1.1.0/) (OCSF) logs into OpenSearch and use the logs for [Security Analytics](https://opensearch.org/docs/latest/security-analytics/)
 
-This README will provide instructions on how to set up the CloudFormation template before elaborating on each individual component.
+ It consists of index and component templates, OpenSearch Ingestion template, [Index State Management](https://opensearch.org/docs/latest/im-plugin/ism/policies/) policy initialization scripts, and saved objects (visualizations and index templates).
 
-You should deploy this solution in your Audit / Security Tooling account and Amazon Security Lake in your Log Archive account.
+## Overview of components
+### Index and component templates
+Index templates (`schemas/index_templates`) automatically apply predefined settings and mappings to indices. 
 
-## Deploying the CloudFormation template:
-This will deploy
-* An OpenSearch cluster across 3 AZs in a single VPC.
-* A proxy that uses Amazon Cognito and Secrets Manager to authenticate access to the cluster
-* Service-linked roles for OpenSearch and OpenSearch Ingestion Pipelines.
-* Lambda functions to help initialise the cluster.
-* The OpenSearch Ingestion Pipeline.
+Component templates (`schemas/component_templates`) are reusable building blocks that contain mapping definitions. Component templates are used as part of index templates. 
 
-### Prerequisites
-1. You will need to have set up Amazon Security Lake in your Log Archive account.
-2. Create a Security Lake subscriber. Select **S3** for **Data Access** and **SQS Queue** for **S3 notification type**.
-3. Get the Security Lake S3 bucket name from the S3 bucket ARN and store it in a text editor. The bucket name should look like `aws-security-data-lake-<region>-xxxxx`. 
-4.	Go to the Amazon Simple Queue Service (SQS) console and select the SQS queue created as part of the Security Lake subscriber. It should look like `AmazonSecurityLake-xxxxxxxxx-Main-Queue`. Note the queue’s ARN and URL in your text editor. 
+The current set of index and component templates are mapped to the OSCF 1.1.0 standard.
 
-### Deploy CFN templates
-1. Download the `quickstart-kickoff.json` file from the `cfn` folder.
-2. Deploy the `quickstart-kickoff.json` in CloudFormation in your Audit / Security Tooling account. 
-3. Enter the IP address range that you want to allow to access the proxy’s security group. You should limit this to your corporate IP range. You can set it as 0.0.0.0/0 if you would like to expose it to the public internet.
-4. Fill in the details of the Security Lake bucket and the subscriber SQS queue ARN, URL, and region. 
-5. On the **Configure stack options** page, select **Preserve successfully provisioned resources** under **Stack failure options**. This will allow you to more easily troubleshoot the stack if there is a failure. Check the acknowledgements in the Capabilities section.
-6. Deploy the resources. It will take 20-30 minutes to deploy the multiple nested templates. Wait for the main stack to achieve the `CREATE_COMPLETE` status
-7.	Go to the Outputs pane of the main CloudFormation stack. Save these values in a text editor to refer to later. 
+### OpenSearch Ingestion template
+The OpenSearch Ingestion template (`scripts/OSI-pipeline.yaml`) provides a template you can use with an OpenSearch Ingestion pipeline to ingest OCSF data. 
 
-### Initialize the cluster
-1. Open the `DashboardsProxyURL` value in a new tab. Because the proxy relies on a self-signed certificate, you will get an insecure certificate warning. You can safely ignore this warning and proceed. For a production workload, you should issue a trusted private certificate from your internal public key infrastructure or use AWS Private Certificate Authority.
-2. You will be presented with the Amazon Cognito sign-in page. Use the CognitoUser as the username . 
-3. Access AWS Secrets Manager to find the password. Select the secret that was created as part of the stack. 
-4. After logging into the OpenSearch cluster, choose the menu icon (three stacked horizontal lines) on the top left and select **Security** in the Management section. 
-5. Select **Roles**. On the Roles page, search for the all_access role and select it. 
-6. Select **Mapped users** then select **Manage mapping**. 
-7.	On the Map user screen, select **Add another backend role**. Paste the value for the `OpenSearchInitRoleARN` from the list of CloudFormation outputs. Select **Map**.
-8. Leave this tab open and return to the AWS Console. Go to the AWS Lambda console and select the function named xxxxxx-OS_INIT.
-9. In the function screen, select **Test** then **Create new test event**, then **Invoke**. The function should run for about 30 seconds. The execution results should show the component templates that have been created. This Lambda function creates the component and index templates to ingest OCSF data, a set of indices and aliases that correspond with the OCSF classes generated by Security Lake, and a rollover policy that will rollover the index daily or if it becomes larger than 40GB. 
+### Index State Management (ISM) policy
+The ISM policy (`scripts/ISM.json`) rollsover the indexes daily or when they have reached 40GB. The ISM policy also deletes indexes that are more than 15 days old.
 
-### Start the pipeline
-1.	Return to the **Map user** page on the OpenSearch console. 
-2.	Select **Add another backend role**. Paste the value of the `PipelineRole` from the CloudFormation template output. Select Map. This will allow the OpenSearch Ingestion to write to the cluster. 
+### Initialization scripts
+The initialization scripts helps set up the component templates, index templates, ISM policy, and aliases in the OpenSearch cluster. 
 
-### Upload the Index Patterns and Dashboards
-1. Download the `Security-lake-objects.ndjson` from the `assets` folder. 
-2. Go to the **Dashboards Management** page and select **Saved objects**. Click on **Import** and select the `Security-lake-objects.ndjson` file.
+There are two scripts - one that uses basic auth (`scripts/os_init_basic_auth.py`) - and one that uses IAM auth (`scripts/os_init_IAM_auth.py`). 
 
-## Components
+### OpenSearch objects
+The OpenSearch objects (`assets/OCSF_objects.ndjson`) contains visualizations, dashboards, and index patterns to help you get started with exploring OCSF data. Visualizations include: 
 
+  ** OCSF High level overview (All OCSF categories) page
+[[image:all_ocsf_overview.png||height="150" width="900"]]
 
-## Modifying the stack
-### Modifying the files 
-1. Prepare an S3 bucket to store the files needed for this deployment. We recommend creating three folders in the bucket: `cfn`, `Lambda`, and `templates`. 
-2. Download the `component_templates.zip` and the `index_templates.zip` files in the `schemas` folder and upload it to the `templates` folder in your bucket.
-3. Download the `os_init_function.py` from the `init_scripts` folder file and modify the  `install_component_templates()` and `install_index_templates()` sections to point to the files that you just uploaded. 
-4. Zip the `os_init_function.py` file and upload it to the `Lambda` folder. 
-5. Download the the `Klayers-p312-opensearch-py-94f72145-b3aa-4698-b962-5ca70864c436` file from the `init_scripts` folder and upload it to your `Lambda` folder.
-6. Open the `quickstart-dashboards-proxy.json` file from the `cfn` folder. Modify the `LambdaFunctionMappings` section to point to the function that you uploaded.
-7. Upload all the files in the `cfn` folder to the `cfn` folder in the bucket you created.
-8. Modify the `TemplateURL` values in the `quickstart-kickoff.json` CloudFormation template file to point to the files in the `cfn` folder. 
+  ** OCSF Findings (2000 series) overview page
+[[image:ocsf_findings_overview_2000_series.png||height="150" width="900"]]
+
+  ** Network Activity (4001) Org level overview
+[[image:ocsf_4001_overview.png||height="150" width="900"]]
+
+  ** Network Activity (4001) Account Level Drill Down
+[[image:ocsf_4001_drilldown.png||height="150" width="900"]]
+
+  ** DNS Activity (4003) Org level overview
+[[image:ocsf_4003_overview.png||height="150" width="900"]]
+
+## Installation instructions
+1. Download the index and component template zip files. Upload it to an S3 bucket or save it to your local machine.
+2. Download the right initialization script based on how you would like to authenticate to OpenSearch (basic auth or AWS IAM). 
+3. Modify the variables in the initialization script. You will need to add your OpenSearch cluster endpoint, authentication information, and the location of the index and component templates.
+4. Run the initialization script. 
+5. Log in to the OpenSearch cluster and upload the OpenSearch objects in the **Saved Objects** screen under **Dashboards Management**.  
