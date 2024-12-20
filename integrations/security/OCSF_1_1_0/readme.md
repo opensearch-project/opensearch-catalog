@@ -12,7 +12,55 @@ Index templates (`schemas/index_templates`) automatically apply predefined setti
 
 Component templates (`schemas/component_templates`) are reusable building blocks that contain mapping definitions. Component templates are used as part of index templates. 
 
-The current set of index and component templates are mapped to the OSCF 1.1.0 standard.
+The current set of index and component templates are mapped to the OSCF 1.1.0 standard. The repository contains index templates for the following OCSF 1.1.0 categories and classes:
+  ** System Activity
+    *** OCSF 1001 - File System Activity
+    *** OCSF 1002 - Kernel Extension Activity
+    *** OCSF 1003 - Kernel Activity
+    *** OCSF 1004 - Memory Activity
+    *** OCSF 1005 - Module Activity
+    *** OCSF 1006 - Scheduled Job Activity
+    *** OCSF 1007 - Process Activity
+  ** Findings
+    *** OCSF 2002 - Vulnerability Finding
+    *** OCSF 2003 - Compliance Finding
+    *** OCSF 2004 - Detection Finding
+    *** OCSF 2005 - Incident Finding
+  ** Identity and Access Management
+    *** OCSF 3001 - Account Change
+    *** OCSF 3002 - Authentication
+    *** OCSF 3003 - Authorize Session
+    *** OCSF 3004 - Entity Management
+    *** OCSF 3005 - User Access Management
+    *** OCSF 3006 - Group Management
+  ** Network Activity
+    *** OCSF 4001 - Network Activity
+    *** OCSF 4002 - HTTP Activity
+    *** OCSF 4003 - DNS Activity
+    *** OCSF 4004 - DHCP Activity
+    *** OCSF 4005 - RDP Activity
+    *** OCSF 4006 - SMB Activity
+    *** OCSF 4007 - SSH Activity
+    *** OCSF 4008 - FTP Activity
+    *** OCSF 4009 - Email Activity
+    *** OCSF 4010 - Network File Activity
+    *** OCSF 4011 - Email File Activity
+    *** OCSF 4012 - Email URL Activity
+    *** OCSF 4013 - NTP Activity
+  ** Discovery 
+    *** OCSF 5001 - Device Inventory Info
+    *** OCSF 5002 - Device Config State 
+    *** OCSF 5003 - User Inventory Info
+    *** OCSF 5004 - Operating System Patch State
+    *** OCSF 5019 - Device Config State Change 
+  ** Application Activity
+    *** OCSF 6001 - Web Resources Activity
+    *** OCSF 6002 - Application Lifecycle
+    *** OCSF 6003 - API Activity
+    *** OCSF 6004 - Web Resources Access Activity
+    *** OCSF 6005 - Datastore Activity
+    *** OCSF 6006 - File Hosting Activity
+    *** OCSF 6007 - Scan Activity
 
 ### OpenSearch Ingestion template
 The OpenSearch Ingestion template (`scripts/OSI-pipeline.yaml`) provides a template you can use with an OpenSearch Ingestion pipeline to ingest OCSF data. 
@@ -30,7 +78,6 @@ The OpenSearch objects (`assets/OCSF_objects.ndjson`) contains visualizations, d
 
 * OCSF High level overview (All OCSF categories) page
 ![OpenSearch Dashboard](https://github.com/Kevlw-AWS/opensearch-catalog-security/blob/security-lake/integrations/security/OCSF_1_1_0/Images/all_ocsf_overview.png)
-
 
 * OCSF Findings (2000 series) overview page
 ![OpenSearch Dashboard](https://github.com/Kevlw-AWS/opensearch-catalog-security/blob/security-lake/integrations/security/OCSF_1_1_0/Images/ocsf_findings_overview_2000_series.png)
