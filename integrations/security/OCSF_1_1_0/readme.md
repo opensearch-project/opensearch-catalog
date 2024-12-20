@@ -32,7 +32,7 @@ The OpenSearch objects (`assets/OCSF_objects.ndjson`) contains visualizations, d
 [[image:all_ocsf_overview.png||height="150" width="900"]]
 
 * OCSF Findings (2000 series) overview page
-![OpenSearch Dashboard](images/all_ocsf_overview.png)
+![OpenSearch Dashboard](./images/all_ocsf_overview.png)
 
 * Network Activity (4001) Org level overview
 ![OpenSearch Dashboard](images/ocsf_4001_overview.png)
