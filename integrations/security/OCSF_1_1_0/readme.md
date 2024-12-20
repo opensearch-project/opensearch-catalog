@@ -28,20 +28,20 @@ There are two scripts - one that uses basic auth (`scripts/os_init_basic_auth.py
 ### OpenSearch objects
 The OpenSearch objects (`assets/OCSF_objects.ndjson`) contains visualizations, dashboards, and index patterns to help you get started with exploring OCSF data. Visualizations include: 
 
-  ** OCSF High level overview (All OCSF categories) page
+* OCSF High level overview (All OCSF categories) page
 [[image:all_ocsf_overview.png||height="150" width="900"]]
 
-  ** OCSF Findings (2000 series) overview page
-[[image:ocsf_findings_overview_2000_series.png||height="150" width="900"]]
+* OCSF Findings (2000 series) overview page
+![OpenSearch Dashboard](images/all_ocsf_overview.png)
 
-  ** Network Activity (4001) Org level overview
-[[image:ocsf_4001_overview.png||height="150" width="900"]]
+* Network Activity (4001) Org level overview
+![OpenSearch Dashboard](images/ocsf_4001_overview.png)
 
-  ** Network Activity (4001) Account Level Drill Down
-[[image:ocsf_4001_drilldown.png||height="150" width="900"]]
+* Network Activity (4001) Account Level Drill Down
+![OpenSearch Dashboard](images/ocsf_4001_drilldown.png)
 
-  ** DNS Activity (4003) Org level overview
-[[image:ocsf_4003_overview.png||height="150" width="900"]]
+* DNS Activity (4003) Org level overview
+![OpenSearch Dashboard](images/ocsf_4003_overview.png)
 
 ## Installation instructions
 1. Download the index and component template zip files. Upload it to an S3 bucket or save it to your local machine.
