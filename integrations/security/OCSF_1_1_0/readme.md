@@ -92,9 +92,35 @@ The OpenSearch objects (`assets/OCSF_objects.ndjson`) contains visualizations, d
 * DNS Activity (4003) Org level overview
 ![OpenSearch Dashboard](static/ocsf_4003_overview.png)
 
-## Installation instructions
-1. Download the index and component template zip files. Upload it to an S3 bucket or save it to your local machine.
+## Installing the index and component templates (IAM Auth)
+* This script will install the mappings, aliases, index templates, and ISM policy for your cluster. 
+
+* This method will use AWS IAM SigV4 request signing to authenticate to your cluster. The machine that runs the script will need `ec2:Describe*` and `es:ESHttp*` permissions.
+
+* This is the recommended method if you are using Amazon OpenSearch service. 
+
+1. Download the index (`schemas/index_templates.zip`) and component template (`schemas/component_templates.zip`) zip files. Upload them to an S3 bucket.
+2. Download the `os_init_IAM_auth.py` file and open it in a code editor. 
+3. Modify the `OSEndpoint`, `region`, `bucket_name`, `component_templates`, and `index_templates` variables to match your set up.
+4. Run the `os_init_IAM_auth.py` file in your code editor. It will connect to your cluster and install the mappings, aliases, index templates, and the ISM policy to your cluster. 
+
+## Installing the index and component templates (Basic Auth)
+* This script will install the mappings, aliases, index templates, and ISM policy for your cluster. 
+* This method will use the OpenSearch username and password to authenticate to your cluster.
+
+1. Download the index (`schemas/index_templates.zip`) and component template (`schemas/component_templates.zip`) zip files. Upload them to an S3 bucket.
+2. Download the `os_init_basic_auth.py` file and open it in a code editor. 
+3. Modify the `OSEndpoint`, `region`, `bucket_name`, `OS_USERNAME`, `OS_PASSWORD`, `component_templates`, and `index_templates` variables to match your set up.
+4. Run the `os_init_basic_auth.py` file in your code editor. It will connect to your cluster and install the mappings, aliases, index templates, and the ISM policy to your cluster. 
+
 2. Download the right initialization script based on how you would like to authenticate to OpenSearch (basic auth or AWS IAM). 
 3. Modify the variables in the initialization script. You will need to add your OpenSearch cluster endpoint, authentication information, and the location of the index and component templates.
-4. Run the initialization script. 
-5. Log in to the OpenSearch cluster and upload the OpenSearch objects in the **Saved Objects** screen under **Dashboards Management**.  
+4. Open and run the initialization script with a code editor. 
+
+## Installing the Visualizations and Index templates
+1. Log in to the OpenSearch cluster 
+2. Expand the hamburger menu on the top left and select **Dashboards Management** 
+![Dashboards Management](static/DashboardsManagementScreenshot.png)
+3. Select **Saved Objects**, then select **Import**. 
+![Saved Objects](static/DashboardsManagementSavedObjects.png)
+4. Select **Import**, then select the `OCSF_objects.ndjson` file. Select **Open** and then **Import**. 
