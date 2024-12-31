@@ -34,6 +34,13 @@
       }
     ]
   },
+  "components": [
+    { "name": "communication", "version": "1.1.0" },
+    { "name": "http", "version": "1.1.0" },
+    { "name": "logs_apache", "version": "1.1.0" },
+    { "name": "ocsf_1_1_0_actor", "version": "1.1.0" },
+    { "name": "ocsf_1_1_0_answers", "version": "1.1.0" }
+  ],
   "assets": [
     { "name": "OCSF_readme", "version": "1.1.0", "extension": "ndjson", "type": "savedObjectBundle", "workflows": ["dashboards"] }
   ],
