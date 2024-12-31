@@ -5,8 +5,8 @@
                 "version": "1.1.0",
                 "catalog": "observability",
                 "type": "logs",
-                "component": "communication",
-                "labels": ["communication"]
+                "component": "actor",
+                "labels": ["actor"]
               },
             "properties":{
                 "actor":{
