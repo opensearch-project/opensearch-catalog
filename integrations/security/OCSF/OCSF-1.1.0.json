@@ -1,0 +1,50 @@
+{
+  "name": "OCSF",
+  "version": "1.1.0",
+  "displayName": "Open Cybersecurity Schema Framework",
+  "description": "Logs collected in the OCSF format.",
+  "license": "Apache-2.0",
+  "type": "logs_apache",
+  "labels": ["Security", "Logs", "OCSF", "Amazon Security Lake"],
+  "author": "OpenSearch",
+  "sourceUrl": "https://github.com/Kevlw-AWS/opensearch-catalog-security/tree/security-lake/integrations/security/OCSF_1_1_0",
+  "workflows": [
+    {
+      "name": "queries",
+      "label": "Queries (recommended)",
+      "description": "Tables and pre-written queries for quickly getting insights on your data.",
+      "enabled_by_default": true
+    },
+    {
+      "name": "dashboards",
+      "label": "Dashboards & Visualizations",
+      "description": "Dashboards and indices that enable you to easily visualize important metrics.",
+      "enabled_by_default": false
+    }
+  ],
+  "statics": {
+    "logo": {
+      "annotation": "OCSF Logo",
+      "path": "ocsf-logo.png"
+    },
+    "gallery": [
+      {
+        "annotation": "OCSF Dashboard",
+        "path": "all_ocsf_overview.png"
+      }
+    ]
+  },
+  "components": [
+    { "name": "ocsf_1_1_0_actor", "version": "1.1.0" },
+    { "name": "ocsf_1_1_0_answers", "version": "1.1.0" },
+    { "name": "http", "version": "1.1.0" },
+    { "name": "communication", "version": "1.1.0" },
+    { "name": "logs_apache", "version": "1.1.0" }
+  ],
+  "assets": [
+    { "name": "OCSF_readme", "version": "1.1.0", "extension": "ndjson", "type": "savedObjectBundle", "workflows": ["dashboards"] }
+  ],
+  "sampleData": {
+    "path": "sample.json"
+  }
+}

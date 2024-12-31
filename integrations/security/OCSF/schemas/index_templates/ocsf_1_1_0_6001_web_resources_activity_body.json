@@ -1,0 +1,44 @@
+{
+    "index_patterns":[
+        "ocsf-1.1.0-6001*"
+    ],
+    "template":{
+        "settings":{
+            "index.number_of_shards":1,
+            "index.number_of_replicas":1,
+            "index.max_docvalue_fields_search":400,
+            "index.mapping.total_fields.limit":4000
+        },
+        "mappings":{
+            "properties":{
+                "disposition_id":{
+                    "type":"integer"
+                }
+            }
+        }
+    },
+    "composed_of":[
+        "ocsf_1_1_0_base_event",
+        "ocsf_1_1_0_api",
+        "ocsf_1_1_0_actor",
+        "ocsf_1_1_0_attacks",
+        "ocsf_1_1_0_authorizations",
+        "ocsf_1_1_0_cloud",
+        "ocsf_1_1_0_dst_endpoint",
+        "ocsf_1_1_0_device",
+        "ocsf_1_1_0_enrichments",
+        "ocsf_1_1_0_firewall_rule",
+        "ocsf_1_1_0_http_request",
+        "ocsf_1_1_0_http_response",
+        "ocsf_1_1_0_metadata",
+        "ocsf_1_1_0_observables",
+        "ocsf_1_1_0_src_endpoint",
+        "ocsf_1_1_0_tls",
+        "ocsf_1_1_0_web_resources",
+        "ocsf_1_1_0_web_resources_result"
+    ],
+    "version":1,
+    "_meta":{
+        "description":"Web Resources Activity - 6001 - schema version OCSF v1.1.0"
+    }
+}

@@ -1,0 +1,50 @@
+{
+    "template":{
+        "mappings":{
+            "_meta": {
+                "version": "1.1.0",
+                "catalog": "observability",
+                "type": "logs",
+                "component": "http",
+                "labels": ["http"]
+              },
+            "properties":{
+                "answers":{
+                    "properties":{
+                        "flags":{
+                            "type":"keyword",
+                            "ignore_above":32
+                        },
+                        "flags_ids":{
+                            "type":"integer"
+                        },
+                        "rdata":{
+                            "type":"text",
+                            "fields":{
+                                "keyword":{
+                                    "type":"keyword",
+                                    "ignore_above":256
+                                }
+                            }
+                        },
+                        "packet_uid":{
+                            "type":"integer"
+                        },
+                        "class":{
+                            "type":"keyword",
+                            "ignore_above":16
+                        },
+                        "type":{
+                            "type":"keyword",
+                            "ignore_above":16
+                        },
+                        "ttl":{
+                            "type":"integer"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
