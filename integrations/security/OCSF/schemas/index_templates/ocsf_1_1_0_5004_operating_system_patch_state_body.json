@@ -1,0 +1,27 @@
+{
+    "index_patterns":[
+        "ocsf-1.1.0-5004*"
+    ],
+    "template":{
+        "settings":{
+            "index.number_of_shards":1,
+            "index.number_of_replicas":1,
+            "index.max_docvalue_fields_search":400,
+            "index.mapping.total_fields.limit":4000
+        }
+    },
+    "composed_of":[
+        "ocsf_1_1_0_base_event",
+        "ocsf_1_1_0_api",
+        "ocsf_1_1_0_cloud",
+        "ocsf_1_1_0_device",
+        "ocsf_1_1_0_enrichments",
+        "ocsf_1_1_0_kb_article_list",
+        "ocsf_1_1_0_metadata",
+        "ocsf_1_1_0_observables"
+    ],
+    "version":1,
+    "_meta":{
+        "description":"Operating System Patch State - 5004 - schema version OCSF v1.1.0"
+    }
+}

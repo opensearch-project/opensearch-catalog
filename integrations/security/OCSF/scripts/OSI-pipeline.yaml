@@ -1,0 +1,54 @@
+version: "2"
+s3-log-pipeline:
+  source:
+    s3:
+      # Prevent data loss by only considering logs to be processed successfully after they are received by the opensearch sink
+      acknowledgments: true
+      notification_type: "sqs"
+      compression: "none"
+      notification_source: "eventbridge"
+      codec:
+        parquet:
+      sqs:
+        queue_url: "https://sqs.us-east-1.amazonaws.com/123456789012/AmazonSecurityLake-2c7ac5af-efc2-4244-8185-a05b14f3ffd4-Main-Queue"
+        visibility_timeout: "60s"
+        visibility_duplication_protection: true
+      aws:
+        # Provide the region to use for aws credentials
+        region: "<<us-east-1>>"
+        # Provide the role to assume for requests to SQS and S3
+        sts_role_arn: "<<arn:aws:iam::123456789012:role/Example-Role>>"
+  processor:
+    - drop_events:
+        drop_when: '/status_code != "OK" and /metadata/product/name == "Amazon VPC"'
+    - lowercase_string:
+        with_keys: [ "/metadata/product/name", "/class_name" ]
+    - substitute_string:
+        entries:
+          - source: "/metadata/product/name"
+            from: "\\s"
+            to: "_"
+          - source: "/class_name"
+            from: "\\s"
+            to: "_"
+    - delete_entries:
+        with_keys: [ "s3" ]
+  sink:
+    - opensearch:
+        hosts: [ "<<https://search-mydomain-1a2a3a4a5a6a7a8a9a0a9a8a7a.us-east-1.es.amazonaws.com>>"] 
+        aws:
+          sts_role_arn: "<<arn:aws:iam::123456789012:role/Example-Role>>"
+          region: "<<us-east-1>>"
+          serverless: false
+        index: "ocsf-${/metadata/version}-${/class_uid}-${/class_name}"
+        # Optional: Enable the S3 DLQ to capture any failed requests in an S3 bucket. Delete this entire block if you don't want a DLQ.
+        dlq:
+          s3:
+            # Provide an S3 bucket
+            bucket: "<<your-dlq-bucket-name>>"
+            # Provide a key path prefix for the failed requests
+            # key_path_prefix: "s3-log-pipeline/dlq"
+            # Provide the region of the bucket.
+            region: "<<us-east-1>>"
+            # Provide a Role ARN with access to the bucket. This role should have a trust relationship with osis-pipelines.amazonaws.com
+            sts_role_arn: "<<arn:aws:iam::123456789012:role/Example-Role>>"

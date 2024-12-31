@@ -1,0 +1,57 @@
+{
+    "template":{
+        "mappings":{
+            "properties":{
+                "http_response":{
+                    "properties":{
+                        "code":{
+                            "type":"integer"
+                        },
+                        "content_type":{
+                            "type":"keyword",
+                            "ignore_above":64
+                        },
+                        "http_headers":{
+                            "properties":{
+                                "name":{
+                                    "type":"keyword",
+                                    "ignore_above":256
+                                },
+                                "value":{
+                                    "type":"text",
+                                    "fields":{
+                                        "keyword":{
+                                            "type":"keyword",
+                                            "ignore_above":2048
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "latency":{
+                            "type":"integer"
+                        },
+                        "length":{
+                            "type":"integer"
+                        },
+                        "message":{
+                            "type":"text",
+                            "fields":{
+                                "keyword":{
+                                    "type":"keyword",
+                                    "ignore_above":256
+                                }
+                            }
+                        },
+                        "status":{
+                            "type":"keyword",
+                            "ignore_above":64
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+

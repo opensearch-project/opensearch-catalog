@@ -1,0 +1,34 @@
+{
+    "template":{
+        "mappings":{
+            "properties":{
+                "query":{
+                    "properties":{
+                        "opcode":{
+                            "type":"keyword",
+                            "ignore_above":32
+                        },
+                        "opcode_id":{
+                            "type":"integer"
+                        },
+                        "hostname":{
+                            "type":"keyword",
+                            "ignore_above":256
+                        },
+                        "packet_uid":{
+                            "type":"integer"
+                        },
+                        "class":{
+                            "type":"keyword",
+                            "ignore_above":32
+                        },
+                        "type":{
+                            "type":"keyword",
+                            "ignore_above":16
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

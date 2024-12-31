@@ -1,0 +1,37 @@
+{
+    "template":{
+        "mappings":{
+            "properties":{
+                "server_hassh":{
+                    "properties":{
+                        "algorithm":{
+                            "type":"text",
+                            "fields":{
+                                "keyword":{
+                                    "type":"keyword",
+                                    "ignore_above":256
+                                }
+                            }
+                        },
+                        "fingerprint":{
+                            "properties":{
+                                "algorithm":{
+                                    "type":"keyword",
+                                    "ignore_above":64
+                                },
+                                "algorithm_id":{
+                                    "type":"integer"
+                                },
+                                "value":{
+                                    "type":"keyword",
+                                    "ignore_above":1024
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+

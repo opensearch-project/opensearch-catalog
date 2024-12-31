@@ -1,0 +1,120 @@
+{
+    "template":{
+        "mappings":{
+            "properties":{
+                "api":{
+                    "properties":{
+                        "request":{
+                            "properties":{
+                                "flags":{
+                                    "type":"keyword",
+                                    "ignore_above":32
+                                },
+                                "uid":{
+                                    "type":"keyword",
+                                    "ignore_above":48
+                                }
+                            }
+                        },                        
+                        "response":{
+                            "properties":{
+                                "error":{
+                                    "type":"keyword",
+                                    "ignore_above":32
+                                },
+                                "error_message":{
+                                    "type" : "text",
+                                    "fields" : {
+                                        "keyword" : {
+                                            "type" : "keyword",
+                                            "ignore_above" : 256
+                                        }
+                                    }
+                                },
+                                "flags":{
+                                    "type":"keyword",
+                                    "ignore_above":32
+                                },
+                                "message":{
+                                    "type" : "text",
+                                    "fields" : {
+                                       "keyword" : {
+                                            "type" : "keyword",
+                                            "ignore_above" : 256
+                                        }
+                                    }
+                                },                                
+                                "code":{
+                                    "type":"integer"
+                                }
+                            }
+                        },
+                        "group":{
+                            "properties":{
+                                "type":{
+                                    "type":"keyword",
+                                    "ignore_above":64
+                                },
+                                "desc":{
+                                    "type":"text",
+                                    "fields":{
+                                        "keyword":{
+                                            "type":"keyword",
+                                            "ignore_above":256
+                                        }
+                                    }
+                                },
+                                "domain":{
+                                    "type":"keyword",
+                                    "ignore_above":64
+                                },
+                                "name":{
+                                    "type":"keyword",
+                                    "ignore_above":64
+                                },
+                                "privileges":{
+                                    "type":"keyword",
+                                    "ignore_above":64
+                                },
+                                "uid":{
+                                    "type":"keyword",
+                                    "ignore_above":64
+                                }
+                            }
+                        },
+                        "operation":{
+                            "type":"keyword",
+                            "ignore_above":256
+                        },
+                        "service":{
+                            "properties":{
+                                "labels":{
+                                    "type":"keyword",
+                                    "ignore_above":64
+                                },
+                                "name":{
+                                    "type":"keyword",
+                                    "ignore_above":64
+                                },
+                                "uid":{
+                                    "type":"keyword",
+                                    "ignore_above":48
+                                },
+                                "version":{
+                                    "type":"keyword",
+                                    "ignore_above":32
+                                }                                
+                            }                        
+                        },
+                        "version":{
+                            "type":"keyword",
+                            "ignore_above":32
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+

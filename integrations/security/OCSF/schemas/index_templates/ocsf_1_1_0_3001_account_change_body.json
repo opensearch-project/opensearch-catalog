@@ -1,0 +1,45 @@
+{
+    "index_patterns":[
+        "ocsf-1.1.0-3001*"
+    ],
+    "template":{
+        "settings":{
+            "index.plugins.index_state_management.rollover_alias": "ocsf-1.1.0-3001-account_change",
+            "index.number_of_shards":1,
+            "index.number_of_replicas":1,
+            "index.max_docvalue_fields_search":400,
+            "index.mapping.total_fields.limit":4000
+        },
+        "mappings":{
+            "properties":{
+                "action":{
+                    "type":"keyword",
+                    "ignore_above":64
+                },
+                "action_id":{
+                    "type":"integer"
+                }
+            }
+        }
+    },
+    "composed_of":[
+        "ocsf_1_1_0_base_event",
+        "ocsf_1_1_0_api",
+        "ocsf_1_1_0_actor",
+        "ocsf_1_1_0_attacks",
+        "ocsf_1_1_0_cloud",
+        "ocsf_1_1_0_device",
+        "ocsf_1_1_0_enrichments",
+        "ocsf_1_1_0_http_request",
+        "ocsf_1_1_0_metadata",
+        "ocsf_1_1_0_observables",
+        "ocsf_1_1_0_policy",
+        "ocsf_1_1_0_src_endpoint",
+        "ocsf_1_1_0_user",
+        "ocsf_1_1_0_user_result"
+    ],
+    "version":1,
+    "_meta":{
+        "description":"Account Change - 3001 - schema version OCSF v1.1.0"
+    }
+}
