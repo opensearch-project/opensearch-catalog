@@ -105,8 +105,23 @@ def attach_assets(config: dict, path: Path) -> dict:
 # Serialize integration as local dictionary
 def scan_integration(path: Path) -> dict:
     integration_name = path.stem
-    # TODO detect latest version instead of defaulting to 1.0.0
-    with open(path / f"{integration_name}-1.0.0.json", "r") as config_file:
+    # Find all files matching pattern: integration_name-X.Y.Z.json
+    version_files = glob(str(path / f"{integration_name}-[0-9]*.[0-9]*.[0-9]*.json"))
+    if not version_files:
+        raise ValueError(f"No version files found for integration: {integration_name}")
+    # Extract versions and sort them
+    versions = []
+    for file in version_files:
+        # Extract version from filename (e.g., "name-1.2.1.json" -> "1.2.1")
+        version = Path(file).stem.split('-')[1]
+        versions.append(version)
+    
+    # Sort versions naturally - since they're in X.Y.Z format, string sorting works
+    latest_version = sorted(versions, reverse=True)[0]
+    
+    # Read the latest version file
+    config_path = path / f"{integration_name}-{latest_version}.json"
+    with open(config_path, "r") as config_file:
         config = json.load(config_file)
     config = attach_assets(config, path)
     return config
