@@ -412,10 +412,10 @@ GET flint_{datasource_name}_{database_name}_{user_given_flint_asset_name}_{flint
 
 - Navigate to **Dashboards Management → Index Patterns** (https://{dashboards_base_url}/_dashboards/app/management/opensearch-dashboards/indexPatterns) in OpenSearch Dashboards.
 - Click Create Index Pattern.
-- Enter the full name of your MV index (e.g., `flint_flinttest1_default_vpc_mv_10000_100424_agg`) or a matching pattern.
-![index_pattern_creation](../img/integration-sop-doc/index_pattern_creation.png)
-- Select the appropriate time field (e.g., @timestamp) for time-based visualizations.
-![index_pattern_time_field](../img/integration-sop-doc/index_pattern_time_field.png)
+- Enter the full name of your MV index (e.g., `flint_flinttest1_default_vpc_mv_10000_100424_agg`) or a matching pattern.  
+![index_pattern_creation](../img/integration-sop-doc/index_pattern_creation.png)  
+- Select the appropriate time field (e.g., @timestamp) for time-based visualizations.  
+![index_pattern_time_field](../img/integration-sop-doc/index_pattern_time_field.png)  
 - Save the index pattern.
 
 **3. Create and Configure Dashboards with Visualizations**
@@ -444,13 +444,13 @@ This feature allows users to bypass manual configuration by reusing pre-configur
 - **Exporting Visualizations**:
   - Navigate to **Dashboards Management → Saved Objects**.
   - Search for the visualization or dashboard you want to export.
-  - Select the desired objects and click Export to download the `.ndjson` file.
+  - Select the desired objects and click Export to download the `.ndjson` file.  
   ![dashboard_export](../img/integration-sop-doc/dashboard_export.png)
 - **Importing Visualizations**:
   - Navigate to **Dashboards Management → Saved Objects**.
   - Click Import and upload the `.ndjson` file.
   - Resolve any conflicts (e.g., index pattern mismatches) during the import process.
-  - The imported visualizations will now be available in the Visualize and Dashboards sections.
+  - The imported visualizations will now be available in the Visualize and Dashboards sections.  
   ![dashboard_import](../img/integration-sop-doc/dashboard_import.png)
 
 ### Troubleshooting Common Issues
