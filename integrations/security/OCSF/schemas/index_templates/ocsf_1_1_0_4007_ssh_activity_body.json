@@ -29,7 +29,7 @@
                 "auth_type_id":{
                     "type":"integer"
                 },
-                "dispostion":{
+                "disposition":{
                     "type":"keyword",
                     "ignore_above":64
                 },

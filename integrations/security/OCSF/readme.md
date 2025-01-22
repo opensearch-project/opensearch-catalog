@@ -100,7 +100,7 @@ The OpenSearch objects (`assets/OCSF_objects.ndjson`) contains visualizations, d
 * This is the recommended method if you are using Amazon OpenSearch service. 
 
 1. Download the index (`schemas/index_templates.zip`) and component template (`schemas/component_templates.zip`) zip files. Upload them to an S3 bucket.
-2. Download the `os_init_IAM_auth.py` file and open it in a code editor. 
+2. Download the `os_init_IAM_auth.py` file and open it in a code editor.  The machine that runs the script will need ec2:Describe* and es:ESHttp* permissions. This is the recommended method if you are using Amazon OpenSearch service.
 3. Modify the `OSEndpoint`, `region`, `bucket_name`, `component_templates`, and `index_templates` variables to match your set up.
 4. Run the `os_init_IAM_auth.py` file in your code editor. It will connect to your cluster and install the mappings, aliases, index templates, and the ISM policy to your cluster. 
 

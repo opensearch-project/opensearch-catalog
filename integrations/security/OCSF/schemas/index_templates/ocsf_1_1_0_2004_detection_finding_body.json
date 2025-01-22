@@ -38,7 +38,7 @@
                         }
                     }
                 },
-                "dispostion":{
+                "disposition":{
                     "type":"keyword",
                     "ignore_above":64
                 },
