@@ -35,7 +35,7 @@
                     "type":"keyword",
                     "ignore_above":64
                 },
-                "dispostion":{
+                "disposition":{
                     "type":"keyword",
                     "ignore_above":64
                 },
