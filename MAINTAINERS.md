@@ -13,6 +13,7 @@ This document contains a list of maintainers in this repo. See [opensearch-proje
 | Miki Barahmand   | [AMoo-Miki](https://github.com/AMoo-Miki)             | Amazon      |
 | Lior Perry       | [YANG-DB](https://github.com/YANG-DB/)                | Amazon      |
 | Simeon Widdis    | [Swiddis](https://github.com/Swiddis)                 | Amazon      |
+| Vamsi Manohar    | [vamsimanohar](https://github.com/vamsimanohar)       | Amazon      |
 
 ## Emeritus
 
