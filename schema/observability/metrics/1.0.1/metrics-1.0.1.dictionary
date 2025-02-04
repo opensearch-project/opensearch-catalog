@@ -1,0 +1,579 @@
+{
+  "catalog": "observability",
+  "version": "1.0",
+  "attributes": [
+    {
+      "name": {
+        "category": "metrics",
+        "component": "metrics",
+        "caption": "Name",
+        "description": "The name of the metric.",
+        "examples": [
+          "http_requests_total",
+          "http_request_duration_seconds"
+        ],
+        "object_name": "name",
+        "object_type": "text/keyword"
+      },
+      "attributes.data_stream.dataset": {
+        "category": "metrics",
+        "component": "metrics",
+        "caption": "Data Stream Dataset",
+        "description": "Identifies the data set.",
+        "examples": [
+          "http_logs",
+          "system_metrics"
+        ],
+        "object_name": "attributes.data_stream.dataset",
+        "object_type": "keyword"
+      },
+      "attributes.data_stream.namespace": {
+        "category": "metrics",
+        "component": "metrics",
+        "caption": "Data Stream Namespace",
+        "description": "Specifies the namespace of the data stream.",
+        "examples": [
+          "web",
+          "database"
+        ],
+        "object_name": "attributes.data_stream.namespace",
+        "object_type": "keyword"
+      },
+      "attributes.data_stream.type": {
+        "category": "metrics",
+        "component": "metrics",
+        "caption": "Data Stream Type",
+        "description": "Specifies the type of data in the stream.",
+        "examples": [
+          "logs",
+          "metrics"
+        ],
+        "object_name": "attributes.data_stream.type",
+        "object_type": "keyword"
+      },
+      "description": {
+        "category": "metrics",
+        "component": "metrics",
+        "caption": "Description",
+        "description": "Description of the metric.",
+        "examples": [
+          "Total number of HTTP requests.",
+          "Duration of HTTP requests in seconds."
+        ],
+        "object_name": "description",
+        "object_type": "text/keyword"
+      },
+      "unit": {
+        "category": "metrics",
+        "component": "metrics",
+        "caption": "Unit",
+        "description": "The unit of the metric, e.g., bytes, seconds, etc.",
+        "examples": [
+          "seconds",
+          "bytes"
+        ],
+        "object_name": "unit",
+        "object_type": "keyword"
+      },
+      "kind": {
+        "category": "metrics",
+        "component": "metrics",
+        "caption": "Kind",
+        "description": "The kind of metric (e.g., gauge, counter, histogram, etc.).",
+        "examples": [
+          "gauge",
+          "counter"
+        ],
+        "object_name": "kind",
+        "object_type": "keyword"
+      },
+      "aggregationTemporality": {
+        "category": "metrics",
+        "component": "metrics",
+        "caption": "Aggregation Temporality",
+        "description": "Specifies the temporality of the aggregation (e.g., cumulative, delta).",
+        "examples": [
+          "cumulative",
+          "delta"
+        ],
+        "object_name": "aggregationTemporality",
+        "object_type": "keyword"
+      },
+      "monotonic": {
+        "category": "metrics",
+        "component": "metrics",
+        "caption": "Monotonic",
+        "description": "Indicates if the value can only increase.",
+        "examples": [
+          "true",
+          "false"
+        ],
+        "object_name": "monotonic",
+        "object_type": "boolean"
+      },
+      "startTime": {
+        "category": "metrics",
+        "component": "metrics",
+        "caption": "Start Time",
+        "description": "The start time of the metric collection.",
+        "examples": [
+          "2023-06-14T00:00:00Z",
+          "2023-06-14T01:00:00Z"
+        ],
+        "object_name": "startTime",
+        "object_type": "date"
+      },
+      "@timestamp": {
+        "category": "metrics",
+        "component": "metrics",
+        "caption": "Timestamp",
+        "description": "The timestamp when the metric was collected or received.",
+        "examples": [
+          "2023-06-14T00:05:00Z",
+          "2023-06-14T01:05:00Z"
+        ],
+        "object_name": "@timestamp",
+        "object_type": "date"
+      },
+      "observedTimestamp": {
+        "category": "metrics",
+        "component": "metrics",
+        "caption": "Observed Timestamp",
+        "description": "The precise timestamp of when the metric was observed.",
+        "examples": [
+          "2023-06-14T00:05:00.123456789Z",
+          "2023-06-14T01:05:00.123456789Z"
+        ],
+        "object_name": "observedTimestamp",
+        "object_type": "date_nanos"
+      },
+      "value.int": {
+        "category": "metrics",
+        "component": "metrics",
+        "caption": "Integer Value",
+        "description": "Integer value of the metric.",
+        "examples": [
+          "100",
+          "200"
+        ],
+        "object_name": "value.int",
+        "object_type": "integer"
+      },
+      "value.double": {
+        "category": "metrics",
+        "component": "metrics",
+        "caption": "Double Value",
+        "description": "Double/float value of the metric.",
+        "examples": [
+          "1.23",
+          "4.56"
+        ],
+        "object_name": "value.double",
+        "object_type": "double"
+      },
+      "buckets.count": {
+        "category": "metrics",
+        "component": "metrics",
+        "caption": "Buckets Count",
+        "description": "Count of the observed values in the bucket (used in histogram metrics).",
+        "examples": [
+          "1000",
+          "2000"
+        ],
+        "object_name": "buckets.count",
+        "object_type": "long"
+      },
+      "buckets.sum": {
+        "category": "metrics",
+        "component": "metrics",
+        "caption": "Buckets Sum",
+        "description": "Sum of the observed values in the bucket (used in histogram metrics).",
+        "examples": [
+          "10000.0",
+          "20000.0"
+        ],
+        "object_name": "buckets.sum",
+        "object_type": "double"
+      },
+      "buckets.max": {
+        "category": "metrics",
+        "component": "metrics",
+        "caption": "Buckets Max",
+        "description": "Maximum observed value in the bucket (used in histogram metrics).",
+        "examples": [
+          "100.0",
+          "200.0"
+        ],
+        "object_name": "buckets.max",
+        "object_type": "float"
+      },
+      "buckets.min": {
+        "category": "metrics",
+        "component": "metrics",
+        "caption": "Buckets Min",
+        "description": "Minimum observed value in the bucket (used in histogram metrics).",
+        "examples": [
+          "1.0",
+          "2.0"
+        ],
+        "object_name": "buckets.min",
+        "object_type": "float"
+      }
+    },
+    {
+      "bucketCount": {
+        "category": "metrics",
+        "component": "metrics",
+        "caption": "Bucket Count",
+        "description": "The total number of buckets.",
+        "examples": [
+          "10",
+          "20"
+        ],
+        "object_name": "bucketCount",
+        "object_type": "long"
+      },
+      "bucketCountsList": {
+        "category": "metrics",
+        "component": "metrics",
+        "caption": "Bucket Counts List",
+        "description": "A list of counts for multiple buckets.",
+        "examples": [
+          "[100, 200, 300]",
+          "[500, 600, 700]"
+        ],
+        "object_name": "bucketCountsList",
+        "object_type": "long"
+      },
+      "explicitBoundsList": {
+        "category": "metrics",
+        "component": "metrics",
+        "caption": "Explicit Bounds List",
+        "description": "A list of explicit bounds for histogram metrics.",
+        "examples": [
+          "[0.5, 0.7, 1.0]",
+          "[0.1, 0.2, 0.3]"
+        ],
+        "object_name": "explicitBoundsList",
+        "object_type": "float"
+      },
+      "explicitBoundsCount": {
+        "category": "metrics",
+        "component": "metrics",
+        "caption": "Explicit Bounds Count",
+        "description": "Count of explicit bounds.",
+        "examples": [
+          "3",
+          "4"
+        ],
+        "object_name": "explicitBoundsCount",
+        "object_type": "float"
+      },
+      "quantiles.quantile": {
+        "category": "metrics",
+        "component": "metrics",
+        "caption": "Quantile",
+        "description": "The quantile value (e.g., 0.95 for 95th percentile).",
+        "examples": [
+          "0.95",
+          "0.99"
+        ],
+        "object_name": "quantiles.quantile",
+        "object_type": "double"
+      },
+      "quantiles.value": {
+        "category": "metrics",
+        "component": "metrics",
+        "caption": "Quantile Value",
+        "description": "The value at the specified quantile.",
+        "examples": [
+          "10.0",
+          "20.0"
+        ],
+        "object_name": "quantiles.value",
+        "object_type": "double"
+      },
+      "quantileValuesCount": {
+        "category": "metrics",
+        "component": "metrics",
+        "caption": "Quantile Values Count",
+        "description": "Count of quantile values.",
+        "examples": [
+          "5",
+          "10"
+        ],
+        "object_name": "quantileValuesCount",
+        "object_type": "long"
+      },
+      "positiveBuckets.count": {
+        "category": "metrics",
+        "component": "metrics",
+        "caption": "Positive Buckets Count",
+        "description": "Count of positive observed values in the bucket (used in histogram metrics).",
+        "examples": [
+          "100",
+          "200"
+        ],
+        "object_name": "positiveBuckets.count",
+        "object_type": "long"
+      },
+      "positiveBuckets.max": {
+        "category": "metrics",
+        "component": "metrics",
+        "caption": "Positive Buckets Max",
+        "description": "Maximum positive observed value in the bucket (used in histogram metrics).",
+        "examples": [
+          "100.0",
+          "200.0"
+        ],
+        "object_name": "positiveBuckets.max",
+        "object_type": "float"
+      },
+      "positiveBuckets.min": {
+        "category": "metrics",
+        "component": "metrics",
+        "caption": "Positive Buckets Min",
+        "description": "Minimum positive observed value in the bucket (used in histogram metrics).",
+        "examples": [
+          "1.0",
+          "2.0"
+        ],
+        "object_name": "positiveBuckets.min",
+        "object_type": "float"
+      },
+      "negativeBuckets.count": {
+        "category": "metrics",
+        "component": "metrics",
+        "caption": "Negative Buckets Count",
+        "description": "Count of negative observed values in the bucket (used in histogram metrics).",
+        "examples": [
+          "100",
+          "200"
+        ],
+        "object_name": "negativeBuckets.count",
+        "object_type": "long"
+      },
+      "negativeBuckets.max": {
+        "category": "metrics",
+        "component": "metrics",
+        "caption": "Negative Buckets Max",
+        "description": "Maximum negative observed value in the bucket (used in histogram metrics).",
+        "examples": [
+          "-100.0",
+          "-200.0"
+        ],
+        "object_name": "negativeBuckets.max",
+        "object_type": "float"
+      },
+      "negativeBuckets.min": {
+        "category": "metrics",
+        "component": "metrics",
+        "caption": "Negative Buckets Min",
+        "description": "Minimum negative observed value in the bucket (used in histogram metrics).",
+        "examples": [
+          "-1.0",
+          "-2.0"
+        ],
+        "object_name": "negativeBuckets.min",
+        "object_type": "float"
+      },
+      "negativeOffset": {
+        "category": "metrics",
+        "component": "metrics",
+        "caption": "Negative Offset",
+        "description": "The offset for negative values in histogram metrics.",
+        "examples": [
+          "-10",
+          "-20"
+        ],
+        "object_name": "negativeOffset",
+        "object_type": "integer"
+      },
+      "positiveOffset": {
+        "category": "metrics",
+        "component": "metrics",
+        "caption": "Positive Offset",
+        "description": "The offset for positive values in histogram metrics.",
+        "examples": [
+          "10",
+          "20"
+        ],
+        "object_name": "positiveOffset",
+        "object_type": "integer"
+      },
+      "zeroCount": {
+        "category": "metrics",
+        "component": "metrics",
+        "caption": "Zero Count",
+        "description": "Count of zero values.",
+        "examples": [
+          "100",
+          "200"
+        ],
+        "object_name": "zeroCount",
+        "object_type": "long"
+      },
+      "scale": {
+        "category": "metrics",
+        "component": "metrics",
+        "caption": "Scale",
+        "description": "The scaling factor for the metric values.",
+        "examples": [
+          "100",
+          "200"
+        ],
+        "object_name": "scale",
+        "object_type": "long"
+      },
+      "max": {
+        "category": "metrics",
+        "component": "metrics",
+        "caption": "Max",
+        "description": "The maximum value of the metric.",
+        "examples": [
+          "100.0",
+          "200.0"
+        ],
+        "object_name": "max",
+        "object_type": "float"
+      },
+      "min": {
+        "category": "metrics",
+        "component": "metrics",
+        "caption": "Min",
+        "description": "The minimum value of the metric.",
+        "examples": [
+          "1.0",
+          "2.0"
+        ],
+        "object_name": "min",
+        "object_type": "float"
+      },
+      "sum": {
+        "category": "metrics",
+        "component": "metrics",
+        "caption": "Sum",
+        "description": "The sum of the metric values.",
+        "examples": [
+          "1000.0",
+          "2000.0"
+        ],
+        "object_name": "sum",
+        "object_type": "float"
+      },
+      "count": {
+        "category": "metrics",
+        "component": "metrics",
+        "caption": "Count",
+        "description": "The total count of the metric observations.",
+        "examples": [
+          "10000",
+          "20000"
+        ],
+        "object_name": "count",
+        "object_type": "long"
+      }
+    },
+    {
+      "exemplar.time": {
+        "category": "metrics",
+        "component": "metrics",
+        "caption": "Exemplar Time",
+        "description": "The timestamp of the exemplar observation.",
+        "examples": [
+          "2023-06-14T00:10:00Z",
+          "2023-06-14T01:10:00Z"
+        ],
+        "object_name": "exemplar.time",
+        "object_type": "date"
+      },
+      "exemplar.traceId": {
+        "category": "metrics",
+        "component": "metrics",
+        "caption": "Exemplar Trace ID",
+        "description": "The trace ID associated with the exemplar.",
+        "examples": [
+          "1234567890abcdef",
+          "0987654321fedcba"
+        ],
+        "object_name": "exemplar.traceId",
+        "object_type": "keyword",
+        "correlation_field": "traces.traceId"
+      },
+      "exemplar.spanId": {
+        "category": "metrics",
+        "component": "metrics",
+        "caption": "Exemplar Span ID",
+        "description": "The span ID associated with the exemplar.",
+        "examples": [
+          "abcdef1234567890",
+          "fedcba0987654321"
+        ],
+        "object_name": "exemplar.spanId",
+        "object_type": "keyword",
+        "correlation_field": "traces.spanId"
+
+      },
+      "instrumentationScope.name": {
+        "category": "metrics",
+        "component": "metrics",
+        "caption": "Instrumentation Scope Name",
+        "description": "The name of the instrumentation scope.",
+        "examples": [
+          "serviceA",
+          "serviceB"
+        ],
+        "object_name": "instrumentationScope.name",
+        "object_type": "text/keyword"
+      },
+      "instrumentationScope.version": {
+        "category": "metrics",
+        "component": "metrics",
+        "caption": "Instrumentation Scope Version",
+        "description": "The version of the instrumentation scope.",
+        "examples": [
+          "1.0.0",
+          "2.0.0"
+        ],
+        "object_name": "instrumentationScope.version",
+        "object_type": "text/keyword"
+      },
+      "instrumentationScope.droppedAttributesCount": {
+        "category": "metrics",
+        "component": "metrics",
+        "caption": "Dropped Attributes Count",
+        "description": "The count of dropped attributes in the instrumentation scope.",
+        "examples": [
+          "10",
+          "20"
+        ],
+        "object_name": "instrumentationScope.droppedAttributesCount",
+        "object_type": "integer"
+      },
+      "instrumentationScope.schemaUrl": {
+        "category": "metrics",
+        "component": "metrics",
+        "caption": "Instrumentation Scope Schema URL",
+        "description": "The URL of the schema for the instrumentation scope.",
+        "examples": [
+          "https://example.com/schema",
+          "https://example.com/schema2"
+        ],
+        "object_name": "instrumentationScope.schemaUrl",
+        "object_type": "text/keyword"
+      },
+      "schemaUrl": {
+        "category": "metrics",
+        "component": "metrics",
+        "caption": "Schema URL",
+        "description": "The URL of the schema for the metric.",
+        "examples": [
+          "https://example.com/metric-schema",
+          "https://example.com/metric-schema2"
+        ],
+        "object_name": "schemaUrl",
+        "object_type": "text/keyword"
+      }
+    }
+  ]
+}
