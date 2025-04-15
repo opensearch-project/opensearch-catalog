@@ -71,6 +71,20 @@
       "tags": ["log", "aws", "communication", "http", "cloud", "elb", "url"]
     },
     {
+      "component": "Amazon Network Firewall Integration",
+      "description": "AWS Network Firewall is a managed network security service that helps protect your AWS Virtual Private Cloud (VPC) resources from network threats.",
+      "version": "1.0",
+      "url": "https://github.com/opensearch-project/opensearch-catalog/blob/main/integrations/observability/amazon_networkfirewall",
+      "logo": "https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/amazon_networkfirewall/static/logo.png",
+      "try_me_url" : "https://otel.playground.opensearch.org/app/dashboards?security_tenant=global#/view/ea4a25f2-9bcb-49cb-8fc0-0a89a43a58a2?_g=(filters:!(),refreshInterval:(pause:!t,value:0),time:(from:'2024-01-02T19:38:31.109Z',to:'2024-01-02T19:42:47.383Z'))&_a=(description:'',filters:!(),fullScreenMode:!f,options:(hidePanelTitles:!f,useMargins:!t),query:(language:kuery,query:''),timeRestore:!t,title:logs-aws-networkfirewall-dashboard,viewMode:view)",
+      "gallery": [
+        {
+          "asset": "dashboard",
+          "image": "https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/amazon_networkfirewall/static/dashboard.png"
+        }],
+      "tags": ["log", "aws", "s3", "cloud", "networkfirewall"]
+    },
+    {
       "component": "Amazon RDS Integration",
       "description": "AWS RDS (Relational Database Service) is a managed service that makes it easy to set up, operate, and scale a relational database in the cloud.",
       "version": "1.0",
