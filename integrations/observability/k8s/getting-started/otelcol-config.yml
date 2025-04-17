@@ -1,0 +1,118 @@
+extensions:
+  basicauth/client:
+    client_auth:
+      username: admin
+      password: admin
+
+receivers:
+  otlp:
+    protocols:
+      grpc:
+      http:
+        cors:
+          allowed_origins:
+            - "http://*"
+            - "https://*"
+  kubeletstats:
+    collection_interval: 10s
+    auth_type: 'serviceAccount'
+    endpoint: '${env:K8S_NODE_NAME}:10250'
+    insecure_skip_verify: true
+    metric_groups:
+      - node
+      - pod
+      - container
+
+exporters:
+  logging:
+    loglevel: info
+  debug:
+  otlp:
+    endpoint: "jaeger:4317"
+    tls:
+      insecure: true
+      insecure_skip_verify: true
+  opensearch/traces:
+    http:
+      endpoint: https://opensearch-node2:9200
+      auth:
+        authenticator: basicauth/client
+      tls:
+        insecure: false
+        insecure_skip_verify: true
+    timeout:
+    retry_on_failure:
+      enabled: true
+      initial_interval: 100000000
+      randomization_factor: 0.5
+    dataset: traces
+  opensearch/logs:
+    http:
+      endpoint: https://opensearch-node2:9200
+      auth:
+        authenticator: basicauth/client
+      tls:
+        insecure: false
+        insecure_skip_verify: true
+    timeout:
+    retry_on_failure:
+      enabled: true
+      initial_interval: 100000000
+      randomization_factor: 0.5
+    dataset: logs
+  otlp/traces:
+    endpoint: "data-prepper:21890"
+    tls:
+      insecure: true
+      insecure_skip_verify: true
+  otlp/metrics:
+    endpoint: "data-prepper:21891"
+    tls:
+      insecure: true
+      insecure_skip_verify: true
+  otlp/logs:
+    endpoint: "data-prepper:21892"
+    tls:
+      insecure: true
+      insecure_skip_verify: true
+  otlphttp/prometheus:
+    endpoint: "http://prometheus:9090/metrics"
+    tls:
+      insecure: true
+
+processors:
+  batch:
+  filter/ottl:
+    error_mode: ignore
+    metrics:
+      metric:
+        # FIXME: remove when a Metrics View is implemented in the checkout and productcatalog components
+        # or when this issue is resolved: https://github.com/open-telemetry/opentelemetry-go-contrib/issues/3071
+        - 'name == "rpc.server.duration"'
+  transform:
+    metric_statements:
+      - context: metric
+        statements:
+          # FIXME: remove when this issue is resolved: https://github.com/open-telemetry/opentelemetry-java/issues/4834
+          - set(description, "") where name == "queueSize"
+          # FIXME: remove when this issue is resolved: https://github.com/open-telemetry/opentelemetry-python-contrib/issues/1958
+          - set(description, "") where name == "http.client.duration"
+
+connectors:
+  spanmetrics:
+
+service:
+  extensions: [basicauth/client]
+  pipelines:
+    traces:
+      receivers: [otlp]
+      processors: [batch]
+      exporters: [otlp, debug, spanmetrics, otlp/traces, opensearch/traces]
+    metrics:
+      receivers: [otlp, spanmetrics, kubeletstats]
+      processors: [filter/ottl, transform, batch]
+      exporters: [otlphttp/prometheus, otlp/metrics, debug]
+    logs:
+      receivers: [otlp]
+      processors: [batch]
+      exporters: [otlp/logs, opensearch/logs, debug]
