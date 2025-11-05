@@ -1,0 +1,159 @@
+{
+  "catalog": "observability",
+  "version": "1.0",
+  "attributes": [
+    {
+      "severity.number": {
+        "category": "log",
+        "component": "severity",
+        "caption": "severity number",
+        "description": "Severity number associated with the log entry.",
+        "examples": [
+          "1",
+          "2",
+          "3"
+        ],
+        "object_name": "number",
+        "object_type": "long"
+      },
+      "severity.text": {
+        "category": "log",
+        "component": "severity",
+        "caption": "severity text",
+        "description": "Severity text associated with the log entry.",
+        "examples": [
+          "INFO",
+          "WARN",
+          "ERROR"
+        ],
+        "object_name": "text",
+        "object_type": "keyword"
+      },
+      "attributes.data_stream.*": {
+        "category": "log",
+        "component": "attributes",
+        "caption": "data stream attributes",
+        "description": "Data stream attributes for the log entry.",
+        "examples": [
+          "data_stream_1",
+          "data_stream_2",
+          "data_stream_3"
+        ],
+        "object_name": "data_stream",
+        "object_type": "keyword"
+      },
+      "body": {
+        "category": "log",
+        "component": "general",
+        "caption": "log body",
+        "description": "Log message content.",
+        "examples": [
+          "Error occured while trying to connect to the database",
+          "Server started successfully",
+          "User logged in"
+        ],
+        "object_name": "body",
+        "object_type": "text"
+      },
+      "@timestamp": {
+        "category": "log",
+        "component": "general",
+        "caption": "timestamp",
+        "description": "Log entry timestamp.",
+        "examples": [
+          "2023-06-14T18:00:00Z",
+          "2023-06-14T19:00:00Z",
+          "2023-06-14T20:00:00Z"
+        ],
+        "object_name": "timestamp",
+        "object_type": "date"
+      },
+      "observedTimestamp": {
+        "category": "log",
+        "component": "general",
+        "caption": "observed timestamp",
+        "description": "Observed timestamp of the log entry.",
+        "examples": [
+          "2023-06-14T18:00:00Z",
+          "2023-06-14T19:00:00Z",
+          "2023-06-14T20:00:00Z"
+        ],
+        "object_name": "observedTimestamp",
+        "object_type": "date"
+      },
+      "observerTime": {
+        "category": "log",
+        "component": "general",
+        "caption": "observer time",
+        "description": "Alias for `observedTimestamp`.",
+        "examples": [
+          "2023-06-14T18:00:00Z",
+          "2023-06-14T19:00:00Z",
+          "2023-06-14T20:00:00Z"
+        ],
+        "object_name": "observerTime",
+        "object_type": "alias"
+      },
+      "traceId": {
+        "category": "log",
+        "component": "trace",
+        "caption": "trace ID",
+        "description": "Trace ID associated with the log entry.",
+        "examples": [
+          "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+          "3fa85f64-5717-4562-b3fc-2c963f66afa7",
+          "3fa85f64-5717-4562-b3fc-2c963f66afa8"
+        ],
+        "object_name": "traceId",
+        "object_type": "keyword",
+        "correlation_field": "traces.traceId"
+      },
+      "spanId": {
+        "category": "log",
+        "component": "trace",
+        "caption": "span ID",
+        "description": "Span ID associated with the log entry.",
+        "examples": [
+          "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+          "3fa85f64-5717-4562-b3fc-2c963f66afa7",
+          "3fa85f64-5717-4562-b3fc-2c963f66afa8"
+        ],
+        "object_name": "spanId",
+        "object_type": "keyword",
+        "correlation_field": "traces.spanId"
+      },
+      "schemaUrl": {
+        "category": "log",
+        "component": "general",
+        "caption": "schema URL",
+        "description": "URL of the schema used for the log entry.",
+        "examples": [
+          "https://myschema.org/schema_v1.json",
+          "https://myschema.org/schema_v2.json",
+          "https://myschema.org/schema_v3.json"
+        ],
+        "object_name": "schemaUrl",
+        "object_type": "keyword"
+      },
+      "instrumentationScope.*": {
+        "category": "log",
+        "component": "instrumentation",
+        "caption": "instrumentation scope",
+        "description": "Instrumentation scope information for the log entry.",
+        "examples": [],
+        "object_name": "instrumentationScope",
+        "object_type": "keyword"
+      },
+      "event.*": {
+        "category": "log",
+        "component": "event",
+        "caption": "event info",
+        "description": "Event information associated with the log entry.",
+        "examples": [],
+        "object_name": "event",
+        "object_type": "keyword"
+      }
+    }
+  ]
+}
+

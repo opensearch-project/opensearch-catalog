@@ -1,0 +1,333 @@
+{
+  "catalog": "observability",
+  "version": "1.0",
+  "attributes": [
+    {
+      "traceId": {
+        "category": "traces",
+        "component": "trace",
+        "caption": "Trace ID",
+        "description": "The trace ID.",
+        "examples": [
+          "1234567890",
+          "0987654321"
+        ],
+        "object_name": "traceId",
+        "object_type": "keyword"
+      },
+      "spanId": {
+        "category": "traces",
+        "component": "trace",
+        "caption": "Span ID",
+        "description": "The span ID.",
+        "examples": [
+          "spanA",
+          "spanB"
+        ],
+        "object_name": "spanId",
+        "object_type": "keyword"
+      },
+      "traceState": {
+        "category": "traces",
+        "component": "trace",
+        "caption": "Trace State",
+        "description": "The trace state.",
+        "examples": [
+          "active",
+          "completed"
+        ],
+        "object_name": "traceState",
+        "object_type": "text"
+      },
+      "parentSpanId": {
+        "category": "traces",
+        "component": "trace",
+        "caption": "Parent Span ID",
+        "description": "The parent span ID.",
+        "examples": [
+          "parentSpanA",
+          "parentSpanB"
+        ],
+        "object_name": "parentSpanId",
+        "object_type": "keyword"
+      },
+      "name": {
+        "category": "traces",
+        "component": "trace",
+        "caption": "Trace Name",
+        "description": "The name of the trace.",
+        "examples": [
+          "trace1",
+          "trace2"
+        ],
+        "object_name": "name",
+        "object_type": "keyword"
+      },
+      "kind": {
+        "category": "traces",
+        "component": "trace",
+        "caption": "Trace Kind",
+        "description": "The kind of the trace.",
+        "examples": [
+          "request",
+          "database"
+        ],
+        "object_name": "kind",
+        "object_type": "keyword"
+      },
+      "startTime": {
+        "category": "traces",
+        "component": "trace",
+        "caption": "Start Time",
+        "description": "The start time of the trace.",
+        "examples": [
+          "2023-06-14T00:00:00Z",
+          "2023-06-14T12:00:00Z"
+        ],
+        "object_name": "startTime",
+        "object_type": "date_nanos"
+      },
+      "endTime": {
+        "category": "traces",
+        "component": "trace",
+        "caption": "End Time",
+        "description": "The end time of the trace.",
+        "examples": [
+          "2023-06-14T01:00:00Z",
+          "2023-06-14T13:00:00Z"
+        ],
+        "object_name": "endTime",
+        "object_type": "date_nanos"
+      },
+      "droppedAttributesCount": {
+        "category": "traces",
+        "component": "trace",
+        "caption": "Dropped Attributes Count",
+        "description": "The count of dropped attributes.",
+        "examples": [
+          10,
+          20
+        ],
+        "object_name": "droppedAttributesCount",
+        "object_type": "long"
+      },
+      "droppedEventsCount": {
+        "category": "traces",
+        "component": "trace",
+        "caption": "Dropped Events Count",
+        "description": "The count of dropped events.",
+        "examples": [
+          5,
+          15
+        ],
+        "object_name": "droppedEventsCount",
+        "object_type": "long"
+      },
+      "droppedLinksCount": {
+        "category": "traces",
+        "component": "trace",
+        "caption": "Dropped Links Count",
+        "description": "The count of dropped links.",
+        "examples": [
+          3,
+          8
+        ],
+        "object_name": "droppedLinksCount",
+        "object_type": "long"
+      },
+      "status.code": {
+        "category": "traces",
+        "component": "trace",
+        "caption": "Status Code",
+        "description": "The status code of the trace.",
+        "examples": [
+          200,
+          500
+        ],
+        "object_name": "status.code",
+        "object_type": "long"
+      },
+      "status.message": {
+        "category": "traces",
+        "component": "trace",
+        "caption": "Status Message",
+        "description": "The status message of the trace.",
+        "examples": [
+          "Success",
+          "Error"
+        ],
+        "object_name": "status.message",
+        "object_type": "keyword"
+      },
+      "attributes.serviceName": {
+        "category": "traces",
+        "component": "trace",
+        "caption": "Service Name",
+        "description": "The name of the service.",
+        "examples": [
+          "serviceA",
+          "serviceB"
+        ],
+        "object_name": "attributes.serviceName",
+        "object_type": "keyword",
+        "correlation_field": "services.serviceName"
+      },
+      "attributes.data_stream.dataset": {
+        "category": "traces",
+        "component": "trace",
+        "caption": "Data Stream Dataset",
+        "description": "The dataset of the data stream.",
+        "examples": [
+          "datasetA",
+          "datasetB"
+        ],
+        "object_name": "attributes.data_stream.dataset",
+        "object_type": "keyword"
+      },
+      "attributes.data_stream.namespace": {
+        "category": "traces",
+        "component": "trace",
+        "caption": "Data Stream Namespace",
+        "description": "The namespace of the data stream.",
+        "examples": [
+          "namespaceA",
+          "namespaceB"
+        ],
+        "object_name": "attributes.data_stream.namespace",
+        "object_type": "keyword"
+      },
+      "events.name": {
+        "category": "traces",
+        "component": "trace",
+        "caption": "Event Name",
+        "description": "The name of the event.",
+        "examples": [
+          "eventA",
+          "eventB"
+        ],
+        "object_name": "events.name",
+        "object_type": "keyword"
+      },
+      "events.@timestamp": {
+        "category": "traces",
+        "component": "trace",
+        "caption": "Event Timestamp",
+        "description": "The timestamp of the event.",
+        "examples": [
+          "2023-06-14T00:00:00Z",
+          "2023-06-14T12:00:00Z"
+        ],
+        "object_name": "events.@timestamp",
+        "object_type": "date_nanos"
+      },
+      "events.observedTimestamp": {
+        "category": "traces",
+        "component": "trace",
+        "caption": "Event Observed Timestamp",
+        "description": "The observed timestamp of the event.",
+        "examples": [
+          "2023-06-14T01:00:00Z",
+          "2023-06-14T13:00:00Z"
+        ],
+        "object_name": "events.observedTimestamp",
+        "object_type": "date_nanos"
+      },
+      "links.traceId": {
+        "category": "traces",
+        "component": "trace",
+        "caption": "Link Trace ID",
+        "description": "The trace ID of the link.",
+        "examples": [
+          "linkTraceA",
+          "linkTraceB"
+        ],
+        "object_name": "links.traceId",
+        "object_type": "keyword"
+      },
+      "links.spanId": {
+        "category": "traces",
+        "component": "trace",
+        "caption": "Link Span ID",
+        "description": "The span ID of the link.",
+        "examples": [
+          "linkSpanA",
+          "linkSpanB"
+        ],
+        "object_name": "links.spanId",
+        "object_type": "keyword"
+      },
+      "links.traceState": {
+        "category": "traces",
+        "component": "trace",
+        "caption": "Link Trace State",
+        "description": "The trace state of the link.",
+        "examples": [
+          "linkActive",
+          "linkCompleted"
+        ],
+        "object_name": "links.traceState",
+        "object_type": "text"
+      },
+      "instrumentationScope.name": {
+        "category": "traces",
+        "component": "trace",
+        "caption": "Instrumentation Scope Name",
+        "description": "The name of the instrumentation scope.",
+        "examples": [
+          "scopeA",
+          "scopeB"
+        ],
+        "object_name": "instrumentationScope.name",
+        "object_type": "keyword"
+      },
+      "instrumentationScope.version": {
+        "category": "traces",
+        "component": "trace",
+        "caption": "Instrumentation Scope Version",
+        "description": "The version of the instrumentation scope.",
+        "examples": [
+          "versionA",
+          "versionB"
+        ],
+        "object_name": "instrumentationScope.version",
+        "object_type": "keyword"
+      },
+      "instrumentationScope.droppedAttributesCount": {
+        "category": "traces",
+        "component": "trace",
+        "caption": "Instrumentation Scope Dropped Attributes Count",
+        "description": "The count of dropped attributes in the instrumentation scope.",
+        "examples": [
+          2,
+          4
+        ],
+        "object_name": "instrumentationScope.droppedAttributesCount",
+        "object_type": "integer"
+      },
+      "instrumentationScope.schemaUrl": {
+        "category": "traces",
+        "component": "trace",
+        "caption": "Instrumentation Scope Schema URL",
+        "description": "The schema URL of the instrumentation scope.",
+        "examples": [
+          "https://example.com/schemaA",
+          "https://example.com/schemaB"
+        ],
+        "object_name": "instrumentationScope.schemaUrl",
+        "object_type": "keyword"
+      },
+      "schemaUrl": {
+        "category": "traces",
+        "component": "trace",
+        "caption": "Schema URL",
+        "description": "The schema URL of the trace.",
+        "examples": [
+          "https://example.com/schema1",
+          "https://example.com/schema2"
+        ],
+        "object_name": "schemaUrl",
+        "object_type": "keyword"
+      }
+    }
+  ]
+}

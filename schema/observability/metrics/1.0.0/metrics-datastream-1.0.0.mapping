@@ -49,28 +49,8 @@
           "type": "keyword"
         },
         "name": {
-            "type": "keyword"
-        },
-        "attributes": {
-          "type": "object",
-          "properties": {
-            "data_stream": {
-              "properties": {
-                "dataset": {
-                  "ignore_above": 128,
-                  "type": "keyword"
-                },
-                "namespace": {
-                  "ignore_above": 128,
-                  "type": "keyword"
-                },
-                "type": {
-                  "ignore_above": 56,
-                  "type": "keyword"
-                }
-              }
-            }
-          }
+          "type": "keyword",
+          "ignore_above": 256
         },
         "description": {
           "type": "text",
@@ -214,6 +194,10 @@
               "ignore_above": 256,
               "type": "keyword"
             },
+            "serviceName": {
+              "ignore_above": 256,
+              "type": "keyword"
+            },
             "spanId": {
               "ignore_above": 256,
               "type": "keyword"
@@ -223,22 +207,12 @@
         "instrumentationScope": {
           "properties": {
             "name": {
-              "type": "text",
-              "fields": {
-                "keyword": {
-                  "type": "keyword",
-                  "ignore_above": 128
-                }
-              }
+              "type": "keyword",
+              "ignore_above": 256
             },
             "version": {
-              "type": "text",
-              "fields": {
-                "keyword": {
-                  "type": "keyword",
-                  "ignore_above": 256
-                }
-              }
+              "type": "keyword",
+              "ignore_above": 256
             },
             "droppedAttributesCount": {
               "type": "integer"
@@ -264,6 +238,9 @@
           }
         }
       }
+    },
+    "aliases" : {
+      "otel-metrics-" : {}
     },
     "settings": {
       "index": {
