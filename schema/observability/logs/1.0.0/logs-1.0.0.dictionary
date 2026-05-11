@@ -48,7 +48,7 @@
         "caption": "log body",
         "description": "Log message content.",
         "examples": [
-          "Error occured while trying to connect to the database",
+          "Error occurred while trying to connect to the database",
           "Server started successfully",
           "User logged in"
         ],
