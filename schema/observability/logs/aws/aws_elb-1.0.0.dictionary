@@ -3,6 +3,15 @@
   "version": "1.0",
   "attributes": [
     {
+      "aws.elb.actions_executed": {
+        "category": "aws_elb",
+        "component": "elb",
+        "caption": "Actions Executed",
+        "description": "Actions taken when processing the request",
+        "examples": [],
+        "object_name": "actions_executed",
+        "object_type": "keyword"
+      },
       "aws.elb.backend.ip": {
         "category": "aws_elb",
         "component": "elb",
@@ -38,6 +47,33 @@
         "examples": [],
         "object_name": "backend.status_code",
         "object_type": "short"
+      },
+      "aws.elb.chosen_cert_arn": {
+        "category": "aws_elb",
+        "component": "elb",
+        "caption": "Chosen Cert ARN",
+        "description": "ARN of the certificate presented to the client",
+        "examples": [],
+        "object_name": "chosen_cert_arn",
+        "object_type": "keyword"
+      },
+      "aws.elb.classification": {
+        "category": "aws_elb",
+        "component": "elb",
+        "caption": "Classification",
+        "description": "Classification for desync mitigation",
+        "examples": [],
+        "object_name": "classification",
+        "object_type": "keyword"
+      },
+      "aws.elb.classification_reason": {
+        "category": "aws_elb",
+        "component": "elb",
+        "caption": "Classification Reason",
+        "description": "Classification reason code",
+        "examples": [],
+        "object_name": "classification_reason",
+        "object_type": "keyword"
       },
       "aws.elb.client.ip": {
         "category": "aws_elb",
@@ -84,6 +120,15 @@
         "object_name": "destination.port",
         "object_type": "integer"
       },
+      "aws.elb.elb_name": {
+        "category": "aws_elb",
+        "component": "elb",
+        "caption": "ELB Name",
+        "description": "Resource ID of the load balancer",
+        "examples": [],
+        "object_name": "elb_name",
+        "object_type": "keyword"
+      },
       "aws.elb.elb_status_code": {
         "category": "aws_elb",
         "component": "elb",
@@ -92,9 +137,16 @@
         "examples": [],
         "object_name": "elb_status_code",
         "object_type": "short"
-      }
-    },
-    {
+      },
+      "aws.elb.elb_type": {
+        "category": "aws_elb",
+        "component": "elb",
+        "caption": "ELB Type",
+        "description": "Type of request or connection",
+        "examples": [],
+        "object_name": "elb_type",
+        "object_type": "keyword"
+      },
       "aws.elb.http.port": {
         "category": "aws_elb",
         "component": "elb",
@@ -111,6 +163,15 @@
         "description": "The HTTP version of the request",
         "examples": [],
         "object_name": "http.version",
+        "object_type": "keyword"
+      },
+      "aws.elb.lambda_error_reason": {
+        "category": "aws_elb",
+        "component": "elb",
+        "caption": "Lambda Error Reason",
+        "description": "Error reason code",
+        "examples": [],
+        "object_name": "lambda_error_reason",
         "object_type": "keyword"
       },
       "aws.elb.matched_rule_priority": {
@@ -130,6 +191,15 @@
         "examples": [],
         "object_name": "received_bytes",
         "object_type": "integer"
+      },
+      "aws.elb.redirect_url": {
+        "category": "aws_elb",
+        "component": "elb",
+        "caption": "Redirect URL",
+        "description": "URL of the redirect target for the location header of the HTTP response",
+        "examples": [],
+        "object_name": "redirect_url",
+        "object_type": "keyword"
       },
       "aws.elb.request_creation_time": {
         "category": "aws_elb",
