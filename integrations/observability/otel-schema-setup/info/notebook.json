@@ -20,7 +20,7 @@
 
 # Create the ss4o_traces_template index template 
 # >> remove the "data_stream":{} line to apply for indices rahter than data-streams
-PUT  index_template/ss4o_traces_template
+PUT  _index_template/ss4o_traces_template
 {
   "index_patterns": [
     "ss4o_traces-*-*"
@@ -235,7 +235,7 @@ PUT  index_template/ss4o_traces_template
 
 # Create the ss4o_logs_template index template
 # >> remove the "data_stream":{} line to apply for indices rahter than data-streams
-PUT  index_template/ss4o_logs_template
+PUT  _index_template/ss4o_logs_template
 {
   "index_patterns": ["ss4o_logs-*-*"],
   "priority": 900,
@@ -454,7 +454,7 @@ PUT  index_template/ss4o_logs_template
         
 # Create the ss4o_metrics_template index template
 # >> remove the "data_stream":{} line to apply for indices rahter than data-streams
-PUT  index_template/ss4o_metrics_template
+PUT  _index_template/ss4o_metrics_template
 {
   "index_patterns": [
     "ss4o_metrics-*-*"
@@ -767,7 +767,7 @@ PUT  index_template/ss4o_metrics_template
           
 # Create the ss4o_services_template index template
 # >> remove the "data_stream":{} line to apply for indices rahter than data-streams
-PUT  index_template/ss4o_services_template
+PUT  _index_template/ss4o_services_template
 {
   "index_patterns": [
     "ss4o_services-*-*"
