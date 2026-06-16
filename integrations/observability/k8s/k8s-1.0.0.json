@@ -36,6 +36,10 @@
     {
       "name": "logs-k8s",
       "version": "1.0.0"
+    },
+    {
+      "name": "metrics",
+      "version": "1.0.0"
     }
   ],
   "assets": [{
@@ -44,6 +48,148 @@
     "extension": "ndjson",
     "type": "savedObjectBundle"
   }],
+  "getting-started": {
+  "info": "https://github.com/opensearch-project/opensearch-catalog/tree/main/integrations/observability/k8s/info/Getting-Started.md",
+  "ingestion": ["data-prepper"],
+  "structured": "true",
+  "technology": "k8s",
+  "protocol": ["otel"],
+  "live-sample": "false",
+  "workflows": [
+    {
+      "name": "Connect to K8s",
+      "description": "This is a data-prepper based getting started instructions tutorial",
+      "steps": [
+        {
+          "name": "Data-Prepper Pipeline Config",
+          "type": "console-cmd",
+          "phase": "collection",
+          "label": "Pipeline Config",
+          "info": ["https://github.com/opensearch-project/opensearch-catalog/tree/main/integrations/observability/k8s/getting-started/data-prepper/pipeline.yml"],
+          "description": "Setup data-prepper config file for collecting k8s produced metrics using otel collector",
+          "content": "  exporters:\n    otlp:\n      endpoint: \"<your-DataPrepper-url>\"\n      tls:\n        cert_file: \"./cert.pem\"\n        key_file: \"./key.pem\"\n  metrics-pipeline:\n    source:\n    otel_metrics_source:\n      ssl: true\n      sslKeyCertChainFile: \"./cert.pem\"\n      sslKeyFile: \"./key.pem\"\n    processor:\n      - otel_metrics:\n    sink:\n      - opensearch:\n          hosts: [ \"<your-OpenSearch-url>\" ]\n          username: \"otelWriter\"\n          password: \"<your-password>\"\n          index: \"ss4o_metrics-k8s-%{yyyy.MM.dd}\""
+        },
+        {
+          "name": "OTEL collector Setup",
+          "type": "console-cmd",
+          "phase": "collection",
+          "label": "Pipeline Config",
+          "info": ["https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/receiver/kubeletstatsreceiver/README.md"],
+          "description": "Setup Kubelet Stats metrics Receiver in the Otel pipeline config file",
+          "content": "receivers:\n  otlp:\n    protocols:\n      grpc:\n      http:\n        cors:\n          allowed_origins:\n            - \"http://*\"\n            - \"https://*\"\n  kubeletstats:\n    collection_interval: 10s\n    auth_type: serviceAccount\n    endpoint: \"https://${HOSTNAME}:10250\"\n    insecure_skip_verify: true\n    metric_groups: [\"cpu\", \"memory\", \"filesystem\", \"network\", \"volume\"]\n"
+        },
+        {
+          "name": "Fluent-Bit Setup",
+          "type": "console-cmd",
+          "phase": "ingestion",
+          "label": "Agent Set-Up",
+          "info": ["https://github.com/opensearch-project/opensearch-catalog/tree/main/integrations/observability/nginx/getting-started/fluent-bit/fluent-bit.conf"],
+          "description": "Setup Fluent-Bit conf file including logs parsing and OpenSearch access",
+          "input-params": [
+            {
+              "name": "opensearch-node1",
+              "description": "Opensearch host",
+              "type": "host-name"
+            },
+            {
+              "name": "ss4o_logs-nginx-prod",
+              "description": "logs sink index name",
+              "type": "index-name"
+            }
+          ],
+          "content": "[SERVICE]\n    Parsers_File parsers.conf\n\n[INPUT]\n    Name forward\n    Port 24224\n\n[FILTER]\n    Name parser\n    Match nginx.access\n    Key_Name log\n    Parser nginx\n\n[FILTER]\n    Name parser\n    Match apache.access\n    Key_Name log\n    Parser apache\n\n[Filter]\n    Name    lua\n    Match   *\n    Script  otel-converter.lua\n    call    convert_to_otel\n\n[OUTPUT]\n    Name  opensearch\n    Match nginx.access\n    Host  ${opensearch-node1}\n    Port  9200\n    Index ${ss4o_logs-nginx-prod}\n    Suppress_Type_Name On\n    tls             On\n    tls.verify      Off\n    HTTP_User       admin\n    HTTP_Passwd     my_%New%_passW0rd!@#\n\n[OUTPUT]\n    Name  opensearch\n    Match apache.access\n    Host  ${opensearch-node1}\n    Port  9200\n    Index ${ss4o_logs-nginx-prod}\n    Suppress_Type_Name On\n    tls             On\n    tls.verify      Off\n    HTTP_User       admin\n    HTTP_Passwd     my_%New%_passW0rd!@#\n\n[OUTPUT]\n    Name stdout\n    Match nginx.access"
+        }
+      ]
+    },
+    {
+      "name": "Quick Start",
+      "description": "This is a fluent-bit based docker quick starting instructions tutorial with a live example",
+      "steps": [
+        {
+          "name": "Create docker-network",
+          "label": "Environment setting",
+          "phase": "docker",
+          "type": "console-cmd",
+          "content": "docker network create opensearch-net",
+          "description": "Before running any docker-compose files, create the opensearch-net network"
+        },
+        {
+          "name": "Setup docker .env file",
+          "label": "Environment Parameters",
+          "phase": "docker",
+          "type": "file-url",
+          "input-params": [
+            {
+              "name": "OPENSEARCH_HOST",
+              "description": "Opensearch host",
+              "type": "host-name"
+            },
+            {
+              "name": "OPENSEARCH_DASHBOARD_HOST",
+              "description": "Opensearch Dashboard host",
+              "type": "host-name"
+            }
+          ],
+          "info": ["https://github.com/opensearch-project/opensearch-catalog/tree/main/integrations/observability/nginx/getting-started/.env"],
+          "content": "wget https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/tree/main/integrations/observability/nginx/getting-started/.env",
+          "description": "Setup docker-compose env variables "
+        },
+        {
+          "name": "Setup fluent-bit folder",
+          "label": "Environment Parameters",
+          "phase": "docker",
+          "type": "file-url",
+          "info": ["https://github.com/opensearch-project/opensearch-catalog/tree/main/integrations/observability/nginx/getting-started/fluent-bit/fluent-bit.conf",
+            "https://github.com/opensearch-project/opensearch-catalog/tree/main/integrations/observability/nginx/getting-started/fluent-bit/otel-converter.lua",
+            "https://github.com/opensearch-project/opensearch-catalog/tree/main/integrations/observability/nginx/getting-started/fluent-bit/parsers.conf"
+          ],
+          "content": "wget https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/nginx/getting-started/fluent-bit/fluent-bit.conf \\\n     https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/nginx/getting-started/fluent-bit/otel-converter.lua \\\n     https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/nginx/getting-started/fluent-bit/parsers.conf\n",
+          "description": "Setup docker-compose fluent-bit's service configuration "
+        },
+        {
+          "name": "Run docker-compose",
+          "label": "live container",
+          "type": "file-url",
+          "phase": "docker",
+          "info": ["https://github.com/opensearch-project/opensearch-catalog/tree/main/integrations/observability/nginx/getting-started/nginx-node.yml"],
+          "description": "Run docker-compose for the nginx live example and see the generated index",
+          "content": "wget -O nginx-node.yml https://raw.githubusercontent.com/opensearch-project/opensearch-catalog/main/integrations/observability/nginx/getting-started/nginx-node.yml && docker-compose -f nginx-node.yml up -d\n"
+        }
+      ]
+    }
+  ],
+  "schema": [
+    {
+      "type": "http",
+      "info": ["https://opensearch.org/docs/latest/im-plugin/index-templates","https://github.com/opensearch-project/opensearch-catalog/blob/main/docs/schema/observability/Naming-convention.md"],
+      "content": "PUT _component_template/http",
+      "description": "Setup simple schema http component template in the dev console",
+      "index-template": "https://github.com/opensearch-project/opensearch-catalog/tree/main/integrations/observability/nginx/schema/http-1.0.0.mapping.json"
+    },
+    {
+      "type": "communication",
+      "info": ["https://opensearch.org/docs/latest/im-plugin/index-templates","https://github.com/opensearch-project/opensearch-catalog/blob/main/docs/schema/observability/Naming-convention.md"],
+      "content": "PUT _component_template/communication",
+      "description": "Setup simple schema communication component template in the dev console",
+      "index-template": "https://github.com/opensearch-project/opensearch-catalog/tree/main/integrations/observability/nginx/schema/communication-1.0.0.mapping.json"
+    },
+    {
+      "type": "logs",
+      "info": ["https://opensearch.org/docs/latest/im-plugin/index-templates","https://github.com/opensearch-project/opensearch-catalog/blob/main/docs/schema/observability/Naming-convention.md"],
+      "content": "PUT _index_template/ss4o_logs_template",
+      "description": "Setup simple schema logs index template in the dev console",
+      "index-template": "https://github.com/opensearch-project/opensearch-catalog/tree/main/integrations/observability/nginx/schema/logs-1.0.0.mapping.json",
+      "index-pattern-name": "ss4o_logs-*-*"
+    }
+  ],
+  "index-patterns": {
+    "type": ["logs"],
+    "info": ["https://opensearch.org/docs/latest/dashboards/management/index-patterns/"],
+    "description": "Import index patterns `.ndjson` file to the saved objects",
+    "index-pattern": "https://github.com/opensearch-project/opensearch-catalog/tree/main/integrations/observability/nginx/assets/nginx-index-patterns-1.0.0.ndjson",
+    "index-patterns-name": ["ss4o_logs-*-*"]
+  }
+},
   "sampleData": {
     "path": "sample.json"
   }
