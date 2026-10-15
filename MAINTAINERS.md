@@ -6,7 +6,6 @@ This document contains a list of maintainers in this repo. See [opensearch-proje
 
 | Maintainer       | GitHub ID                                             | Affiliation |
 |------------------|-------------------------------------------------------| ----------- |
-| Bowen Lan        | [bowenlan-amzn](https://github.com/bowenlan-amzn)     | Amazon      |
 | Khushboo Rajput  | [khushbr](https://github.com/khushbr)                 | Amazon      |
 | Praveen Sameneni | [praveensameneni](https://github.com/praveensameneni) | Amazon      |
 | Anan Zhuang      | [ananzh](https://github.com/ananzh)                   | Amazon      |
@@ -21,3 +20,4 @@ This document contains a list of maintainers in this repo. See [opensearch-proje
 | ---------------- | ----------------------------------------------------- | ----------- |
 | Drew Baugher     | [dbbaughe](https://github.com/dbbaughe)               | Amazon      |
 | Sean Neumann     | [seanneumann](https://github.com/seanneumann)         | Contributor      |
+| Bowen Lan        | [bowenlan-amzn](https://github.com/bowenlan-amzn)     | Amazon      |
